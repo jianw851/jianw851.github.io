@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 category: [reading]
 title: About reading
