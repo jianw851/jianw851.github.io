@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
-category: daily
-title: 为Jekyll增加不完美的分页和文章摘要
+category: [trick]
+title: 关于如何设置jekyll的一些格式运用
 tagline: by Kingauthur
 tags: [jekyll]
 ---
