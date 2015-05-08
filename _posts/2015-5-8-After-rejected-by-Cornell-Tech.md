@@ -1,100 +1,21 @@
 ---
 layout: post
-category: c++
-tagline: by Snail
-title: 《C++ Primer》笔记：第3章
-tags: c++ primer
+category: daily
+title:  After rejected by Cornell Tech
+tagline: by Jian
+tags: [Cornell Tech]
 ---
-《C++ Primer》第3章笔记，字符串、向量和数组。
 
 <!--more-->
 
-# Vector
+# Never say never
 
-## vector值初始化
-
-如果Vector对象中的类型不支持默认初始化，就必须提供初始值，如（`string`支持默认初始化）：
-
-    vector<string> vec(10, "s");
-
-## 列表初始化
-
-如果使用花括号，先尝试列表初始化，再尝试默认初始化，如：
-
-    vector<string> v5{"hi"}; //列表初始化
-    vector<string> v6{10}; //默认初始化
+## Rejected
+   I got rejected email from Cornell Tech this morning which ended my four-month waiting. I can't say I am sad while I can't say I am happy. I want to say many thing to Cornell Tech which I haven't had time to say. I have been working very hard on my academic courses and English skill improvement. Although having been taken charge on three software projects at work, I have used most my spare time finish reading an algorithm book, an English writing book, a C programing language book, an algorithm video course (except other courses unrelated to computer science such as Macro Economics) and do language exchange with a English native speaker twice a week in the last three months since I submitted my application of the program. Though I have learned most of the prerequisite courses such as: CS 2800, CS 4410, CS 2110, CS 1130, CS 3410, I would like review them again to make sure I can understand and use them. I believe I can do very well both on the courses and in the job with partners.
+   Cornell Tech's unique master's program in CS which perfectly meet my requirement, but I failed. GPA seems the main reason though I had 7 years working exprience. I can understand that Cornell would never give admission to a student with GPA lower than 3.0 as a Ivy league member. 
     
-## vector操作
-
-    v1 = {a,b,c... } 用列表中元素的拷贝替换v1中的元素
+## More space to improve 
+   But everything has two side. If I got the chance to study and cooperate with world-class faculty in Cornell, would I succeed in the future? This result can only prove I don't have more advantages for educational oppotunities than local American students and high GPA students. I believe this is a good chance for me to improve my acdemic skills and I will work harder on them to get a better oppotunity to career life. Through this application, I found many good videos teach Tech innovation and startups on the Internet which shared by Cornell Tech faculties.such as [Christine Sneva's twitter](https://twitter.com/Christine_Sneva), [the next silicon valley](http://www.usnews.com/news/college-of-tomorrow/articles/2015/04/01/the-next-silicon-valley), [how to launch a successful company](http://tech.cornell.edu/news/4-lessons-from-david-tisch-on-how-to-launch-a-successful-company). In addtion, I found I am weak in Operating Systems and have a gap in Transition to Object-Oriented Programming. Failure is not the end, there is more space to improve.  
     
-## 使用范围for语名改变字符中的字符
-
-    string s("Hello World!!!");
-    for (auto &c : s)
-        c = toupper(c);
-    cout << s << endl;
-    
-## 迭代器
-
-C++11新标准引入了`cbegin()`返回`const_iterator`。
-
-迭代器距离类型为`difference_type`。
-
-# 数组
-
-## 初始化
-
-不允许用auto关键字。
-
-    int ia[] = {0,1,2}
-    auto ia2(ia); //ia2是一个整型指针，指向ia的第一个元素。
-    decltype(ia) ia3; //10个整数构成的数组。
-
-## 复杂的数组声明
-
-    int *ptrs[10]; //ptrs是含有10个整型指针的数组
-    int (*Parray)[10] = &arr; //Parray指向一个含有10个整数的数组
-    int (&arrRef)[10] = arr;  //arrRef引用一个含有10个整数的数组
-    int *(&arry)[10] = ptrs; //arry是数组的引用，该数组含有10个指针
-    
-## 下标和指针
-
-内置的下标运算符所用的索引值不是无符号类型。
-
-## 标准库函数begin和end
-
-C++11新标准加入了begin和end函数。
-
-## 标准库类型
-
-`size_t`为数组大小类型，`ptrdiff_t`为指针距离类型。
-
-## 使用数组初始化vector
-
-    int int_arr[] = {0, 1, 2};
-    vector<int> ivec(begin(int_arr), end(int_arr));
-    
-# 多维数组
-
-## 使用范围for
-
-    size_t cnt = 0;
-    for (auto &row : ia)
-        for (auto &col : row) {
-            col = cnt;
-            ++cnt;
-        }
-
-除了最内层的循环外，其它的循环的控制变量必须是引用类型的。
-
-## 指针和多维数组
-
-    int ia[3][4];
-    int (*p)[4] ia;
-    p = &ia[2];
-    for (auto p = ia; p != ia + 3; ++p) {
-        for (auto q = *p; q != *p + 4; ++q)
-            cout << *q << ' ';
-        cout << endl;
-    }
+## In the future
+   It's the time to make the decision. I think I will choose to study in Stevens Institue of Technology. Focus on big data or  cloud computing, keep on improving algorithm, enhance programing skills and creativity. Life is a long run, learn to love, learn to face, learn to cherish, learn to learn.
