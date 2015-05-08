@@ -1,6 +1,6 @@
 ---
 layout: post
-category: [reading]
+category: [read]
 title: About reading
 tagline: by Hongbing Song
 tags: [recommend books]
