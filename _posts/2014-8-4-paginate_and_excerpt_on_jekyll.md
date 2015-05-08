@@ -17,7 +17,7 @@ tags: [jekyll]
 如果要斜体，用两个* 括起来   *斜体*
 
 站内链接引用的样式 如下
-可参考[关于阅读]({% post_url 2014-4-10-about_reading %})。 
+可参考[关于阅读]({% post_url 2015-4-10-about-reading %})。 
 
 回到主题，下面先说下Jekyll分页，这个功能有内置的，但是非常见鬼的，只支持对index.html的分页，你没看错，文件名必须是这个，如果你是用JB的话，把index.md重命名成index.html，然后再继续往下看：
 
