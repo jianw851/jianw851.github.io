@@ -36,7 +36,7 @@ search :
   
   # Your Google custom search engine ID
   #
-  gcse :jianwang
+  gcse :
     cx :008018105865478382285:lev-i0j0osy
   
 # The way of excerpt. There are two options: "teaser" and "truncate_words".
