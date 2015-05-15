@@ -4,13 +4,88 @@
  <title>Welcome to</title>
  <link href="http://jianw851.github.io/" rel="self"/>
  <link href="http://jianw851.github.io"/>
- <updated>2015-05-09T22:36:46+08:00</updated>
+ <updated>2015-05-15T20:35:21+08:00</updated>
  <id>http://jianw851.github.io</id>
  <author>
    <name>Jian Wang</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Memo</title>
+   <link href="http://jianw851.github.io/daily/2015/05/15/memo"/>
+   <updated>2015-05-15T00:00:00+08:00</updated>
+   <id>http://jianw851.github.io/daily/2015/05/15/memo</id>
+   <content type="html">&lt;!--more--&gt;
+
+&lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;	克	333	   s	1.1	Y
+	克	7	   s	1.1	Y
+	脸	851g	   s	1.1	Y
+	腿	851g	   s	1.1	Y
+	林克	851g	   s	1.1	Y
+	浪	蜡烛	   e	1.1	Y
+	浪	speedlearn e	1.1	Y
+	易	蜡烛	   e	1.1	Y
+	易	蜡烛	   e	1.1	Y
+	骨	蜡烛       e	1.1	Y
+            骨      851g	   e	1.1	Y
+        史学	jwang99	   ed	1.1	Y
+        陶	蜡烛浪	   b	1.1	Y
+        ..	pay	   mom		Y
+        阿	蜡烛浪	   b	1.1	Y
+        老爹	37732620   b	1.1	Y
+        训	蜡烛g	   b	1.1	Y
+        陪跑	蜡烛g	   b	1.1	Y
+        余		   mom		Y
+     	危		   mom		Y
+    web	喆	灯	   eb	1.1	Y
+    web	喆	只	   江山		Y
+    mb	喆	只	   江山		Y
+    web	喆	优	   唯一		Y
+    teb	喆		   唯一		Y
+    mb	剑	灯	   eb	1.1	Y
+    mb	剑	只	   江山		Y
+    web	剑	只	   唯一		Y
+    web	剑	优	   唯一		Y
+    web	剑	灯	   ！！		Y
+    web	赵	灯	   唯一		Y
+    web	赵	只	   mom		Y
+    web	赵	优	   爱1		Y
+    web	赵	只	   江山		Y
+    web	华	蜡烛易2	   eb	1.1	Y
+    web	华	只	   江山		Y
+    teb	华		   唯一		Y
+    o	急啥	851g	   o	1.1	Y
+    o	百云	7q	   o	1.1	2010
+    o	有裤	131	   o	1.1	Y
+&lt;/code&gt;&lt;/pre&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Universal Mindmap Cloud Construction</title>
+   <link href="http://jianw851.github.io/idea/2015/05/13/universal-structure-cloud-construction"/>
+   <updated>2015-05-13T00:00:00+08:00</updated>
+   <id>http://jianw851.github.io/idea/2015/05/13/universal-structure-cloud-construction</id>
+   <content type="html">&lt;p&gt;I have been thinking about a structure for a long time. This structure is shapeless like a piece of cloud which can include anything in the universe. once this structure is constructed, it can solve any problem, even solve problems that will happen in the future. This structure is exist, since it is trememdous, no one think it as a whole.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;composation&quot;&gt;Composation&lt;/h3&gt;
+
+&lt;p&gt;Firstly, it is composed of inumerous nodes, each node stand for an entity which can be anything in the world. Literally they are nouns. Secondly, these different nodes are connected with lines, these lines are directed, each node points to another, it can be a loop, it can point to each other. Each node can be connected to another. The whole stucture has no boundry.&lt;/p&gt;
+
+&lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
+&lt;p&gt;I found everything in the world has connections with each other. For example, geografically, every spot on the earth has features such as location, products, culture, tradition, language, history etc.  Element like “pepper” which belongs to product feature may also belongs to culture in Sichuan province China, thus build a interconnection between different features. Inumerous elements may connected with each other due to logical, literal, commercial, mathematical reasons. Reasons can also be vary from any aspects. Form the macro level, a node can be a field such as economics, math, computer science, outerspace, animals, human beings etc, which can also be connected with each other by the link between there inner connections.&lt;/p&gt;
+
+&lt;p&gt;to be continue…&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Maintenance of github pages</title>
