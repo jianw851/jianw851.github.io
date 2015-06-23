@@ -4,13 +4,93 @@
  <title>Welcome to</title>
  <link href="http://jianw851.github.io/" rel="self"/>
  <link href="http://jianw851.github.io"/>
- <updated>2015-05-15T20:35:21+08:00</updated>
+ <updated>2015-06-23T18:57:00+08:00</updated>
  <id>http://jianw851.github.io</id>
  <author>
    <name>Jian Wang</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>After read Dreaming In Code</title>
+   <link href="http://jianw851.github.io/read/2015/06/23/dreaming-in-code"/>
+   <updated>2015-06-23T00:00:00+08:00</updated>
+   <id>http://jianw851.github.io/read/2015/06/23/dreaming-in-code</id>
+   <content type="html">&lt;p&gt;Today I finished read the book &lt;em&gt;Dreaming In Code&lt;/em&gt; which is strongly recommended for software engineers. As expected, the book gave me the unpresedental feeling and recognition of software engineering and management. All the stories told by the book are what I have been experienced when working. I feel regret to read it so late. How do I love it, let me count the ways.Due to what I have read is a Chinese version, excuse me for using Chinese.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;about-the-history&quot;&gt;About the history&lt;/h3&gt;
+
+&lt;p&gt;1.布鲁克斯(Frederick Brooks)法则：往已延误的项目中补充人力，会让其更加延误。这个理论可谓软件工程的奠基石，因为在软件工业发展之初，软件开发和管理困难重重，软件开发人员的效率几十年以来没有什么进步。但是软件千变万化，软件开发人员遇到的困难也前所未有，他非常有前瞻的提出了一个观点：构建软件系统最难的就是精确设定要做什么东西&lt;/p&gt;
+
+&lt;p&gt;2.Eric S.Raymond 瑞蒙德德观点超越了布鲁克斯，他和同时代的托瓦茨发明了开源系统，所以得出了李纳斯法则：眼球足够多，缺陷无处躲。但是开源项目仍然没有驳倒布鲁克斯，因为开源项目仍然没有解决时间问题，项目延误仍然大量存在。书中给出了大量例证，无论是国家安全局，还是财政局，很多公司几十亿的项目投入上千人，最后仍然无疾而终。但是我们看到大教堂模式的典型代表，linux系统的诞生，让我们看到开源项目的优点。同时也让程序员找到了创作的原动力：乐享即能高效，愉悦是金－－对于创造性工作，玩耍是最经济有效的模式。而同时代，有些前辈提出比较先进的观点：停止设计，开始编码。&lt;/p&gt;
+
+&lt;p&gt;3.随着软件工程的提出，极限编程模式被提出。核心思想是，用力立即去做小软件，不要做大软件。潜台词是如果你一开始就想做大软件，你最后什么都做不出来，但是这会给重用性带来很大的灾难。&lt;/p&gt;
+
+&lt;p&gt;4.凯尔的文章，开始抨击软件，大肆宣扬IT无关紧要和历史终结论。另外还有马克米纳，也鼓吹《软件阴谋论》。激起广泛的社会反响，还成为了畅销书。但是这些都只是历史进程的一点波澜，并不影响软件产业的发展，软件的历史进步作用是不可磨灭的。而历史证明这些理论都是错误的。&lt;/p&gt;
+
+&lt;p&gt;5.大家都希望从本质上消灭代码，uml,mdd,mda软件应运而生，人称意识编程，然而截止到现在什么成果也没有突破，应为根据漏洞抽象法则：在某种程度来说，所有非平常的抽象都有漏洞，抽象总会出错。所以聪明的程序员根本不敢去把程序一层一层抽象网上摞，因为即使抽象到100层，出了问题，仍然要从第0层开始往上找原因，根本无法摆脱计算机底层的东西。就像书里说的：抽象并未真的像人们打算的那样简化我们的生活，漏洞抽象法则意味着，无论何时有人拿出一套本该能提升我们效率的所见即所得新代码抽象工具，你总会听到许多人说“先学会怎么手工做，再用所见即所得工具节省制作时间”。所以抽象节省了工作时间，却没有节省学习的时间，总而言之，尽管我们拥有了越来越高级的编程工具以及越来越好的抽象，但要成为编程高手却越来越难了，这真够扯的。&lt;/p&gt;
+
+&lt;p&gt;6.汉弗里在ibm执行强制进度纪律，取得了成功。基于两个原则：1.计划是强制性的2.从底至上，即根据那些负责按计划执行的程序员的经验和知识来，而不是靠管理者拍脑袋或对市场的期望而来。后来80年代，他加入了卡耐基梅隆大学，创办了软件工程学院，并创建了cmm软件成熟度模型。ps，我报了这个学院，给我出了codility的测试，后来被拒了。。。&lt;/p&gt;
+
+&lt;p&gt;7.新的软件管理办法：mbwa闲逛式管理，也被否定了。因为今天的商业世界中，在对软件项目表现普通不满意表象背后，有着更深层次的焦虑－－只怕问题的根源不在于管理技术的失败，而在于这里工作人的天性。对于许多管理者、甚至对于销售或其他部门的同事而言，程序员根本就属于另一类物种。和他们沟通相当困难、令人丧气。他们对常用的奖励／惩罚刺激手段毫无反应。他们是Geek，他们正是问题所在。&lt;/p&gt;
+
+&lt;p&gt;8.joel test 祖尔测试，要回答12个问题，得分满分就ok，但是大多数公司只能得2分，这里微软和google做的最好。12个问题是：1.你们使用源代码控制么？2你们每步都做构建么？3你们做每日构建么？4你们有缺陷数据库么？5你们会在写新代码之前修复缺陷么？6你们有与当前工作吻合的进度安排么？7你们有规约么？8程序员工作环境安静吗？9你们采用了市面上最好的工具了吗？10你们有测试人员吗？11你们会要求应聘者在面试时写代码吗？12你们做走廊可用性测试吗？&lt;/p&gt;
+
+&lt;p&gt;9.google公司让员工把5分之一的工作时间花在个人项目上。这20%时间的劳动成果可能会变成很酷的新产品，不用担心,google安抚员工说尽管开干，挠自己的痒处。实用最小主义在google用的很好。&lt;/p&gt;
+
+&lt;p&gt;10.罗森伯格法则：软件好做，除非你让她完成新任务。接下来可以推论：只有完成新任务的软件才是值得做的软件。ps听起来是屁话，老练的程序员没有一个愿意去做已经被做烂的软件，比如：日历，课程表，计算机，扫雷，五子棋。&lt;/p&gt;
+
+&lt;p&gt;11.总结：现今软件批评家们常常抱怨我们还处在这项技术的“修补引擎”阶段。在汽车业发展早期，车辆很有可能在到达目的地之前抛锚，如果你想开到任何地方去，都的先做个业务机修工。同样今天的计算机用户常常也的当业余程序员，学习机器的思维方式，修复在完成工作时遇到的大量问题。最终汽车越来越可靠，控制器件越来越标准化，不必为了驾驶而勉力成为汽修爱好者；可我们却一直在等待，期待按照同样的原则，软件领域中也能出现类似的情形。我支持这个观点，也许有一天我们能达到软件真的变成像水管或汽车一样的地步－－能遵循常例生产，不费心思也能用，而且永不改动。&lt;/p&gt;
+
+&lt;h3 id=&quot;about-the-experience&quot;&gt;About the experience&lt;/h3&gt;
+
+&lt;p&gt;1.在每个编程项目的早期阶段，当团队选择语言和技术，准备切入开发时，关于需求的灵活和程序的不可扩展的两难悖论就已然降临了。对语言和技术的选择，初时无关大局重选亦可，转而便得混凝土般坚如磐石，关系重大。&lt;/p&gt;
+
+&lt;p&gt;2.好的程序员懂得写什么，而卓越的程序员知道改写（并复用）什么。&lt;/p&gt;
+
+&lt;p&gt;3.要想在大型软件中保持高效，你得效忠于它，你要将它印在自己的脑海中。常常做梦也梦到它。&lt;/p&gt;
+
+&lt;p&gt;4.wiki发明者Ward Cunningham：持续跟进代码库中可利用的内容，是最大的信息过载挑战。一直到现在如何做到软件复用，仍然是一个难题。&lt;/p&gt;
+
+&lt;h3 id=&quot;good-books-that-mentioned&quot;&gt;Good books that mentioned&lt;/h3&gt;
+
+&lt;p&gt;1.大教堂与集市 《The Cathedral and the Bazar》 Eric S Raymond
+此书提出了开源和分享的法则，是开源理论的始祖&lt;/p&gt;
+
+&lt;p&gt;2.计算机编程心理学《The Psychology of Computer Programming》 Gerald Weinberg
+第一本，不敢说是最后一本，程序员心理学丛书，号召程序员与他人倾诉，形式越随意越好.&lt;/p&gt;
+
+&lt;p&gt;3.模式语言《A pattern Language》 Christopher Alexande
+第一本描写模式语言的书，开创了模式之路&lt;/p&gt;
+
+&lt;p&gt;4.《计算机编程艺术》高纳德
+重点推荐，该书从数学基础层面揭示算法的本质，绝对是算法始祖书籍，他还有讲座“theory and Practice”&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Visa got approved</title>
+   <link href="http://jianw851.github.io/daily/2015/06/01/visa-got-approved"/>
+   <updated>2015-06-01T00:00:00+08:00</updated>
+   <id>http://jianw851.github.io/daily/2015/06/01/visa-got-approved</id>
+   <content type="html">&lt;p&gt;Today is a big day for me, I was approved for my F1 visa. I can’t say I am lucky, because everything that I have done was granted. And based on this thinking, instead of rejoice, I feel so tired that it costed me so long to get everthing right on the way, and this is just the begining of my new choice.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;milestone&quot;&gt;Milestone&lt;/h3&gt;
+
+&lt;p&gt;From now on, I don’t need to take GRE, TOEFL test any more, don’t have to pracitse spoken English with foriegners third time a week, don’t have to worry about my application being rejected, and don’t need to be anxious to borrow money for finacial qualification. Thus, the new epic is beginning, where there is no constrain of culture unity, no discrimination of human value, no critics of individual character development, no judgement of personal behavior, no opacity of leadership election. What I should do is focus on what I would like to do and what I want to be. I call it freedom, happiness, and health which is the original power of human life.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-next&quot;&gt;What next&lt;/h3&gt;
+
+&lt;p&gt;There are four goals in my year of 2015, they are: learn to face, learn to love, learn to cherish, learn to learn. I think I have done facing directly to my departure from my former job, and deal with relationship between me and my colleges. I love all the people appear in my life, who helped me, love me, like me, hate me, hurt me which composed my experience, formlessly developed me. I cherish the relationship with my girl, who is my best love ever in the world. Without her, I cannot reach to the goal which I have already achieved. Without her, I couldn’t be the person who firmly belief there is hope and love in the world. I will give her the best understanding, caring, responsebility, respect, suport and lovein the world. Finally, it is education which rebuild my confidence to study, to human connection, to the objective world, so I will focus on the method of learning to make my world being sustainable to be excellent.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Memo</title>
@@ -46,7 +126,7 @@
     mb	喆	只	   江山		Y
     web	喆	优	   唯一		Y
     teb	喆		   唯一		Y
-    mb	剑	灯	   eb	1.1	Y
+    mb	剑	灯	   唯一		Y
     mb	剑	只	   江山		Y
     web	剑	只	   唯一		Y
     web	剑	优	   唯一		Y

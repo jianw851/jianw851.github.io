@@ -1,11 +1,12 @@
 ---
 layout: post
-category: [daily]
+category: daily
 title:  Visa got approved 
 tagline: by Jian
 tags: [visa]
 ---
    Today is a big day for me, I was approved for my F1 visa. I can't say I am lucky, because everything that I have done was granted. And based on this thinking, instead of rejoice, I feel so tired that it costed me so long to get everthing right on the way, and this is just the begining of my new choice. 
+
 <!--more-->
 
 ###Milestone
