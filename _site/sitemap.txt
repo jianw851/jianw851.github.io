@@ -11,6 +11,7 @@ http://jianw851.github.io/sitemap.txt
 http://jianw851.github.io/tags.html
 http://jianw851.github.io/2/index.html
 
+http://jianw851.github.io/read/2015/06/24/why-family-hurt
 http://jianw851.github.io/read/2015/06/23/dreaming-in-code
 http://jianw851.github.io/daily/2015/06/01/visa-got-approved
 http://jianw851.github.io/daily/2015/05/15/memo
