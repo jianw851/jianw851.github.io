@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Welcome to</title>
- <link href="http://jianw851.github.io/" rel="self"/>
- <link href="http://jianw851.github.io"/>
- <updated>2015-06-29T14:13:52+08:00</updated>
- <id>http://jianw851.github.io</id>
+ <link href="http://jianwang.info//" rel="self"/>
+ <link href="http://jianwang.info/"/>
+ <updated>2015-07-07T00:23:23+08:00</updated>
+ <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Why Family Hurt</title>
-   <link href="http://jianw851.github.io/read/2015/06/24/why-family-hurt"/>
+   <link href="http://jianwang.info//read/2015/06/24/why-family-hurt"/>
    <updated>2015-06-24T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/read/2015/06/24/why-family-hurt</id>
+   <id>http://jianwang.info//read/2015/06/24/why-family-hurt</id>
    <content type="html">&lt;p&gt;Today I finished read the book &lt;em&gt;Why Family Hurt&lt;/em&gt; (为何家会伤人) which is a psychological book about relationship between family members and aspect about how it hurt when treat them improperly. The author, 武志红,  a chinese psychologist, try to tell us practical methods and common rules through vivid cases and great theories . I gained many useful experiences and important recogition about intimacy relationship and child parents relationship, what is more, it  solved a psychological shade of mine and gave me the best answer since my family went wrong as many common Chinese families do.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -112,9 +112,9 @@
  
  <entry>
    <title>After read Dreaming In Code</title>
-   <link href="http://jianw851.github.io/read/2015/06/23/dreaming-in-code"/>
+   <link href="http://jianwang.info//read/2015/06/23/dreaming-in-code"/>
    <updated>2015-06-23T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/read/2015/06/23/dreaming-in-code</id>
+   <id>http://jianwang.info//read/2015/06/23/dreaming-in-code</id>
    <content type="html">&lt;p&gt;Today I finished read the book &lt;em&gt;Dreaming In Code&lt;/em&gt; which is strongly recommended for software engineers. As expected, the book gave me the unpresedental feeling and recognition of software engineering and management. All the stories told by the book are what I have been experienced when working. I feel regret to read it so late. How do I love it, let me count the ways.Due to what I have read is a Chinese version, excuse me for using Chinese.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -177,9 +177,9 @@
  
  <entry>
    <title>Visa got approved</title>
-   <link href="http://jianw851.github.io/daily/2015/06/01/visa-got-approved"/>
+   <link href="http://jianwang.info//daily/2015/06/01/visa-got-approved"/>
    <updated>2015-06-01T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/daily/2015/06/01/visa-got-approved</id>
+   <id>http://jianwang.info//daily/2015/06/01/visa-got-approved</id>
    <content type="html">&lt;p&gt;Today is a big day for me, I was approved for my F1 visa. I can’t say I am lucky, because everything that I have done was granted. And based on this thinking, instead of rejoice, I feel so tired that it costed me so long to get everthing right on the way, and this is just the begining of my new choice.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -197,9 +197,9 @@
  
  <entry>
    <title>Memo</title>
-   <link href="http://jianw851.github.io/daily/2015/05/15/memo"/>
+   <link href="http://jianwang.info//daily/2015/05/15/memo"/>
    <updated>2015-05-15T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/daily/2015/05/15/memo</id>
+   <id>http://jianwang.info//daily/2015/05/15/memo</id>
    <content type="html">&lt;!--more--&gt;
 
 &lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
@@ -251,9 +251,9 @@
  
  <entry>
    <title>Universal Mindmap Cloud Construction</title>
-   <link href="http://jianw851.github.io/idea/2015/05/13/universal-structure-cloud-construction"/>
+   <link href="http://jianwang.info//idea/2015/05/13/universal-structure-cloud-construction"/>
    <updated>2015-05-13T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/idea/2015/05/13/universal-structure-cloud-construction</id>
+   <id>http://jianwang.info//idea/2015/05/13/universal-structure-cloud-construction</id>
    <content type="html">&lt;p&gt;I have been thinking about a structure for a long time. This structure is shapeless like a piece of cloud which can include anything in the universe. once this structure is constructed, it can solve any problem, even solve problems that will happen in the future. This structure is exist, since it is trememdous, no one think it as a whole.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -272,9 +272,9 @@
  
  <entry>
    <title>Maintenance of github pages</title>
-   <link href="http://jianw851.github.io/trick/2015/05/09/maintenance-of-github-pages"/>
+   <link href="http://jianwang.info//trick/2015/05/09/maintenance-of-github-pages"/>
    <updated>2015-05-09T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/trick/2015/05/09/maintenance-of-github-pages</id>
+   <id>http://jianwang.info//trick/2015/05/09/maintenance-of-github-pages</id>
    <content type="html">&lt;p&gt;I am a new learner, content bellow will show some tricks about github pages’ development and maintenance. How to use  git, jekyll, ruby, rails will also be included.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -333,9 +333,9 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
  
  <entry>
    <title>After rejected by Cornell Tech</title>
-   <link href="http://jianw851.github.io/daily/2015/05/08/After-rejected-by-Cornell-Tech"/>
+   <link href="http://jianwang.info//daily/2015/05/08/After-rejected-by-Cornell-Tech"/>
    <updated>2015-05-08T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/daily/2015/05/08/After-rejected-by-Cornell-Tech</id>
+   <id>http://jianwang.info//daily/2015/05/08/After-rejected-by-Cornell-Tech</id>
    <content type="html">&lt;!--more--&gt;
 
 &lt;h1 id=&quot;never-say-never&quot;&gt;Never say never&lt;/h1&gt;
@@ -354,9 +354,9 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
  
  <entry>
    <title>About reading</title>
-   <link href="http://jianw851.github.io/read/2015/04/10/about-reading"/>
+   <link href="http://jianwang.info//read/2015/04/10/about-reading"/>
    <updated>2015-04-10T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/read/2015/04/10/about-reading</id>
+   <id>http://jianwang.info//read/2015/04/10/about-reading</id>
    <content type="html">&lt;p&gt;我们常常听到一句话：“听君一席话，胜读十年书。”但我们一般的人是没有条件可以成天四处去拜访名师，听圣贤教诲。但我们有一个简单而且便宜的办法，那就是读好书！以下是《鸿观》宋鸿兵老师总结出来的读书心得！。&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -459,9 +459,9 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
  
  <entry>
    <title>关于如何设置jekyll的一些格式运用</title>
-   <link href="http://jianw851.github.io/trick/2014/08/04/paginate_and_excerpt_on_jekyll"/>
+   <link href="http://jianwang.info//trick/2014/08/04/paginate_and_excerpt_on_jekyll"/>
    <updated>2014-08-04T00:00:00+08:00</updated>
-   <id>http://jianw851.github.io/trick/2014/08/04/paginate_and_excerpt_on_jekyll</id>
+   <id>http://jianwang.info//trick/2014/08/04/paginate_and_excerpt_on_jekyll</id>
    <content type="html">&lt;p&gt;怎么说呢，用Jekyll搭建Blog不管被说的多么好用，但终究应该只属于技术宅+爱折腾的群体吧，经常一个Wordpress上的小功能，却要在Jekyll折腾不少时间，比如之前的站内搜索，以及今天的分页以及文章摘要，足足折腾了我一下午，而且最后的解决方案还是不完美，有点小挫败感。&lt;/p&gt;
 
 &lt;!--more--&gt;
