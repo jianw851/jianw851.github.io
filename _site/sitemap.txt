@@ -11,6 +11,7 @@ http://jianwang.info//sitemap.txt
 http://jianwang.info//tags.html
 http://jianwang.info//2/index.html
 
+http://jianwang.info//read/2015/07/07/code
 http://jianwang.info//read/2015/06/24/why-family-hurt
 http://jianwang.info//read/2015/06/23/dreaming-in-code
 http://jianwang.info//daily/2015/06/01/visa-got-approved
