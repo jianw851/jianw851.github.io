@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>An amazing book -- Code</title>
+	<title>strStr</title>
     
 	
 	<meta name="author" content="Jian Wang">
@@ -144,8 +144,8 @@
 				
 				<div class="journal-cat-box">
 
-<a href="/categories.html#read-ref" title="read">
-	read
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
 
 </a>
 </div>
@@ -153,84 +153,60 @@
 				</div>
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title">An amazing book -- Code<span class="author">by Jian</span>
+				<h1 class="journal-title">strStr<span class="author"></span>
 				</h1>
 				<span class="the-article">
-				<p><em>Code</em> is the most amazing book about computer science that I have ever read which was wrote by Charles Petzold who was the former professor and employee of Microsoft. It uses the most understandable words and examples to tell how each component of a computer works. Each chapter tell a component using a lively story which introduce the princeple of how it was created from the physical aspect. What’s more, it introduces some basic electronic theory which largely improve my understanding about them. Finally, as the reader, I can also learn much history about the development of computer science.</p>
+				<p>For a given source string and a target string, you should output the first index(from 0) of target string in source string.</p>
+
+<p>If target does not exist in source, just return -1.
+  O(n2) is acceptable. Can you implement an O(n) algorithm?
+when you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.</p>
 
 <!--more-->
 
-<h3 id="the-most-important-development-of-computer-science">The most important development of computer science</h3>
+<pre><code>class Solution { public:
+/**
+ * Returns a index to the first occurrence of target in source,
+ * or -1  if target is not part of source.
+ * @param source string to be scanned.
+ * @param target string containing the sequence of characters to match.
+ */
+int strStr(const char *source, const char *target) {
+    if (source == NULL||target == NULL) {
+    return -1;
+    }
+    int len_source = strlen(source);
+    int len_target = strlen(target);
+    for (int i = 0; i &lt; len_source-len_target+1; i++) {
+      int j = 0;
+      for (j = 0; j &lt; len_target; j++) {
+        if (target[j] != source[i+j])
+        break;
+      }
+      if (j == len_target)
+      return i;
+    }
+    return -1;
+} };
+</code></pre>
 
-<ol>
-  <li>
-    <p>The digital logic is the fundimental theory of morden computer science. Combine with the princeple about telegraph and telephone, the original calculator can be created.
-  a) Here are some very important digital logic:
-OR 或门, AND 与门, NOR 或非门, NAND 与非门, 缓冲器，反向器，迪摩根定律，XOR异或门, 同或门 
-  b) binary
-  c) relay 
-  d) electronic</p>
-  </li>
-  <li>
-    <p>Trigger makes a computer memorizing
-many relays compose of a trigger, 1918年英国射电物理学家 William Henry Eccles和 F.W.Jordan 发明了触发器。构成了ram的基本构造。加上震荡器，寄存器，加法器，计数器，就构成了cpu的雏形。此架构是建立在冯诺伊曼的理论体系上的计算机体系。</p>
-  </li>
-  <li>
-    <p>晶体管的发明，使得传统的继电器被淘汰，大大的增加了运算速度，节省了cpu成本，石英也成为震荡器的主要材料。</p>
-  </li>
-  <li>
-    <p>二进制使得加法机的发明
-  随后，加减乘除都可以做，其他的复杂的数学运算都是在加法机上做的</p>
-  </li>
-  <li>
-    <p>文字表示，键盘，鼠标，操作系统，程序语言，互联网，网络，图形化革命</p>
-  </li>
-  <li>
-    <p>未来：物联网，大数据，云计算，可穿戴设备，人工智能，机器学习等。</p>
-  </li>
-</ol>
-
-<h3 id="about-the-history">About the history</h3>
-
-<ol>
-  <li>
-    <p>之前中国在用算盘，罗马，希腊，埃及及印度人也发明了自己的计算方法。</p>
-  </li>
-  <li>
-    <p>霍勒瑞斯参与1890年人口普查，采用纸带打孔形式进行人口统计和计算，到1896年采用射频的方法计算，1915年加入ibm公司。</p>
-  </li>
-  <li>
-    <p>1935年, Conrad Zuse 发明了继电器计算机，1937年， Howard Aiken改进了版本，来自哈弗大学。</p>
-  </li>
-  <li>
-    <p>1945年，第一台电子计算机 ENIAC, 冯诺伊曼改进，发明了 EDVAC</p>
-  </li>
-  <li>
-    <p>1947年， 晶体管被发明，被誉为20世纪最伟大的发明。</p>
-  </li>
-  <li>
-    <p>1948年，bit概念被提出</p>
-  </li>
-  <li>
-    <p>1952年， ibm发明了第一台商用计算机 701，研究机构是贝尔实验室，该实验室还发明了unix, c语言。 另外AT&amp;T公司也是1925年从该机构分离出来的。</p>
-  </li>
-  <li>
-    <p>1956年，Shockley 离开bell实验室，在加州南部成立半导体实验室和公司，于是硅谷因此而得名, 第一台晶体管计算机问世。</p>
-  </li>
-  <li>
-    <p>1971年，微软和摩托罗拉的第一代cpu问世，分别是8080和6800，是现代cpu的始祖。</p>
-  </li>
-</ol>
+<hr />
 
 				</span>
-				<div class="journal-date">Published 07 July 2015</div>
+				<div class="journal-date">Published 11 December 2015</div>
 				<div class="journal-tags">
 				
 				
 	 
-		<a class="tag-cont" href="/tags.html#computer science-ref">
+		<a class="tag-cont" href="/tags.html#string-ref">
 			<div class="tag-l"></div>
-			<div class="tag-c">computer science</div>
+			<div class="tag-c">string</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#for loop-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">for loop</div>
 			<div class="tag-r"></div>
 		</a>
 	
@@ -249,7 +225,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 
   <!-- 多说评论框 start -->
 <div id="comments">
-    <div class="ds-thread" data-thread-key="/read/2015/07/07/code"  data-title="An amazing book -- Code - Welcome to"></div>
+    <div class="ds-thread" data-thread-key="/algorithm/2015/12/11/strStr"  data-title="strStr - Welcome to"></div>
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
