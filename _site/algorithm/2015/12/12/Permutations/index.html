@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Welcome to</title>
+	<title>Permutations</title>
     
 	
 	<meta name="author" content="Jian Wang">
@@ -136,155 +136,126 @@
 </nav>
 			<div id="page-content">
 				
-<div class="page-title-inline">
-	
-	<h1>Welcome to </h1>
-	<h2>Jian Wang's blog</h2>
-	
-</div>
-<div class="cont932">
-	<hr style="margin-top: 0;">
+<div id="page-content">
+	<div class="cont932">
 	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">Permutations<span class="author"></span>
+				</h1>
+				<span class="the-article">
+				<p>Given a list of numbers, return all possible permutations.
+Example
+For nums = [1,2,3], the permutations are:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+Challenge
+Do it without recursion.</p>
+
+<!--more-->
+
+<pre><code> vector&lt;vector&lt;int&gt; &gt; permute(vector&lt;int&gt; nums) {
+ vector&lt;vector&lt;int&gt; &gt; resultSets;
+ vector&lt;int&gt; list;
+ if (nums.size() == 0) {
+    return resultSets;
+ }
+ permutation(resultSets, list, nums);
+return resultSets;
+}
+void permutation(vector&lt;vector&lt;int&gt; &gt; &amp;result, vector&lt;int&gt; &amp;list, vector&lt;int&gt; &amp;nums) {
+    if (list.size() == nums.size()) {
+      result.push_back(list);
+    } else {
+        for (int i = 0; i &lt; nums.size(); i++) {
+        if (count(list.begin(), list.end(), nums[i]) &gt; 0) {
+         continue;
+        }
+         list.push_back(nums[i]);
+         permutation(result, list, nums);
+         list.pop_back();
+        }
+    }
+}
+</code></pre>
+
+<hr />
+
+				</span>
+				<div class="journal-date">Published 12 December 2015</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#DFS-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">DFS</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#backtracking-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">backtracking</div>
+			<div class="tag-r"></div>
+		</a>
 	
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#read-ref" title="read">
-	read
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/read/2015/06/24/why-family-hurt">Why Family Hurt</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>Today I finished read the book <em>Why Family Hurt</em> (为何家会伤人) which is a psychological book about relationship between family members and aspect about how it hurt when treat them improperly. The author, 武志红,  a chinese psychologist, try to tell us practical methods and common rules through vivid cases and great theories . I gained many useful experiences and important recogition about intimacy relationship and child parents relationship, what is more, it  solved a psychological shade of mine and gave me the best answer since my family went wrong as many common Chinese families do.</p>
 
 
-				
-				</span>
-				<span class="readmore"><a href="/read/2015/06/24/why-family-hurt">Read More</a></span>
+
+				</div>
 			</div>
 		</div>
 		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#read-ref" title="read">
-	read
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/read/2015/06/23/dreaming-in-code">After read Dreaming In Code</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>Today I finished read the book <em>Dreaming In Code</em> which is strongly recommended for software engineers. As expected, the book gave me the unpresedental feeling and recognition of software engineering and management. All the stories told by the book are what I have been experienced when working. I feel regret to read it so late. How do I love it, let me count the ways.Due to what I have read is a Chinese version, excuse me for using Chinese.</p>
-
-
-				
-				</span>
-				<span class="readmore"><a href="/read/2015/06/23/dreaming-in-code">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#daily-ref" title="daily">
-	daily
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/daily/2015/06/01/visa-got-approved">Visa got approved</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>Today is a big day for me, I was approved for my F1 visa. I can’t say I am lucky, because everything that I have done was granted. And based on this thinking, instead of rejoice, I feel so tired that it costed me so long to get everthing right on the way, and this is just the begining of my new choice.</p>
-
-
-				
-				</span>
-				<span class="readmore"><a href="/daily/2015/06/01/visa-got-approved">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#daily-ref" title="daily">
-	daily
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/daily/2015/05/15/memo">Memo</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser">
-				
-				</span>
-				<span class="readmore"><a href="/daily/2015/05/15/memo">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#idea-ref" title="idea">
-	idea
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/idea/2015/05/13/universal-structure-cloud-construction">Universal Mindmap Cloud Construction</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>I have been thinking about a structure for a long time. This structure is shapeless like a piece of cloud which can include anything in the universe. once this structure is constructed, it can solve any problem, even solve problems that will happen in the future. This structure is exist, since it is trememdous, no one think it as a whole.</p>
-
-
-				
-				</span>
-				<span class="readmore"><a href="/idea/2015/05/13/universal-structure-cloud-construction">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
 	</div>
-	
-	<div id="journal-arrows-cont">
-			<a href="/4" class="journal-arrow ja-forward"></a>
-	</div>
-	
+</div>
 	<div class="clearboth"></div>
-	<div id="journal-loadmore">Load More…</div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/algorithm/2015/12/12/Permutations"  data-title="Permutations - Welcome to"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jian"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
 	<div class="clearboth"></div>
 </div>
-<div class="clearboth"></div>
+
 			</div>
 			<div class="clearboth pagebottom"></div>
 		</div>

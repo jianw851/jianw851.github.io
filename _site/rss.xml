@@ -5,8 +5,8 @@
         <description>Welcome to - Jian Wang</description>
         <link>http://jianwang.info/</link>
         <link>http://jianwang.info/</link>
-        <lastBuildDate>2016-01-10T22:22:47-05:00</lastBuildDate>
-        <pubDate>2016-01-10T22:22:47-05:00</pubDate>
+        <lastBuildDate>2016-01-15T23:14:49-05:00</lastBuildDate>
+        <pubDate>2016-01-15T23:14:49-05:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -201,6 +201,213 @@ int leftSearch(vector&amp;lt;int&amp;gt;&amp;amp; A, int target, int begin, int 
                 <link>http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target</link>
                 <guid>http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target</guid>
                 <pubDate>2015-12-13T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Subsets II</title>
+                <description>&lt;p&gt;Given a list of numbers that may has duplicate numbers, return all possible subsets
+Example
+If S = [1,2,2], a solution is:
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+Note
+Each element in a subset must be in non-descending order.
+The ordering between two subsets is free.
+The solution set must not contain duplicate subsets.
+Challenge
+Can you do it in both recursively and iteratively?&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; subsetsWithDup(vector&amp;lt;int&amp;gt; &amp;amp;S) {
+   vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
+   vector&amp;lt;int&amp;gt; list;
+   if (S.size() == 0) {
+    resultSets.push_back(S);
+    return resultSets;
+   }
+    sort(S.begin(), S.end());
+    subDivide(resultSets, list, S, 0);
+  return resultSets;
+}
+void subDivide(vector&amp;lt;vector &amp;lt;int&amp;gt;&amp;gt; &amp;amp;result, vector&amp;lt;int&amp;gt; &amp;amp;list, const vector&amp;lt;int&amp;gt; &amp;amp;S, int pos) {
+     result.push_back(list);
+     for (int i = pos; i &amp;lt; S.size(); i++) {
+        if ((i != pos)&amp;amp;&amp;amp;S[i] == S[i-1])
+        continue;
+        list.push_back(S[i]);
+        subDivide(result, list, S, i+1);
+        list.pop_back();
+    }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description>
+                <link>http://jianwang.info//algorithm/2015/12/13/Subsets-II</link>
+                <guid>http://jianwang.info//algorithm/2015/12/13/Subsets-II</guid>
+                <pubDate>2015-12-13T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Subsets</title>
+                <description>&lt;p&gt;Given a set of distinct integers, return all possible subsets.
+Example
+If S = [1,2,3], a solution is:
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+Note
+Elements in a subset must be in non-descending order.
+The solution set must not contain duplicate subsets.
+Challenge
+Can you do it in both recursively and iteratively?&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; subsets(vector&amp;lt;int&amp;gt; &amp;amp;nums) {
+  vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
+  if (nums.size() == 0) {
+   resultSets.push_back(nums);
+   return resultSets;
+  }
+  sort(nums.begin(), nums.end());
+  vector&amp;lt;int&amp;gt; list;
+  subSetsHelper(resultSets, list, nums, 0);
+  return resultSets;
+}
+void subSetsHelper(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;result, vector&amp;lt;int&amp;gt; &amp;amp;list, vector&amp;lt;int&amp;gt; &amp;amp;nums, int pos) {
+  result.push_back(list);
+  for (int i = pos; i &amp;lt; nums.size(); i++) {
+    list.push_back(nums[i]);
+    subSetsHelper(result, list, nums, i+1);
+    list.pop_back();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description>
+                <link>http://jianwang.info//algorithm/2015/12/13/Subsets</link>
+                <guid>http://jianwang.info//algorithm/2015/12/13/Subsets</guid>
+                <pubDate>2015-12-13T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Permutations</title>
+                <description>&lt;p&gt;Given a list of numbers, return all possible permutations.
+Example
+For nums = [1,2,3], the permutations are:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+Challenge
+Do it without recursion.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code&gt; vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; permute(vector&amp;lt;int&amp;gt; nums) {
+ vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
+ vector&amp;lt;int&amp;gt; list;
+ if (nums.size() == 0) {
+    return resultSets;
+ }
+ permutation(resultSets, list, nums);
+return resultSets;
+}
+void permutation(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;result, vector&amp;lt;int&amp;gt; &amp;amp;list, vector&amp;lt;int&amp;gt; &amp;amp;nums) {
+    if (list.size() == nums.size()) {
+      result.push_back(list);
+    } else {
+        for (int i = 0; i &amp;lt; nums.size(); i++) {
+        if (count(list.begin(), list.end(), nums[i]) &amp;gt; 0) {
+         continue;
+        }
+         list.push_back(nums[i]);
+         permutation(result, list, nums);
+         list.pop_back();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description>
+                <link>http://jianwang.info//algorithm/2015/12/12/Permutations</link>
+                <guid>http://jianwang.info//algorithm/2015/12/12/Permutations</guid>
+                <pubDate>2015-12-12T00:00:00-05:00</pubDate>
+        </item>
+
+        <item>
+                <title>Permutations II</title>
+                <description>&lt;p&gt;Given a list of numbers with duplicate number in it. Find all unique permutations.
+Example
+For numbers [1,2,2] the unique permutations are:
+[
+  [1,2,2],
+  [2,1,2],
+  [2,2,1]
+]
+Challenge
+Using recursion to do it is acceptable. If you can do it without recursion, that would be great!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; permuteUnique(vector&amp;lt;int&amp;gt; &amp;amp;nums) {
+  vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
+  vector&amp;lt;int&amp;gt; list;
+  if (nums.size() == 0) {
+    resultSets.push_back(list);
+    return resultSets;
+  }
+  vector&amp;lt;bool&amp;gt; visited(nums.size());
+  for_each(visited.begin(), visited.end(), [&amp;amp;](bool x) { x = false;});
+  sort(nums.begin(), nums.end());
+  permutation(resultSets, list, nums, visited);
+  return resultSets;
+}
+void permutation(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;result, vector&amp;lt;int&amp;gt; &amp;amp;list,
+                 vector&amp;lt;int&amp;gt; &amp;amp;nums, vector&amp;lt;bool&amp;gt; &amp;amp;visited) {
+    if (list.size() == nums.size()) {
+      result.push_back(list);
+    } else {
+      for (int i = 0; i &amp;lt; nums.size(); i++) {
+        if (visited[i] == true||(i != 0&amp;amp;&amp;amp;nums[i] == nums[i-1]&amp;amp;&amp;amp;visited[i-1] == false)) {
+          continue;
+        }
+        visited[i] = true;
+        list.push_back(nums[i]);
+        permutation(result, list, nums, visited);
+        list.pop_back();
+        visited[i] = false;
+      }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description>
+                <link>http://jianwang.info//algorithm/2015/12/12/Permutation-II</link>
+                <guid>http://jianwang.info//algorithm/2015/12/12/Permutation-II</guid>
+                <pubDate>2015-12-12T00:00:00-05:00</pubDate>
         </item>
 
         <item>

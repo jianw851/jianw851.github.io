@@ -11,10 +11,15 @@ http://jianwang.info//sitemap.txt
 http://jianwang.info//tags.html
 http://jianwang.info//2/index.html
 http://jianwang.info//3/index.html
+http://jianwang.info//4/index.html
 
 http://jianwang.info//algorithm/2016/01/10/Top-K-Frequent-Words
 http://jianwang.info//algorithm/2015/12/14/Closest-Number-in-Sorted-Array
 http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target
+http://jianwang.info//algorithm/2015/12/13/Subsets-II
+http://jianwang.info//algorithm/2015/12/13/Subsets
+http://jianwang.info//algorithm/2015/12/12/Permutations
+http://jianwang.info//algorithm/2015/12/12/Permutation-II
 http://jianwang.info//algorithm/2015/12/12/Min-Stack
 http://jianwang.info//algorithm/2015/12/11/strStr
 http://jianwang.info//read/2015/07/07/code
