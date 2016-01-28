@@ -5,10 +5,70 @@
         <description>Welcome to - Jian Wang</description>
         <link>http://jianwang.info/</link>
         <link>http://jianwang.info/</link>
-        <lastBuildDate>2016-01-15T23:14:49-05:00</lastBuildDate>
-        <pubDate>2016-01-15T23:14:49-05:00</pubDate>
+        <lastBuildDate>2016-01-27T23:27:04-05:00</lastBuildDate>
+        <pubDate>2016-01-27T23:27:04-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Palindrome Partitioning</title>
+                <description>&lt;p&gt;Given a string s, partition s such that every substring of the partition is a palindrome.&lt;/p&gt;
+
+&lt;p&gt;Return all possible palindrome partitioning of s.&lt;/p&gt;
+
+&lt;p&gt;Example
+  Given s = “aab”, return:&lt;/p&gt;
+
+&lt;p&gt;[
+    [“aa”,”b”],
+    [“a”,”a”,”b”]
+  ]&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; partition(string s) {
+  vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; result;
+  if (s.length() == 0) return result;
+  vector&amp;lt;string&amp;gt; list;
+  dfs_traverse(result, list, s, 0);
+  return result;
+}
+bool isParlindrome(string s) {
+  int left = 0, right = s.length() - 1;
+  while (left &amp;lt;= right) {
+    if (s[left] != s[right]) {
+      break;
+    } else {
+      left++; right--;
+    }
+  }
+  if (left &amp;lt;= right)
+    return false;
+  return true;
+}
+void dfs_traverse(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; &amp;amp;result, vector&amp;lt;string&amp;gt; list, string s, int pos) {
+  int len = s.length();
+  if (pos == len) {
+    result.push_back(list);
+  } else {
+   for (int i = 1; i &amp;lt;= len - pos; i++) {
+     string temp = s.substr(pos, i);
+     if (!isParlindrome(temp))
+     continue;
+     list.push_back(temp);
+     dfs_traverse(result, list, s, pos+i);
+     list.pop_back();
+   }
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description>
+                <link>http://jianwang.info//algorithm/2016/01/24/Palindrome-Partitioning</link>
+                <guid>http://jianwang.info//algorithm/2016/01/24/Palindrome-Partitioning</guid>
+                <pubDate>2016-01-24T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Top K Frequent Words</title>

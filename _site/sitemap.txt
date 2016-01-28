@@ -13,6 +13,7 @@ http://jianwang.info//2/index.html
 http://jianwang.info//3/index.html
 http://jianwang.info//4/index.html
 
+http://jianwang.info//algorithm/2016/01/24/Palindrome-Partitioning
 http://jianwang.info//algorithm/2016/01/10/Top-K-Frequent-Words
 http://jianwang.info//algorithm/2015/12/14/Closest-Number-in-Sorted-Array
 http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target
