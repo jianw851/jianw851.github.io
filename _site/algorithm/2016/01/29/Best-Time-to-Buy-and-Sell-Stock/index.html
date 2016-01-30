@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Palindrome Partitioning</title>
+	<title>Best Time to Buy and Sell Stock</title>
     
 	
 	<meta name="author" content="Jian Wang">
@@ -157,77 +157,48 @@
 				</div>
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title">Palindrome Partitioning<span class="author"></span>
+				<h1 class="journal-title">Best Time to Buy and Sell Stock<span class="author"></span>
 				</h1>
 				<span class="the-article">
-				<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
-
-<p>Return all possible palindrome partitioning of s.</p>
+				<p>Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
 
 <p>Example
-  Given s = “aab”, return:</p>
-
-<p>[
-    [“aa”,”b”],
-    [“a”,”a”,”b”]
-  ]</p>
+  Given an example [3,2,3,1,2], return 1</p>
 
 <!--more-->
 
-<pre><code>vector&lt;vector&lt;string&gt;&gt; partition(string s) {
-  vector&lt;vector&lt;string&gt;&gt; result;
-  if (s.length() == 0) return result;
-  vector&lt;string&gt; list;
-  dfs_traverse(result, list, s, 0);
-  return result;
-}
-bool isParlindrome(string s) {
-  int left = 0, right = s.length() - 1;
-  while (left &lt;= right) {
-    if (s[left] != s[right]) {
-      break;
-    } else {
-      left++; right--;
+<pre><code> int maxProfit(vector&lt;int&gt; &amp;prices) {
+  if (prices.size() == 0) {
+    return 0;
+  }
+  int minValue = INT_MAX, profit = INT_MIN;
+  for (int i = 0; i &lt; prices.size(); i++) {
+    minValue = min(minValue, prices[i]);
+    if (prices[i] - minValue &gt; profit) {
+      profit = prices[i] - minValue;
     }
   }
-  if (left &lt;= right)
-    return false;
-  return true;
-}
-void dfs_traverse(vector&lt;vector&lt;string&gt;&gt; &amp;result, vector&lt;string&gt; list, string s, int pos) {
-  int len = s.length();
-  if (pos == len) {
-    result.push_back(list);
-  } else {
-   for (int i = 1; i &lt;= len - pos; i++) {
-     string temp = s.substr(pos, i);
-     if (!isParlindrome(temp))
-     continue;
-     list.push_back(temp);
-     dfs_traverse(result, list, s, pos+i);
-     list.pop_back();
-   }
- }
+  return profit;
 }
 </code></pre>
 
 <hr />
 
 				</span>
-				<div class="journal-date">Published 24 January 2016</div>
+				<div class="journal-date">Published 29 January 2016</div>
 				<div class="journal-tags">
 				
 				
 	 
-		<a class="tag-cont" href="/tags.html#graph-ref">
+		<a class="tag-cont" href="/tags.html#Array-ref">
 			<div class="tag-l"></div>
-			<div class="tag-c">graph</div>
+			<div class="tag-c">Array</div>
 			<div class="tag-r"></div>
 		</a>
 	 
-		<a class="tag-cont" href="/tags.html#dfs-ref">
+		<a class="tag-cont" href="/tags.html#Dynamic Programming-ref">
 			<div class="tag-l"></div>
-			<div class="tag-c">dfs</div>
+			<div class="tag-c">Dynamic Programming</div>
 			<div class="tag-r"></div>
 		</a>
 	
@@ -246,7 +217,7 @@ void dfs_traverse(vector&lt;vector&lt;string&gt;&gt; &amp;result, vector&lt;stri
 
   <!-- 多说评论框 start -->
 <div id="comments">
-    <div class="ds-thread" data-thread-key="/algorithm/2016/01/24/Palindrome-Partitioning"  data-title="Palindrome Partitioning - Welcome to"></div>
+    <div class="ds-thread" data-thread-key="/algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock"  data-title="Best Time to Buy and Sell Stock - Welcome to"></div>
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->

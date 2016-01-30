@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Palindrome Partitioning</title>
+	<title>Welcome to</title>
     
 	
 	<meta name="author" content="Jian Wang">
@@ -138,136 +138,49 @@
 </nav>
 			<div id="page-content">
 				
-<div id="page-content">
-	<div class="cont932">
+<div class="page-title-inline">
+	
+	<h1>Welcome to </h1>
+	<h2>Jian Wang's blog</h2>
+	
+</div>
+<div class="cont932">
+	<hr style="margin-top: 0;">
 	<div id="journal-articles-block">
+	
 		<div class="journal-article">
 			<div class="journal-post-info">
-				<div class="journal-cat-box">
 				
 				
 				<div class="journal-cat-box">
 
-<a href="/categories.html#algorithm-ref" title="algorithm">
-	algorithm
+<a href="/categories.html#trick-ref" title="trick">
+	trick
 
 </a>
 </div>
 				
-				</div>
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title">Palindrome Partitioning<span class="author"></span>
-				</h1>
-				<span class="the-article">
-				<p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+				<h1 class="journal-title"><a href="/trick/2014/08/04/paginate_and_excerpt_on_jekyll">关于如何设置jekyll的一些格式运用</a><span class="author">by Kingauthur</span></h1>
+				
+				<span class="teaser"><p>怎么说呢，用Jekyll搭建Blog不管被说的多么好用，但终究应该只属于技术宅+爱折腾的群体吧，经常一个Wordpress上的小功能，却要在Jekyll折腾不少时间，比如之前的站内搜索，以及今天的分页以及文章摘要，足足折腾了我一下午，而且最后的解决方案还是不完美，有点小挫败感。</p>
 
-<p>Return all possible palindrome partitioning of s.</p>
 
-<p>Example
-  Given s = “aab”, return:</p>
-
-<p>[
-    [“aa”,”b”],
-    [“a”,”a”,”b”]
-  ]</p>
-
-<!--more-->
-
-<pre><code>vector&lt;vector&lt;string&gt;&gt; partition(string s) {
-  vector&lt;vector&lt;string&gt;&gt; result;
-  if (s.length() == 0) return result;
-  vector&lt;string&gt; list;
-  dfs_traverse(result, list, s, 0);
-  return result;
-}
-bool isParlindrome(string s) {
-  int left = 0, right = s.length() - 1;
-  while (left &lt;= right) {
-    if (s[left] != s[right]) {
-      break;
-    } else {
-      left++; right--;
-    }
-  }
-  if (left &lt;= right)
-    return false;
-  return true;
-}
-void dfs_traverse(vector&lt;vector&lt;string&gt;&gt; &amp;result, vector&lt;string&gt; list, string s, int pos) {
-  int len = s.length();
-  if (pos == len) {
-    result.push_back(list);
-  } else {
-   for (int i = 1; i &lt;= len - pos; i++) {
-     string temp = s.substr(pos, i);
-     if (!isParlindrome(temp))
-     continue;
-     list.push_back(temp);
-     dfs_traverse(result, list, s, pos+i);
-     list.pop_back();
-   }
- }
-}
-</code></pre>
-
-<hr />
-
+				
 				</span>
-				<div class="journal-date">Published 24 January 2016</div>
-				<div class="journal-tags">
-				
-				
-	 
-		<a class="tag-cont" href="/tags.html#graph-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">graph</div>
-			<div class="tag-r"></div>
-		</a>
-	 
-		<a class="tag-cont" href="/tags.html#dfs-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">dfs</div>
-			<div class="tag-r"></div>
-		</a>
-	
-
-
-
-				</div>
+				<span class="readmore"><a href="/trick/2014/08/04/paginate_and_excerpt_on_jekyll">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
+		
 	</div>
-</div>
-	<div class="clearboth"></div>
 	
-
-
-  <!-- 多说评论框 start -->
-<div id="comments">
-    <div class="ds-thread" data-thread-key="/algorithm/2016/01/24/Palindrome-Partitioning"  data-title="Palindrome Partitioning - Welcome to"></div>
-</div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"jian"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-
-
-
+	<div class="clearboth"></div>
+	<div id="journal-loadmore">Load More…</div>
 	<div class="clearboth"></div>
 </div>
-
+<div class="clearboth"></div>
 			</div>
 			<div class="clearboth pagebottom"></div>
 		</div>

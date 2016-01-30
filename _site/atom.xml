@@ -4,13 +4,44 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-01-27T23:27:04-05:00</updated>
+ <updated>2016-01-30T18:47:18-05:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Best Time to Buy and Sell Stock</title>
+   <link href="http://jianwang.info//algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock"/>
+   <updated>2016-01-29T00:00:00-05:00</updated>
+   <id>http://jianwang.info//algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock</id>
+   <content type="html">&lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.&lt;/p&gt;
+
+&lt;p&gt;Example
+  Given an example [3,2,3,1,2], return 1&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;pre&gt;&lt;code&gt; int maxProfit(vector&amp;lt;int&amp;gt; &amp;amp;prices) {
+  if (prices.size() == 0) {
+    return 0;
+  }
+  int minValue = INT_MAX, profit = INT_MIN;
+  for (int i = 0; i &amp;lt; prices.size(); i++) {
+    minValue = min(minValue, prices[i]);
+    if (prices[i] - minValue &amp;gt; profit) {
+      profit = prices[i] - minValue;
+    }
+  }
+  return profit;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Palindrome Partitioning</title>
@@ -859,7 +890,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
     web	华	只	   江山		Y
     teb	华		   唯一		Y
     o	急啥	851g	   o	1.1	Y
-    o	百云	7q	   o	1.1	2010
+    o	百云	7q	   o	!!	2010
     o	有裤	131	   o	1.1	Y
 &lt;/code&gt;&lt;/pre&gt;
 
