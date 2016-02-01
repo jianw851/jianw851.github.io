@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>After rejected by Cornell Tech</title>
+	<title>Power Of Two</title>
     
 	
 	<meta name="author" content="Jian Wang">
@@ -148,8 +148,8 @@
 				
 				<div class="journal-cat-box">
 
-<a href="/categories.html#daily-ref" title="daily">
-	daily
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
 
 </a>
 </div>
@@ -157,32 +157,128 @@
 				</div>
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title">After rejected by Cornell Tech<span class="author">by Jian</span>
+				<h1 class="journal-title">Power Of Two<span class="author">by Jian</span>
 				</h1>
 				<span class="the-article">
 				<!--more-->
 
-<h1 id="never-say-never">Never say never</h1>
+<h1 id="problem-231-power-of-two">Problem 231 Power of Two</h1>
 
-<h2 id="rejected">Rejected</h2>
-<p>I got a rejection letter from Cornell Tech this morning which ended my four-month waiting. I can’t say I am sad while I can’t say I am happy. I want to say many thing to Cornell Tech which I haven’t had time to say. I have been working very hard on my academic courses and English skill improvement. Although having been taken charge on three software projects at work, I have used most my spare time finish reading an algorithm book, an English writing book, a C programing language book, an algorithm video course (except other courses unrelated to computer science such as Macro Economics) and do language exchange with a English native speaker twice a week in the last three months since I submitted my application of the program. Though I have learned most of the prerequisite courses such as: CS 2800, CS 4410, CS 2110, CS 1130, CS 3410, I would like review them again to make sure I can understand and use them. I believe I can do very well both on the courses and in the job with partners.
-   Cornell Tech’s unique master’s program in CS which perfectly meet my requirement, but I failed. GPA seems the main reason though I had 7 years working exprience. I can understand that Cornell would never give admission to a student with GPA lower than 3.0 as a Ivy league member.</p>
+<blockquote>
+  <p>Given an integer, write a function to determine if it is a power of two.</p>
+</blockquote>
 
-<h2 id="more-space-to-improve">More space to improve</h2>
-<p>But everything has two side. If I got the chance to study and cooperate with world-class faculty in Cornell, would I succeed in the future? This result can only prove I don’t have more advantages for educational oppotunities than local American students and high GPA students. I believe this is a good chance for me to improve my acdemic skills and I will work harder on them to get a better oppotunity to career life. Through this application, I found many good videos teach Tech innovation and startups on the Internet which shared by Cornell Tech faculties.such as <a href="https://twitter.com/Christine_Sneva">Christine Sneva’s twitter</a>, <a href="http://www.usnews.com/news/college-of-tomorrow/articles/2015/04/01/the-next-silicon-valley">the next silicon valley</a>, <a href="http://tech.cornell.edu/news/4-lessons-from-david-tisch-on-how-to-launch-a-successful-company">how to launch a successful company</a>. In addtion, I found I am weak in Operating Systems and have a gap in Transition to Object-Oriented Programming. Failure is not the end, there is more space to improve.</p>
+<blockquote>
+  <p><strong>Example 1:</strong></p>
+</blockquote>
 
-<h2 id="in-the-future">In the future</h2>
-<p>It’s the time to make the decision. I think I will choose to study in Stevens Institue of Technology. Focus on big data or  cloud computing, keep on improving algorithm, enhance programing skills and creativity. Life is a long run, learn to love, learn to face, learn to cherish, learn to learn.</p>
+<blockquote>
+  <p><em>n</em> = <code>12</code></p>
+</blockquote>
+
+<blockquote>
+  <p>return <code>false</code></p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Example 2:</strong></p>
+</blockquote>
+
+<blockquote>
+  <p><em>n</em> = <code>64</code></p>
+</blockquote>
+
+<blockquote>
+  <p>return <code>true</code></p>
+</blockquote>
+
+<blockquote>
+  <p>Tag: bit manipulation</p>
+</blockquote>
+
+<blockquote>
+  <p>Company:</p>
+</blockquote>
+
+<h2 id="solution">Solution</h2>
+
+<ul>
+  <li>C++</li>
+</ul>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.</p>
+
+<p>解法2: 位操作， 2的幂在二进制表示的时候，有一个特性，那就是只有一个1在里面（如：00001000就是2的幂，而00001100就不是2的幂），利用这个特性我们就可以衍生出三种解法都可以达到用O(1)的时间复杂度.</p>
+
+<ol>
+  <li>移位法：把后面的0移掉，剩下的部分＝＝1，就对了 (不推荐)</li>
+  <li>－1求与：n &amp; n-1 == 0 就对了 （推荐）</li>
+  <li>补数求与： (n &amp; (~n + 1)) == n 就对了 （尚可）</li>
+</ol>
+
+<p>网上对这道题的分析太透彻，其他的解法我就不再赘述，把链接贴在reference大家自己看。我就把两种解法写出来。</p>
+
+<p><strong>复杂度</strong></p>
+
+<p>时间：<script type="math/tex">O(1)</script></p>
+
+<p>空间：<script type="math/tex">O(0)</script></p>
+
+<p><strong>实现一(cpp)</strong></p>
+
+<p><code>cpp
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+      return n &gt; 0 &amp;&amp; ((n &amp; (n - 1)) == 0);
+    }
+};
+</code>
+<strong>复杂度</strong></p>
+
+<p>时间：<script type="math/tex">O(logn)</script></p>
+
+<p>空间：<script type="math/tex">O(1)</script>
+<strong>实现二(cpp)</strong>
+<code>c++
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+      if (n &lt;= 0) return false;
+      while (n != 1) {
+        if (n % 2 != 0)
+        return false;
+        n /= 2;
+      }
+      return true;
+    }
+};
+</code></p>
+
+<h2 id="contribution">Contribution</h2>
+
+<ul>
+  <li><a href="http://jianwang.info/">@jianw851</a></li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<p>[^1] <a href="https://leetcode.com/problems/power-of-two/">231. Power of Two</a></p>
+
+<p>[^2] <a href="http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/">Ten Ways to Check if an Integer Is a Power Of Two in C</a></p>
+
 
 				</span>
-				<div class="journal-date">Published 08 May 2015</div>
+				<div class="journal-date">Published 30 January 2016</div>
 				<div class="journal-tags">
 				
 				
 	 
-		<a class="tag-cont" href="/tags.html#Cornell Tech-ref">
+		<a class="tag-cont" href="/tags.html#bit manipulation-ref">
 			<div class="tag-l"></div>
-			<div class="tag-c">Cornell Tech</div>
+			<div class="tag-c">bit manipulation</div>
 			<div class="tag-r"></div>
 		</a>
 	
@@ -201,7 +297,7 @@
 
   <!-- 多说评论框 start -->
 <div id="comments">
-    <div class="ds-thread" data-thread-key="/daily/2015/05/08/After-rejected-by-Cornell-Tech"  data-title="After rejected by Cornell Tech - Welcome to"></div>
+    <div class="ds-thread" data-thread-key="/algorithm/2016/01/30/Power-Of-Two"  data-title="Power Of Two - Welcome to"></div>
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
