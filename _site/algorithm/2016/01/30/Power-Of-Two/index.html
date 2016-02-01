@@ -163,42 +163,19 @@
 				<!--more-->
 
 <h1 id="problem-231-power-of-two">Problem 231 Power of Two</h1>
+<p>Given an integer, write a function to determine if it is a power of two.</p>
 
-<blockquote>
-  <p>Given an integer, write a function to determine if it is a power of two.</p>
-</blockquote>
+<p><strong>Example 1:</strong></p>
 
-<blockquote>
-  <p><strong>Example 1:</strong></p>
-</blockquote>
+<p><em>n</em> = <code>12</code></p>
 
-<blockquote>
-  <p><em>n</em> = <code>12</code></p>
-</blockquote>
+<p>return <code>false</code></p>
 
-<blockquote>
-  <p>return <code>false</code></p>
-</blockquote>
+<p><strong>Example 2:</strong></p>
 
-<blockquote>
-  <p><strong>Example 2:</strong></p>
-</blockquote>
+<p><em>n</em> = <code>64</code></p>
 
-<blockquote>
-  <p><em>n</em> = <code>64</code></p>
-</blockquote>
-
-<blockquote>
-  <p>return <code>true</code></p>
-</blockquote>
-
-<blockquote>
-  <p>Tag: bit manipulation</p>
-</blockquote>
-
-<blockquote>
-  <p>Company:</p>
-</blockquote>
+<p>return <code>true</code></p>
 
 <h2 id="solution">Solution</h2>
 
@@ -228,34 +205,30 @@
 
 <p><strong>实现一(cpp)</strong></p>
 
-<p><code>cpp
-class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-      return n &gt; 0 &amp;&amp; ((n &amp; (n - 1)) == 0);
-    }
-};
-</code>
-<strong>复杂度</strong></p>
+<pre><code>class Solution { public:
+bool isPowerOfTwo(int n) {
+  return n &gt; 0 &amp;&amp; ((n &amp; (n - 1)) == 0);
+}
+}; **复杂度**
+</code></pre>
 
 <p>时间：<script type="math/tex">O(logn)</script></p>
 
 <p>空间：<script type="math/tex">O(1)</script>
-<strong>实现二(cpp)</strong>
-<code>c++
-class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-      if (n &lt;= 0) return false;
-      while (n != 1) {
-        if (n % 2 != 0)
-        return false;
-        n /= 2;
-      }
-      return true;
-    }
+<strong>实现二(cpp)</strong></p>
+
+<pre><code>class Solution { public:
+bool isPowerOfTwo(int n) {
+  if (n &lt;= 0) return false;
+  while (n != 1) {
+    if (n % 2 != 0)
+    return false;
+    n /= 2;
+  }
+  return true;
+}
 };
-</code></p>
+</code></pre>
 
 <h2 id="contribution">Contribution</h2>
 

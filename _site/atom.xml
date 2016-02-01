@@ -4,7 +4,7 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-01-31T22:24:26-05:00</updated>
+ <updated>2016-01-31T23:27:13-05:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
@@ -20,42 +20,19 @@
    <content type="html">&lt;!--more--&gt;
 
 &lt;h1 id=&quot;problem-231-power-of-two&quot;&gt;Problem 231 Power of Two&lt;/h1&gt;
+&lt;p&gt;Given an integer, write a function to determine if it is a power of two.&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Given an integer, write a function to determine if it is a power of two.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;n&lt;/em&gt; = &lt;code&gt;12&lt;/code&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;n&lt;/em&gt; = &lt;code&gt;12&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;return &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;return &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;n&lt;/em&gt; = &lt;code&gt;64&lt;/code&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;n&lt;/em&gt; = &lt;code&gt;64&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;return &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Tag: bit manipulation&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Company:&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;return &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
 
@@ -85,34 +62,30 @@
 
 &lt;p&gt;&lt;strong&gt;实现一(cpp)&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;cpp
-class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-      return n &amp;gt; 0 &amp;amp;&amp;amp; ((n &amp;amp; (n - 1)) == 0);
-    }
-};
-&lt;/code&gt;
-&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class Solution { public:
+bool isPowerOfTwo(int n) {
+  return n &amp;gt; 0 &amp;amp;&amp;amp; ((n &amp;amp; (n - 1)) == 0);
+}
+}; **复杂度**
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(logn)&lt;/script&gt;&lt;/p&gt;
 
 &lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(1)&lt;/script&gt;
-&lt;strong&gt;实现二(cpp)&lt;/strong&gt;
-&lt;code&gt;c++
-class Solution {
-public:
-    bool isPowerOfTwo(int n) {
-      if (n &amp;lt;= 0) return false;
-      while (n != 1) {
-        if (n % 2 != 0)
-        return false;
-        n /= 2;
-      }
-      return true;
-    }
+&lt;strong&gt;实现二(cpp)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Solution { public:
+bool isPowerOfTwo(int n) {
+  if (n &amp;lt;= 0) return false;
+  while (n != 1) {
+    if (n % 2 != 0)
+    return false;
+    n /= 2;
+  }
+  return true;
+}
 };
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;contribution&quot;&gt;Contribution&lt;/h2&gt;
 

@@ -9,25 +9,19 @@ tags: [bit manipulation]
 <!--more-->
 
 # Problem 231 Power of Two
+ Given an integer, write a function to determine if it is a power of two.
 
-> Given an integer, write a function to determine if it is a power of two.
+**Example 1:**
 
->**Example 1:**
+*n* = `12`
 
->*n* = `12`
+return `false`
 
->return `false`
+**Example 2:**
 
->**Example 2:**
+*n* = `64`
 
->*n* = `64`
-
->return `true`
-
->Tag: bit manipulation
-
->Company: 
-
+return `true`
 
 ## Solution
 
@@ -55,22 +49,20 @@ tags: [bit manipulation]
 
 **实现一(cpp)** 
 
-```cpp
-class Solution {
+	class Solution {
 public:
     bool isPowerOfTwo(int n) {
       return n > 0 && ((n & (n - 1)) == 0);
     }
-};
-```
+	};
 **复杂度**
 
 时间：$$O(logn)$$
 
 空间：$$O(1)$$
 **实现二(cpp)**
-```c++
-class Solution {
+
+	class Solution {
 public:
     bool isPowerOfTwo(int n) {
       if (n <= 0) return false;
@@ -81,8 +73,8 @@ public:
       }
       return true;
     }
-};
-```
+	};
+
 
 
 
