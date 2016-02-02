@@ -8,7 +8,7 @@ tags: [bit manipulation]
 
 <!--more-->
 
-# Problem 231 Power of Two
+ Problem 231 Power of Two
  Given an integer, write a function to determine if it is a power of two.
 
 Example 1:
@@ -35,13 +35,13 @@ return true
 网上对这道题的分析太透彻，其他的解法我就不再赘述，把链接贴在reference大家自己看。我就把两种解法写出来。
 
 
-**复杂度**
+复杂度
 
 时间：O(1)
 
 空间：O(0)
 
-**实现一(cpp)** 
+实现一(cpp) 
 
 	class Solution {
 public:
@@ -49,12 +49,12 @@ public:
       return n > 0 && ((n & (n - 1)) == 0);
     }
 	};
-**复杂度**
+复杂度
 
 时间：O(logn)
 
 空间：O(1)
-**实现二(cpp)**
+实现二(cpp)
 
 	class Solution {
 public:
@@ -72,15 +72,15 @@ public:
 
 
 
-## Contribution
+ Contribution
 
 + [@jianw851](http://jianwang.info/)
 
-## Reference
+ Reference
 
-[^1] [231. Power of Two](https://leetcode.com/problems/power-of-two/)
+[1] [231. Power of Two](https://leetcode.com/problems/power-of-two/)
 
-[^2] [Ten Ways to Check if an Integer Is a Power Of Two in C](http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/)
+[2] [Ten Ways to Check if an Integer Is a Power Of Two in C](http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/)
 
  
 

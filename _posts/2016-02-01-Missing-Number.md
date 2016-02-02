@@ -23,7 +23,7 @@ Given nums = [0, 1, 3] return 2
 当然还有其他方法，在此已经找到最优解，所以就不引荐了。
 
 
-**复杂度**
+复杂度
 
 时间：O(n)
 
@@ -46,14 +46,14 @@ public:
     }
 	};
 
-```
-**复杂度**
+
+复杂度
 
 时间：O(n)
 
 空间：O(0)
 
-**实现二(cpp)**
+实现二(cpp)
 
 
 	class Solution {
@@ -68,14 +68,14 @@ public:
     }
 	};
 
-```
-**复杂度**
+
+复杂度
 
 时间：O(n)
 
 空间：O(n)
 
-**实现三(cpp)**
+实现三(cpp)
 
 
 	class Solution {
@@ -96,13 +96,13 @@ public:
 
 
 
-## Contribution
+ Contribution
 
 + [@jianw851](http://jianwang.info/)
 
-## Reference
+ Reference
 
-[^1] [268. Missing Number](https://leetcode.com/problems/missing-number/)	
+[1] [268. Missing Number](https://leetcode.com/problems/missing-number/)	
 
 
 ---
