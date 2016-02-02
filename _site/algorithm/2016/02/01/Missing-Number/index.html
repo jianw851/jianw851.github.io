@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<title>Subsets II</title>
+	<title>Missing Number</title>
     
 	
 	<meta name="author" content="Jian Wang">
@@ -157,69 +157,129 @@
 				</div>
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title">Subsets II<span class="author"></span>
+				<h1 class="journal-title">Missing Number<span class="author"></span>
 				</h1>
 				<span class="the-article">
-				<p>Given a list of numbers that may has duplicate numbers, return all possible subsets
-Example
-If S = [1,2,2], a solution is:
-[
-  [2],
-  [1],
-  [1,2,2],
-  [2,2],
-  [1,2],
-  []
-]
-Note
-Each element in a subset must be in non-descending order.
-The ordering between two subsets is free.
-The solution set must not contain duplicate subsets.
-Challenge
-Can you do it in both recursively and iteratively?</p>
+				<p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
+
+<p>Example:</p>
+
+<p>Given nums = [0, 1, 3] return 2</p>
 
 <!--more-->
 
-<pre><code>vector&lt;vector&lt;int&gt; &gt; subsetsWithDup(vector&lt;int&gt; &amp;S) {
-   vector&lt;vector&lt;int&gt; &gt; resultSets;
-   vector&lt;int&gt; list;
-   if (S.size() == 0) {
-    resultSets.push_back(S);
-    return resultSets;
-   }
-    sort(S.begin(), S.end());
-    subDivide(resultSets, list, S, 0);
-  return resultSets;
+<p>解法1: 数学法（推荐）：既然是连续的数，那么就是一个等差数列，把它想象成n＋1个等差数列之和 － 给出的数列之和 ＝ 结果.</p>
+
+<p>解法2: 位操作（推荐）， 这道题跟single number的思路差不多，当一个数异或偶数次的时候就等于0，所以将给定数列 ^ 完整数列 ＝ 结果.</p>
+
+<p>解法3: hash表：（不推荐）另外开一个布尔类型的array， 按照index值存放是否访问过， 第一遍编hash，第二遍输出结果， 注意第二遍输出结果可以用for，也可以用二分法，反正复杂度已经是O(n)了，感觉二分不二分差别不大了。</p>
+
+<p>当然还有其他方法，在此已经找到最优解，所以就不引荐了。</p>
+
+<p><strong>复杂度</strong></p>
+
+<p>时间：<script type="math/tex">O(n)</script></p>
+
+<p>空间：<script type="math/tex">O(1)</script></p>
+
+<p><strong>实现一(cpp)</strong></p>
+
+<p>```cpp</p>
+
+<pre><code>class Solution { public:    int missingNumber(vector&lt;int&gt;&amp; nums) {
+  if (nums.size() == 0) return 0;
+  int sum = 0;
+  int n = nums.size();
+  for (int i = 0; i &lt; nums.size(); i++) {
+    sum += nums[i];
+  }
+  return (n+1)*n/2 - sum;
 }
-void subDivide(vector&lt;vector &lt;int&gt;&gt; &amp;result, vector&lt;int&gt; &amp;list, const vector&lt;int&gt; &amp;S, int pos) {
-     result.push_back(list);
-     for (int i = pos; i &lt; S.size(); i++) {
-        if ((i != pos)&amp;&amp;S[i] == S[i-1])
-        continue;
-        list.push_back(S[i]);
-        subDivide(result, list, S, i+1);
-        list.pop_back();
-    }
- }
+};
 </code></pre>
+
+<p>```
+<strong>复杂度</strong></p>
+
+<p>时间：<script type="math/tex">O(n)</script></p>
+
+<p>空间：<script type="math/tex">O(0)</script></p>
+
+<p><strong>实现二(cpp)</strong>
+```c++</p>
+
+<pre><code>class Solution { public:
+int missingNumber(vector&lt;int&gt;&amp; nums) {
+  if (nums.size() == 0) return 0;
+  int result = 0;
+  for (int i = 0; i &lt; nums.size(); i++) {
+     result ^= (i+1) ^ nums[i];
+  }
+  return result;
+}
+};
+</code></pre>
+
+<p>```
+<strong>复杂度</strong></p>
+
+<p>时间：<script type="math/tex">O(n)</script></p>
+
+<p>空间：<script type="math/tex">O(n)</script></p>
+
+<p><strong>实现三(cpp)</strong>
+```c++</p>
+
+<pre><code>class Solution { public:    int missingNumber(vector&lt;int&gt;&amp; nums) {
+  if (nums.size() == 0) return 0;
+  vector&lt;bool&gt; list(nums.size(), true);
+  for (int i = 0; i &lt; nums.size(); i++) {
+    list[nums[i]] = false;
+  }
+  int i = 0;
+  for (; i &lt; list.size(); i++) {
+    if (list[i]) return i;
+  }
+  return i;
+}
+};
+</code></pre>
+
+<p>```</p>
+
+<h2 id="contribution">Contribution</h2>
+
+<ul>
+  <li><a href="http://jianwang.info/">@jianw851</a></li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<p>[^1] <a href="https://leetcode.com/problems/missing-number/">268. Missing Number</a></p>
 
 <hr />
 
 				</span>
-				<div class="journal-date">Published 13 December 2015</div>
+				<div class="journal-date">Published 01 February 2016</div>
 				<div class="journal-tags">
 				
 				
 	 
-		<a class="tag-cont" href="/tags.html#DFS-ref">
+		<a class="tag-cont" href="/tags.html#Array-ref">
 			<div class="tag-l"></div>
-			<div class="tag-c">DFS</div>
+			<div class="tag-c">Array</div>
 			<div class="tag-r"></div>
 		</a>
 	 
-		<a class="tag-cont" href="/tags.html#backtracking-ref">
+		<a class="tag-cont" href="/tags.html#Bit Manipulation-ref">
 			<div class="tag-l"></div>
-			<div class="tag-c">backtracking</div>
+			<div class="tag-c">Bit Manipulation</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#Math-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">Math</div>
 			<div class="tag-r"></div>
 		</a>
 	
@@ -238,7 +298,7 @@ void subDivide(vector&lt;vector &lt;int&gt;&gt; &amp;result, vector&lt;int&gt; &
 
   <!-- 多说评论框 start -->
 <div id="comments">
-    <div class="ds-thread" data-thread-key="/algorithm/2015/12/13/Subsets-II"  data-title="Subsets II - Welcome to"></div>
+    <div class="ds-thread" data-thread-key="/algorithm/2016/02/01/Missing-Number"  data-title="Missing Number - Welcome to"></div>
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->

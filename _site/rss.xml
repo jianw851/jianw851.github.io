@@ -5,10 +5,116 @@
         <description>Welcome to - Jian Wang</description>
         <link>http://jianwang.info/</link>
         <link>http://jianwang.info/</link>
-        <lastBuildDate>2016-01-31T23:27:13-05:00</lastBuildDate>
-        <pubDate>2016-01-31T23:27:13-05:00</pubDate>
+        <lastBuildDate>2016-02-01T22:48:31-05:00</lastBuildDate>
+        <pubDate>2016-02-01T22:48:31-05:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Missing Number</title>
+                <description>&lt;p&gt;Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;Given nums = [0, 1, 3] return 2&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;解法1: 数学法（推荐）：既然是连续的数，那么就是一个等差数列，把它想象成n＋1个等差数列之和 － 给出的数列之和 ＝ 结果.&lt;/p&gt;
+
+&lt;p&gt;解法2: 位操作（推荐）， 这道题跟single number的思路差不多，当一个数异或偶数次的时候就等于0，所以将给定数列 ^ 完整数列 ＝ 结果.&lt;/p&gt;
+
+&lt;p&gt;解法3: hash表：（不推荐）另外开一个布尔类型的array， 按照index值存放是否访问过， 第一遍编hash，第二遍输出结果， 注意第二遍输出结果可以用for，也可以用二分法，反正复杂度已经是O(n)了，感觉二分不二分差别不大了。&lt;/p&gt;
+
+&lt;p&gt;当然还有其他方法，在此已经找到最优解，所以就不引荐了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(1)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;实现一(cpp)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;```cpp&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
+  if (nums.size() == 0) return 0;
+  int sum = 0;
+  int n = nums.size();
+  for (int i = 0; i &amp;lt; nums.size(); i++) {
+    sum += nums[i];
+  }
+  return (n+1)*n/2 - sum;
+}
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```
+&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(0)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;实现二(cpp)&lt;/strong&gt;
+```c++&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Solution { public:
+int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
+  if (nums.size() == 0) return 0;
+  int result = 0;
+  for (int i = 0; i &amp;lt; nums.size(); i++) {
+     result ^= (i+1) ^ nums[i];
+  }
+  return result;
+}
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```
+&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;实现三(cpp)&lt;/strong&gt;
+```c++&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
+  if (nums.size() == 0) return 0;
+  vector&amp;lt;bool&amp;gt; list(nums.size(), true);
+  for (int i = 0; i &amp;lt; nums.size(); i++) {
+    list[nums[i]] = false;
+  }
+  int i = 0;
+  for (; i &amp;lt; list.size(); i++) {
+    if (list[i]) return i;
+  }
+  return i;
+}
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;contribution&quot;&gt;Contribution&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;[^1] &lt;a href=&quot;https://leetcode.com/problems/missing-number/&quot;&gt;268. Missing Number&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+                <link>http://jianwang.info//algorithm/2016/02/01/Missing-Number</link>
+                <guid>http://jianwang.info//algorithm/2016/02/01/Missing-Number</guid>
+                <pubDate>2016-02-01T00:00:00-05:00</pubDate>
+        </item>
 
         <item>
                 <title>Power Of Two</title>
@@ -17,25 +123,17 @@
 &lt;h1 id=&quot;problem-231-power-of-two&quot;&gt;Problem 231 Power of Two&lt;/h1&gt;
 &lt;p&gt;Given an integer, write a function to determine if it is a power of two.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Example 1:&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;n&lt;/em&gt; = &lt;code&gt;12&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;n = &lt;code&gt;12&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;return &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Example 2:&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;n&lt;/em&gt; = &lt;code&gt;64&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;n = &lt;code&gt;64&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;return &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;C++&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
 
 &lt;p&gt;解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.&lt;/p&gt;
 

@@ -11,23 +11,17 @@ tags: [bit manipulation]
 # Problem 231 Power of Two
  Given an integer, write a function to determine if it is a power of two.
 
-**Example 1:**
+Example 1:
 
-*n* = `12`
+n = `12`
 
 return `false`
 
-**Example 2:**
+Example 2:
 
-*n* = `64`
+n = `64`
 
 return `true`
-
-## Solution
-
-+ C++
-
-## Analysis
 
 
 解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.
