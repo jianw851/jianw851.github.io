@@ -13,15 +13,15 @@ tags: [bit manipulation]
 
 Example 1:
 
-n = `12`
+n = 12
 
-return `false`
+return false
 
 Example 2:
 
-n = `64`
+n = 64
 
-return `true`
+return true
 
 
 解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.
@@ -37,9 +37,9 @@ return `true`
 
 **复杂度**
 
-时间：$$O(1)$$
+时间：O(1)
 
-空间：$$O(0)$$
+空间：O(0)
 
 **实现一(cpp)** 
 
@@ -51,9 +51,9 @@ public:
 	};
 **复杂度**
 
-时间：$$O(logn)$$
+时间：O(logn)
 
-空间：$$O(1)$$
+空间：O(1)
 **实现二(cpp)**
 
 	class Solution {

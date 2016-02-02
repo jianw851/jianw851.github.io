@@ -25,13 +25,13 @@ Given nums = [0, 1, 3] return 2
 
 **复杂度**
 
-时间：$$O(n)$$
+时间：O(n)
 
-空间：$$O(1)$$
+空间：O(1)
 
-**实现一(cpp)** 
+实现一(cpp) 
 
-```cpp
+
 
 	class Solution {
 public:
@@ -49,12 +49,12 @@ public:
 ```
 **复杂度**
 
-时间：$$O(n)$$
+时间：O(n)
 
-空间：$$O(0)$$
+空间：O(0)
 
 **实现二(cpp)**
-```c++
+
 
 	class Solution {
 public:
@@ -71,12 +71,12 @@ public:
 ```
 **复杂度**
 
-时间：$$O(n)$$
+时间：O(n)
 
-空间：$$O(n)$$
+空间：O(n)
 
 **实现三(cpp)**
-```c++
+
 
 	class Solution {
 public:
@@ -94,7 +94,7 @@ public:
     }
 	};
 
-```
+
 
 ## Contribution
 
