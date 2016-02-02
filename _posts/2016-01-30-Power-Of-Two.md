@@ -1,6 +1,6 @@
 ---
 layout: post
-category: Algorithm
+category: algorithm
 title: Power Of Two
 tagline: by Jian
 tags: [bit manipulation]
@@ -26,7 +26,8 @@ return true
 
 解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.
   
-解法2: 位操作， 2的幂在二进制表示的时候，有一个特性，那就是只有一个1在里面（如：00001000就是2的幂，而00001100就不是2的幂），利用这个特性我们就可以衍生出三种解法都可以达到用O(1)的时间复杂度.
+解法2: 位操作， 2的幂在二进制表示的时候，有一个特性，那就是只有一个1在里面（如：00001000就是2的幂，
+而00001100就不是2的幂），利用这个特性我们就可以衍生出三种解法都可以达到用O(1)的时间复杂度.
 
 1. 移位法：把后面的0移掉，剩下的部分＝＝1，就对了 (不推荐)
 2. －1求与：n & n-1 == 0 就对了 （推荐）
@@ -74,13 +75,13 @@ public:
 
  Contribution
 
-+ [@jianw851](http://jianwang.info/)
+[@jianw851](http://jianwang.info/)
 
  Reference
 
-[1] [231. Power of Two](https://leetcode.com/problems/power-of-two/)
+ [231. Power of Two](https://leetcode.com/problems/power-of-two/)
 
-[2] [Ten Ways to Check if an Integer Is a Power Of Two in C](http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/)
+ [Ten Ways to Check if an Integer Is a Power Of Two in C](http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/)
 
  
 

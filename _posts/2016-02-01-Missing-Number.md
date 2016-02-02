@@ -98,11 +98,11 @@ public:
 
  Contribution
 
-+ [@jianw851](http://jianwang.info/)
+ [@jianw851](http://jianwang.info/)
 
  Reference
 
-[1] [268. Missing Number](https://leetcode.com/problems/missing-number/)	
+ [268. Missing Number](https://leetcode.com/problems/missing-number/)	
 
 
 ---

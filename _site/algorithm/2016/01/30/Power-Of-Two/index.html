@@ -162,20 +162,20 @@
 				<span class="the-article">
 				<!--more-->
 
-<h1 id="problem-231-power-of-two">Problem 231 Power of Two</h1>
-<p>Given an integer, write a function to determine if it is a power of two.</p>
+<p>Problem 231 Power of Two
+ Given an integer, write a function to determine if it is a power of two.</p>
 
 <p>Example 1:</p>
 
-<p>n = <code>12</code></p>
+<p>n = 12</p>
 
-<p>return <code>false</code></p>
+<p>return false</p>
 
 <p>Example 2:</p>
 
-<p>n = <code>64</code></p>
+<p>n = 64</p>
 
-<p>return <code>true</code></p>
+<p>return true</p>
 
 <p>解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.</p>
 
@@ -189,25 +189,25 @@
 
 <p>网上对这道题的分析太透彻，其他的解法我就不再赘述，把链接贴在reference大家自己看。我就把两种解法写出来。</p>
 
-<p><strong>复杂度</strong></p>
+<p>复杂度</p>
 
-<p>时间：<script type="math/tex">O(1)</script></p>
+<p>时间：O(1)</p>
 
-<p>空间：<script type="math/tex">O(0)</script></p>
+<p>空间：O(0)</p>
 
-<p><strong>实现一(cpp)</strong></p>
+<p>实现一(cpp)</p>
 
 <pre><code>class Solution { public:
 bool isPowerOfTwo(int n) {
   return n &gt; 0 &amp;&amp; ((n &amp; (n - 1)) == 0);
 }
-}; **复杂度**
+}; 复杂度
 </code></pre>
 
-<p>时间：<script type="math/tex">O(logn)</script></p>
+<p>时间：O(logn)</p>
 
-<p>空间：<script type="math/tex">O(1)</script>
-<strong>实现二(cpp)</strong></p>
+<p>空间：O(1)
+实现二(cpp)</p>
 
 <pre><code>class Solution { public:
 bool isPowerOfTwo(int n) {
@@ -222,17 +222,17 @@ bool isPowerOfTwo(int n) {
 };
 </code></pre>
 
-<h2 id="contribution">Contribution</h2>
+<p>Contribution</p>
 
 <ul>
   <li><a href="http://jianwang.info/">@jianw851</a></li>
 </ul>
 
-<h2 id="reference">Reference</h2>
+<p>Reference</p>
 
-<p>[^1] <a href="https://leetcode.com/problems/power-of-two/">231. Power of Two</a></p>
+<p>[1] <a href="https://leetcode.com/problems/power-of-two/">231. Power of Two</a></p>
 
-<p>[^2] <a href="http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/">Ten Ways to Check if an Integer Is a Power Of Two in C</a></p>
+<p>[2] <a href="http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/">Ten Ways to Check if an Integer Is a Power Of Two in C</a></p>
 
 
 				</span>

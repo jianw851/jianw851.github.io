@@ -4,7 +4,7 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-02-01T22:48:31-05:00</updated>
+ <updated>2016-02-02T16:59:41-05:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
@@ -33,15 +33,13 @@
 
 &lt;p&gt;当然还有其他方法，在此已经找到最优解，所以就不引荐了。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;复杂度&lt;/p&gt;
 
-&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;时间：O(n)&lt;/p&gt;
 
-&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(1)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;空间：O(1)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;实现一(cpp)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;```cpp&lt;/p&gt;
+&lt;p&gt;实现一(cpp)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
   if (nums.size() == 0) return 0;
@@ -55,15 +53,13 @@
 };
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;```
-&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;复杂度&lt;/p&gt;
 
-&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;时间：O(n)&lt;/p&gt;
 
-&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(0)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;空间：O(0)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;实现二(cpp)&lt;/strong&gt;
-```c++&lt;/p&gt;
+&lt;p&gt;实现二(cpp)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution { public:
 int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
@@ -77,15 +73,13 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 };
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;```
-&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;复杂度&lt;/p&gt;
 
-&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;时间：O(n)&lt;/p&gt;
 
-&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(n)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;空间：O(n)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;实现三(cpp)&lt;/strong&gt;
-```c++&lt;/p&gt;
+&lt;p&gt;实现三(cpp)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
   if (nums.size() == 0) return 0;
@@ -102,17 +96,15 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 };
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;```&lt;/p&gt;
-
-&lt;h2 id=&quot;contribution&quot;&gt;Contribution&lt;/h2&gt;
+&lt;p&gt;Contribution&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;Reference&lt;/p&gt;
 
-&lt;p&gt;[^1] &lt;a href=&quot;https://leetcode.com/problems/missing-number/&quot;&gt;268. Missing Number&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&quot;https://leetcode.com/problems/missing-number/&quot;&gt;268. Missing Number&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 </content>
@@ -125,20 +117,20 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
    <id>http://jianwang.info//algorithm/2016/01/30/Power-Of-Two</id>
    <content type="html">&lt;!--more--&gt;
 
-&lt;h1 id=&quot;problem-231-power-of-two&quot;&gt;Problem 231 Power of Two&lt;/h1&gt;
-&lt;p&gt;Given an integer, write a function to determine if it is a power of two.&lt;/p&gt;
+&lt;p&gt;Problem 231 Power of Two
+ Given an integer, write a function to determine if it is a power of two.&lt;/p&gt;
 
 &lt;p&gt;Example 1:&lt;/p&gt;
 
-&lt;p&gt;n = &lt;code&gt;12&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;n = 12&lt;/p&gt;
 
-&lt;p&gt;return &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;return false&lt;/p&gt;
 
 &lt;p&gt;Example 2:&lt;/p&gt;
 
-&lt;p&gt;n = &lt;code&gt;64&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;n = 64&lt;/p&gt;
 
-&lt;p&gt;return &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;return true&lt;/p&gt;
 
 &lt;p&gt;解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.&lt;/p&gt;
 
@@ -152,25 +144,25 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 
 &lt;p&gt;网上对这道题的分析太透彻，其他的解法我就不再赘述，把链接贴在reference大家自己看。我就把两种解法写出来。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;复杂度&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;复杂度&lt;/p&gt;
 
-&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(1)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;时间：O(1)&lt;/p&gt;
 
-&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(0)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;空间：O(0)&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;实现一(cpp)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;实现一(cpp)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution { public:
 bool isPowerOfTwo(int n) {
   return n &amp;gt; 0 &amp;amp;&amp;amp; ((n &amp;amp; (n - 1)) == 0);
 }
-}; **复杂度**
+}; 复杂度
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;时间：&lt;script type=&quot;math/tex&quot;&gt;O(logn)&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;时间：O(logn)&lt;/p&gt;
 
-&lt;p&gt;空间：&lt;script type=&quot;math/tex&quot;&gt;O(1)&lt;/script&gt;
-&lt;strong&gt;实现二(cpp)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;空间：O(1)
+实现二(cpp)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution { public:
 bool isPowerOfTwo(int n) {
@@ -185,17 +177,17 @@ bool isPowerOfTwo(int n) {
 };
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;contribution&quot;&gt;Contribution&lt;/h2&gt;
+&lt;p&gt;Contribution&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;Reference&lt;/p&gt;
 
-&lt;p&gt;[^1] &lt;a href=&quot;https://leetcode.com/problems/power-of-two/&quot;&gt;231. Power of Two&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&quot;https://leetcode.com/problems/power-of-two/&quot;&gt;231. Power of Two&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;[^2] &lt;a href=&quot;http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/&quot;&gt;Ten Ways to Check if an Integer Is a Power Of Two in C&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a href=&quot;http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/&quot;&gt;Ten Ways to Check if an Integer Is a Power Of Two in C&lt;/a&gt;&lt;/p&gt;
 
 </content>
  </entry>
