@@ -4,7 +4,7 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-02-02T20:02:18-05:00</updated>
+ <updated>2016-02-03T15:08:28-05:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
@@ -25,14 +25,6 @@
 
 &lt;!--more--&gt;
 
-&lt;p&gt;解法1: 数学法（推荐）：既然是连续的数，那么就是一个等差数列，把它想象成n＋1个等差数列之和 － 给出的数列之和 ＝ 结果.&lt;/p&gt;
-
-&lt;p&gt;解法2: 位操作（推荐）， 这道题跟single number的思路差不多，当一个数异或偶数次的时候就等于0，所以将给定数列 ^ 完整数列 ＝ 结果.&lt;/p&gt;
-
-&lt;p&gt;解法3: hash表：（不推荐）另外开一个布尔类型的array， 按照index值存放是否访问过， 第一遍编hash，第二遍输出结果， 注意第二遍输出结果可以用for，也可以用二分法，反正复杂度已经是O(n)了，感觉二分不二分差别不大了。&lt;/p&gt;
-
-&lt;p&gt;当然还有其他方法，在此已经找到最优解，所以就不引荐了。&lt;/p&gt;
-
 &lt;p&gt;复杂度&lt;/p&gt;
 
 &lt;p&gt;时间：O(n)&lt;/p&gt;
@@ -41,7 +33,7 @@
 
 &lt;p&gt;实现一(cpp)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
   if (nums.size() == 0) return 0;
   int sum = 0;
   int n = nums.size();
@@ -52,6 +44,7 @@
 }
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;复杂度&lt;/p&gt;
 
@@ -61,7 +54,7 @@
 
 &lt;p&gt;实现二(cpp)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:
 int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
   if (nums.size() == 0) return 0;
   int result = 0;
@@ -72,6 +65,7 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 }
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;复杂度&lt;/p&gt;
 
@@ -81,7 +75,7 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 
 &lt;p&gt;实现三(cpp)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:    int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
   if (nums.size() == 0) return 0;
   vector&amp;lt;bool&amp;gt; list(nums.size(), true);
   for (int i = 0; i &amp;lt; nums.size(); i++) {
@@ -95,6 +89,7 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 }
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Contribution&lt;/p&gt;
 
@@ -151,19 +146,20 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 
 &lt;p&gt;实现一(cpp)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:
 bool isPowerOfTwo(int n) {
   return n &amp;gt; 0 &amp;amp;&amp;amp; ((n &amp;amp; (n - 1)) == 0);
 }
 }; 复杂度
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;时间：O(logn)&lt;/p&gt;
 
 &lt;p&gt;空间：O(1)
 实现二(cpp)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:
 bool isPowerOfTwo(int n) {
   if (n &amp;lt;= 0) return false;
   while (n != 1) {
@@ -175,6 +171,7 @@ bool isPowerOfTwo(int n) {
 }
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Contribution&lt;/p&gt;
 
@@ -201,7 +198,7 @@ bool isPowerOfTwo(int n) {
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt; int maxProfit(vector&amp;lt;int&amp;gt; &amp;amp;prices) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; int maxProfit(vector&amp;lt;int&amp;gt; &amp;amp;prices) {
   if (prices.size() == 0) {
     return 0;
   }
@@ -215,6 +212,7 @@ bool isPowerOfTwo(int n) {
   return profit;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -239,7 +237,7 @@ bool isPowerOfTwo(int n) {
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; partition(string s) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; partition(string s) {
   vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; result;
   if (s.length() == 0) return result;
   vector&amp;lt;string&amp;gt; list;
@@ -275,6 +273,7 @@ void dfs_traverse(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; &amp;amp;re
  }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -292,7 +291,7 @@ Extra points if you can do it in O(n) time with O(k) extra space.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt; class Solution {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; class Solution {
  public:
  class resultType {
    public:
@@ -332,6 +331,7 @@ Extra points if you can do it in O(n) time with O(k) extra space.&lt;/p&gt;
   return result;
 }   };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -352,7 +352,7 @@ There can be duplicate elements in the array, and we can return any of the indic
 O(logn) time complexity.&lt;/p&gt;
 
 &lt;!--more--&gt;
-&lt;pre&gt;&lt;code&gt;int closestNumber(vector&amp;lt;int&amp;gt;&amp;amp; A, int target) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int closestNumber(vector&amp;lt;int&amp;gt;&amp;amp; A, int target) {
   if (A.size() == 0) {
     return -1;
   } else if (A.size() == 1) {
@@ -381,6 +381,7 @@ O(logn) time complexity.&lt;/p&gt;
   }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -400,7 +401,7 @@ Time complexity in O(logn)&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:
 /**
  * @param A an integer array sorted in ascending order
  * @param target an integer
@@ -468,58 +469,7 @@ int leftSearch(vector&amp;lt;int&amp;gt;&amp;amp; A, int target, int begin, int 
   }
 } };
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Subsets II</title>
-   <link href="http://jianwang.info//algorithm/2015/12/13/Subsets-II"/>
-   <updated>2015-12-13T00:00:00-05:00</updated>
-   <id>http://jianwang.info//algorithm/2015/12/13/Subsets-II</id>
-   <content type="html">&lt;p&gt;Given a list of numbers that may has duplicate numbers, return all possible subsets
-Example
-If S = [1,2,2], a solution is:
-[
-  [2],
-  [1],
-  [1,2,2],
-  [2,2],
-  [1,2],
-  []
-]
-Note
-Each element in a subset must be in non-descending order.
-The ordering between two subsets is free.
-The solution set must not contain duplicate subsets.
-Challenge
-Can you do it in both recursively and iteratively?&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; subsetsWithDup(vector&amp;lt;int&amp;gt; &amp;amp;S) {
-   vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
-   vector&amp;lt;int&amp;gt; list;
-   if (S.size() == 0) {
-    resultSets.push_back(S);
-    return resultSets;
-   }
-    sort(S.begin(), S.end());
-    subDivide(resultSets, list, S, 0);
-  return resultSets;
-}
-void subDivide(vector&amp;lt;vector &amp;lt;int&amp;gt;&amp;gt; &amp;amp;result, vector&amp;lt;int&amp;gt; &amp;amp;list, const vector&amp;lt;int&amp;gt; &amp;amp;S, int pos) {
-     result.push_back(list);
-     for (int i = pos; i &amp;lt; S.size(); i++) {
-        if ((i != pos)&amp;amp;&amp;amp;S[i] == S[i-1])
-        continue;
-        list.push_back(S[i]);
-        subDivide(result, list, S, i+1);
-        list.pop_back();
-    }
- }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -551,7 +501,7 @@ Can you do it in both recursively and iteratively?&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; subsets(vector&amp;lt;int&amp;gt; &amp;amp;nums) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; subsets(vector&amp;lt;int&amp;gt; &amp;amp;nums) {
   vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
   if (nums.size() == 0) {
    resultSets.push_back(nums);
@@ -571,6 +521,60 @@ void subSetsHelper(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;res
   }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Subsets II</title>
+   <link href="http://jianwang.info//algorithm/2015/12/13/Subsets-II"/>
+   <updated>2015-12-13T00:00:00-05:00</updated>
+   <id>http://jianwang.info//algorithm/2015/12/13/Subsets-II</id>
+   <content type="html">&lt;p&gt;Given a list of numbers that may has duplicate numbers, return all possible subsets
+Example
+If S = [1,2,2], a solution is:
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+Note
+Each element in a subset must be in non-descending order.
+The ordering between two subsets is free.
+The solution set must not contain duplicate subsets.
+Challenge
+Can you do it in both recursively and iteratively?&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; subsetsWithDup(vector&amp;lt;int&amp;gt; &amp;amp;S) {
+   vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
+   vector&amp;lt;int&amp;gt; list;
+   if (S.size() == 0) {
+    resultSets.push_back(S);
+    return resultSets;
+   }
+    sort(S.begin(), S.end());
+    subDivide(resultSets, list, S, 0);
+  return resultSets;
+}
+void subDivide(vector&amp;lt;vector &amp;lt;int&amp;gt;&amp;gt; &amp;amp;result, vector&amp;lt;int&amp;gt; &amp;amp;list, const vector&amp;lt;int&amp;gt; &amp;amp;S, int pos) {
+     result.push_back(list);
+     for (int i = pos; i &amp;lt; S.size(); i++) {
+        if ((i != pos)&amp;amp;&amp;amp;S[i] == S[i-1])
+        continue;
+        list.push_back(S[i]);
+        subDivide(result, list, S, i+1);
+        list.pop_back();
+    }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -597,7 +601,7 @@ Do it without recursion.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt; vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; permute(vector&amp;lt;int&amp;gt; nums) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; permute(vector&amp;lt;int&amp;gt; nums) {
  vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
  vector&amp;lt;int&amp;gt; list;
  if (nums.size() == 0) {
@@ -621,6 +625,7 @@ void permutation(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;resul
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -644,7 +649,7 @@ Using recursion to do it is acceptable. If you can do it without recursion, that
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; permuteUnique(vector&amp;lt;int&amp;gt; &amp;amp;nums) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; permuteUnique(vector&amp;lt;int&amp;gt; &amp;amp;nums) {
   vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; resultSets;
   vector&amp;lt;int&amp;gt; list;
   if (nums.size() == 0) {
@@ -675,6 +680,7 @@ void permutation(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;resul
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -697,7 +703,7 @@ min()   // return 1&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;class MinStack { public:   stack&amp;lt;int&amp;gt; mainStack, minStack;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class MinStack { public:   stack&amp;lt;int&amp;gt; mainStack, minStack;
 MinStack() {
 }
 void push(int number) {
@@ -716,6 +722,7 @@ int min() {
   return minStack.top();
 } };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -734,7 +741,7 @@ when you meet this problem in a real interview, the interviewer may just want to
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;class Solution { public:
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:
 /**
  * Returns a index to the first occurrence of target in source,
  * or -1  if target is not part of source.
@@ -759,6 +766,7 @@ int strStr(const char *source, const char *target) {
     return -1;
 } };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;hr /&gt;
 </content>
@@ -858,14 +866,16 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
   &lt;li&gt;
     &lt;p&gt;Give advise: if your lover ask you some question, do not immediately give advise.&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt; Tip: try to know your lovers feelings first, then accept and understand them. 
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Tip: try to know your lovers feelings first, then accept and understand them. 
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Don’t bring your power outside to home&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt; Tips:divide work from family, family is the place where you should deal with gently and patiently. Keep your family members equal important and give respect to them. Cherish is the main theme of family.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Tips:divide work from family, family is the place where you should deal with gently and patiently. Keep your family members equal important and give respect to them. Cherish is the main theme of family.
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1029,7 +1039,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 
 &lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code&gt;	克	333	   s	1.1	Y
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	克	333	   s	1.1	Y
 	克	7	   s	1.1	Y
 	脸	851g	   s	1.1	Y
 	腿	851g	   s	1.1	Y
@@ -1070,6 +1080,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
     o	百云	7q	   o	!!	2010
     o	有裤	131	   o	1.1	Y
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 </content>
  </entry>
@@ -1105,13 +1116,15 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 &lt;!--more--&gt;
 
 &lt;h3 id=&quot;recovery&quot;&gt;Recovery&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;  $ git log --pretty=oneline
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ git log --pretty=oneline
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;this is to look formal commit&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  $ git reset --hard 1a410efbd2fdkaldafdkajfdklds059dd55cfe9
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ git reset --hard 1a410efbd2fdkaldafdkajfdklds059dd55cfe9
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;this command is to recover the formal commit using SHA&lt;/p&gt;
 
@@ -1120,25 +1133,29 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 &lt;h3 id=&quot;install-jekyll&quot;&gt;Install jekyll&lt;/h3&gt;
 &lt;p&gt;在中国，jekyll所在的网站是被屏蔽的，所以需要用vpn翻墙才能成功执行install jekyll命令x,否则会报超时。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  $ sudo gem update --system
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sudo gem update --system
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;update the gem to latest version&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  $ sudo gem install jekyll
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sudo gem install jekyll
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;install jekyll&lt;/p&gt;
 
 &lt;p&gt;if you want to install rails, the command is the same&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  $ sudo gem install rails
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sudo gem install rails
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;jekyll&quot;&gt;jekyll&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;  $ jekyll serve --watch --baseurl &quot;&quot;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ jekyll serve --watch --baseurl &quot;&quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;this will run the jekyll server, and type the 127.0.0.1:4000 to the url column, you can test or debug the local project&lt;/p&gt;
 
@@ -1305,9 +1322,10 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
 
 &lt;p&gt;修改_config.yml文件，增加&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;# 每一页显示的文章数
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 每一页显示的文章数
 paginate: 5
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;添加了上面后，你就可以在index.html页面中，引用paginator这个对象了，记住，只有index.html页面可以用。&lt;/p&gt;
 
@@ -1335,8 +1353,9 @@ paginate: 5
   &lt;li&gt;
     &lt;p&gt;装truncatehtml插件。这个插件首先需要nokogiri，所以你需要在本地安装，安装命令如下：&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt;gem install nokogiri
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install nokogiri
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
     &lt;p&gt;然后再安装上述的插件，这个插件的好处就是对解析后的html代码进行控制，但坏处就是，你如果是托管在Github上，那就悲剧了，不能用。&lt;/p&gt;
   &lt;/li&gt;
@@ -1345,7 +1364,7 @@ paginate: 5
 &lt;p&gt;上面两种方法，都有一个问题，就是对所有文章的摘要提取都是一样的，但是有时候，对于不同的问题，我想显示不同长度的摘要，所以下面隆重祭出第三种方法（其实，也是我在网上找的，版权不归我哈）： 
 首先，在你文章里，想要输出摘要的截至地方，打上标签，比如：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; ---
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ---
  title: some post
  layout: post
  ---
@@ -1356,11 +1375,13 @@ paginate: 5
 
  有一天我心血来潮骑它取赶集。  
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;然后用下面的方式截取：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  \{\{ post.content  | | split:&#39;&amp;lt;!--break--&amp;gt;&#39; | first \}\}
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  \{\{ post.content  | | split:&#39;&amp;lt;!--break--&amp;gt;&#39; | first \}\}
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;这样的方式，就是，你需要在写文章的时候，打一个注释，但是，这个成本，我想，还好吧。&lt;/p&gt;
 

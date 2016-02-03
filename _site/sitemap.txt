@@ -1,18 +1,18 @@
 
-http://jianwang.info//404.html
-http://jianwang.info//about.html
-http://jianwang.info//archive.html
+http://jianwang.info//404
+http://jianwang.info//about
+http://jianwang.info//archive
 http://jianwang.info//atom.xml
-http://jianwang.info//categories.html
-http://jianwang.info//index.html
+http://jianwang.info//categories
+http://jianwang.info//
 http://jianwang.info//rss.xml
-http://jianwang.info//search.html
+http://jianwang.info//search
 http://jianwang.info//sitemap.txt
-http://jianwang.info//tags.html
-http://jianwang.info//2/index.html
-http://jianwang.info//3/index.html
-http://jianwang.info//4/index.html
-http://jianwang.info//5/index.html
+http://jianwang.info//tags
+http://jianwang.info//2/
+http://jianwang.info//3/
+http://jianwang.info//4/
+http://jianwang.info//5/
 
 http://jianwang.info//algorithm/2016/02/01/Missing-Number
 http://jianwang.info//algorithm/2016/01/30/Power-Of-Two
@@ -21,8 +21,8 @@ http://jianwang.info//algorithm/2016/01/24/Palindrome-Partitioning
 http://jianwang.info//algorithm/2016/01/10/Top-K-Frequent-Words
 http://jianwang.info//algorithm/2015/12/14/Closest-Number-in-Sorted-Array
 http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target
-http://jianwang.info//algorithm/2015/12/13/Subsets-II
 http://jianwang.info//algorithm/2015/12/13/Subsets
+http://jianwang.info//algorithm/2015/12/13/Subsets-II
 http://jianwang.info//algorithm/2015/12/12/Permutations
 http://jianwang.info//algorithm/2015/12/12/Permutation-II
 http://jianwang.info//algorithm/2015/12/12/Min-Stack
