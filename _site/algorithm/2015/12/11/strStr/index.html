@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>strStr</title>
+    
+	
+	<meta name="author" content="Jian Wang">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+		<div>
+			<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 700px;">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About Me"><a href="/about.html">About Me</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive.html">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories.html">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags.html">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
+			<div id="page-content">
+				
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">strStr<span class="author"></span>
+				</h1>
+				<span class="the-article">
+				<p>For a given source string and a target string, you should output the first index(from 0) of target string in source string.</p>
+
+<p>If target does not exist in source, just return -1.
+  O(n2) is acceptable. Can you implement an O(n) algorithm?
+when you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.</p>
+
+<!--more-->
+
+<pre><code>class Solution { public:
+/**
+ * Returns a index to the first occurrence of target in source,
+ * or -1  if target is not part of source.
+ * @param source string to be scanned.
+ * @param target string containing the sequence of characters to match.
+ */
+int strStr(const char *source, const char *target) {
+    if (source == NULL||target == NULL) {
+    return -1;
+    }
+    int len_source = strlen(source);
+    int len_target = strlen(target);
+    for (int i = 0; i &lt; len_source-len_target+1; i++) {
+      int j = 0;
+      for (j = 0; j &lt; len_target; j++) {
+        if (target[j] != source[i+j])
+        break;
+      }
+      if (j == len_target)
+      return i;
+    }
+    return -1;
+} };
+</code></pre>
+
+<hr />
+
+				</span>
+				<div class="journal-date">Published 11 December 2015</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#string-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">string</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#for loop-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">for loop</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/algorithm/2015/12/11/strStr"  data-title="strStr - Welcome to"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jian"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	﻿<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+			© 2015 Jian Wang.<br><br>
+			Content licensed under:<br>
+			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
+			<a href = "/about.html">About Me</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#trick-ref">
+    		trick <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#read-ref">
+    		read <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#daily-ref">
+    		daily <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#idea-ref">
+    		idea <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#algorithm-ref">
+    		algorithm <span>13</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about.html">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				 
+					<li><a href = "http://jianwang.info/">Jian Wang's Blog</a></li>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "mailto:jianw851@gmail.com">e-mail</a></li>
+				 
+					<li><a href = "https://github.com/jianw851">Github</a></li>
+				 
+					<li><a href = "https://cn.linkedin.com/in/jianwang85">Linkedin</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+
+	
+</body>
+</html>
+
