@@ -3,7 +3,11 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+<<<<<<< Updated upstream
 highlighter: rouge
+=======
+highlighter: rouge 
+>>>>>>> Stashed changes
 
 markdown: kramdown
 

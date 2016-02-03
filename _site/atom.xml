@@ -4,7 +4,7 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-02-02T16:59:41-05:00</updated>
+ <updated>2016-02-02T20:02:18-05:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
@@ -98,13 +98,11 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 
 &lt;p&gt;Contribution&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Reference&lt;/p&gt;
 
-&lt;p&gt;[1] &lt;a href=&quot;https://leetcode.com/problems/missing-number/&quot;&gt;268. Missing Number&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/missing-number/&quot;&gt;268. Missing Number&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 </content>
@@ -134,7 +132,8 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
 
 &lt;p&gt;解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.&lt;/p&gt;
 
-&lt;p&gt;解法2: 位操作， 2的幂在二进制表示的时候，有一个特性，那就是只有一个1在里面（如：00001000就是2的幂，而00001100就不是2的幂），利用这个特性我们就可以衍生出三种解法都可以达到用O(1)的时间复杂度.&lt;/p&gt;
+&lt;p&gt;解法2: 位操作， 2的幂在二进制表示的时候，有一个特性，那就是只有一个1在里面（如：00001000就是2的幂，
+而00001100就不是2的幂），利用这个特性我们就可以衍生出三种解法都可以达到用O(1)的时间复杂度.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;移位法：把后面的0移掉，剩下的部分＝＝1，就对了 (不推荐)&lt;/li&gt;
@@ -179,15 +178,13 @@ bool isPowerOfTwo(int n) {
 
 &lt;p&gt;Contribution&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Reference&lt;/p&gt;
 
-&lt;p&gt;[1] &lt;a href=&quot;https://leetcode.com/problems/power-of-two/&quot;&gt;231. Power of Two&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/power-of-two/&quot;&gt;231. Power of Two&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;[2] &lt;a href=&quot;http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/&quot;&gt;Ten Ways to Check if an Integer Is a Power Of Two in C&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/&quot;&gt;Ten Ways to Check if an Integer Is a Power Of Two in C&lt;/a&gt;&lt;/p&gt;
 
 </content>
  </entry>
