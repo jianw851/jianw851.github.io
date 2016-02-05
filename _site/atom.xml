@@ -4,13 +4,76 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-02-03T15:08:28-05:00</updated>
+ <updated>2016-02-04T22:51:55-05:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Clone Graphr</title>
+   <link href="http://jianwang.info//algorithm/2016/02/03/Clone-Graph"/>
+   <updated>2016-02-03T00:00:00-05:00</updated>
+   <id>http://jianwang.info//algorithm/2016/02/03/Clone-Graph</id>
+   <content type="html">&lt;p&gt;Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.&lt;/p&gt;
+
+&lt;p&gt;How we serialize an undirected graph:&lt;/p&gt;
+
+&lt;p&gt;Nodes are labeled uniquely.&lt;/p&gt;
+
+&lt;p&gt;We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
+As an example, consider the serialized graph {0,1,2#1,2#2,2}.&lt;/p&gt;
+
+&lt;p&gt;The graph has a total of three nodes, and therefore contains three parts as separated by #.&lt;/p&gt;
+
+&lt;p&gt;First node is labeled as 0. Connect node 0 to both nodes 1 and 2.
+Second node is labeled as 1. Connect node 1 to node 2.
+Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.&lt;/p&gt;
+
+&lt;p&gt;return a deep copied graph.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Solution { public:
+UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
+  if (node == NULL) return NULL;
+  unordered_map&amp;lt;UndirectedGraphNode*, UndirectedGraphNode*&amp;gt; map1;
+  vector&amp;lt;UndirectedGraphNode*&amp;gt; queue;
+  queue.push_back(node);
+  UndirectedGraphNode *head = new UndirectedGraphNode(node-&amp;gt;label);
+  map1[node] = head;
+  int curr = 0;
+  while (curr &amp;lt; queue.size()) {
+    UndirectedGraphNode * curr_node = queue[curr];
+    int size = curr_node-&amp;gt;neighbors.size();
+    for (int i = 0; i &amp;lt; size; i++) {
+      UndirectedGraphNode * curr_neigh = curr_node-&amp;gt;neighbors[i];
+      if (map1.find(curr_neigh) == map1.end()) {
+        UndirectedGraphNode * curr_copy = new UndirectedGraphNode(curr_neigh-&amp;gt;label);
+        map1[curr_node]-&amp;gt;neighbors.push_back(curr_copy);
+        map1[curr_neigh] = curr_copy;
+        queue.push_back(curr_neigh);
+      } else {
+        map1[curr_node]-&amp;gt;neighbors.push_back(map1[curr_neigh]);
+      }
+    }
+    curr++;
+  }
+  return head;
+}
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Contribution&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jianwang.info/&quot;&gt;@jianw851&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Missing Number</title>
