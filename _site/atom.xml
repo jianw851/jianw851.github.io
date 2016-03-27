@@ -4,7 +4,7 @@
  <title>Welcome to</title>
  <link href="http://jianwang.info//" rel="self"/>
  <link href="http://jianwang.info/"/>
- <updated>2016-02-15T22:27:44-05:00</updated>
+ <updated>2016-03-17T12:55:21-07:00</updated>
  <id>http://jianwang.info/</id>
  <author>
    <name>Jian Wang</name>
@@ -13,9 +13,143 @@
 
  
  <entry>
+   <title>Assembly on Mac</title>
+   <link href="http://jianwang.info//learn/2016/03/17/Assembly-Study"/>
+   <updated>2016-03-17T00:00:00-07:00</updated>
+   <id>http://jianwang.info//learn/2016/03/17/Assembly-Study</id>
+   <content type="html">&lt;p&gt;Assembly language is the very basic programming language in a Computer. First it is more detailed. Second it is more effcient. Today I am going to try it on my macbook. Although it is not my first time to try assembly, I feel more comfortable and engaged to do so. This airticle will record some of method and tools.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;tool&quot;&gt;Tool&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NASM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  brew install nasm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Xcode
+which contains gcc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;this link is a very good materail to learn 64 bit assembly on mac
+http://www.idryman.org/blog/2014/12/02/writing-64-bit-assembly-on-mac-os-x/&lt;/p&gt;
+
+&lt;p&gt;here is a short example&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_asm.s
+# as hello_asm.s -o hello_asm.o
+# ld hello_asm.o -e _main -o hello_asm
+.section __DATA,__data
+str:
+  .asciz &quot;Hello world!\n&quot;
+
+.section __TEXT,__text
+.globl _main
+_main:
+  movl $0x2000004, %eax           # preparing system call 4
+  movl $1, %edi                    # STDOUT file descriptor is 1
+  movq str@GOTPCREL(%rip), %rsi   # The value to print
+  movq $100, %rdx                 # the size of the value to print
+  syscall
+
+  movl $0, %ebx
+  movl $0x2000001, %eax           # exit 0
+  syscall
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;I have already installed gcc on my computer, so I will not install nasm.&lt;/p&gt;
+
+&lt;hr /&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Facebook Technology Study I</title>
+   <link href="http://jianwang.info//technology/2016/02/23/Facebook-Study-I"/>
+   <updated>2016-02-23T00:00:00-08:00</updated>
+   <id>http://jianwang.info//technology/2016/02/23/Facebook-Study-I</id>
+   <content type="html">&lt;p&gt;As is known to us all, Facebook is world class big tech company which is engaging in connecting the world with its various open source software and open source hardware. So far Facebook has had 296 open source projects on GitHub with 10+ Million Lines of code, 265k Followers and 43k Forks. This airticle is going to introduce the general open source software infrastructure of Facebook. 
+&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Open source is very important for Facebook. Being open is better than being close. Being connection is better than being isolation. Bellow is a short list of facebook’s open source software in the last 6 months.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;grocery-delivery
+ig-json-parser
+xhp-bootstrap
+parseapplinksanalytics
+fbcuda
+mcrouter
+errgroup
+third-party
+fb-adb
+flow
+css-layout
+httpdown
+riftdk1
+jsx
+vim-flow
+flux
+dfuse
+thpp
+immutable-js
+fblualib
+rpool
+osquery
+fatal
+ds2
+proxygen : layer 7 load balancer
+fbpca
+stats
+rebound-js
+runcmd
+asyncdisplaykit
+neti
+fbcunn
+f8developerconferenceapp
+parse-facebook-user-session
+parseui-ios
+parse-php-sdk
+facebook-python-ads-sdk
+oss-performance
+taste-tester
+presto-odbc
+between-meals
+neti-cookbook
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Facebook mainly focus on 4 main softwares: data infrastructure like “Presto” and “rocksdb”, server runtime like “proxygen” and “HHVM”, web framework like “javascript”, mobile tools and libraries.&lt;/p&gt;
+
+&lt;p&gt;RocksDB is an embeddable persistent key-value store for fast storage. RocksDB can also be the foundation for a client-server database but our current focus is on embedded workloads.&lt;/p&gt;
+
+&lt;p&gt;Presto is an open source distributed SQL query engine for running interactive analytic queries against data sources of all sizes ranging from gigabytes to petabytes.&lt;/p&gt;
+
+&lt;p&gt;Why open source is very important?&lt;/p&gt;
+
+&lt;p&gt;In the year 2004, facebook start with LAMP frame (Linux, Apache, Mysql, PHP),  now it’s like a giant LAMP website with third degree scale. Engineers has done a lot to improve the LAMP and memcache.  you had to make it scale. For example, first we use Mysql, then we need to scale it, then need improve it, even replace it. After we release it, we continue using it, it become a loop.&lt;/p&gt;
+
+&lt;p&gt;How facebook contribute?&lt;/p&gt;
+
+&lt;p&gt;Hardware: Facebook open a hardware project called “open compute project”, you can buy those hardware from OEM, they don’t have secret anymore.&lt;/p&gt;
+
+&lt;p&gt;OCP data center design: mechanical design, electronical design.&lt;/p&gt;
+
+&lt;hr /&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Ugly Number II</title>
    <link href="http://jianwang.info//algorithm/2016/02/15/Ugly-Number_II"/>
-   <updated>2016-02-15T00:00:00-05:00</updated>
+   <updated>2016-02-15T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/02/15/Ugly-Number_II</id>
    <content type="html">&lt;p&gt;Problem 264 Ugly Number II&lt;/p&gt;
 
@@ -214,7 +348,7 @@ return x
  <entry>
    <title>Clone Graph</title>
    <link href="http://jianwang.info//algorithm/2016/02/03/Clone-Graph"/>
-   <updated>2016-02-03T00:00:00-05:00</updated>
+   <updated>2016-02-03T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/02/03/Clone-Graph</id>
    <content type="html">&lt;p&gt;Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.&lt;/p&gt;
 
@@ -277,7 +411,7 @@ UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
  <entry>
    <title>Missing Number</title>
    <link href="http://jianwang.info//algorithm/2016/02/01/Missing-Number"/>
-   <updated>2016-02-01T00:00:00-05:00</updated>
+   <updated>2016-02-01T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/02/01/Missing-Number</id>
    <content type="html">&lt;p&gt;Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.&lt;/p&gt;
 
@@ -368,7 +502,7 @@ int missingNumber(vector&amp;lt;int&amp;gt;&amp;amp; nums) {
  <entry>
    <title>Power Of Two</title>
    <link href="http://jianwang.info//algorithm/2016/01/30/Power-Of-Two"/>
-   <updated>2016-01-30T00:00:00-05:00</updated>
+   <updated>2016-01-30T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/01/30/Power-Of-Two</id>
    <content type="html">&lt;!--more--&gt;
 
@@ -451,7 +585,7 @@ bool isPowerOfTwo(int n) {
  <entry>
    <title>Best Time to Buy and Sell Stock</title>
    <link href="http://jianwang.info//algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock"/>
-   <updated>2016-01-29T00:00:00-05:00</updated>
+   <updated>2016-01-29T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock</id>
    <content type="html">&lt;p&gt;Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.&lt;/p&gt;
 
@@ -483,7 +617,7 @@ bool isPowerOfTwo(int n) {
  <entry>
    <title>Palindrome Partitioning</title>
    <link href="http://jianwang.info//algorithm/2016/01/24/Palindrome-Partitioning"/>
-   <updated>2016-01-24T00:00:00-05:00</updated>
+   <updated>2016-01-24T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/01/24/Palindrome-Partitioning</id>
    <content type="html">&lt;p&gt;Given a string s, partition s such that every substring of the partition is a palindrome.&lt;/p&gt;
 
@@ -544,7 +678,7 @@ void dfs_traverse(vector&amp;lt;vector&amp;lt;string&amp;gt;&amp;gt; &amp;amp;re
  <entry>
    <title>Top K Frequent Words</title>
    <link href="http://jianwang.info//algorithm/2016/01/10/Top-K-Frequent-Words"/>
-   <updated>2016-01-10T00:00:00-05:00</updated>
+   <updated>2016-01-10T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2016/01/10/Top-K-Frequent-Words</id>
    <content type="html">&lt;p&gt;Given a list of words and an integer k, return the top k frequent words in the list.
   You should order the words by the frequency of them in the return list, the most frequent one comes first. If two words has the same frequency, the one with lower alphabetical order come first.
@@ -602,7 +736,7 @@ Extra points if you can do it in O(n) time with O(k) extra space.&lt;/p&gt;
  <entry>
    <title>Closest Number in Sorted Array</title>
    <link href="http://jianwang.info//algorithm/2015/12/14/Closest-Number-in-Sorted-Array"/>
-   <updated>2015-12-14T00:00:00-05:00</updated>
+   <updated>2015-12-14T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/14/Closest-Number-in-Sorted-Array</id>
    <content type="html">&lt;p&gt;Given a target number and an integer array A sorted in ascending order, find the index i in A such that A[i] is closest to the given target.
 Return -1 if there is no element in the array.
@@ -652,7 +786,7 @@ O(logn) time complexity.&lt;/p&gt;
  <entry>
    <title>Total Occurrence of Target</title>
    <link href="http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target"/>
-   <updated>2015-12-13T00:00:00-05:00</updated>
+   <updated>2015-12-13T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/13/Total-Occurrence-of-Target</id>
    <content type="html">&lt;p&gt;Given a target number and an integer array sorted in ascending order. Find the total number of occurrences of target in the array.
 Given [1, 3, 3, 4, 5] and target = 3, return 2.
@@ -740,7 +874,7 @@ int leftSearch(vector&amp;lt;int&amp;gt;&amp;amp; A, int target, int begin, int 
  <entry>
    <title>Subsets</title>
    <link href="http://jianwang.info//algorithm/2015/12/13/Subsets"/>
-   <updated>2015-12-13T00:00:00-05:00</updated>
+   <updated>2015-12-13T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/13/Subsets</id>
    <content type="html">&lt;p&gt;Given a set of distinct integers, return all possible subsets.
 Example
@@ -792,7 +926,7 @@ void subSetsHelper(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;res
  <entry>
    <title>Subsets II</title>
    <link href="http://jianwang.info//algorithm/2015/12/13/Subsets-II"/>
-   <updated>2015-12-13T00:00:00-05:00</updated>
+   <updated>2015-12-13T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/13/Subsets-II</id>
    <content type="html">&lt;p&gt;Given a list of numbers that may has duplicate numbers, return all possible subsets
 Example
@@ -845,7 +979,7 @@ void subDivide(vector&amp;lt;vector &amp;lt;int&amp;gt;&amp;gt; &amp;amp;result,
  <entry>
    <title>Permutations</title>
    <link href="http://jianwang.info//algorithm/2015/12/12/Permutations"/>
-   <updated>2015-12-12T00:00:00-05:00</updated>
+   <updated>2015-12-12T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/12/Permutations</id>
    <content type="html">&lt;p&gt;Given a list of numbers, return all possible permutations.
 Example
@@ -896,7 +1030,7 @@ void permutation(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;resul
  <entry>
    <title>Permutations II</title>
    <link href="http://jianwang.info//algorithm/2015/12/12/Permutation-II"/>
-   <updated>2015-12-12T00:00:00-05:00</updated>
+   <updated>2015-12-12T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/12/Permutation-II</id>
    <content type="html">&lt;p&gt;Given a list of numbers with duplicate number in it. Find all unique permutations.
 Example
@@ -951,7 +1085,7 @@ void permutation(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt; &amp;amp;resul
  <entry>
    <title>Min Stack</title>
    <link href="http://jianwang.info//algorithm/2015/12/12/Min-Stack"/>
-   <updated>2015-12-12T00:00:00-05:00</updated>
+   <updated>2015-12-12T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/12/Min-Stack</id>
    <content type="html">&lt;p&gt;Implement a stack with min() function, which will return the smallest number in the stack.
 It should support push, pop and min operation all in O(1) cost.
@@ -993,7 +1127,7 @@ int min() {
  <entry>
    <title>strStr</title>
    <link href="http://jianwang.info//algorithm/2015/12/11/strStr"/>
-   <updated>2015-12-11T00:00:00-05:00</updated>
+   <updated>2015-12-11T00:00:00-08:00</updated>
    <id>http://jianwang.info//algorithm/2015/12/11/strStr</id>
    <content type="html">&lt;p&gt;For a given source string and a target string, you should output the first index(from 0) of target string in source string.&lt;/p&gt;
 
@@ -1037,7 +1171,7 @@ int strStr(const char *source, const char *target) {
  <entry>
    <title>An amazing book -- Code</title>
    <link href="http://jianwang.info//read/2015/07/07/code"/>
-   <updated>2015-07-07T00:00:00-04:00</updated>
+   <updated>2015-07-07T00:00:00-07:00</updated>
    <id>http://jianwang.info//read/2015/07/07/code</id>
    <content type="html">&lt;p&gt;&lt;em&gt;Code&lt;/em&gt; is the most amazing book about computer science that I have ever read which was wrote by Charles Petzold who was the former professor and employee of Microsoft. It uses the most understandable words and examples to tell how each component of a computer works. Each chapter tell a component using a lively story which introduce the princeple of how it was created from the physical aspect. What’s more, it introduces some basic electronic theory which largely improve my understanding about them. Finally, as the reader, I can also learn much history about the development of computer science.&lt;/p&gt;
 
@@ -1073,7 +1207,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;about-the-history&quot;&gt;About the history&lt;/h3&gt;
+&lt;p&gt;###About the history&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -1110,13 +1244,13 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
  <entry>
    <title>Why Family Hurt</title>
    <link href="http://jianwang.info//read/2015/06/24/why-family-hurt"/>
-   <updated>2015-06-24T00:00:00-04:00</updated>
+   <updated>2015-06-24T00:00:00-07:00</updated>
    <id>http://jianwang.info//read/2015/06/24/why-family-hurt</id>
    <content type="html">&lt;p&gt;Today I finished read the book &lt;em&gt;Why Family Hurt&lt;/em&gt; (为何家会伤人) which is a psychological book about relationship between family members and aspect about how it hurt when treat them improperly. The author, 武志红,  a chinese psychologist, try to tell us practical methods and common rules through vivid cases and great theories . I gained many useful experiences and important recogition about intimacy relationship and child parents relationship, what is more, it  solved a psychological shade of mine and gave me the best answer since my family went wrong as many common Chinese families do.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;harmful-behaviors-between-lovers&quot;&gt;Harmful behaviors between lovers&lt;/h3&gt;
+&lt;p&gt;###Harmful behaviors between lovers&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -1141,7 +1275,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;important-theories&quot;&gt;Important theories&lt;/h3&gt;
+&lt;p&gt;###Important theories&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -1164,7 +1298,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;what-is-wrong-with-chinese-way-of-love-and-family&quot;&gt;What is wrong with Chinese way of love and family&lt;/h3&gt;
+&lt;p&gt;###What is wrong with Chinese way of love and family&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -1187,7 +1321,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;my-thoughts&quot;&gt;My thoughts&lt;/h3&gt;
+&lt;p&gt;###My thoughts&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -1210,13 +1344,13 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
  <entry>
    <title>After read Dreaming In Code</title>
    <link href="http://jianwang.info//read/2015/06/23/dreaming-in-code"/>
-   <updated>2015-06-23T00:00:00-04:00</updated>
+   <updated>2015-06-23T00:00:00-07:00</updated>
    <id>http://jianwang.info//read/2015/06/23/dreaming-in-code</id>
    <content type="html">&lt;p&gt;Today I finished read the book &lt;em&gt;Dreaming In Code&lt;/em&gt; which is strongly recommended for software engineers. As expected, the book gave me the unpresedental feeling and recognition of software engineering and management. All the stories told by the book are what I have been experienced when working. I feel regret to read it so late. How do I love it, let me count the ways.Due to what I have read is a Chinese version, excuse me for using Chinese.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;about-the-history&quot;&gt;About the history&lt;/h3&gt;
+&lt;p&gt;###About the history&lt;/p&gt;
 
 &lt;p&gt;1.布鲁克斯(Frederick Brooks)法则：往已延误的项目中补充人力，会让其更加延误。这个理论可谓软件工程的奠基石，因为在软件工业发展之初，软件开发和管理困难重重，软件开发人员的效率几十年以来没有什么进步。但是软件千变万化，软件开发人员遇到的困难也前所未有，他非常有前瞻的提出了一个观点：构建软件系统最难的就是精确设定要做什么东西&lt;/p&gt;
 
@@ -1241,7 +1375,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 &lt;p&gt;11.奇点理论：卡兹维尔预言21世纪40年代，软件将会迎来奇点。21世纪20年代，人工智能通过图灵测试，将见证奇点来袭。40年代人类体验将会被根本改变,超越人类想像的人类科技进步将会发生。
 11.总结：现今软件批评家们常常抱怨我们还处在这项技术的“修补引擎”阶段。在汽车业发展早期，车辆很有可能在到达目的地之前抛锚，如果你想开到任何地方去，都的先做个业务机修工。同样今天的计算机用户常常也的当业余程序员，学习机器的思维方式，修复在完成工作时遇到的大量问题。最终汽车越来越可靠，控制器件越来越标准化，不必为了驾驶而勉力成为汽修爱好者；可我们却一直在等待，期待按照同样的原则，软件领域中也能出现类似的情形。我支持这个观点，也许有一天我们能达到软件真的变成像水管或汽车一样的地步－－能遵循常例生产，不费心思也能用，而且永不改动。&lt;/p&gt;
 
-&lt;h3 id=&quot;about-the-experience&quot;&gt;About the experience&lt;/h3&gt;
+&lt;p&gt;###About the experience&lt;/p&gt;
 
 &lt;p&gt;1.在每个编程项目的早期阶段，当团队选择语言和技术，准备切入开发时，关于需求的灵活和程序的不可扩展的两难悖论就已然降临了。对语言和技术的选择，初时无关大局重选亦可，转而便得混凝土般坚如磐石，关系重大。&lt;/p&gt;
 
@@ -1251,7 +1385,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 
 &lt;p&gt;4.wiki发明者Ward Cunningham：持续跟进代码库中可利用的内容，是最大的信息过载挑战。一直到现在如何做到软件复用，仍然是一个难题。&lt;/p&gt;
 
-&lt;h3 id=&quot;good-books-that-mentioned&quot;&gt;Good books that mentioned&lt;/h3&gt;
+&lt;p&gt;###Good books that mentioned&lt;/p&gt;
 
 &lt;p&gt;1.大教堂与集市 《The Cathedral and the Bazar》 Eric S Raymond
 此书提出了开源和分享的法则，是开源理论的始祖&lt;/p&gt;
@@ -1275,17 +1409,17 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
  <entry>
    <title>Visa got approved</title>
    <link href="http://jianwang.info//daily/2015/06/01/visa-got-approved"/>
-   <updated>2015-06-01T00:00:00-04:00</updated>
+   <updated>2015-06-01T00:00:00-07:00</updated>
    <id>http://jianwang.info//daily/2015/06/01/visa-got-approved</id>
    <content type="html">&lt;p&gt;Today is a big day for me, I was approved for my F1 visa. I can’t say I am lucky, because everything that I have done was granted. And based on this thinking, instead of rejoice, I feel so tired that it costed me so long to get everthing right on the way, and this is just the begining of my new choice.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;milestone&quot;&gt;Milestone&lt;/h3&gt;
+&lt;p&gt;###Milestone&lt;/p&gt;
 
 &lt;p&gt;From now on, I don’t need to take GRE, TOEFL test any more, don’t have to pracitse spoken English with foriegners third time a week, don’t have to worry about my application being rejected, and don’t need to be anxious to borrow money for finacial qualification. Thus, the new epic is beginning, where there is no constrain of culture unity, no discrimination of human value, no critics of individual character development, no judgement of personal behavior, no opacity of leadership election. What I should do is focus on what I would like to do and what I want to be. I call it freedom, happiness, and health which is the original power of human life.&lt;/p&gt;
 
-&lt;h3 id=&quot;what-next&quot;&gt;What next&lt;/h3&gt;
+&lt;p&gt;###What next&lt;/p&gt;
 
 &lt;p&gt;There are four goals in my year of 2015, they are: learn to face, learn to love, learn to cherish, learn to learn. I think I have done facing directly to my departure from my former job, and deal with relationship between me and my colleges. I love all the people appear in my life, who helped me, love me, like me, hate me, hurt me which composed my experience, formlessly developed me. I cherish the relationship with my girl, who is my best love ever in the world. Without her, I cannot reach to the goal which I have already achieved. Without her, I couldn’t be the person who firmly belief there is hope and love in the world. I will give her the best understanding, caring, responsebility, respect, suport and lovein the world. Finally, it is education which rebuild my confidence to study, to human connection, to the objective world, so I will focus on the method of learning to make my world being sustainable to be excellent.&lt;/p&gt;
 
@@ -1295,11 +1429,11 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
  <entry>
    <title>Memo</title>
    <link href="http://jianwang.info//daily/2015/05/15/memo"/>
-   <updated>2015-05-15T00:00:00-04:00</updated>
+   <updated>2015-05-15T00:00:00-07:00</updated>
    <id>http://jianwang.info//daily/2015/05/15/memo</id>
    <content type="html">&lt;!--more--&gt;
 
-&lt;h1 id=&quot;memo&quot;&gt;memo&lt;/h1&gt;
+&lt;p&gt;#memo&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	克	333	   s	1.1	Y
 	克	7	   s	1.1	Y
@@ -1350,18 +1484,18 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
  <entry>
    <title>Universal Mindmap Cloud Construction</title>
    <link href="http://jianwang.info//idea/2015/05/13/universal-structure-cloud-construction"/>
-   <updated>2015-05-13T00:00:00-04:00</updated>
+   <updated>2015-05-13T00:00:00-07:00</updated>
    <id>http://jianwang.info//idea/2015/05/13/universal-structure-cloud-construction</id>
    <content type="html">&lt;p&gt;I have been thinking about a structure for a long time. This structure is shapeless like a piece of cloud which can include anything in the universe. once this structure is constructed, it can solve any problem, even solve problems that will happen in the future. This structure is exist, since it is trememdous, no one think it as a whole.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;composation&quot;&gt;Composation&lt;/h3&gt;
+&lt;p&gt;###Composation&lt;/p&gt;
 
 &lt;p&gt;Firstly, it is composed of inumerous nodes, each node stand for an entity which can be anything in the world. Literally they are nouns. Secondly, these different nodes are connected with lines, these lines are directed, each node points to another, it can be a loop, it can point to each other. Each node can be connected to another. The whole stucture has no boundry.&lt;/p&gt;
 
-&lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
-&lt;p&gt;I found everything in the world has connections with each other. For example, geografically, every spot on the earth has features such as location, products, culture, tradition, language, history etc.  Element like “pepper” which belongs to product feature may also belongs to culture in Sichuan province China, thus build a interconnection between different features. Inumerous elements may connected with each other due to logical, literal, commercial, mathematical reasons. Reasons can also be vary from any aspects. Form the macro level, a node can be a field such as economics, math, computer science, outerspace, animals, human beings etc, which can also be connected with each other by the link between there inner connections.&lt;/p&gt;
+&lt;p&gt;###Content
+I found everything in the world has connections with each other. For example, geografically, every spot on the earth has features such as location, products, culture, tradition, language, history etc.  Element like “pepper” which belongs to product feature may also belongs to culture in Sichuan province China, thus build a interconnection between different features. Inumerous elements may connected with each other due to logical, literal, commercial, mathematical reasons. Reasons can also be vary from any aspects. Form the macro level, a node can be a field such as economics, math, computer science, outerspace, animals, human beings etc, which can also be connected with each other by the link between there inner connections.&lt;/p&gt;
 
 &lt;p&gt;to be continue…&lt;/p&gt;
 
@@ -1371,16 +1505,14 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
  <entry>
    <title>Maintenance of github pages</title>
    <link href="http://jianwang.info//trick/2015/05/09/maintenance-of-github-pages"/>
-   <updated>2015-05-09T00:00:00-04:00</updated>
+   <updated>2015-05-09T00:00:00-07:00</updated>
    <id>http://jianwang.info//trick/2015/05/09/maintenance-of-github-pages</id>
    <content type="html">&lt;p&gt;I am a new learner, content bellow will show some tricks about github pages’ development and maintenance. How to use  git, jekyll, ruby, rails will also be included.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h3 id=&quot;recovery&quot;&gt;Recovery&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ git log --pretty=oneline
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;###Recovery
+      $ git log –pretty=oneline&lt;/p&gt;
 
 &lt;p&gt;this is to look formal commit&lt;/p&gt;
 
@@ -1392,8 +1524,8 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 
 &lt;p&gt;For more info, &lt;a href=&quot;http://git-scm.com/book/zh/v1/Git-%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86-%E7%BB%B4%E6%8A%A4%E5%8F%8A%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D&quot;&gt;click this url&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;install-jekyll&quot;&gt;Install jekyll&lt;/h3&gt;
-&lt;p&gt;在中国，jekyll所在的网站是被屏蔽的，所以需要用vpn翻墙才能成功执行install jekyll命令x,否则会报超时。&lt;/p&gt;
+&lt;p&gt;###Install jekyll
+在中国，jekyll所在的网站是被屏蔽的，所以需要用vpn翻墙才能成功执行install jekyll命令x,否则会报超时。&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ sudo gem update --system
 &lt;/code&gt;&lt;/pre&gt;
@@ -1413,7 +1545,7 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;jekyll&quot;&gt;jekyll&lt;/h3&gt;
+&lt;p&gt;###jekyll&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ jekyll serve --watch --baseurl &quot;&quot;
 &lt;/code&gt;&lt;/pre&gt;
@@ -1421,14 +1553,14 @@ many relays compose of a trigger, 1918年英国射电物理学家 William Henry 
 
 &lt;p&gt;this will run the jekyll server, and type the 127.0.0.1:4000 to the url column, you can test or debug the local project&lt;/p&gt;
 
-&lt;h3 id=&quot;google-custom-search-enginegcse&quot;&gt;Google Custom Search Engine(gcse)&lt;/h3&gt;
-&lt;p&gt;First, you need to submit your website and sitemap to google, otherwise, there would be no result. 
+&lt;p&gt;###Google Custom Search Engine(gcse)
+First, you need to submit your website and sitemap to google, otherwise, there would be no result. 
 &lt;a href=&quot;https://www.google.com/webmasters/tools/home?hl=en&quot;&gt;click here to submit google webmasters&lt;/a&gt;
 Second, customize your google custom search engine API at &lt;a href=&quot;https://cse.google.com/cse/all&quot;&gt;here&lt;/a&gt;
 Finally, If you customize your search engine API and use gcse:searchresults-only featrue,pay attention to the “Query Parameter Name” which has to be given your input name. This problem had costed me half a day to settle down. Otherwise, you can not see any response on the result page after submit your search request.&lt;/p&gt;
 
-&lt;h3 id=&quot;google-analytics&quot;&gt;Google Analytics&lt;/h3&gt;
-&lt;p&gt;Click &lt;a href=&quot;http://www.google.com/analytics&quot;&gt;Google Analytics&lt;/a&gt; to creat your account.&lt;/p&gt;
+&lt;p&gt;###Google Analytics
+Click &lt;a href=&quot;http://www.google.com/analytics&quot;&gt;Google Analytics&lt;/a&gt; to creat your account.&lt;/p&gt;
 
 &lt;p&gt;A good way to test if it was well set, click your website url and see the Reporting–&amp;gt;Real-Time–&amp;gt;Overview menu if there would be new sessions and new active pages.&lt;/p&gt;
 
@@ -1438,7 +1570,7 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
  <entry>
    <title>After rejected by Cornell Tech</title>
    <link href="http://jianwang.info//daily/2015/05/08/After-rejected-by-Cornell-Tech"/>
-   <updated>2015-05-08T00:00:00-04:00</updated>
+   <updated>2015-05-08T00:00:00-07:00</updated>
    <id>http://jianwang.info//daily/2015/05/08/After-rejected-by-Cornell-Tech</id>
    <content type="html">&lt;!--more--&gt;
 
@@ -1459,70 +1591,70 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
  <entry>
    <title>About reading</title>
    <link href="http://jianwang.info//read/2015/04/10/about-reading"/>
-   <updated>2015-04-10T00:00:00-04:00</updated>
+   <updated>2015-04-10T00:00:00-07:00</updated>
    <id>http://jianwang.info//read/2015/04/10/about-reading</id>
    <content type="html">&lt;p&gt;我们常常听到一句话：“听君一席话，胜读十年书。”但我们一般的人是没有条件可以成天四处去拜访名师，听圣贤教诲。但我们有一个简单而且便宜的办法，那就是读好书！以下是《鸿观》宋鸿兵老师总结出来的读书心得！。&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;1.0 什么是好书？&lt;/h2&gt;
-&lt;p&gt;首先要自成体系，有完备的逻辑架构，同时还得具备血肉丰满，有大量的知识细节，这样的书才有营养，同时，这些书还必须要具有诗性、灵性和神性这三个特点。让人读起来非常过瘾，有节奏感。&lt;/p&gt;
+&lt;p&gt;##1.0 什么是好书？ 
+首先要自成体系，有完备的逻辑架构，同时还得具备血肉丰满，有大量的知识细节，这样的书才有营养，同时，这些书还必须要具有诗性、灵性和神性这三个特点。让人读起来非常过瘾，有节奏感。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;1.1 好书之上的级别是什么？&lt;/h2&gt;
-&lt;p&gt;不仅有自己的体系，不仅文字优美，有大量的细节，同时还能够提出新颖的观点或者说建立在新的逻辑架构之上，而这种逻辑架构是具有突破性的，具有冲击性的。即：脑洞级别的好书。&lt;/p&gt;
+&lt;p&gt;##1.1 好书之上的级别是什么？ 
+不仅有自己的体系，不仅文字优美，有大量的细节，同时还能够提出新颖的观点或者说建立在新的逻辑架构之上，而这种逻辑架构是具有突破性的，具有冲击性的。即：脑洞级别的好书。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;1.2 再之上的级别是什么？&lt;/h2&gt;
-&lt;p&gt;脑洞级别的书，同时具有颠覆你三观的震撼力。即：颠覆三观级别的好书。&lt;/p&gt;
+&lt;p&gt;##1.2 再之上的级别是什么？ 
+脑洞级别的书，同时具有颠覆你三观的震撼力。即：颠覆三观级别的好书。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;1.3 好书的三个层次&lt;/h2&gt;
-&lt;p&gt;第一个层次：普通的好书 
+&lt;p&gt;##1.3 好书的三个层次 
+第一个层次：普通的好书 
 第二个层次：脑洞级别的好书 
 第三个层次：颠覆性的好书&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;2.0 宋鸿兵推荐7大脑洞级别的好书&lt;/h2&gt;
+&lt;p&gt;##2.0 宋鸿兵推荐7大脑洞级别的好书&lt;/p&gt;
 
-&lt;h3 id=&quot;no1--a-global-history&quot;&gt;NO.1 《全球通史》——史学界 A Global History&lt;/h3&gt;
-&lt;p&gt;推荐理由：第一，是一种全新的视角，它是从生产率的提升作为中心的环节，来解读全球的历史，这是它的一大突破；第二，它强调了整个世界历史中各个民族之间的互动，整个全世界各个民族、各个文明发展过程之中，始终处于互动之中，这个是以前的很多历史，所没有的一种视角。所以这本书，可以说具有着强大的冲击力，改变了我们很多对历史的看法。&lt;/p&gt;
+&lt;p&gt;###NO.1 《全球通史》——史学界 A Global History
+推荐理由：第一，是一种全新的视角，它是从生产率的提升作为中心的环节，来解读全球的历史，这是它的一大突破；第二，它强调了整个世界历史中各个民族之间的互动，整个全世界各个民族、各个文明发展过程之中，始终处于互动之中，这个是以前的很多历史，所没有的一种视角。所以这本书，可以说具有着强大的冲击力，改变了我们很多对历史的看法。&lt;/p&gt;
 
-&lt;h3 id=&quot;no2--the-selfish-gene&quot;&gt;NO.2 《自私的基因》——生物界 The Selfish Gene&lt;/h3&gt;
-&lt;p&gt;推荐理由：看完了《自私的基因》，这本书之后，你会觉得你看问题的深度更深，你会站在分子生物学的层次上，来看万事万物变化的规律，所以说看完之后，让你脑洞大开。&lt;/p&gt;
+&lt;p&gt;###NO.2 《自私的基因》——生物界 The Selfish Gene
+推荐理由：看完了《自私的基因》，这本书之后，你会觉得你看问题的深度更深，你会站在分子生物学的层次上，来看万事万物变化的规律，所以说看完之后，让你脑洞大开。&lt;/p&gt;
 
-&lt;h3 id=&quot;no3--guns-germs-and-steel&quot;&gt;NO.3 《枪炮病菌和铁》——人类 Guns, Germs, and Steel&lt;/h3&gt;
-&lt;p&gt;推荐理由：解读了很多以前我们理解不了的事情，特别是文明起源，社会的起源方面，进行了突破性的解释。&lt;/p&gt;
+&lt;p&gt;###NO.3 《枪炮病菌和铁》——人类 Guns, Germs, and Steel
+推荐理由：解读了很多以前我们理解不了的事情，特别是文明起源，社会的起源方面，进行了突破性的解释。&lt;/p&gt;
 
-&lt;h3 id=&quot;no4--out-of-control&quot;&gt;NO.4 《失控》——互联网 Out Of Control&lt;/h3&gt;
-&lt;p&gt;推荐理由：也可以说是脑洞打开，像这样的书至少读三遍。但有缺陷，就是讲述的点太多了，不够深入。&lt;/p&gt;
+&lt;p&gt;###NO.4 《失控》——互联网 Out Of Control#
+推荐理由：也可以说是脑洞打开，像这样的书至少读三遍。但有缺陷，就是讲述的点太多了，不够深入。&lt;/p&gt;
 
-&lt;h3 id=&quot;no5--a-brief-history-of-time&quot;&gt;NO.5 《时间简史》——天体物理 A Brief History Of Time&lt;/h3&gt;
-&lt;p&gt;推荐理由：看完这本书之后，你一定也是对时间的认识，对宇宙的起源，都会产生一个爆炸性的影响。&lt;/p&gt;
+&lt;p&gt;###NO.5 《时间简史》——天体物理 A Brief History Of Time
+推荐理由：看完这本书之后，你一定也是对时间的认识，对宇宙的起源，都会产生一个爆炸性的影响。&lt;/p&gt;
 
-&lt;h3 id=&quot;no6---from-dawn-to-decadence&quot;&gt;NO.6 《从黎明到衰落》 ——西方文化 From Dawn to Decadence&lt;/h3&gt;
-&lt;p&gt;推荐理由：它回顾了西方，五百年以来的文化现象，从兴起，到现在面临的问题。这本书读完，你对整个西方文化的发展和动态，包括未来的趋势，都会有一个全面的认识。&lt;/p&gt;
+&lt;p&gt;###NO.6 《从黎明到衰落》 ——西方文化 From Dawn to Decadence
+推荐理由：它回顾了西方，五百年以来的文化现象，从兴起，到现在面临的问题。这本书读完，你对整个西方文化的发展和动态，包括未来的趋势，都会有一个全面的认识。&lt;/p&gt;
 
-&lt;h3 id=&quot;no7--the-story-of-art&quot;&gt;NO.7 《艺术的故事》——艺术史 The Story Of Art&lt;/h3&gt;
-&lt;p&gt;推荐理由：这本书看完之后，你会对艺术，会有一个全新的了解。&lt;/p&gt;
+&lt;p&gt;###NO.7 《艺术的故事》——艺术史 The Story Of Art
+推荐理由：这本书看完之后，你会对艺术，会有一个全新的了解。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-5&quot;&gt;3.1 读书五神器之一：意志锤&lt;/h2&gt;
-&lt;p&gt;意志锤：当我们阅读本专业书籍比较轻松，当跨学科跨领域读书会比较困难，知识储备不足，需要意志锤开山劈路。学习中的亮剑精神。 
+&lt;p&gt;##3.1 读书五神器之一：意志锤 
+意志锤：当我们阅读本专业书籍比较轻松，当跨学科跨领域读书会比较困难，知识储备不足，需要意志锤开山劈路。学习中的亮剑精神。 
 跨学科跨领域去学习实际上市为了给我们现在的研究，现在的知识体系增加新的刺激，新的灵感。 
 开山劈路进入新领域之后，进入读书的第二个阶段&lt;/p&gt;
 
-&lt;h2 id=&quot;section-6&quot;&gt;3.2 读书五神器之二：逻辑刀&lt;/h2&gt;
-&lt;p&gt;吸收了大量新的知识，获得了大量的信息之后，怎样去分辨，怎样去取舍，就靠脑子中的逻辑刀。逻辑刀的主要作用就是把获得的大量信息进行分辨，对我们有用的东西深入研究，对我们无用的东西看看即可。 
+&lt;p&gt;##3.2 读书五神器之二：逻辑刀 
+吸收了大量新的知识，获得了大量的信息之后，怎样去分辨，怎样去取舍，就靠脑子中的逻辑刀。逻辑刀的主要作用就是把获得的大量信息进行分辨，对我们有用的东西深入研究，对我们无用的东西看看即可。 
 逻辑刀在分析问题的时候，要把你感兴趣的知识体系一块一块切下来，然后保存起来，这是后面要研究的重点方向，也是深入研究的线索。当你的逻辑刀切下来更专业更细致的东西之后，这些东西会被转入读书的第三个阶段。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-7&quot;&gt;3.3 读书五神器之三：思考锅&lt;/h2&gt;
-&lt;p&gt;获取的大量感兴趣的东西在思考锅里进行高压、消化和吸收。 
+&lt;p&gt;##3.3 读书五神器之三：思考锅 
+获取的大量感兴趣的东西在思考锅里进行高压、消化和吸收。 
 借助思维导图建立直观的知识体系或知识图。 
 无法复述。还是别人的东西。思考锅就是帮助裂解知识，为我所用。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-8&quot;&gt;3.4 读书五神器之四：模式库&lt;/h2&gt;
-&lt;p&gt;模式库：就是我们长期在思考过程中所形成的思维方式，这些思维方式最终能够逐渐提炼成模式。 
+&lt;p&gt;##3.4 读书五神器之四：模式库 
+模式库：就是我们长期在思考过程中所形成的思维方式，这些思维方式最终能够逐渐提炼成模式。 
 我们所有认识世界的过程都是在做模式识别。所有伟大的科学发现都是在不同层次发现类似的模式。 
 当你经过长时间的跨学科的大量积累，脑中存储的模式会越来越多，而且模式之间能够发生涌现效应，模式和模式之间可以相互刺激，这个时候你的大脑就真的在进化了，当你的模式库里面积累的处理问题的十八般武器越来越多的时候，就进入读书的第五个阶段。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-9&quot;&gt;3.5 读书五神器之五：智慧流&lt;/h2&gt;
-&lt;p&gt;在智慧流这个阶段中，你开始有意识的运用调用这些模式，帮你去分析、解决新的问题。&lt;/p&gt;
+&lt;p&gt;##3.5 读书五神器之五：智慧流 
+在智慧流这个阶段中，你开始有意识的运用调用这些模式，帮你去分析、解决新的问题。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;以下内容来自@宋鸿兵 微博&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;/p&gt;
 
@@ -1564,7 +1696,7 @@ Finally, If you customize your search engine API and use gcse:searchresults-only
  <entry>
    <title>关于如何设置jekyll的一些格式运用</title>
    <link href="http://jianwang.info//trick/2014/08/04/paginate_and_excerpt_on_jekyll"/>
-   <updated>2014-08-04T00:00:00-04:00</updated>
+   <updated>2014-08-04T00:00:00-07:00</updated>
    <id>http://jianwang.info//trick/2014/08/04/paginate_and_excerpt_on_jekyll</id>
    <content type="html">&lt;p&gt;怎么说呢，用Jekyll搭建Blog不管被说的多么好用，但终究应该只属于技术宅+爱折腾的群体吧，经常一个Wordpress上的小功能，却要在Jekyll折腾不少时间，比如之前的站内搜索，以及今天的分页以及文章摘要，足足折腾了我一下午，而且最后的解决方案还是不完美，有点小挫败感。&lt;/p&gt;
 

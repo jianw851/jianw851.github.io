@@ -4,17 +4,30 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
-#highlighter: pygments
-#lsi : false
 #safe: true
 #gist:
 #      noscript: false
 gems:
      - jekyll-paginate
      - jekyll-coffeescript
-#incremental: false
-#source     : _site
-#markdown: kramdown
+
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+rdiscount:
+  extensions: []
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: false 
+  auto_ids: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+redcarpet:
+  extensions: []
+
 theme : Snail
 # The title and tagline is showed on homepage
 #
