@@ -87,6 +87,7 @@ int main () {
     cout << arr.get(i) << " ";
   }
   cout << endl << arr.getCapacity()<<endl;
+  return 0;
 }
 
 ```
