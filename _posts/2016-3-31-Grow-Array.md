@@ -13,8 +13,10 @@ This implementaion only gives the general idea of how grow array data structure 
 <!--more-->
 
 ```cpp
+
 #include<iostream>
-using namespace std;
+using std::cout;
+using std::endl;
 class growArray {
 private:
   int * array;
@@ -23,8 +25,7 @@ private:
   void grow() {
     int * temp = array;
     array = new int[size*2];
-    for (int i = 0; i < size*2; i++) {
-      if (i < size)
+    for (int i = 0; i < used; i++) {
         array[i] = temp[i];
     }
     size *= 2;
