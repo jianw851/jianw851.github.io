@@ -1,14 +1,14 @@
 ---
 layout: post
 category: [algorithm]
-title: Singly Linked List Practice
+title: Doubly Linked List Practice
 tagline: by Jian
-tags: [Singly Linked List, List]
+tags: [Doubly Linked List, List]
 ---
 
-This is a naive implementation of Singly Linked List which mainly used to add or remove element from front or end side.
+This is a naive implementation of Doubly Linked List which mainly used to add or remove element from front or end side.
 
-This implementation only shows the general idea of how Singly Linked List works inside the computer. This is not used for any real world problems.
+This implementation only shows the general idea of how Doubly Linked List data structure works inside the computer. This is not used for any real world problems.
 
 <!--more-->
 
@@ -19,24 +19,26 @@ class Node {
 public:
   int val;
   Node * next;
-  Node() : val(0), next(NULL) {}
-  Node(int v) : val(v), next(NULL) {}
+  Node * prev;
+  Node() : val(0), next(NULL), prev(NULL) {}
+  Node(int v) : val(v), next(NULL), prev(NULL) {}
 };
-class SinglyLinkedList {
+class DoublyLinkedList {
 private:
   Node * head;
   Node * tail;
 public:
-  SinglyLinkedList() : head(NULL), tail(NULL) { }
-  SinglyLinkedList(int v) {
+  DoublyLinkedList() : head(NULL), tail(NULL) {}
+  DoublyLinkedList(int v) {
     head = tail = new Node(v);
   }
-  ~ SinglyLinkedList() {
+  ~ DoublyLinkedList() {
     Node * temp;
     while (head != NULL) {
       temp = head;
       head = head->next;
       temp->next = NULL;
+      temp->prev = NULL;
       delete temp;
     }
     temp = NULL;
@@ -52,6 +54,7 @@ public:
     Node * temp = head;
     head = new Node(v);
     head->next = temp;
+    head->next->prev = head;
     temp = NULL;
     }
   }
@@ -60,6 +63,7 @@ public:
       firstAdd(v);
     } else {
       tail->next = new Node(v);
+      tail->next->prev = tail;
       tail = tail->next;
     }
   }
@@ -68,6 +72,18 @@ public:
       Node * temp = head;
       head = head->next;
       temp->next = NULL;
+      head->prev = NULL;
+      delete temp;
+      temp = NULL;
+    }
+  }
+  void removeEnd() {
+    if (tail != NULL) {
+      Node * temp = tail;
+      tail = tail->prev;
+      if (tail != NULL)
+       tail->next = NULL;
+      temp->prev = NULL;
       delete temp;
       temp = NULL;
     }
@@ -80,17 +96,27 @@ public:
     }
     curr = NULL;
   }
+  void Reversedisplay() {
+    Node * curr = tail;
+    while (curr != NULL) {
+      cout << curr->val << " ";
+      curr = curr->prev;
+    }
+    curr = NULL;
+  }
 };
 
 int main() {
-  SinglyLinkedList sll;
+  DoublyLinkedList dll;
   for (int i = 0; i < 20; i++)
-    sll.addEnd(i);
+    dll.addEnd(i);
   for (int i = 0; i < 20; i++)
-      sll.addStart(i);
+    dll.addStart(i);
   for (int i = 0; i < 10; i++)
-    sll.removeStart();
-  sll.display();
+    dll.removeStart();
+  dll.display();
+  cout<<endl;
+  dll.Reversedisplay();
 }
 
 ```
