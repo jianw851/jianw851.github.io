@@ -6,7 +6,10 @@ tagline: by Jian
 tags: [Grow Array, Array]
 ---
 
-This is a naive implementation of Grow Array which mainly used to add or remove element from front or end side. This implementaion only gives the general idea of how grow array data structure works inside the computer. This is not used for any real world problems.
+> This is a naive implementation of Grow Array which mainly used to add or remove element from front or end side.
+
+> This implementaion only gives the general idea of how grow array data structure works inside the computer. This is not used for any real world problems.
+
 <!--more-->
 
 ```
