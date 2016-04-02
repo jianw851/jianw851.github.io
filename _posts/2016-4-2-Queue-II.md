@@ -42,7 +42,7 @@ private:
     delete [] temp;
   }
 public:
-  Queue() : capacity(0), array(NULL), head(-1), tail(0) {}
+  Queue() : capacity(0), array(NULL), head(-1), tail(-1) {}
   Queue(int size) {
     capacity = size;
     array = new int[size];
