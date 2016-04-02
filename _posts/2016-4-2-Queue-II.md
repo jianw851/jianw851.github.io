@@ -11,7 +11,6 @@ This is a implementation of Queue using Grow Array with two pointers.
 <!--more-->
 
 ```cpp
-
 #include<iostream>
 
 using std::cout;
@@ -60,7 +59,7 @@ public:
       array[0] = v;
       tail = head = 0;
     } else {
-      if ((head + 1) % capacity == tail)
+      if (head >= tail && (head + 1) % capacity == tail)
         grow();
       head++;
       array[head % capacity] = v;
@@ -86,13 +85,13 @@ public:
 
 int main() {
   Queue q;
-  for (int i = 0; i < 30; i++) {
+  for (int i = 0; i < 300; i++) {
     q.enqueue(i);
   }
-  for (int i = 0; i < 20; i++) {
+  for (int i = 0; i < 300; i++) {
     q.dequeue();
   }
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 105; i++) {
     if (i % 2 == 0)
       q.enqueue(i);
     else
@@ -102,6 +101,7 @@ int main() {
   q.display();
   return 0;
 }
+
 
 ```
 
