@@ -43,10 +43,9 @@ private:
   }
 public:
   Queue() : capacity(0), array(NULL), head(-1), tail(0) {}
-  Queue(int v) {
-    capacity = 1;
-    array = new int[1];
-    array[0] = v;
+  Queue(int size) {
+    capacity = size;
+    array = new int[size];
     tail = head = 0;
   }
   ~ Queue() {
