@@ -10,12 +10,16 @@ This is a naive  trie practise.
 
 <!--more-->
 
-```
+```cpp
+
 #include<iostream>
 #include<fstream>
 #include<string>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::string;
+using std::ifstream;
 
 class TrieNode {
 public:
@@ -39,15 +43,16 @@ public:
   }
 
   ~Trie() {
-    deconstruct(root);
+    destruct(root);
+    delete root;
   }
-  void deconstruct (TrieNode * node) {
+  void destruct (TrieNode * node) {
     if (node == NULL) return;
     for (int i = 0; i < 26; i++) {
-      if (node->subTrie[i] == NULL)
-        delete [] node->subTrie[i];
-      else
-        deconstruct (node->subTrie[i]);
+      if (node->subTrie[i] != NULL) {
+        deconstruct(node->subTrie[i]);
+        delete node->subTrie[i];
+      }
     }
   }
   void addWord(string word) {
@@ -90,6 +95,19 @@ public:
     return curr->isWord;
   }
 
+  bool searchPrefix(string word) {
+    TrieNode * curr = root;
+    for (int i = 0; i < word.length(); i++) {
+      int idx = word[i] - 97;
+      if (idx < 0 || idx >25) return false;
+      if (curr->subTrie[idx] == NULL) {
+        return false;
+      }
+      curr = curr->subTrie[idx];
+    }
+    return true;
+  }
+
   void find(string filename) {
     ifstream infile;
     infile.open(filename);
@@ -99,7 +117,7 @@ public:
     }
     string word = "";
     while (infile >> word) {
-      if (searchWord(word))
+      if (searchPrefix(word))
         cout << word << " : True" <<endl;
       else
         cout << word << " : False" <<endl;
