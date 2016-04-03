@@ -44,13 +44,14 @@ public:
 
   ~Trie() {
     destruct(root);
-    delete root;
+    if (root != NULL)
+      delete root;
   }
   void destruct (TrieNode * node) {
     if (node == NULL) return;
     for (int i = 0; i < 26; i++) {
       if (node->subTrie[i] != NULL) {
-        deconstruct(node->subTrie[i]);
+        destruct(node->subTrie[i]);
         delete node->subTrie[i];
       }
     }
