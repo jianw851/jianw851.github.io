@@ -15,7 +15,7 @@ Just used to learn the general idea.
 
 ### Source Code (C++)
 
-```c
+```cpp
 
 #include <iostream>
 #include <string>
@@ -141,6 +141,7 @@ int main() {
   m2.display();
   return 0;
 }
+
 
 ```
 
