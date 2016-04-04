@@ -11,6 +11,8 @@ This is a implementation of Boggle game using Trie.
 
 <!--more-->
 
+### Source Code (C++)
+
 ```cpp
 #include<iostream>
 #include<fstream>
@@ -221,10 +223,13 @@ int main() {
 
 ```
 
-[test dictionary.txt](https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view)
-[test boggle.dat.txt](https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing)
+### Test files
 
- Contribution
++ [test dictionary.txt](https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view)
+
++ [test boggle.dat.txt](https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing)
+
+### Contribution
 
  [@jianw851](http://jianwang.info/)
 
