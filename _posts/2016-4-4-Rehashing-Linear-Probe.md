@@ -36,10 +36,10 @@ public:
     table = new string*[16];
   }
   ~Hashmap() {
-		for (int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
       delete table[i];
-		delete [] table;
-	}
+    delete [] table;
+  }
   void grow() {
     const Hashmap *old = new Hashmap(*this);
     size *= 2;
@@ -52,27 +52,30 @@ public:
       }
     }
   }
+
   Hashmap(int init) {
-		int i;
-		for (i = 1; i < init; i *= 2);
-		limit = i / 2;
-		size = limit*2;
-		table = new string*[size];
-		for (int i = 0; i < size; i++)
+    int i;
+    for (i = 1; i < init; i *= 2);
+    limit = i / 2;
+    size = limit*2;
+    table = new string*[size];
+    for (int i = 0; i < size; i++)
       table[i] = nullptr;
-		used = 0;
-	}
+    used = 0;
+  }
+
   Hashmap(const Hashmap& orig)  {
-		table = new string*[orig.size];
-		size = orig.size;
-		used = orig.used;
-		limit = orig.limit;
-		for (int i = 0; i < orig.size; i++)
-      if (orig.table[i] == nullptr)
-      	table[i] = nullptr;
+    table = new string*[orig.size];
+    size = orig.size;
+    used = orig.used;
+    limit = orig.limit;
+    for (int i = 0; i < orig.size; i++)
+      if (orig.table[i] == nullptr) {
+        table[i] = nullptr;
       else
-      	table[i] = new string(*orig.table[i]);
-	}
+        table[i] = new string(*orig.table[i]);
+      }
+  }
 
   int hash1(const string &word) {
     int hashcode = 0;
@@ -86,38 +89,41 @@ public:
       hashcode = (hashcode << 13) + word[i] +(hashcode >> 17);
     return hashcode;
   }
+
   int hash(int v) {
-		return v & (size - 1);
-	}
+    return v & (size - 1);
+  }
+
   Hashmap& operator=(const Hashmap& orig) {
-		if (this != &orig) {
+    if (this != &orig) {
       this->~Hashmap();
       table = new string*[orig.size];
       size = orig.size;
       used = orig.used;
       limit = orig.limit;
       for (int i = 0; i < orig.size; i++) {
-      	if (orig.table[i] == nullptr)
-      		table[i] = nullptr;
-      	else
-      		table[i] = new string(*orig.table[i]);
+        if (orig.table[i] == nullptr)
+          table[i] = nullptr;
+        else
+          table[i] = new string(*orig.table[i]);
       }
-		}
-		return *this;
-	}
+    }
+    return *this;
+  }
+
   void add(const string &s) {
     used++;
     if (used > limit)
       this->grow();
-		int bin = hash(stoi(s));
-		int count = 0;
-		while (table[bin] != nullptr) {
+    int bin = hash(stoi(s));
+    int count = 0;
+    while (table[bin] != nullptr) {
       bin = (bin+1) % size;
       count ++;
-		}
-		table[bin] = new string(s);
+    }
+    table[bin] = new string(s);
+  }
 
-	}
   void display() {
     cout << used << " " << limit << " " << size<<endl;
     for (int i = 0; i < used; i++) {
@@ -129,12 +135,12 @@ public:
 };
 
 int main() {
-	Hashmap m(100);
-	for (int i = 0; i < 1000; i++) {
+  Hashmap m(100);
+  for (int i = 0; i < 1000; i++) {
     string s = to_string(i);
     m.add(s);
-	}
-	Hashmap m2 = m;
+  }
+  Hashmap m2 = m;
   m.display();
   m2.display();
   return 0;
