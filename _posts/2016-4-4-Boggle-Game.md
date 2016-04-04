@@ -225,9 +225,13 @@ int main() {
 
 ### Test files
 
-+ [test dictionary.txt](https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view)
++ [dictionary.txt](https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view)
 
-+ [test boggle.dat.txt](https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing)
++ [boggle.dat](https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing)
+
+### Output
+
++ [bogglewords.txt](../../../../files/bogglewords.txt)
 
 ### Contribution
 

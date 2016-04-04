@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>A Hash Function For English Dictionary</title>
+    
+	
+	<meta name="author" content="Jian Wang">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>	
+	
+        <script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+		<div>
+			<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 700px;">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About Me"><a href="/about">About Me</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
+			<div id="page-content">
+				
+
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">A Hash Function For English Dictionary<span class="author">by Jian</span>
+				</h1>
+				<span class="the-article">
+				<p>This is a linear chain hash function for English dictionary (210 thousand words)</p>
+
+<ul>
+  <li>First serialize each word with a hash function</li>
+  <li>Then hash each word to a linear chain table with maxmium prime number of dictionary length</li>
+  <li>Output the histogram  operation steps needed when insert (conflict)</li>
+</ul>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+#include&lt;string&gt;
+#include&lt;vector&gt;
+#include&lt;map&gt;
+
+using namespace std;
+
+class hashNode {
+public:
+  unsigned long val;
+  hashNode *next;
+  hashNode() {
+    val = 0;
+    next = NULL;
+  }
+  hashNode (unsigned long v) {
+    val = v;
+    next = NULL;
+  }
+};
+
+class hashTable {
+public:
+  vector&lt;hashNode&gt; hashtable;
+  int hashLen;
+  hashTable() {
+  }
+  hashTable(int size) {
+    hashLen = size;
+    hashtable.resize(size);
+  }
+  ~hashTable() {
+    hashtable.clear();
+  }
+  unsigned long serilize(string str) {
+    unsigned long hash = 5381;
+    int len =  str.length();
+    for (int i = 0; i &lt; len; i++) {
+        hash = ((hash&lt;&lt;5) + hash) + (str[len - i - 1] - 96);
+    }
+    return hash;
+  }
+  void buildHashTable(string filename, string ofilename) {
+    ifstream infile;
+    infile.open(filename);
+    if (infile.fail()) {
+        cout &lt;&lt; "open "&lt;&lt; filename &lt;&lt;" failed"&lt;&lt;endl;
+        return;
+    }
+    if (ifstream(ofilename)) {
+      cout &lt;&lt; ofilename &lt;&lt; " already exists, delete it" &lt;&lt; endl;
+      remove(ofilename.c_str());
+    }
+    ofstream outfile;
+    outfile.open(ofilename, ios::out | ios::app);
+    if (outfile.fail()) {
+        cout &lt;&lt; ofilename &lt;&lt;" open failed" &lt;&lt;endl;
+        return;
+    }
+    string line = "";
+    while (getline(infile, line)) {
+      unsigned long hash =  serilize(line);
+      int idx = (hash % hashLen);
+      int count = 1;
+      if (hashtable[idx].val == 0) {
+        hashtable[idx].val = hash;
+      } else {
+        hashNode newNode = hashNode(hash);
+        hashNode * curr = &amp;hashtable[idx];
+        while (curr-&gt;next != NULL) {
+          curr = curr-&gt;next;
+          count++;
+        }
+        curr-&gt;next = &amp;newNode;
+      }
+      outfile &lt;&lt; count &lt;&lt; endl;
+    }
+  }
+  void findHashTable(string filename) {
+    ifstream infile;
+    infile.open(filename);
+    if (infile.fail()) {
+        cout &lt;&lt; "open "&lt;&lt; filename &lt;&lt;" failed"&lt;&lt;endl;
+        return;
+    }
+    string word = "";
+    while (infile &gt;&gt; word) {
+      bool canfind = false;
+      unsigned long hash =  serilize(word);
+      int idx = (hash % hashLen);
+      if (hashtable[idx].val != 0) {
+        hashNode * curr = &amp;hashtable[idx];
+        while (curr != NULL) {
+          if (curr-&gt;val == hash) {
+            canfind = true;
+          }
+          curr = curr-&gt;next;
+        }
+      }
+      if (canfind)
+       cout &lt;&lt; word &lt;&lt; " : true" &lt;&lt;endl;
+      else
+       cout &lt;&lt; word &lt;&lt; " : false" &lt;&lt;endl;
+      word = "";
+    }
+  }
+  void showHistogram(string filename) {
+    ifstream infile;
+    infile.open(filename);
+    if (infile.fail()) {
+        cout &lt;&lt; "open "&lt;&lt; filename &lt;&lt;" failed"&lt;&lt;endl;
+        return;
+    }
+    map&lt;int, int&gt; map1;
+    string word = "";
+    while (infile &gt;&gt; word) {
+      int val = stoi(word);
+      if (map1.find(val) != map1.end())
+          map1[val]++;
+      else
+          map1[val] = 1;
+    }
+    cout &lt;&lt;endl&lt;&lt;"*******************************"&lt;&lt;endl;
+    cout &lt;&lt;"         Histogram"&lt;&lt;endl;
+    cout &lt;&lt;"*******************************"&lt;&lt;endl;
+    cout &lt;&lt; "insert      count "&lt;&lt;endl;
+    map&lt;int, int&gt;::iterator itr = map1.begin();
+    for (; itr != map1.end(); itr++) {
+      cout &lt;&lt; itr-&gt;first &lt;&lt; "           " &lt;&lt; itr-&gt;second &lt;&lt;endl;
+    }
+  }
+};
+
+int main() {
+  hashTable hashtb(213557);
+  hashtb.buildHashTable("dict.txt", "output3.txt");
+  hashtb.findHashTable("hw8.dat");
+  hashtb.showHistogram("output3.txt");
+  return 0;
+}
+
+</code></pre>
+</div>
+
+<p>Contribution</p>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+				</span>
+				<div class="journal-date">Published 27 March 2016</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#Hashmap-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">Hashmap</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/algorithm/2016/03/27/Hash-Dictionary"  data-title="A Hash Function For English Dictionary - Welcome to"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jian"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	﻿<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+			© 2015 Jian Wang.<br><br>
+			Content licensed under:<br>
+			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
+			<a href = "/about.html">About Me</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#trick-ref">
+    		trick <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#read-ref">
+    		read <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#daily-ref">
+    		daily <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#idea-ref">
+    		idea <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#algorithm-ref">
+    		algorithm <span>26</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Technology-ref">
+    		Technology <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#learn-ref">
+    		learn <span>1</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				 
+					<li><a href = "http://jianwang.info/">Jian Wang's Blog</a></li>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "mailto:jianw851@gmail.com">e-mail</a></li>
+				 
+					<li><a href = "https://github.com/jianw851">Github</a></li>
+				 
+					<li><a href = "https://cn.linkedin.com/in/jianwang85">Linkedin</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+
+	
+</body>
+</html>
+

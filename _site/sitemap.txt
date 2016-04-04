@@ -14,7 +14,20 @@ http://jianwang.info//3/
 http://jianwang.info//4/
 http://jianwang.info//5/
 http://jianwang.info//6/
+http://jianwang.info//7/
+http://jianwang.info//8/
 
+http://jianwang.info//algorithm/2016/04/04/Boggle-Game
+http://jianwang.info//algorithm/2016/04/03/Binary-Tree
+http://jianwang.info//algorithm/2016/04/02/Queue-II
+http://jianwang.info//algorithm/2016/04/01/Stack
+http://jianwang.info//algorithm/2016/04/01/Queue
+http://jianwang.info//algorithm/2016/04/01/Grow-Array-II
+http://jianwang.info//algorithm/2016/03/31/Singly-Linked-List
+http://jianwang.info//algorithm/2016/03/31/Grow-Array
+http://jianwang.info//algorithm/2016/03/31/Doubly-Linked-List
+http://jianwang.info//algorithm/2016/03/27/Naive-Trie
+http://jianwang.info//algorithm/2016/03/27/Hash-Dictionary
 http://jianwang.info//learn/2016/03/17/Assembly-Study
 http://jianwang.info//technology/2016/02/23/Facebook-Study-I
 http://jianwang.info//algorithm/2016/02/15/Ugly-Number_II
