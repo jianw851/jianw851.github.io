@@ -6,7 +6,7 @@ tagline: by Jian
 tags: [Hashing, Linear Probe, Rehashing]
 ---
 
-This is a implementation of Linear Probe Hashing and Rehashing, this code is based on Prof. Dov's code. So no integrity can be found.
+This is a implementation of Linear Probe Hashing and Rehashing, this code is based on Prof. Dov's code.
 
 Just used to learn the general idea.
 
