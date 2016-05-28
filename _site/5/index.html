@@ -125,6 +125,8 @@
 			 
 				
 			 
+				
+			 
 			
 			
 		</ul>
@@ -171,21 +173,29 @@
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2015/12/14/Closest-Number-in-Sorted-Array">Closest Number in Sorted Array</a><span class="author"></span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/02/03/Clone-Graph">Clone Graph</a><span class="author">by Jian</span></h1>
 				
-				<span class="teaser"><p>Given a target number and an integer array A sorted in ascending order, find the index i in A such that A[i] is closest to the given target.
-Return -1 if there is no element in the array.
-Given [1, 2, 3] and target = 2, return 1.
-Given [1, 4, 6] and target = 3, return 1.
-Given [1, 4, 6] and target = 5, return 1 or 2.
-Given [1, 3, 3, 4] and target = 2, return 0 or 1 or 2.
-There can be duplicate elements in the array, and we can return any of the indices with same value.
-O(logn) time complexity.</p>
+				<span class="teaser"><p>Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.</p>
+
+<p>How we serialize an undirected graph:</p>
+
+<p>Nodes are labeled uniquely.</p>
+
+<p>We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
+As an example, consider the serialized graph {0,1,2#1,2#2,2}.</p>
+
+<p>The graph has a total of three nodes, and therefore contains three parts as separated by #.</p>
+
+<p>First node is labeled as 0. Connect node 0 to both nodes 1 and 2.
+Second node is labeled as 1. Connect node 1 to node 2.
+Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.</p>
+
+<p>return a deep copied graph.</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2015/12/14/Closest-Number-in-Sorted-Array">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/02/03/Clone-Graph">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -204,19 +214,18 @@ O(logn) time complexity.</p>
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2015/12/13/Total-Occurrence-of-Target">Total Occurrence of Target</a><span class="author"></span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/02/01/Missing-Number">Missing Number</a><span class="author">by Jian</span></h1>
 				
-				<span class="teaser"><p>Given a target number and an integer array sorted in ascending order. Find the total number of occurrences of target in the array.
-Given [1, 3, 3, 4, 5] and target = 3, return 2.
-Given [2, 2, 3, 4, 6] and target = 4, return 1.
-Given [1, 2, 3, 4, 5] and target = 6, return 0.
-Challenge
-Time complexity in O(logn)</p>
+				<span class="teaser"><p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
+
+<p>Example:</p>
+
+<p>Given nums = [0, 1, 3] return 2</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2015/12/13/Total-Occurrence-of-Target">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/02/01/Missing-Number">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -235,31 +244,12 @@ Time complexity in O(logn)</p>
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2015/12/13/Subsets">Subsets</a><span class="author"></span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/01/30/Power-Of-Two">Power Of Two</a><span class="author">by Jian</span></h1>
 				
-				<span class="teaser"><p>Given a set of distinct integers, return all possible subsets.
-Example
-If S = [1,2,3], a solution is:
-[
-  [3],
-  [1],
-  [2],
-  [1,2,3],
-  [1,3],
-  [2,3],
-  [1,2],
-  []
-]
-Note
-Elements in a subset must be in non-descending order.
-The solution set must not contain duplicate subsets.
-Challenge
-Can you do it in both recursively and iteratively?</p>
-
-
+				<span class="teaser">
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2015/12/13/Subsets">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/01/30/Power-Of-Two">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -278,30 +268,17 @@ Can you do it in both recursively and iteratively?</p>
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2015/12/13/Subsets-II">Subsets II</a><span class="author"></span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock">Best Time to Buy and Sell Stock</a><span class="author"></span></h1>
 				
-				<span class="teaser"><p>Given a list of numbers that may has duplicate numbers, return all possible subsets
-Example
-If S = [1,2,2], a solution is:
-[
-  [2],
-  [1],
-  [1,2,2],
-  [2,2],
-  [1,2],
-  []
-]
-Note
-Each element in a subset must be in non-descending order.
-The ordering between two subsets is free.
-The solution set must not contain duplicate subsets.
-Challenge
-Can you do it in both recursively and iteratively?</p>
+				<span class="teaser"><p>Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+
+<p>Example
+  Given an example [3,2,3,1,2], return 1</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2015/12/13/Subsets-II">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -320,26 +297,24 @@ Can you do it in both recursively and iteratively?</p>
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2015/12/12/Permutations">Permutations</a><span class="author"></span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/01/24/Palindrome-Partitioning">Palindrome Partitioning</a><span class="author"></span></h1>
 				
-				<span class="teaser"><p>Given a list of numbers, return all possible permutations.
-Example
-For nums = [1,2,3], the permutations are:
-[
-  [1,2,3],
-  [1,3,2],
-  [2,1,3],
-  [2,3,1],
-  [3,1,2],
-  [3,2,1]
-]
-Challenge
-Do it without recursion.</p>
+				<span class="teaser"><p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+
+<p>Return all possible palindrome partitioning of s.</p>
+
+<p>Example
+  Given s = “aab”, return:</p>
+
+<p>[
+    [“aa”,”b”],
+    [“a”,”a”,”b”]
+  ]</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2015/12/12/Permutations">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/01/24/Palindrome-Partitioning">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -394,7 +369,7 @@ Do it without recursion.</p>
     	</a></li>
      
     	<li><a href="/categories.html#algorithm-ref">
-    		algorithm <span>26</span>
+    		algorithm <span>30</span>
     	</a></li>
      
     	<li><a href="/categories.html#Technology-ref">
@@ -403,6 +378,10 @@ Do it without recursion.</p>
      
     	<li><a href="/categories.html#learn-ref">
     		learn <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Daily-ref">
+    		Daily <span>2</span>
     	</a></li>
     
   
@@ -471,6 +450,8 @@ Do it without recursion.</p>
       	<li><a href="/tags">Tags</a></li>
       	
       
+    
+  
     
   
     

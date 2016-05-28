@@ -1,0 +1,658 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Graph Representation</title>
+    
+	
+	<meta name="author" content="Jian Wang">
+	
+	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>	
+	
+        <script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+		<div>
+			<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 700px;">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About Me"><a href="/about">About Me</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
+			<div id="page-content">
+				
+
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">Graph Representation<span class="author">by Jian</span>
+				</h1>
+				<span class="the-article">
+				<p>This is a simple implementation of Undirected Graph</p>
+
+<!--more-->
+
+<h3 id="source-code-c">Source Code (C++)</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+<span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">undirectedGraph</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">class</span> <span class="nc">edge</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="c1">//int vertex;  //in case the vetices are huge and not contiguous
+</span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">;</span>
+    <span class="n">edge</span> <span class="p">()</span> <span class="p">{}</span>
+  <span class="p">};</span>
+  <span class="kt">int</span> <span class="n">V</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">E</span><span class="p">;</span>
+  <span class="n">bool</span> <span class="n">useMatrix</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">edge</span><span class="o">&gt;</span> <span class="n">adjlist</span><span class="p">;</span>  <span class="c1">// representation of adjacent list
+</span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">matrix</span><span class="p">;</span>  <span class="c1">// representation of matrix
+</span>  <span class="n">undirectedGraph</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// O(1)
+</span>    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * create am empty graph with V vertices
+  *******************************/</span>
+  <span class="n">undirectedGraph</span><span class="p">(</span><span class="kt">int</span> <span class="n">V1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">E1</span><span class="p">,</span> <span class="n">bool</span> <span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">useMatrix</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="n">V</span> <span class="o">=</span> <span class="n">V1</span><span class="p">;</span>
+      <span class="n">E</span> <span class="o">=</span> <span class="n">E1</span><span class="p">;</span>
+      <span class="n">matrix</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span> <span class="c1">//O(V^2)
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">useMatrix</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="n">V</span> <span class="o">=</span> <span class="n">V1</span><span class="p">;</span>
+      <span class="n">E</span> <span class="o">=</span> <span class="n">E1</span><span class="p">;</span>
+      <span class="n">adjlist</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">edge</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">);</span> <span class="c1">//initial O(V)
+</span>    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="n">numberOfV</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>    <span class="k">return</span> <span class="n">V</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="n">numberOfE</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>    <span class="k">return</span> <span class="n">E</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * find all the adjacent value
+  *******************************/</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adjacent</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adjvector</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// O(V)
+</span>       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">adjvector</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+       <span class="p">}</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  <span class="c1">// O(V) omega(1)
+</span>       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">adjvector</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="k">return</span> <span class="n">adjvector</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * find the number of vetices
+  * adjacent to vertex v
+  *******************************/</span>
+  <span class="kt">int</span> <span class="n">degree</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// matrix: O(V) adjacent list: O(V) omega(1)
+</span>    <span class="kt">int</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="o">:</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="n">degree</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">degree</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * add edges to the graph
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// here I use the whole matrix (not half)
+</span>      <span class="n">matrix</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">matrix</span><span class="p">[</span><span class="n">w</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+      <span class="n">adjlist</span><span class="p">[</span><span class="n">w</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * count the number of Cycles
+  * matrix: O(V^3) adjacent list: O(V^3) omega(V^2)
+  *******************************/</span>
+  <span class="kt">int</span> <span class="n">numberOfCycles</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">w</span> <span class="o">&lt;</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">).</span><span class="n">size</span><span class="p">();</span> <span class="n">w</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// this is only for undirected graph. For directed graph, no need divide by 2;
+</span>  <span class="p">}</span>
+  <span class="cm">/******************************
+  * check if two vertices are adjacent
+  *******************************/</span>
+  <span class="n">bool</span> <span class="n">isAdjacent</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// O(1)
+</span>      <span class="k">return</span> <span class="n">matrix</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// O(V) omega(1)
+</span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span>
+           <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * DFS all the vertices
+  * O(V^2) omega(V) limited to edges
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">DFS</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">visited</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">DFS</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * BFS all the vertices
+  * O(V^2) omega(V) limited to edges too
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">BFS</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">visited</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">queue1</span><span class="p">;</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue1</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">queue1</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+      <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+         <span class="n">queue1</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">queue1</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * count the number of Cycles
+  * matrix: O(V^3) adjacent list: O(V^3) omega(V^2)
+  *******************************/</span>
+  <span class="n">bool</span> <span class="n">isConnected</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="n">DFS</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="n">BFS</span><span class="p">(</span><span class="n">visited</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">visited</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"title "</span><span class="p">;</span>
+      <span class="k">for</span>  <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">V</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">"     "</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+           <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"vertex #"</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span><span class="s">": "</span><span class="p">;</span>
+         <span class="k">else</span>
+           <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">list</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span> <span class="c1">// two adjacent vertices
+</span>  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">V</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">E</span><span class="p">;</span>
+  <span class="n">undirectedGraph</span> <span class="n">graphmatrix</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="n">undirectedGraph</span> <span class="n">graphadjlist</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">E</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">w</span><span class="p">;</span>
+    <span class="n">graphmatrix</span><span class="p">.</span><span class="n">addEdge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+    <span class="n">graphadjlist</span><span class="p">.</span><span class="n">addEdge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"**************** Matrix representation ***************** "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of vertices is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">numberOfV</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of edges is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">numberOfE</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the degree of v = 1 is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">degree</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of cycles is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">numberOfCycles</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"bellow is the representation of the graph:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">graphmatrix</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Is connected? "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">isConnected</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"*************** adj-list representation **************** "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of vertices is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">numberOfV</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of edges is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">numberOfE</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the degree of v = 1 is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">degree</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of cycles is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">numberOfCycles</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"bellow is the representation of the graph:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">graphadjlist</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Is connected? "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">isConnected</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+</code></pre>
+</div>
+<p>Bellow is test data</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>7
+8
+0 1
+0 2
+0 6
+0 5
+3 5
+3 4
+4 5
+4 6
+</code></pre>
+</div>
+<p>### Contribution</p>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+				</span>
+				<div class="journal-date">Published 02 May 2016</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#Graph-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">Graph</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#DFS-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">DFS</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#BFS-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">BFS</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/algorithm/2016/05/02/graph-DFS-BFS"  data-title="Graph Representation - Welcome to"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"jian"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	﻿<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+			© 2015 Jian Wang.<br><br>
+			Content licensed under:<br>
+			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
+			<a href = "/about.html">About Me</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#trick-ref">
+    		trick <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#read-ref">
+    		read <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#daily-ref">
+    		daily <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#idea-ref">
+    		idea <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#algorithm-ref">
+    		algorithm <span>30</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Technology-ref">
+    		Technology <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#learn-ref">
+    		learn <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Daily-ref">
+    		Daily <span>2</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				 
+					<li><a href = "http://jianwang.info/">Jian Wang's Blog</a></li>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "mailto:jianw851@gmail.com">e-mail</a></li>
+				 
+					<li><a href = "https://github.com/jianw851">Github</a></li>
+				 
+					<li><a href = "https://cn.linkedin.com/in/jianwang85">Linkedin</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+
+	
+</body>
+</html>
+

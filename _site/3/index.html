@@ -125,6 +125,8 @@
 			 
 				
 			 
+				
+			 
 			
 			
 		</ul>
@@ -171,71 +173,14 @@
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2016/03/27/Hash-Dictionary">A Hash Function For English Dictionary</a><span class="author">by Jian</span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/04/01/Queue">Queue by Linked List</a><span class="author">by Jian</span></h1>
 				
-				<span class="teaser"><p>This is a linear chain hash function for English dictionary (210 thousand words)</p>
-
-<ul>
-  <li>First serialize each word with a hash function</li>
-  <li>Then hash each word to a linear chain table with maxmium prime number of dictionary length</li>
-  <li>Output the histogram  operation steps needed when insert (conflict)</li>
-</ul>
+				<span class="teaser"><p>This is a naive implementation of Queue.</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2016/03/27/Hash-Dictionary">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#learn-ref" title="learn">
-	learn
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/learn/2016/03/17/Assembly-Study">Assembly on Mac</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>Assembly language is the very basic programming language in a Computer. First it is more detailed. Second it is more effcient. Today I am going to try it on my macbook. Although it is not my first time to try assembly, I feel more comfortable and engaged to do so. This airticle will record some of method and tools.</p>
-
-
-				
-				</span>
-				<span class="readmore"><a href="/learn/2016/03/17/Assembly-Study">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#Technology-ref" title="Technology">
-	Technology
-
-</a>
-</div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/technology/2016/02/23/Facebook-Study-I">Facebook Technology Study I</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>As is known to us all, Facebook is world class big tech company which is engaging in connecting the world with its various open source software and open source hardware. So far Facebook has had 296 open source projects on GitHub with 10+ Million Lines of code, 265k Followers and 43k Forks. This airticle is going to introduce the general open source software infrastructure of Facebook. 
-
-				
-				</span>
-				<span class="readmore"><a href="/technology/2016/02/23/Facebook-Study-I">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/04/01/Queue">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -254,26 +199,14 @@
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2016/02/15/Ugly-Number_II">Ugly Number II</a><span class="author">by Jian</span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/04/01/Grow-Array-II">Grow Array Practice II</a><span class="author">by Jian</span></h1>
 				
-				<span class="teaser"><p>Problem 264 Ugly Number II</p>
-
-<p>Write a program to find the n-th ugly number.</p>
-
-<p>Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.</p>
-
-<p>Note that 1 is typically treated as an ugly number.</p>
-
-<p>Hint: The naive approach is to call isUgly for every number until you reach the nth one. Most numbers are not ugly. Try to focus your effort on generating only the ugly ones. An ugly number must be multiplied by either 2, 3, or 5 from a smaller ugly number.</p>
-
-<p>Example 1:</p>
-
-<p>n = 10 return 12</p>
+				<span class="teaser"><p>This is a naive implementation of Grow Array which mainly used to add or remove element from front or end side. This Grow Array distinguish the first one that using first and last pointer instead of used and size;</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2016/02/15/Ugly-Number_II">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/04/01/Grow-Array-II">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -292,29 +225,72 @@
 				
 			</div>
 			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2016/02/03/Clone-Graph">Clone Graph</a><span class="author">by Jian</span></h1>
+				<h1 class="journal-title"><a href="/algorithm/2016/03/31/Singly-Linked-List">Singly Linked List Practice</a><span class="author">by Jian</span></h1>
 				
-				<span class="teaser"><p>Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.</p>
+				<span class="teaser"><p>This is a naive implementation of Singly Linked List which mainly used to add or remove element from front or end side.</p>
 
-<p>How we serialize an undirected graph:</p>
-
-<p>Nodes are labeled uniquely.</p>
-
-<p>We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
-As an example, consider the serialized graph {0,1,2#1,2#2,2}.</p>
-
-<p>The graph has a total of three nodes, and therefore contains three parts as separated by #.</p>
-
-<p>First node is labeled as 0. Connect node 0 to both nodes 1 and 2.
-Second node is labeled as 1. Connect node 1 to node 2.
-Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.</p>
-
-<p>return a deep copied graph.</p>
+<p>This implementation only shows the general idea of how Singly Linked List works inside the computer. This is not used for any real world problems.</p>
 
 
 				
 				</span>
-				<span class="readmore"><a href="/algorithm/2016/02/03/Clone-Graph">Read More</a></span>
+				<span class="readmore"><a href="/algorithm/2016/03/31/Singly-Linked-List">Read More</a></span>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+		
+		<div class="journal-article">
+			<div class="journal-post-info">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
+
+</a>
+</div>
+				
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title"><a href="/algorithm/2016/03/31/Grow-Array">Grow Array Practice</a><span class="author">by Jian</span></h1>
+				
+				<span class="teaser"><p>This is a naive implementation of Grow Array which mainly used to add or remove element from front or end side.</p>
+
+<p>This implementaion only gives the general idea of how grow array data structure works inside the computer. This is not used for any real world problems.</p>
+
+
+				
+				</span>
+				<span class="readmore"><a href="/algorithm/2016/03/31/Grow-Array">Read More</a></span>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+		
+		<div class="journal-article">
+			<div class="journal-post-info">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#algorithm-ref" title="algorithm">
+	algorithm
+
+</a>
+</div>
+				
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title"><a href="/algorithm/2016/03/31/Doubly-Linked-List">Doubly Linked List Practice</a><span class="author">by Jian</span></h1>
+				
+				<span class="teaser"><p>This is a naive implementation of Doubly Linked List which mainly used to add or remove element from front or end side.</p>
+
+<p>This implementation only shows the general idea of how Doubly Linked List data structure works inside the computer. This is not used for any real world problems.</p>
+
+
+				
+				</span>
+				<span class="readmore"><a href="/algorithm/2016/03/31/Doubly-Linked-List">Read More</a></span>
 			</div>
 		</div>
 		<div class="clearboth"></div>
@@ -369,7 +345,7 @@ Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a se
     	</a></li>
      
     	<li><a href="/categories.html#algorithm-ref">
-    		algorithm <span>26</span>
+    		algorithm <span>30</span>
     	</a></li>
      
     	<li><a href="/categories.html#Technology-ref">
@@ -378,6 +354,10 @@ Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a se
      
     	<li><a href="/categories.html#learn-ref">
     		learn <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Daily-ref">
+    		Daily <span>2</span>
     	</a></li>
     
   
@@ -446,6 +426,8 @@ Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a se
       	<li><a href="/tags">Tags</a></li>
       	
       
+    
+  
     
   
     
