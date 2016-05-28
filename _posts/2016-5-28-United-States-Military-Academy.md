@@ -6,7 +6,7 @@ tagline: by Jian
 tags: [West Point, United States Military Academy]
 ---
 
-One week ago, I visited United States Military Academy by the 2-hours tour with a guide. Since it located at West Point we usually call it West Point Military Academy . It is famous not only for its contribution to the world and rigorous discipline but also for its invention of modern civilization. West Point has a gene of loyalty, engineering, and sports. Let me talk about some fabulous stories about it.
+One week ago, I visited United States Military Academy by the 2-hours tour with a guide. Since it locates at West Point we usually call it West Point Military Academy . It is famous not only for its contribution to the world and rigorous discipline but also for its invention of modern civilization. West Point has a gene of loyalty, engineering, and sports. Let me talk about some fabulous stories about it.
 
 <!--more-->
 
