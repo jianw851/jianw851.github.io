@@ -1,183 +1,181 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="utf-8">
-	
-	<title>Boggle Game</title>
-    
-	
-	<meta name="author" content="Jian Wang">
-	
-	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
-	
-	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
-	
-	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
-	
-	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
-	
-	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>	
-	
-        <script type="text/javascript">
-	  $(function(){
-		$("pre code").addClass("prettyprint linenums");
-		prettyPrint();
-	  });
-	</script>
-	
-<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 
-<!-- atom & rss feed -->
-    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<meta property="og:title" content="Boggle Game">
+<title>Boggle Game</title>
+<meta property="og:description" content="This is a implementation of Boggle game using Trie.Source Code (C++)#include&lt;iostream&gt;#include&lt;fstream&gt;#include&lt;string&gt;#include&lt;vector&g...">
+<meta property="og:url" content="http://localhost:4000/algorithm/2016/04/04/Boggle-Game.html">
+<meta property="og:site_name" content="Jian's Blog">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@jianw851">
+<meta name="twitter:creator" content="@jianw851">
+<meta name="twitter:title" content="Boggle Game">
+<meta name="twitter:description" content="This is a implementation of Boggle game using Trie.Source Code (C++)#include&lt;iostream&gt;#include&lt;fstream&gt;#include&lt;string&gt;#include&lt;vector&g...">
+<meta name="twitter:url" content="http://localhost:4000/algorithm/2016/04/04/Boggle-Game.html">
+
+<meta name="keywords" content="Jian Wang, Blog, Technology Blog">
+
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="http://localhost:4000/algorithm/2016/04/04/Boggle-Game.html">
+<link rel="alternate" type="application/atom+xml" title="Jian's Blog" href="http://localhost:4000/feed.xml" />
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script language="Javascript" type="text/javascript">
+function search_google()
+{
+  var query = document.getElementById("google-search").value;
+  window.open("http://google.com/search?q=" + query
+      + "%20site:" + "http://localhost:4000");
+}
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61717136-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+<script type='text/javascript'>
+var blocklink = ['http://humanorightswatch.org','http://o-o-6-o-o.com','http://darodar.com','http://blackhatworth.com','http://hulfingtonpost.com','http://bestwebsitesawards.com','http://darodar.com','http://buttons-for-website.com','http://ilovevitaly.co','http://semalt.com','http://priceg.com','http://simple-share-buttons.com','http://googlsucks.com','http://4webmasters.org','http://aliexpress.com','http://addons.mozilla.org/en-US/firefox/addon/ilovevitaly/','http://free-share-buttons.com','http://buttons-for-your-website.com','http://theguardlan.com','http://buy-cheap-online.info','http://best-seo-offer.com','http://4webmasters.org','http://trafficmonetize.org','http://howtostopreferralspam.eu','http://ilovevitaly.com','http://sanjosestartups.com','http://free-social-buttons.com','http://best-seo-offer.com','http://guardlink.org','http://www.event-tracking.com','http://www3.free-social-buttons.com','http://www1.free-social-buttons.com','http://www2.free-social-buttons.com','http://websites-reviews.com','http://floating-share-buttons.com','http://satellite.maps.ilovevitaly.com','http://free-social-buttons.com','http://www.event-tracking.com','http://erot.co'];
+for (var b = blocklink.length; b--;) {
+  if (document.referrer.match(blocklink[b]))
+    window.location = "http://www.google.com";
+}
+</script>
+
+
+
+
 </head>
+
+
 <body>
-	<noscript>
-		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
-	</noscript>
-    <div id="page-container">
-		<div>
-			<nav>
-	<div id="nav-l">
-	</div>
-	<div id="nav-c">
-		<ul id="nav-list" style="width: 700px;">
-			<li id="home"><a href="/">Home</a></li>
-			
-			
-			
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "About Me"><a href="/about">About Me</a></li>
-					
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Archive"><a href="/archive">Archive</a></li>
-					
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Categories"><a href="/categories">Categories</a></li>
-					
-				  
-				
-			 
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Tags"><a href="/tags">Tags</a></li>
-					
-				  
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-			
-			
-		</ul>
-		<form id="nav-search" method="GET" action="/search.html">
-			<div id="search-right-pix">
-				<div id="search-left-pix">
-					<div id="search-center-pix">
-						<div id="search-icon-pix"></div>
-						<input name="query" type="text" placeholder="Search">
-					</div>
-				</div>
-			</div>
-		</form>
-		
-		
-	</div>
-	<div id="nav-r">
-	</div>
-</nav>
-			<div id="page-content">
-				
 
-<div id="page-content">
-	<div class="cont932">
-	<div id="journal-articles-block">
-		<div class="journal-article">
-			<div class="journal-post-info">
-				<div class="journal-cat-box">
-				
-				
-				<div class="journal-cat-box">
+<div class="container">
 
-<a href="/categories.html#algorithm-ref" title="algorithm">
-	algorithm
+  <header class="site-header">
 
-</a>
-</div>
-				
-				</div>
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title">Boggle Game<span class="author">by Jian</span>
-				</h1>
-				<span class="the-article">
-				<p>This is a implementation of Boggle game using Trie.</p>
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/">Jian's Blog</a></h1>
+    <h3 class="site-meta">Welcome to My Blog</h3>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+        
+        <a class="page-link" href="/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/archives/">Archives</a>
+        
+        
+        
+        <a class="page-link" href="/categories/">Categories</a>
+        
+        
+        
+        <a class="page-link" href="/tags/">Tags</a>
+        
+        
+        
+        <a class="page-link" href="/guestbook/">Guestbook</a>
+        
+        
+        
+        <a class="page-link" href="/feed.xml">Subscribe</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    
+
+  <div class="page-content col-sm-8">
+    <div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 itemprop="name" class="post-title">Boggle Game</h1>
+    <meta itemprop="keywords" content="DFS,Back Tracking,Boggle" />
+    <p class="post-meta">
+    Posted in
+    
+    <a href="/categories/#algorithm">algorithm</a>
+     
+    
+    and tagged
+    
+    <a href="/tags/#DFS" title="DFS">DFS</a>, 
+    
+    <a href="/tags/#Back Tracking" title="Back Tracking">Back Tracking</a>, 
+    
+    <a href="/tags/#Boggle" title="Boggle">Boggle</a>
+    
+    
+    <time itemprop="datePublished" datetime="2016-04-04">
+    on Apr 4, 2016
+    </time>
+    </p>
+  </header>
+
+  <article class="post-content" itemprop="articleBody">
+    <p>This is a implementation of Boggle game using Trie.</p>
 
 <!--more-->
 
 <h3 id="source-code-c">Source Code (C++)</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
 #include&lt;fstream&gt;
 #include&lt;string&gt;
 #include&lt;vector&gt;
@@ -196,7 +194,7 @@
 
 <span class="k">class</span> <span class="nc">TrieNode</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-  <span class="n">bool</span> <span class="n">isWord</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">isWord</span><span class="p">;</span>
   <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">subTrie</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
   <span class="n">TrieNode</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">isWord</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
@@ -262,7 +260,7 @@
     <span class="n">infile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
   <span class="p">}</span>
 
-  <span class="n">bool</span> <span class="n">contains</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">bool</span> <span class="n">contains</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">toLower</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
@@ -275,7 +273,7 @@
     <span class="k">return</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">isWord</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="n">bool</span> <span class="n">containsPrefix</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">bool</span> <span class="n">containsPrefix</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">toLower</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
@@ -410,245 +408,491 @@
 
 <hr />
 
-				</span>
-				<div class="journal-date">Published 04 April 2016</div>
-				<div class="journal-tags">
-				
-				
-	 
-		<a class="tag-cont" href="/tags.html#DFS-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">DFS</div>
-			<div class="tag-r"></div>
-		</a>
-	 
-		<a class="tag-cont" href="/tags.html#Back Tracking-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">Back Tracking</div>
-			<div class="tag-r"></div>
-		</a>
-	 
-		<a class="tag-cont" href="/tags.html#Boggle-ref">
-			<div class="tag-l"></div>
-			<div class="tag-c">Boggle</div>
-			<div class="tag-r"></div>
-		</a>
-	
-
-
-
-				</div>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-	</div>
+  </article>
+  <hr />
 </div>
-	<div class="clearboth"></div>
-	
 
 
-  <!-- 多说评论框 start -->
-<div id="comments">
-    <div class="ds-thread" data-thread-key="/algorithm/2016/04/04/Boggle-Game"  data-title="Boggle Game - Welcome to"></div>
-</div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<section class="pager">
+  <ul>
+    
+    <li class="previous"><a href="/algorithm/2016/04/03/Binary-Tree.html" title="Binary Tree order traversal implementation">&larr; Older</a></li>
+    
+    
+    <li class="next"><a href="/algorithm/2016/04/04/Rehashing-Linear-Probe.html" title="Rehashing Linear Probe Practice">Newer &rarr;</a></li>
+    
+  </ul>
+</section>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"jian"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
+$(function(){
+  $(document).keydown(function(e) {
+    if (e.target.nodeName.toUpperCase() != 'BODY') return;
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://localhost:4000/algorithm/2016/04/03/Binary-Tree.html';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://localhost:4000/algorithm/2016/04/04/Rehashing-Linear-Probe.html';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
 
 
-	<div class="clearboth"></div>
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+
+  var disqus_developer = 1;
+
+var disqus_shortname ='jianw851';
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+    <section class="pager">
+  
+  
+</section>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    if (e.target.nodeName.toUpperCase() != 'BODY') return;
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+
+  </div>
+  <div class="col-sm-2">
+<div class="sidebar-module about">
+  <h4>About Me</h4>
+  <img title="Jian Wang" src="https://i.imgur.com/Mdc4szJl.jpg" alt="Jian Wang"/>
+  <span>Hi, this is Jian.</span>
+  <br />
+
+  
+
+  You can contact me via: <br />
+
+  
+  <a href="mailto:jianw851@gmail.com" title="mailto: jianw851@gmail.com"><i class="fa fa-envelope-square fa-3x"></i></a>&nbsp;
+  
+  
+  <a href="https://github.com/jianw851" title="GithubID: jianw851"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;
+  
+  
+  <a href="https://twitter.com/jianw851" title="TwitterID: jianw851"><i class="fa fa-twitter-square fa-3x"></i></a>
+  
+
+  
+
 </div>
 
-			</div>
-			<div class="clearboth pagebottom"></div>
-		</div>
-	</div>
-	﻿<footer>
-	<div class="footer-940">
-		<div class="footer-general-info">
-			© 2015 Jian Wang.<br><br>
-			Content licensed under:<br>
-			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
-			<a href = "/about.html">About Me</a><br>
-		</div>
-		<div class="footer-col-cont">
-			<div class="footer-nav-col">
-				<h4><a>Categories</a></h4>
-				<ul>
-					
-					
+<div class="sidebar-module">
+  <h4>Site Search</h4>
+  <form onsubmit="search_google()" >
+    <input type="text" id="google-search" placeholder="Google search" />
+    <input type="submit" name="sa" value="Go" />
+  </form>
+</div>
 
 
-  
-     
-    	<li><a href="/categories.html#trick-ref">
-    		trick <span>2</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#read-ref">
-    		read <span>4</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#daily-ref">
-    		daily <span>3</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#idea-ref">
-    		idea <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#algorithm-ref">
-    		algorithm <span>30</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#Technology-ref">
-    		Technology <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#learn-ref">
-    		learn <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#Daily-ref">
-    		Daily <span>2</span>
-    	</a></li>
-    
-  
-
-
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Pages</a></h4>
-				<ul>
-					
-					
-					
-
+<div class="sidebar-module"> <!-- sidebar-module-inset">-->
+  <h4>Copyright Notice</h4>
 
   
-    
-      
-    
+
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+    <img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png">
+  </a>
+  <br />
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>
+
   
-    
-      
-      	
-      	<li><a href="/about">About Me</a></li>
-      	
-      
-    
+
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Recent Posts</h4>
   
-    
-      
-      	
-      	<li><a href="/archive">Archive</a></li>
-      	
-      
-    
+  <li>
+  <a href="/algorithm/2016/05/02/graph-bellman-ford.html" title="Bellman-Ford algorithm" rel="bookmark">Bellman-Ford algorithm</a>
+  </li>
   
-    
-      
-    
+  <li>
+  <a href="/algorithm/2016/05/02/graph-DFS-BFS.html" title="Graph Representation" rel="bookmark">Graph Representation</a>
+  </li>
   
-    
-      
-      	
-      	<li><a href="/categories">Categories</a></li>
-      	
-      
-    
+  <li>
+  <a href="/algorithm/2016/04/05/Red-Black-Tree.html" title="Red Black Tree implementation" rel="bookmark">Red Black Tree implementation</a>
+  </li>
   
-    
+  <li>
+  <a href="/algorithm/2016/04/04/Rehashing-Linear-Probe.html" title="Rehashing Linear Probe Practice" rel="bookmark">Rehashing Linear Probe Practice</a>
+  </li>
   
-    
-      
-    
+  <li>
+  <a href="/algorithm/2016/04/04/Boggle-Game.html" title="Boggle Game" rel="bookmark">Boggle Game</a>
+  </li>
   
-    
-      
-    
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Categories</h4>
   
-    
-      
-    
+  <li><a href="/categories/#trick" title="trick" rel="2">trick (2)</a></li>
   
-    
-      
-      	
-      	<li><a href="/tags">Tags</a></li>
-      	
-      
-    
+  <li><a href="/categories/#read" title="read" rel="3">read (3)</a></li>
   
-    
+  <li><a href="/categories/#idea" title="idea" rel="1">idea (1)</a></li>
   
-    
+  <li><a href="/categories/#daily" title="daily" rel="1">daily (1)</a></li>
   
-    
+  <li><a href="/categories/#algorithm" title="algorithm" rel="30">algorithm (30)</a></li>
   
-    
+  <li><a href="/categories/#Technology" title="Technology" rel="1">Technology (1)</a></li>
   
-    
+  <li><a href="/categories/#learn" title="learn" rel="1">learn (1)</a></li>
   
-    
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Tags</h4>
   
-    
+    <a href="/tags/#jekyll" title="jekyll" rel="2">jekyll</a> &nbsp;
   
-    
+    <a href="/tags/#recommend books" title="recommend books" rel="1">recommend books</a> &nbsp;
   
+    <a href="/tags/#git" title="git" rel="1">git</a> &nbsp;
+  
+    <a href="/tags/#ruby" title="ruby" rel="1">ruby</a> &nbsp;
+  
+    <a href="/tags/#rails" title="rails" rel="1">rails</a> &nbsp;
+  
+    <a href="/tags/#maintenance" title="maintenance" rel="1">maintenance</a> &nbsp;
+  
+    <a href="/tags/#mindmap" title="mindmap" rel="1">mindmap</a> &nbsp;
+  
+    <a href="/tags/#cloud" title="cloud" rel="1">cloud</a> &nbsp;
+  
+    <a href="/tags/#virtual world" title="virtual world" rel="1">virtual world</a> &nbsp;
+  
+    <a href="/tags/#visa" title="visa" rel="1">visa</a> &nbsp;
+  
+    <a href="/tags/#software engineer" title="software engineer" rel="1">software engineer</a> &nbsp;
+  
+    <a href="/tags/#code" title="code" rel="1">code</a> &nbsp;
+  
+    <a href="/tags/#computer science" title="computer science" rel="1">computer science</a> &nbsp;
+  
+    <a href="/tags/#string" title="string" rel="1">string</a> &nbsp;
+  
+    <a href="/tags/#for loop" title="for loop" rel="1">for loop</a> &nbsp;
+  
+    <a href="/tags/#data structure" title="data structure" rel="2">data structure</a> &nbsp;
+  
+    <a href="/tags/#two stacks" title="two stacks" rel="1">two stacks</a> &nbsp;
+  
+    <a href="/tags/#DFS" title="DFS" rel="8">DFS</a> &nbsp;
+  
+    <a href="/tags/#backtracking" title="backtracking" rel="4">backtracking</a> &nbsp;
+  
+    <a href="/tags/#Binary Search" title="Binary Search" rel="2">Binary Search</a> &nbsp;
+  
+    <a href="/tags/#graph" title="graph" rel="1">graph</a> &nbsp;
+  
+    <a href="/tags/#dfs" title="dfs" rel="1">dfs</a> &nbsp;
+  
+    <a href="/tags/#Array" title="Array" rel="4">Array</a> &nbsp;
+  
+    <a href="/tags/#Dynamic Programming" title="Dynamic Programming" rel="2">Dynamic Programming</a> &nbsp;
+  
+    <a href="/tags/#bit manipulation" title="bit manipulation" rel="1">bit manipulation</a> &nbsp;
+  
+    <a href="/tags/#Bit Manipulation" title="Bit Manipulation" rel="1">Bit Manipulation</a> &nbsp;
+  
+    <a href="/tags/#Math" title="Math" rel="2">Math</a> &nbsp;
+  
+    <a href="/tags/#Graph" title="Graph" rel="3">Graph</a> &nbsp;
+  
+    <a href="/tags/#Heap" title="Heap" rel="1">Heap</a> &nbsp;
+  
+    <a href="/tags/#Three Pointer" title="Three Pointer" rel="1">Three Pointer</a> &nbsp;
+  
+    <a href="/tags/#Facebook" title="Facebook" rel="1">Facebook</a> &nbsp;
+  
+    <a href="/tags/#Architecture" title="Architecture" rel="1">Architecture</a> &nbsp;
+  
+    <a href="/tags/#Technology" title="Technology" rel="1">Technology</a> &nbsp;
+  
+    <a href="/tags/#Assembly" title="Assembly" rel="1">Assembly</a> &nbsp;
+  
+    <a href="/tags/#Hashmap" title="Hashmap" rel="1">Hashmap</a> &nbsp;
+  
+    <a href="/tags/#Trie" title="Trie" rel="1">Trie</a> &nbsp;
+  
+    <a href="/tags/#Doubly Linked List" title="Doubly Linked List" rel="1">Doubly Linked List</a> &nbsp;
+  
+    <a href="/tags/#List" title="List" rel="2">List</a> &nbsp;
+  
+    <a href="/tags/#Grow Array" title="Grow Array" rel="3">Grow Array</a> &nbsp;
+  
+    <a href="/tags/#Singly Linked List" title="Singly Linked List" rel="1">Singly Linked List</a> &nbsp;
+  
+    <a href="/tags/#Queue" title="Queue" rel="2">Queue</a> &nbsp;
+  
+    <a href="/tags/#Linked List" title="Linked List" rel="2">Linked List</a> &nbsp;
+  
+    <a href="/tags/#Stack" title="Stack" rel="1">Stack</a> &nbsp;
+  
+    <a href="/tags/#Two Pointers" title="Two Pointers" rel="1">Two Pointers</a> &nbsp;
+  
+    <a href="/tags/#Tree" title="Tree" rel="1">Tree</a> &nbsp;
+  
+    <a href="/tags/#Divide and Conquer" title="Divide and Conquer" rel="1">Divide and Conquer</a> &nbsp;
+  
+    <a href="/tags/#Traverse" title="Traverse" rel="1">Traverse</a> &nbsp;
+  
+    <a href="/tags/#Pre-order" title="Pre-order" rel="1">Pre-order</a> &nbsp;
+  
+    <a href="/tags/#Post-order" title="Post-order" rel="1">Post-order</a> &nbsp;
+  
+    <a href="/tags/#In-order" title="In-order" rel="1">In-order</a> &nbsp;
+  
+    <a href="/tags/#Back Tracking" title="Back Tracking" rel="1">Back Tracking</a> &nbsp;
+  
+    <a href="/tags/#Boggle" title="Boggle" rel="1">Boggle</a> &nbsp;
+  
+    <a href="/tags/#Hashing" title="Hashing" rel="1">Hashing</a> &nbsp;
+  
+    <a href="/tags/#Linear Probe" title="Linear Probe" rel="1">Linear Probe</a> &nbsp;
+  
+    <a href="/tags/#Rehashing" title="Rehashing" rel="1">Rehashing</a> &nbsp;
+  
+    <a href="/tags/#RBTree" title="RBTree" rel="1">RBTree</a> &nbsp;
+  
+    <a href="/tags/#Red Black Tree" title="Red Black Tree" rel="1">Red Black Tree</a> &nbsp;
+  
+    <a href="/tags/#BFS" title="BFS" rel="1">BFS</a> &nbsp;
+  
+    <a href="/tags/#Bellman-Ford" title="Bellman-Ford" rel="1">Bellman-Ford</a> &nbsp;
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Blogroll</h4>
+  
+  <li><a href="http://jianwang.info/" title="Yet another blog">Jian</a></li>
+  
+  <li><a href="http://jianwang.info/" title="Jian's website">Jian's website</a></li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Archives</h4>
+
+  
+  
+  
+  
+  
+  <li id="2016" > <a href="/archives/#2016">2016</a></li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li id="2015" > <a href="/archives/#2015">2015</a></li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li id="2014" > <a href="/archives/#2014">2014</a></li>
+  
+  
+
+</div>
+
+
+</div>
 
 
 
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Feed</a></h4>
-				<ul>
-					<li><a href="/atom.xml">Atom Feed</a></li>
-					<li><a href="/rss.xml">RSS Feed</a></li>
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Links</a></h4>
-				<ul>
-				 
-					<li><a href = "http://jianwang.info/">Jian Wang's Blog</a></li>
-				
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a href = "/about.html">About Me</a></h4>
-				<ul>
-				 
-					<li><a href = "mailto:jianw851@gmail.com">e-mail</a></li>
-				 
-					<li><a href = "https://github.com/jianw851">Github</a></li>
-				 
-					<li><a href = "https://cn.linkedin.com/in/jianwang85">Linkedin</a></li>
-				
-				</ul>
-			</div>
-			<div class="clearboth"></div>
-		</div>
-		<div class="clearboth"></div>
-	</div>
-	<div class="clearboth"></div>
+  
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/">Jian's Blog</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
+  on 
+  
+  <a href="https://github.com/">Github</a>
+  
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="http://yulijia.net">Lijia Yu</a>  
+
+
+  <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+    <a title="Back To Top"><img src="/images/topbutton.png"/></a>
+  </div>
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/totop.js"></script>  
+
+
+
 </footer>
 
-	
-</body>
-</html>
 
+</div>
+
+</body>
+
+</html>

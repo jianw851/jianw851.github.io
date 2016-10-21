@@ -1,483 +1,1640 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="utf-8">
-	
-	<title>Welcome to</title>
-    
-	
-	<meta name="author" content="Jian Wang">
-	
-	<link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
-	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
-	
-	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
-	
-	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
-	
-	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
-	
-	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
-        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>	
-	
-        <script type="text/javascript">
-	  $(function(){
-		$("pre code").addClass("prettyprint linenums");
-		prettyPrint();
-	  });
-	</script>
-	
-<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 
-<!-- atom & rss feed -->
-    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<meta property="og:title" content="Jian's Blog">
+<title>Jian's Blog</title>
+<meta property="og:description" content="This is a Jian's Blog.">
+<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:site_name" content="Jian's Blog">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@jianw851">
+<meta name="twitter:creator" content="@jianw851">
+<meta name="twitter:title" content="Jian's Blog">
+<meta name="twitter:description" content="This is a Jian's Blog.">
+<meta name="twitter:url" content="http://localhost:4000/">
+
+<meta name="keywords" content="Jian Wang, Blog, Technology Blog">
+
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="canonical" href="http://localhost:4000/">
+<link rel="alternate" type="application/atom+xml" title="Jian's Blog" href="http://localhost:4000/feed.xml" />
+
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script language="Javascript" type="text/javascript">
+function search_google()
+{
+  var query = document.getElementById("google-search").value;
+  window.open("http://google.com/search?q=" + query
+      + "%20site:" + "http://localhost:4000");
+}
+</script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61717136-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+<script type='text/javascript'>
+var blocklink = ['http://humanorightswatch.org','http://o-o-6-o-o.com','http://darodar.com','http://blackhatworth.com','http://hulfingtonpost.com','http://bestwebsitesawards.com','http://darodar.com','http://buttons-for-website.com','http://ilovevitaly.co','http://semalt.com','http://priceg.com','http://simple-share-buttons.com','http://googlsucks.com','http://4webmasters.org','http://aliexpress.com','http://addons.mozilla.org/en-US/firefox/addon/ilovevitaly/','http://free-share-buttons.com','http://buttons-for-your-website.com','http://theguardlan.com','http://buy-cheap-online.info','http://best-seo-offer.com','http://4webmasters.org','http://trafficmonetize.org','http://howtostopreferralspam.eu','http://ilovevitaly.com','http://sanjosestartups.com','http://free-social-buttons.com','http://best-seo-offer.com','http://guardlink.org','http://www.event-tracking.com','http://www3.free-social-buttons.com','http://www1.free-social-buttons.com','http://www2.free-social-buttons.com','http://websites-reviews.com','http://floating-share-buttons.com','http://satellite.maps.ilovevitaly.com','http://free-social-buttons.com','http://www.event-tracking.com','http://erot.co'];
+for (var b = blocklink.length; b--;) {
+  if (document.referrer.match(blocklink[b]))
+    window.location = "http://www.google.com";
+}
+</script>
+
+
+
+
 </head>
+
+
 <body>
-	<noscript>
-		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
-	</noscript>
-    <div id="page-container">
-		<div>
-			<nav>
-	<div id="nav-l">
-	</div>
-	<div id="nav-c">
-		<ul id="nav-list" style="width: 700px;">
-			<li id="home"><a href="/">Home</a></li>
-			
-			
-			
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "About Me"><a href="/about">About Me</a></li>
-					
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Archive"><a href="/archive">Archive</a></li>
-					
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Categories"><a href="/categories">Categories</a></li>
-					
-				  
-				
-			 
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-				
-			 
-				
-				  
-					
-					<li id = "Tags"><a href="/tags">Tags</a></li>
-					
-				  
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-				
-			 
-			
-			
-		</ul>
-		<form id="nav-search" method="GET" action="/search.html">
-			<div id="search-right-pix">
-				<div id="search-left-pix">
-					<div id="search-center-pix">
-						<div id="search-icon-pix"></div>
-						<input name="query" type="text" placeholder="Search">
-					</div>
-				</div>
-			</div>
-		</form>
-		
-		
-	</div>
-	<div id="nav-r">
-	</div>
-</nav>
-			<div id="page-content">
-				
 
-<div class="page-title-inline">
-	
-	<h1>Welcome to </h1>
-	<h2>Jian Wang's blog</h2>
-	
+<div class="container">
+
+  <header class="site-header">
+
+  <div class="wrapper">
+
+    <h1 class="site-title"><a href="/">Jian's Blog</a></h1>
+    <h3 class="site-meta">Welcome to My Blog</h3>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+        
+        <a class="page-link" href="/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/about/">About</a>
+        
+        
+        
+        <a class="page-link" href="/archives/">Archives</a>
+        
+        
+        
+        <a class="page-link" href="/categories/">Categories</a>
+        
+        
+        
+        <a class="page-link" href="/tags/">Tags</a>
+        
+        
+        
+        <a class="page-link" href="/guestbook/">Guestbook</a>
+        
+        
+        
+        <a class="page-link" href="/feed.xml">Subscribe</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    
+
+  <div class="page-content col-sm-8">
+    <div class="home">
+  <div class="post" itemscope itemtype="http://schema.org/BlogPosting" >
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/05/02/graph-bellman-ford.html">Bellman-Ford algorithm</a>
+      </h1>
+      <meta itemprop="keywords" content="Graph,Bellman-Ford" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Graph" title="Graph">Graph</a>, 
+      
+      <a href="/tags/#Bellman-Ford" title="Bellman-Ford">Bellman-Ford</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-05-02">
+        on May 2, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>This is a simple implementation of Bellman-Ford</p>
+
+<!--more-->
+
+<h3 id="source-code-c">Source Code (C++)</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include &lt;limits&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">uwGraph</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">V</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">E</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">useMatrix</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">matrix</span><span class="p">;</span>  <span class="c1">// representation of matrix
+</span>  <span class="n">uwGraph</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// O(1)
+</span>    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * create am empty graph with V vertices
+  *******************************/</span>
+  <span class="n">uwGraph</span><span class="p">(</span><span class="kt">int</span> <span class="n">V1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">E1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">useMatrix</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="n">V</span> <span class="o">=</span> <span class="n">V1</span><span class="p">;</span>
+      <span class="n">E</span> <span class="o">=</span> <span class="n">E1</span><span class="p">;</span>
+      <span class="n">matrix</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()));</span> <span class="c1">//O(V^2)
+</span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * find all the adjacent value
+  *******************************/</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adjacent</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adjvector</span><span class="p">;</span>
+      <span class="c1">// O(V)
+</span>       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">adjvector</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+       <span class="p">}</span>
+     <span class="k">return</span> <span class="n">adjvector</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/******************************
+  * add edges to the graph
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">,</span> <span class="kt">double</span> <span class="n">weight</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>      <span class="c1">// here I use the whole matrix (not half)
+</span>      <span class="n">matrix</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span><span class="p">;</span>
+      <span class="n">matrix</span><span class="p">[</span><span class="n">w</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/******************************
+  * check if two vertices are adjacent
+  *******************************/</span>
+  <span class="kt">bool</span> <span class="n">isAdjacent</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+   <span class="c1">// O(1)
+</span>      <span class="k">return</span> <span class="n">matrix</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"title "</span><span class="p">;</span>
+      <span class="k">for</span>  <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">V</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">"     "</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">bellmanford</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">D</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">P</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// O(V^3) omega(V^2)
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+              <span class="n">D</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">!=</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+              <span class="n">D</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">matrix</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">D</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">matrix</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">];</span>
+                <span class="n">P</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+           <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">weight</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">V</span> <span class="o">&gt;&gt;</span> <span class="n">E</span><span class="p">;</span>
+  <span class="n">uwGraph</span> <span class="n">graphmatrix</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">E</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="n">w</span> <span class="o">&gt;&gt;</span> <span class="n">weight</span><span class="p">;</span>
+    <span class="n">graphmatrix</span><span class="p">.</span><span class="n">addEdge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">weight</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">//cout &lt;&lt; "**************** Matrix representation ***************** " &lt;&lt; endl;
+</span>  <span class="c1">//cout &lt;&lt; "bellow is the representation of the graph:"&lt;&lt;endl;
+</span>  <span class="c1">//graphmatrix.print();
+</span>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">D</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">());</span>
+  <span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">P</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">graphmatrix</span><span class="p">.</span><span class="n">bellmanford</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">P</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">D</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">P</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
 </div>
-<div class="cont932">
-	<hr style="margin-top: 0;">
-	<div id="journal-articles-block">
-	
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
+<p>Bellow is test data</p>
 
-<a href="/categories.html#Daily-ref" title="Daily">
-	Daily
-
-</a>
+<div class="highlighter-rouge"><pre class="highlight"><code>6
+8
+0 1 2.5
+0 3 0.5
+1 4 1.2
+1 2 0.5
+2 3 1.5
+2 4 1.0
+4 5 1.4
+3 5 4.4
+</code></pre>
 </div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/daily/2016/05/28/United-States-Military-Academy">United States Military Academy Tour</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>One week ago, I visited United States Military Academy by the 2-hours tour with a guide. Since it located at West Point we usually call it West Point Military Academy . It is famous not only for its contribution to the world and rigorous discipline but also for its invention of modern civilization. West Point has a gene of loyalty, engineering, and sports. Let me talk about some fabulous stories about it.</p>
+<h3 id="contribution">Contribution</h3>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/05/02/graph-DFS-BFS.html">Graph Representation</a>
+      </h1>
+      <meta itemprop="keywords" content="Graph,DFS,BFS" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Graph" title="Graph">Graph</a>, 
+      
+      <a href="/tags/#DFS" title="DFS">DFS</a>, 
+      
+      <a href="/tags/#BFS" title="BFS">BFS</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-05-02">
+        on May 2, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>This is a simple implementation of Undirected Graph</p>
+
+<!--more-->
+
+<h3 id="source-code-c">Source Code (C++)</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code>
+<span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">undirectedGraph</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">class</span> <span class="nc">edge</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="c1">//int vertex;  //in case the vetices are huge and not contiguous
+</span>    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">;</span>
+    <span class="n">edge</span> <span class="p">()</span> <span class="p">{}</span>
+  <span class="p">};</span>
+  <span class="kt">int</span> <span class="n">V</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">E</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">useMatrix</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">edge</span><span class="o">&gt;</span> <span class="n">adjlist</span><span class="p">;</span>  <span class="c1">// representation of adjacent list
+</span>  <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">matrix</span><span class="p">;</span>  <span class="c1">// representation of matrix
+</span>  <span class="n">undirectedGraph</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// O(1)
+</span>    <span class="n">V</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * create am empty graph with V vertices
+  *******************************/</span>
+  <span class="n">undirectedGraph</span><span class="p">(</span><span class="kt">int</span> <span class="n">V1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">E1</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">useMatrix</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="n">V</span> <span class="o">=</span> <span class="n">V1</span><span class="p">;</span>
+      <span class="n">E</span> <span class="o">=</span> <span class="n">E1</span><span class="p">;</span>
+      <span class="n">matrix</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span> <span class="c1">//O(V^2)
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">useMatrix</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="n">V</span> <span class="o">=</span> <span class="n">V1</span><span class="p">;</span>
+      <span class="n">E</span> <span class="o">=</span> <span class="n">E1</span><span class="p">;</span>
+      <span class="n">adjlist</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">edge</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">);</span> <span class="c1">//initial O(V)
+</span>    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="n">numberOfV</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>    <span class="k">return</span> <span class="n">V</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="n">numberOfE</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>    <span class="k">return</span> <span class="n">E</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * find all the adjacent value
+  *******************************/</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adjacent</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adjvector</span><span class="p">;</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// O(V)
+</span>       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">adjvector</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+       <span class="p">}</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>  <span class="c1">// O(V) omega(1)
+</span>       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">adjvector</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="k">return</span> <span class="n">adjvector</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * find the number of vetices
+  * adjacent to vertex v
+  *******************************/</span>
+  <span class="kt">int</span> <span class="n">degree</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// matrix: O(V) adjacent list: O(V) omega(1)
+</span>    <span class="kt">int</span> <span class="n">degree</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="o">:</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="n">degree</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">degree</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * add edges to the graph
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// O(1)
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// here I use the whole matrix (not half)
+</span>      <span class="n">matrix</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">matrix</span><span class="p">[</span><span class="n">w</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+      <span class="n">adjlist</span><span class="p">[</span><span class="n">w</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * count the number of Cycles
+  * matrix: O(V^3) adjacent list: O(V^3) omega(V^2)
+  *******************************/</span>
+  <span class="kt">int</span> <span class="n">numberOfCycles</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">v</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">w</span> <span class="o">&lt;</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">).</span><span class="n">size</span><span class="p">();</span> <span class="n">w</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// this is only for undirected graph. For directed graph, no need divide by 2;
+</span>  <span class="p">}</span>
+  <span class="cm">/******************************
+  * check if two vertices are adjacent
+  *******************************/</span>
+  <span class="kt">bool</span> <span class="n">isAdjacent</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// O(1)
+</span>      <span class="k">return</span> <span class="n">matrix</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">w</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// O(V) omega(1)
+</span>      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">adjlist</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span>
+           <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * DFS all the vertices
+  * O(V^2) omega(V) limited to edges
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">DFS</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">visited</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">DFS</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * BFS all the vertices
+  * O(V^2) omega(V) limited to edges too
+  *******************************/</span>
+  <span class="kt">void</span> <span class="n">BFS</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">visited</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">queue1</span><span class="p">;</span>
+    <span class="n">queue1</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">queue1</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">queue1</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+      <span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">adjacent</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+         <span class="n">queue1</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">queue1</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="cm">/******************************
+  * count the number of Cycles
+  * matrix: O(V^3) adjacent list: O(V^3) omega(V^2)
+  *******************************/</span>
+  <span class="kt">bool</span> <span class="n">isConnected</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="n">DFS</span><span class="p">(</span><span class="n">visited</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="n">BFS</span><span class="p">(</span><span class="n">visited</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">visited</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">print</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">useMatrix</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"title "</span><span class="p">;</span>
+      <span class="k">for</span>  <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">V</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">"     "</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">list</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+           <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"vertex #"</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span><span class="s">": "</span><span class="p">;</span>
+         <span class="k">else</span>
+           <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">adjlist</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">list</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+       <span class="p">}</span>
+       <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span> <span class="c1">// two adjacent vertices
+</span>  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">V</span><span class="p">;</span>
+  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">E</span><span class="p">;</span>
+  <span class="n">undirectedGraph</span> <span class="n">graphmatrix</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="n">undirectedGraph</span> <span class="n">graphadjlist</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">E</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">w</span><span class="p">;</span>
+    <span class="n">graphmatrix</span><span class="p">.</span><span class="n">addEdge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+    <span class="n">graphadjlist</span><span class="p">.</span><span class="n">addEdge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"**************** Matrix representation ***************** "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of vertices is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">numberOfV</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of edges is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">numberOfE</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the degree of v = 1 is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">degree</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of cycles is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">numberOfCycles</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"bellow is the representation of the graph:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">graphmatrix</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Is connected? "</span> <span class="o">&lt;&lt;</span> <span class="n">graphmatrix</span><span class="p">.</span><span class="n">isConnected</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"*************** adj-list representation **************** "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of vertices is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">numberOfV</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of edges is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">numberOfE</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the degree of v = 1 is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">degree</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"the number of cycles is: "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">numberOfCycles</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"bellow is the representation of the graph:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">graphadjlist</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Is connected? "</span> <span class="o">&lt;&lt;</span> <span class="n">graphadjlist</span><span class="p">.</span><span class="n">isConnected</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
 
-				
-				</span>
-				<span class="readmore"><a href="/daily/2016/05/28/United-States-Military-Academy">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
 
-<a href="/categories.html#algorithm-ref" title="algorithm">
-	algorithm
-
-</a>
+</code></pre>
 </div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2016/05/02/graph-bellman-ford">Bellman-Ford algorithm</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>This is a simple implementation of Bellman-Ford</p>
+<p>Bellow is test data</p>
 
-
-				
-				</span>
-				<span class="readmore"><a href="/algorithm/2016/05/02/graph-bellman-ford">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#algorithm-ref" title="algorithm">
-	algorithm
-
-</a>
+<div class="highlighter-rouge"><pre class="highlight"><code>7
+8
+0 1
+0 2
+0 6
+0 5
+3 5
+3 4
+4 5
+4 6
+</code></pre>
 </div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2016/05/02/graph-DFS-BFS">Graph Representation</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>This is a simple implementation of Undirected Graph</p>
+<h3 id="contribution">Contribution</h3>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/04/05/Red-Black-Tree.html">Red Black Tree implementation</a>
+      </h1>
+      <meta itemprop="keywords" content="RBTree,Red Black Tree" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#RBTree" title="RBTree">RBTree</a>, 
+      
+      <a href="/tags/#Red Black Tree" title="Red Black Tree">Red Black Tree</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-04-05">
+        on Apr 5, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>This is a simple implementation of Red Black Tree.</p>
+
+<!--more-->
+
+<h3 id="source-code-c">Source Code (C++)</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">RBTree</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="k">class</span> <span class="nc">Node</span> <span class="p">{</span>
+  <span class="k">public</span><span class="o">:</span>
+    <span class="kt">bool</span> <span class="n">isred</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span> <span class="n">left</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span> <span class="n">right</span><span class="p">;</span>
+    <span class="n">Node</span><span class="p">()</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">isred</span><span class="p">(</span><span class="nb">true</span><span class="p">),</span> <span class="n">left</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">right</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">isred</span><span class="p">(</span><span class="nb">true</span><span class="p">),</span> <span class="n">left</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">right</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="p">};</span>
+  <span class="n">Node</span> <span class="o">*</span><span class="n">root</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span> <span class="o">*&gt;</span> <span class="n">array</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">RBTree</span><span class="p">()</span> <span class="o">:</span> <span class="n">root</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="n">RBTree</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="o">:</span> <span class="n">root</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="p">{}</span>
+  <span class="o">~</span><span class="n">RBTree</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">root</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">destruct</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+      <span class="k">delete</span> <span class="n">root</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">array</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">destruct</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">destruct</span><span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">);</span>
+      <span class="k">delete</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">destruct</span><span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">);</span>
+      <span class="k">delete</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">bool</span> <span class="n">isRed</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="k">return</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">isred</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">rotate_left</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span> <span class="o">&amp;</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">;</span>
+    <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">;</span>
+    <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+    <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">isred</span> <span class="o">=</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">isred</span><span class="p">;</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">rotate_right</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span> <span class="o">&amp;</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">;</span>
+    <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">;</span>
+    <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">right</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+    <span class="n">temp</span><span class="o">-&gt;</span><span class="n">isred</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">isred</span><span class="p">;</span>
+    <span class="n">node</span><span class="o">-&gt;</span><span class="n">isred</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">flip_color</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span> <span class="o">&amp;</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">isred</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span> <span class="o">-&gt;</span> <span class="n">isred</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span> <span class="o">-&gt;</span> <span class="n">isred</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">buildTree</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">array</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+      <span class="n">insert</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+   <span class="n">display</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+ <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">insert</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span> <span class="o">&amp;</span><span class="n">node</span><span class="p">,</span> <span class="n">Node</span> <span class="o">*</span> <span class="o">&amp;</span><span class="n">vnode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="n">node</span> <span class="o">=</span> <span class="n">vnode</span><span class="p">;</span>
+    <span class="c1">// divide
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">vnode</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span>
+      <span class="n">insert</span><span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">,</span> <span class="n">vnode</span><span class="p">);</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="n">vnode</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span>
+      <span class="n">insert</span><span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">,</span> <span class="n">vnode</span><span class="p">);</span>
+    <span class="c1">// Conquer
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isRed</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">))</span> <span class="n">rotate_left</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">isRed</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">))</span> <span class="n">rotate_right</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isRed</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">isRed</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">))</span> <span class="n">flip_color</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">display</span><span class="p">(</span><span class="n">Node</span> <span class="o">*</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">node</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">RBTree</span> <span class="n">rbtree</span><span class="p">;</span>
+  <span class="n">rbtree</span><span class="p">.</span><span class="n">buildTree</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
 
-				
-				</span>
-				<span class="readmore"><a href="/algorithm/2016/05/02/graph-DFS-BFS">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#Daily-ref" title="Daily">
-	Daily
-
-</a>
+</code></pre>
 </div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/daily/2016/04/07/On-Site-at-Syncsort">On site interview at Syncsort</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>I had an exiting on-site interview at Syncsort yesterday. Everyone was kind and friendly and the environment is elegant. The office building is surrounded by a peaceful lake, trees, huge area of lawns and a big parking lot. The moment I entered in, I felt like I am in a modern and quiet garden. Sunshine falls everywhere from the roof and down to the middle of a pool with fishes and a typical American style coffee shop appears at the base floor. The temperature is mild and the air is fresh and clean. Also my interview went smoothly. I really wish to get the offer. Bellow is the general process of my interview.</p>
+
+<h3 id="contribution">Contribution</h3>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/04/04/Rehashing-Linear-Probe.html">Rehashing Linear Probe Practice</a>
+      </h1>
+      <meta itemprop="keywords" content="Hashing,Linear Probe,Rehashing" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Hashing" title="Hashing">Hashing</a>, 
+      
+      <a href="/tags/#Linear Probe" title="Linear Probe">Linear Probe</a>, 
+      
+      <a href="/tags/#Rehashing" title="Rehashing">Rehashing</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-04-04">
+        on Apr 4, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>This is a implementation of Linear Probe Hashing and Rehashing, this code is based on Prof. Dov’s code.</p>
+
+<p>Just used to learn the general idea.</p>
+
+<!--more-->
+
+<h3 id="source-code-c">Source Code (C++)</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;stdio.h&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Hashmap</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">string</span><span class="o">**</span> <span class="n">table</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">used</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">limit</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">Hashmap</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="o">*</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="o">~</span><span class="n">Hashmap</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="k">delete</span> <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">delete</span> <span class="p">[]</span> <span class="n">table</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">grow</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="n">Hashmap</span> <span class="o">*</span><span class="n">old</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashmap</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+    <span class="n">size</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">limit</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="n">old</span><span class="o">-&gt;</span><span class="n">used</span><span class="p">;</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="o">*</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">old</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">((</span><span class="n">old</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">add</span><span class="p">(</span><span class="o">*</span><span class="n">old</span><span class="o">-&gt;</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">Hashmap</span><span class="p">(</span><span class="kt">int</span> <span class="n">init</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">init</span><span class="p">;</span> <span class="n">i</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">limit</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="o">*</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">Hashmap</span><span class="p">(</span><span class="k">const</span> <span class="n">Hashmap</span><span class="o">&amp;</span> <span class="n">orig</span><span class="p">)</span>  <span class="p">{</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="o">*</span><span class="p">[</span><span class="n">orig</span><span class="p">.</span><span class="n">size</span><span class="p">];</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">orig</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>
+    <span class="n">used</span> <span class="o">=</span> <span class="n">orig</span><span class="p">.</span><span class="n">used</span><span class="p">;</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="n">orig</span><span class="p">.</span><span class="n">limit</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">orig</span><span class="p">.</span><span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+      <span class="k">else</span>
+        <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">orig</span><span class="p">.</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">int</span> <span class="n">hash1</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">hashcode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">hashcode</span> <span class="o">=</span> <span class="n">hashcode</span> <span class="o">*</span> <span class="mi">32</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">return</span> <span class="n">hashcode</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">int</span> <span class="n">hash2</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">hashcode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">hashcode</span> <span class="o">=</span> <span class="p">(</span><span class="n">hashcode</span> <span class="o">&lt;&lt;</span> <span class="mi">13</span><span class="p">)</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span><span class="p">(</span><span class="n">hashcode</span> <span class="o">&gt;&gt;</span> <span class="mi">17</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">hashcode</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">int</span> <span class="n">hash</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">v</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">Hashmap</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Hashmap</span><span class="o">&amp;</span> <span class="n">orig</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">!=</span> <span class="o">&amp;</span><span class="n">orig</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="o">-&gt;~</span><span class="n">Hashmap</span><span class="p">();</span>
+      <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="o">*</span><span class="p">[</span><span class="n">orig</span><span class="p">.</span><span class="n">size</span><span class="p">];</span>
+      <span class="n">size</span> <span class="o">=</span> <span class="n">orig</span><span class="p">.</span><span class="n">size</span><span class="p">;</span>
+      <span class="n">used</span> <span class="o">=</span> <span class="n">orig</span><span class="p">.</span><span class="n">used</span><span class="p">;</span>
+      <span class="n">limit</span> <span class="o">=</span> <span class="n">orig</span><span class="p">.</span><span class="n">limit</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">orig</span><span class="p">.</span><span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">orig</span><span class="p">.</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">)</span>
+          <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="o">*</span><span class="n">orig</span><span class="p">.</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">used</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">used</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">)</span>
+      <span class="k">this</span><span class="o">-&gt;</span><span class="n">grow</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">bin</span> <span class="o">=</span> <span class="n">hash</span><span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">bin</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">bin</span> <span class="o">=</span> <span class="p">(</span><span class="n">bin</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
+      <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">table</span><span class="p">[</span><span class="n">bin</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">string</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">used</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">limit</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">used</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">"  "</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Hashmap</span> <span class="n">m</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="n">m</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">Hashmap</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+  <span class="n">m</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+  <span class="n">m2</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
 
-				
-				</span>
-				<span class="readmore"><a href="/daily/2016/04/07/On-Site-at-Syncsort">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-		<div class="journal-article">
-			<div class="journal-post-info">
-				
-				
-				<div class="journal-cat-box">
-
-<a href="/categories.html#algorithm-ref" title="algorithm">
-	algorithm
-
-</a>
+</code></pre>
 </div>
-				
-			</div>
-			<div class="journal-body">
-				<h1 class="journal-title"><a href="/algorithm/2016/04/05/Red-Black-Tree">Red Black Tree implementation</a><span class="author">by Jian</span></h1>
-				
-				<span class="teaser"><p>This is a simple implementation of Red Black Tree.</p>
 
+<h3 id="contribution">Contribution</h3>
 
-				
-				</span>
-				<span class="readmore"><a href="/algorithm/2016/04/05/Red-Black-Tree">Read More</a></span>
-			</div>
-		</div>
-		<div class="clearboth"></div>
-		
-	</div>
-	
-	<div id="journal-arrows-cont">
-			<a href="/2" class="journal-arrow ja-forward"></a>
-	</div>
-	
-	<div class="clearboth"></div>
-	<div id="journal-loadmore">Load More…</div>
-	<div class="clearboth"></div>
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/04/04/Boggle-Game.html">Boggle Game</a>
+      </h1>
+      <meta itemprop="keywords" content="DFS,Back Tracking,Boggle" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#DFS" title="DFS">DFS</a>, 
+      
+      <a href="/tags/#Back Tracking" title="Back Tracking">Back Tracking</a>, 
+      
+      <a href="/tags/#Boggle" title="Boggle">Boggle</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-04-04">
+        on Apr 4, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>This is a implementation of Boggle game using Trie.</p>
+
+<!--more-->
+
+<h3 id="source-code-c">Source Code (C++)</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+#include&lt;string&gt;
+#include&lt;vector&gt;
+#include&lt;unordered_map&gt;
+#include&lt;algorithm&gt;
+</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">count_if</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">TrieNode</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="kt">bool</span> <span class="n">isWord</span><span class="p">;</span>
+  <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">subTrie</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
+  <span class="n">TrieNode</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">isWord</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">class</span> <span class="nc">Trie</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">root</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">Trie</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="o">~</span><span class="n">Trie</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">destruct</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">root</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+      <span class="k">delete</span> <span class="n">root</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">destruct</span> <span class="p">(</span><span class="n">TrieNode</span> <span class="o">*</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">destruct</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="k">delete</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">getRoot</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">char</span> <span class="n">toLower</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">64</span> <span class="o">&amp;&amp;</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">91</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">32</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">toLower</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
+      <span class="p">}</span>
+      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">curr</span><span class="o">-&gt;</span><span class="n">isWord</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">void</span> <span class="n">buildTrie</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ifstream</span> <span class="n">infile</span><span class="p">;</span>
+    <span class="n">infile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">infile</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"open "</span><span class="o">&lt;&lt;</span> <span class="n">filename</span> <span class="o">&lt;&lt;</span><span class="s">" failed</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">word</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">infile</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">add</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">infile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="kt">bool</span> <span class="n">contains</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">toLower</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">isWord</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">bool</span> <span class="n">containsPrefix</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">toLower</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">containsPrefix_Faster</span><span class="p">(</span><span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">toLower</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">class</span> <span class="nc">Boggle</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">board</span><span class="p">;</span>
+  <span class="n">Trie</span> <span class="n">trie</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">Boggle</span><span class="p">(){}</span>
+  <span class="o">~</span> <span class="n">Boggle</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">init</span><span class="p">(</span><span class="n">string</span> <span class="n">bogglefile</span><span class="p">,</span> <span class="n">string</span> <span class="n">triefile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">trie</span><span class="p">.</span><span class="n">buildTrie</span><span class="p">(</span><span class="n">triefile</span><span class="p">);</span>
+    <span class="n">ifstream</span> <span class="n">infile</span><span class="p">;</span>
+    <span class="n">infile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">bogglefile</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">infile</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"open "</span><span class="o">&lt;&lt;</span> <span class="n">bogglefile</span> <span class="o">&lt;&lt;</span><span class="s">" failed</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">infile</span> <span class="o">&gt;&gt;</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">board</span> <span class="o">=</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="p">(</span><span class="n">size</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="sc">'#'</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">letter</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">infile</span> <span class="o">&gt;&gt;</span> <span class="n">letter</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">letter</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">infile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">play</span><span class="p">(</span><span class="n">string</span> <span class="n">outputfile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">hashmap</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">*</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">backTracking</span><span class="p">(</span><span class="n">hashmap</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">trie</span><span class="p">.</span><span class="n">getRoot</span><span class="p">(),</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+    <span class="c1">// print the result
+</span>    <span class="n">ofstream</span> <span class="n">outfile</span><span class="p">;</span>
+    <span class="n">outfile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">outputfile</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">out</span> <span class="o">|</span> <span class="n">ios</span><span class="o">::</span><span class="n">app</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">outfile</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">outputfile</span> <span class="o">&lt;&lt;</span> <span class="s">"open fail!</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">itr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">itr</span> <span class="o">=</span> <span class="n">hashmap</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">itr</span> <span class="o">!=</span> <span class="n">hashmap</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">itr</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">outfile</span> <span class="o">&lt;&lt;</span> <span class="n">itr</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span><span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">itr</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+         <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">itr</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span><span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">itr</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">outfile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">backTracking</span><span class="p">(</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">hashmap</span><span class="p">,</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">visited</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span><span class="p">,</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">nextptr</span> <span class="o">=</span> <span class="n">trie</span><span class="p">.</span><span class="n">containsPrefix_Faster</span><span class="p">(</span><span class="n">curr</span><span class="p">,</span> <span class="n">board</span><span class="p">[</span><span class="n">pos</span><span class="p">]);</span>
+   <span class="k">if</span> <span class="p">(</span> <span class="n">nextptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">nextptr</span><span class="o">-&gt;</span><span class="n">isWord</span> <span class="o">&amp;&amp;</span> <span class="n">visited</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">string</span> <span class="n">word</span><span class="p">;</span>
+        <span class="n">for_each</span><span class="p">(</span><span class="n">visited</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">visited</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">word</span><span class="p">](</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">word</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
+        <span class="p">});</span>
+        <span class="n">word</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">pos</span><span class="p">]);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">hashmap</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">!=</span> <span class="n">hashmap</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+          <span class="n">hashmap</span><span class="p">[</span><span class="n">word</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">hashmap</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">visited</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+      <span class="c1">// find both unique and valid positions
+</span>      <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span> <span class="o">/</span> <span class="n">size</span><span class="p">),</span> <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span> <span class="o">%</span> <span class="n">size</span><span class="p">);</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">i</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">];</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">y</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">&amp;&amp;</span>
+            <span class="n">j</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">)</span> <span class="p">{</span>
+          <span class="n">pos</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="n">j</span><span class="p">;</span>
+          <span class="k">if</span> <span class="p">(</span><span class="n">count_if</span><span class="p">(</span><span class="n">visited</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">visited</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+            <span class="p">[</span><span class="o">&amp;</span><span class="n">pos</span><span class="p">](</span><span class="kt">int</span> <span class="n">num</span><span class="p">){</span> <span class="k">return</span> <span class="n">num</span> <span class="o">==</span> <span class="n">pos</span><span class="p">;})</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">backTracking</span><span class="p">(</span><span class="n">hashmap</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nextptr</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">i</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">];</span> <span class="n">j</span> <span class="o">-=</span> <span class="n">y</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Boggle</span> <span class="n">boggle</span><span class="p">;</span>
+  <span class="n">boggle</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="s">"boggle.dat"</span><span class="p">,</span> <span class="s">"dictionary.txt"</span><span class="p">);</span>
+  <span class="n">boggle</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="s">"bogglewords.txt"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
 </div>
-<div class="clearboth"></div>
-			</div>
-			<div class="clearboth pagebottom"></div>
-		</div>
-	</div>
-	﻿<footer>
-	<div class="footer-940">
-		<div class="footer-general-info">
-			© 2015 Jian Wang.<br><br>
-			Content licensed under:<br>
-			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
-			<a href = "/about.html">About Me</a><br>
-		</div>
-		<div class="footer-col-cont">
-			<div class="footer-nav-col">
-				<h4><a>Categories</a></h4>
-				<ul>
-					
-					
 
+<h3 id="test-files">Test files</h3>
 
-  
-     
-    	<li><a href="/categories.html#trick-ref">
-    		trick <span>2</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#read-ref">
-    		read <span>4</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#daily-ref">
-    		daily <span>3</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#idea-ref">
-    		idea <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#algorithm-ref">
-    		algorithm <span>30</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#Technology-ref">
-    		Technology <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#learn-ref">
-    		learn <span>1</span>
-    	</a></li>
-     
-    	<li><a href="/categories.html#Daily-ref">
-    		Daily <span>2</span>
-    	</a></li>
-    
-  
+<ul>
+  <li>
+    <p><a href="https://drive.google.com/file/d/0B4WEFlVUmo6xei1zWHF5U0RKd2s/view">dictionary.txt</a></p>
+  </li>
+  <li>
+    <p><a href="https://drive.google.com/file/d/0Bwxfq4Y7f7vkSl92ZkxoMm12cEE/view?usp=sharing">boggle.dat</a></p>
+  </li>
+</ul>
 
+<h3 id="output">Output</h3>
 
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Pages</a></h4>
-				<ul>
-					
-					
-					
+<ul>
+  <li><a href="../../../../files/bogglewords.txt">bogglewords.txt</a></li>
+</ul>
 
+<h3 id="contribution">Contribution</h3>
 
-  
-    
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
       
+    </article>
+    <hr />
+
     
+
+  </div>
+</div>
+
+    <section class="pager">
   
-    
-      
-      	
-      	<li><a href="/about">About Me</a></li>
-      	
-      
-    
   
-    
-      
-      	
-      	<li><a href="/archive">Archive</a></li>
-      	
-      
-    
+  <li class="next"><a href="/page2/" title="Older">Older &rarr;</a></li>
   
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/categories">Categories</a></li>
-      	
-      
-    
-  
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-      	
-      	<li><a href="/tags">Tags</a></li>
-      	
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
+</section>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    if (e.target.nodeName.toUpperCase() != 'BODY') return;
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = '/page2/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
 
 
 
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Feed</a></h4>
-				<ul>
-					<li><a href="/atom.xml">Atom Feed</a></li>
-					<li><a href="/rss.xml">RSS Feed</a></li>
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a>Links</a></h4>
-				<ul>
-				 
-					<li><a href = "http://jianwang.info/">Jian Wang's Blog</a></li>
-				
-				</ul>
-			</div>
-			<div class="footer-nav-col">
-				<h4><a href = "/about.html">About Me</a></h4>
-				<ul>
-				 
-					<li><a href = "mailto:jianw851@gmail.com">e-mail</a></li>
-				 
-					<li><a href = "https://github.com/jianw851">Github</a></li>
-				 
-					<li><a href = "https://cn.linkedin.com/in/jianwang85">Linkedin</a></li>
-				
-				</ul>
-			</div>
-			<div class="clearboth"></div>
-		</div>
-		<div class="clearboth"></div>
-	</div>
-	<div class="clearboth"></div>
+  </div>
+  <div class="col-sm-2">
+<div class="sidebar-module about">
+  <h4>About Me</h4>
+  <img title="Jian Wang" src="https://i.imgur.com/Mdc4szJl.jpg" alt="Jian Wang"/>
+  <span>Hi, this is Jian.</span>
+  <br />
+
+  
+
+  You can contact me via: <br />
+
+  
+  <a href="mailto:jianw851@gmail.com" title="mailto: jianw851@gmail.com"><i class="fa fa-envelope-square fa-3x"></i></a>&nbsp;
+  
+  
+  <a href="https://github.com/jianw851" title="GithubID: jianw851"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;
+  
+  
+  <a href="https://twitter.com/jianw851" title="TwitterID: jianw851"><i class="fa fa-twitter-square fa-3x"></i></a>
+  
+
+  
+
+</div>
+
+<div class="sidebar-module">
+  <h4>Site Search</h4>
+  <form onsubmit="search_google()" >
+    <input type="text" id="google-search" placeholder="Google search" />
+    <input type="submit" name="sa" value="Go" />
+  </form>
+</div>
+
+
+<div class="sidebar-module"> <!-- sidebar-module-inset">-->
+  <h4>Copyright Notice</h4>
+
+  
+
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+    <img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png">
+  </a>
+  <br />
+  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>
+
+  
+
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Recent Posts</h4>
+  
+  <li>
+  <a href="/algorithm/2016/05/02/graph-bellman-ford.html" title="Bellman-Ford algorithm" rel="bookmark">Bellman-Ford algorithm</a>
+  </li>
+  
+  <li>
+  <a href="/algorithm/2016/05/02/graph-DFS-BFS.html" title="Graph Representation" rel="bookmark">Graph Representation</a>
+  </li>
+  
+  <li>
+  <a href="/algorithm/2016/04/05/Red-Black-Tree.html" title="Red Black Tree implementation" rel="bookmark">Red Black Tree implementation</a>
+  </li>
+  
+  <li>
+  <a href="/algorithm/2016/04/04/Rehashing-Linear-Probe.html" title="Rehashing Linear Probe Practice" rel="bookmark">Rehashing Linear Probe Practice</a>
+  </li>
+  
+  <li>
+  <a href="/algorithm/2016/04/04/Boggle-Game.html" title="Boggle Game" rel="bookmark">Boggle Game</a>
+  </li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Categories</h4>
+  
+  <li><a href="/categories/#trick" title="trick" rel="2">trick (2)</a></li>
+  
+  <li><a href="/categories/#read" title="read" rel="3">read (3)</a></li>
+  
+  <li><a href="/categories/#idea" title="idea" rel="1">idea (1)</a></li>
+  
+  <li><a href="/categories/#daily" title="daily" rel="1">daily (1)</a></li>
+  
+  <li><a href="/categories/#algorithm" title="algorithm" rel="30">algorithm (30)</a></li>
+  
+  <li><a href="/categories/#Technology" title="Technology" rel="1">Technology (1)</a></li>
+  
+  <li><a href="/categories/#learn" title="learn" rel="1">learn (1)</a></li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Tags</h4>
+  
+    <a href="/tags/#jekyll" title="jekyll" rel="2">jekyll</a> &nbsp;
+  
+    <a href="/tags/#recommend books" title="recommend books" rel="1">recommend books</a> &nbsp;
+  
+    <a href="/tags/#git" title="git" rel="1">git</a> &nbsp;
+  
+    <a href="/tags/#ruby" title="ruby" rel="1">ruby</a> &nbsp;
+  
+    <a href="/tags/#rails" title="rails" rel="1">rails</a> &nbsp;
+  
+    <a href="/tags/#maintenance" title="maintenance" rel="1">maintenance</a> &nbsp;
+  
+    <a href="/tags/#mindmap" title="mindmap" rel="1">mindmap</a> &nbsp;
+  
+    <a href="/tags/#cloud" title="cloud" rel="1">cloud</a> &nbsp;
+  
+    <a href="/tags/#virtual world" title="virtual world" rel="1">virtual world</a> &nbsp;
+  
+    <a href="/tags/#visa" title="visa" rel="1">visa</a> &nbsp;
+  
+    <a href="/tags/#software engineer" title="software engineer" rel="1">software engineer</a> &nbsp;
+  
+    <a href="/tags/#code" title="code" rel="1">code</a> &nbsp;
+  
+    <a href="/tags/#computer science" title="computer science" rel="1">computer science</a> &nbsp;
+  
+    <a href="/tags/#string" title="string" rel="1">string</a> &nbsp;
+  
+    <a href="/tags/#for loop" title="for loop" rel="1">for loop</a> &nbsp;
+  
+    <a href="/tags/#data structure" title="data structure" rel="2">data structure</a> &nbsp;
+  
+    <a href="/tags/#two stacks" title="two stacks" rel="1">two stacks</a> &nbsp;
+  
+    <a href="/tags/#DFS" title="DFS" rel="8">DFS</a> &nbsp;
+  
+    <a href="/tags/#backtracking" title="backtracking" rel="4">backtracking</a> &nbsp;
+  
+    <a href="/tags/#Binary Search" title="Binary Search" rel="2">Binary Search</a> &nbsp;
+  
+    <a href="/tags/#graph" title="graph" rel="1">graph</a> &nbsp;
+  
+    <a href="/tags/#dfs" title="dfs" rel="1">dfs</a> &nbsp;
+  
+    <a href="/tags/#Array" title="Array" rel="4">Array</a> &nbsp;
+  
+    <a href="/tags/#Dynamic Programming" title="Dynamic Programming" rel="2">Dynamic Programming</a> &nbsp;
+  
+    <a href="/tags/#bit manipulation" title="bit manipulation" rel="1">bit manipulation</a> &nbsp;
+  
+    <a href="/tags/#Bit Manipulation" title="Bit Manipulation" rel="1">Bit Manipulation</a> &nbsp;
+  
+    <a href="/tags/#Math" title="Math" rel="2">Math</a> &nbsp;
+  
+    <a href="/tags/#Graph" title="Graph" rel="3">Graph</a> &nbsp;
+  
+    <a href="/tags/#Heap" title="Heap" rel="1">Heap</a> &nbsp;
+  
+    <a href="/tags/#Three Pointer" title="Three Pointer" rel="1">Three Pointer</a> &nbsp;
+  
+    <a href="/tags/#Facebook" title="Facebook" rel="1">Facebook</a> &nbsp;
+  
+    <a href="/tags/#Architecture" title="Architecture" rel="1">Architecture</a> &nbsp;
+  
+    <a href="/tags/#Technology" title="Technology" rel="1">Technology</a> &nbsp;
+  
+    <a href="/tags/#Assembly" title="Assembly" rel="1">Assembly</a> &nbsp;
+  
+    <a href="/tags/#Hashmap" title="Hashmap" rel="1">Hashmap</a> &nbsp;
+  
+    <a href="/tags/#Trie" title="Trie" rel="1">Trie</a> &nbsp;
+  
+    <a href="/tags/#Doubly Linked List" title="Doubly Linked List" rel="1">Doubly Linked List</a> &nbsp;
+  
+    <a href="/tags/#List" title="List" rel="2">List</a> &nbsp;
+  
+    <a href="/tags/#Grow Array" title="Grow Array" rel="3">Grow Array</a> &nbsp;
+  
+    <a href="/tags/#Singly Linked List" title="Singly Linked List" rel="1">Singly Linked List</a> &nbsp;
+  
+    <a href="/tags/#Queue" title="Queue" rel="2">Queue</a> &nbsp;
+  
+    <a href="/tags/#Linked List" title="Linked List" rel="2">Linked List</a> &nbsp;
+  
+    <a href="/tags/#Stack" title="Stack" rel="1">Stack</a> &nbsp;
+  
+    <a href="/tags/#Two Pointers" title="Two Pointers" rel="1">Two Pointers</a> &nbsp;
+  
+    <a href="/tags/#Tree" title="Tree" rel="1">Tree</a> &nbsp;
+  
+    <a href="/tags/#Divide and Conquer" title="Divide and Conquer" rel="1">Divide and Conquer</a> &nbsp;
+  
+    <a href="/tags/#Traverse" title="Traverse" rel="1">Traverse</a> &nbsp;
+  
+    <a href="/tags/#Pre-order" title="Pre-order" rel="1">Pre-order</a> &nbsp;
+  
+    <a href="/tags/#Post-order" title="Post-order" rel="1">Post-order</a> &nbsp;
+  
+    <a href="/tags/#In-order" title="In-order" rel="1">In-order</a> &nbsp;
+  
+    <a href="/tags/#Back Tracking" title="Back Tracking" rel="1">Back Tracking</a> &nbsp;
+  
+    <a href="/tags/#Boggle" title="Boggle" rel="1">Boggle</a> &nbsp;
+  
+    <a href="/tags/#Hashing" title="Hashing" rel="1">Hashing</a> &nbsp;
+  
+    <a href="/tags/#Linear Probe" title="Linear Probe" rel="1">Linear Probe</a> &nbsp;
+  
+    <a href="/tags/#Rehashing" title="Rehashing" rel="1">Rehashing</a> &nbsp;
+  
+    <a href="/tags/#RBTree" title="RBTree" rel="1">RBTree</a> &nbsp;
+  
+    <a href="/tags/#Red Black Tree" title="Red Black Tree" rel="1">Red Black Tree</a> &nbsp;
+  
+    <a href="/tags/#BFS" title="BFS" rel="1">BFS</a> &nbsp;
+  
+    <a href="/tags/#Bellman-Ford" title="Bellman-Ford" rel="1">Bellman-Ford</a> &nbsp;
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Blogroll</h4>
+  
+  <li><a href="http://jianwang.info/" title="Yet another blog">Jian</a></li>
+  
+  <li><a href="http://jianwang.info/" title="Jian's website">Jian's website</a></li>
+  
+</div>
+
+
+<div class="sidebar-module">
+  <h4>Archives</h4>
+
+  
+  
+  
+  
+  
+  <li id="2016" > <a href="/archives/#2016">2016</a></li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li id="2015" > <a href="/archives/#2015">2015</a></li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li id="2014" > <a href="/archives/#2014">2014</a></li>
+  
+  
+
+</div>
+
+
+</div>
+
+
+
+  
+
+  <footer class="site-footer">
+
+  <p>Copyright &copy; <a href="/">Jian's Blog</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
+  on 
+  
+  <a href="https://github.com/">Github</a>
+  
+  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="http://yulijia.net">Lijia Yu</a>  
+
+
+  <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
+    <a title="Back To Top"><img src="/images/topbutton.png"/></a>
+  </div>
+
+  <script src="/js/jquery-1.9.1.min.js"></script>
+  <script src="/js/totop.js"></script>  
+
+
+
 </footer>
 
-	
-</body>
-</html>
 
+</div>
+
+</body>
+
+</html>
