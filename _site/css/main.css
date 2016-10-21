@@ -279,10 +279,13 @@ cite {
     margin-left: 10px;
     margin-right: 10px; }
   .site-nav a {
-    text-decoration: none; }
+    text-decoration: none;
+    float: left;
+    display: inline; }
     .site-nav a:hover {
       color: #111;
-      text-decoration: none; }
+      text-decoration: none;
+      padding: 5px 10px; }
   @media screen and (max-width: 600px) {
     .site-nav {
       position: relative;
@@ -300,14 +303,18 @@ cite {
           .site-nav .menu-icon > svg path {
             fill: #424242; }
       .site-nav .trigger {
-        clear: both;
-        display: none; }
+        float: left;
+        display: inline; }
       .site-nav:hover .trigger {
-        display: block;
+        display: inline;
         padding-bottom: 5px; }
       .site-nav .page-link {
-        display: block;
-        padding: 5px 10px; } }
+        display: inline;
+        float: left;
+        padding: 5px 10px; }
+      .site-nav .google-search {
+        float: left;
+        display: inline; } }
 
 /**
  * Sidebar

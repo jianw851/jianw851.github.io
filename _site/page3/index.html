@@ -7,16 +7,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width initial-scale=1">
 
-<meta property="og:title" content="Jian's Blog">
-<title>Jian's Blog</title>
+<meta property="og:title" content="Welcome">
+<title>Welcome</title>
 <meta property="og:description" content="This is a Jian's Blog.">
 <meta property="og:url" content="http://localhost:4000/page3/">
-<meta property="og:site_name" content="Jian's Blog">
+<meta property="og:site_name" content="Welcome">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@jianw851">
 <meta name="twitter:creator" content="@jianw851">
-<meta name="twitter:title" content="Jian's Blog">
+<meta name="twitter:title" content="Welcome">
 <meta name="twitter:description" content="This is a Jian's Blog.">
 <meta name="twitter:url" content="http://localhost:4000/page3/">
 
@@ -25,7 +25,7 @@
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="canonical" href="http://localhost:4000/page3/">
-<link rel="alternate" type="application/atom+xml" title="Jian's Blog" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="Welcome" href="http://localhost:4000/feed.xml" />
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -72,8 +72,8 @@ for (var b = blocklink.length; b--;) {
 
   <div class="wrapper">
 
-    <h1 class="site-title"><a href="/">Jian's Blog</a></h1>
-    <h3 class="site-meta">Welcome to My Blog</h3>
+    <h1 class="site-title"><a href="/">Welcome</a></h1>
+    <h3 class="site-meta">to Jian's Blog</h3>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -129,12 +129,12 @@ for (var b = blocklink.length; b--;) {
         
         
         
-        
-        
-        
-        
-        
-        
+        <div class="google-search">
+          <form onsubmit="search_google()" >
+            <input  type="text" id="google-search" placeholder="Google search" />
+            <input  type="submit" name="sa" value="Go" />
+          </form>
+        </div>
       </div>
     </nav>
 
@@ -143,133 +143,110 @@ for (var b = blocklink.length; b--;) {
 </header>
 
 
-    
+  
 
-  <div class="page-content col-sm-8">
-    <div class="home">
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="home">
   <div class="post" itemscope itemtype="http://schema.org/BlogPosting" >
 
     
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/03/31/Singly-Linked-List.html">Singly Linked List Practice</a>
+        <a itemprop="url" class="post-link" href="/technology/2016/02/23/Facebook-Study-I.html">Facebook Technology Study I</a>
       </h1>
-      <meta itemprop="keywords" content="Singly Linked List,List" />
+      <meta itemprop="keywords" content="Facebook,Architecture,Technology" />
       <p class="post-meta">
       Posted in
       
-      <a href="/categories/#algorithm">algorithm</a>
+      <a href="/categories/#Technology">Technology</a>
       
       
       and tagged
       
-      <a href="/tags/#Singly Linked List" title="Singly Linked List">Singly Linked List</a>, 
+      <a href="/tags/#Facebook" title="Facebook">Facebook</a>, 
       
-      <a href="/tags/#List" title="List">List</a>
+      <a href="/tags/#Architecture" title="Architecture">Architecture</a>, 
+      
+      <a href="/tags/#Technology" title="Technology">Technology</a>
       
       
-      <time itemprop="datePublished" datetime="2016-03-31">
-        on Mar 31, 2016
+      <time itemprop="datePublished" datetime="2016-02-23">
+        on Feb 23, 2016
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
       
-      <p>This is a naive implementation of Singly Linked List which mainly used to add or remove element from front or end side.</p>
+      <p>As is known to us all, Facebook is world class big tech company which is engaging in connecting the world with its various open source software and open source hardware. So far Facebook has had 296 open source projects on GitHub with 10+ Million Lines of code, 265k Followers and 43k Forks. This airticle is going to introduce the general open source software infrastructure of Facebook. 
+<!--more--></p>
 
-<p>This implementation only shows the general idea of how Singly Linked List works inside the computer. This is not used for any real world problems.</p>
+<blockquote>
+  <p>Open source is very important for Facebook. Being open is better than being close. Being connection is better than being isolation. Bellow is a short list of facebook’s open source software in the last 6 months.</p>
+</blockquote>
 
-<!--more-->
-
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Node</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">next</span><span class="p">;</span>
-  <span class="n">Node</span><span class="p">()</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">next</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">next</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">};</span>
-<span class="k">class</span> <span class="nc">SinglyLinkedList</span> <span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">head</span><span class="p">;</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">SinglyLinkedList</span><span class="p">()</span> <span class="o">:</span> <span class="n">head</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">tail</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-  <span class="n">SinglyLinkedList</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="o">~</span> <span class="n">SinglyLinkedList</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-      <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-      <span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="k">delete</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">firstAdd</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addStart</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">firstAdd</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addEnd</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">firstAdd</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-      <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">removeStart</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-      <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-      <span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="k">delete</span> <span class="n">temp</span><span class="p">;</span>
-      <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">curr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">SinglyLinkedList</span> <span class="n">sll</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">sll</span><span class="p">.</span><span class="n">addEnd</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-      <span class="n">sll</span><span class="p">.</span><span class="n">addStart</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">sll</span><span class="p">.</span><span class="n">removeStart</span><span class="p">();</span>
-  <span class="n">sll</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
+<div class="highlighter-rouge"><pre class="highlight"><code>grocery-delivery
+ig-json-parser
+xhp-bootstrap
+parseapplinksanalytics
+fbcuda
+mcrouter
+errgroup
+third-party
+fb-adb
+flow
+css-layout
+httpdown
+riftdk1
+jsx
+vim-flow
+flux
+dfuse
+thpp
+immutable-js
+fblualib
+rpool
+osquery
+fatal
+ds2
+proxygen : layer 7 load balancer
+fbpca
+stats
+rebound-js
+runcmd
+asyncdisplaykit
+neti
+fbcunn
+f8developerconferenceapp
+parse-facebook-user-session
+parseui-ios
+parse-php-sdk
+facebook-python-ads-sdk
+oss-performance
+taste-tester
+presto-odbc
+between-meals
+neti-cookbook
 </code></pre>
 </div>
 
-<p>Contribution</p>
+<p>Facebook mainly focus on 4 main softwares: data infrastructure like “Presto” and “rocksdb”, server runtime like “proxygen” and “HHVM”, web framework like “javascript”, mobile tools and libraries.</p>
 
-<p><a href="http://jianwang.info/">@jianw851</a></p>
+<p>RocksDB is an embeddable persistent key-value store for fast storage. RocksDB can also be the foundation for a client-server database but our current focus is on embedded workloads.</p>
+
+<p>Presto is an open source distributed SQL query engine for running interactive analytic queries against data sources of all sizes ranging from gigabytes to petabytes.</p>
+
+<p>Why open source is very important?</p>
+
+<p>In the year 2004, facebook start with LAMP frame (Linux, Apache, Mysql, PHP),  now it’s like a giant LAMP website with third degree scale. Engineers has done a lot to improve the LAMP and memcache.  you had to make it scale. For example, first we use Mysql, then we need to scale it, then need improve it, even replace it. After we release it, we continue using it, it become a loop.</p>
+
+<p>How facebook contribute?</p>
+
+<p>Hardware: Facebook open a hardware project called “open compute project”, you can buy those hardware from OEM, they don’t have secret anymore.</p>
+
+<p>OCP data center design: mechanical design, electronical design.</p>
 
 <hr />
 
@@ -281,9 +258,9 @@ for (var b = blocklink.length; b--;) {
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/03/31/Grow-Array.html">Grow Array Practice</a>
+        <a itemprop="url" class="post-link" href="/algorithm/2016/02/15/Ugly-Number_II.html">Ugly Number II</a>
       </h1>
-      <meta itemprop="keywords" content="Grow Array,Array" />
+      <meta itemprop="keywords" content="Dynamic Programming,Math,Heap,Three Pointer" />
       <p class="post-meta">
       Posted in
       
@@ -292,620 +269,748 @@ for (var b = blocklink.length; b--;) {
       
       and tagged
       
-      <a href="/tags/#Grow Array" title="Grow Array">Grow Array</a>, 
+      <a href="/tags/#Dynamic Programming" title="Dynamic Programming">Dynamic Programming</a>, 
       
-      <a href="/tags/#Array" title="Array">Array</a>
+      <a href="/tags/#Math" title="Math">Math</a>, 
+      
+      <a href="/tags/#Heap" title="Heap">Heap</a>, 
+      
+      <a href="/tags/#Three Pointer" title="Three Pointer">Three Pointer</a>
       
       
-      <time itemprop="datePublished" datetime="2016-03-31">
-        on Mar 31, 2016
+      <time itemprop="datePublished" datetime="2016-02-15">
+        on Feb 15, 2016
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
       
-      <p>This is a naive implementation of Grow Array which mainly used to add or remove element from front or end side.</p>
+      <p>Problem 264 Ugly Number II</p>
 
-<p>This implementaion only gives the general idea of how grow array data structure works inside the computer. This is not used for any real world problems.</p>
+<p>Write a program to find the n-th ugly number.</p>
+
+<p>Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.</p>
+
+<p>Note that 1 is typically treated as an ugly number.</p>
+
+<p>Hint: The naive approach is to call isUgly for every number until you reach the nth one. Most numbers are not ugly. Try to focus your effort on generating only the ugly ones. An ugly number must be multiplied by either 2, 3, or 5 from a smaller ugly number.</p>
+
+<p>Example 1:</p>
+
+<p>n = 10 return 12</p>
 
 <!--more-->
 
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code>
-<span class="cp">#include&lt;iostream&gt;
-</span><span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">growArray</span> <span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
-  <span class="kt">int</span> <span class="o">*</span> <span class="n">array</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">used</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
-  <span class="kt">void</span> <span class="nf">grow</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">;</span>
-    <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">size</span><span class="o">*</span><span class="mi">2</span><span class="p">];</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">used</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="n">size</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">delete</span> <span class="p">[]</span> <span class="n">temp</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">growArray</span><span class="p">()</span> <span class="o">:</span>
-    <span class="n">array</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">size</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">used</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="n">growArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="p">)</span> <span class="o">:</span>
-    <span class="n">array</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">capacity</span><span class="p">]),</span> <span class="n">size</span><span class="p">(</span><span class="n">capacity</span><span class="p">),</span> <span class="n">used</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="o">~</span> <span class="n">growArray</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="p">[]</span> <span class="n">array</span><span class="p">;</span> <span class="p">}</span>
-  <span class="kt">int</span> <span class="n">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">used</span><span class="p">)</span> <span class="k">throw</span> <span class="s">"Out of bound!"</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">used</span><span class="p">)</span> <span class="k">throw</span> <span class="s">"Out of bound!"</span><span class="p">;</span>
-    <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addStart</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">used</span> <span class="o">==</span> <span class="n">size</span><span class="p">)</span>
-      <span class="n">grow</span><span class="p">();</span>
-    <span class="kt">int</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">array</span><span class="p">;</span>
-    <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
-    <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
-    <span class="n">used</span><span class="o">++</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">used</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-      <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-    <span class="k">delete</span> <span class="p">[]</span> <span class="n">temp</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">removeStart</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">used</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-    <span class="n">used</span><span class="o">--</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">used</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-      <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">removeEnd</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">used</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-    <span class="n">used</span><span class="o">--</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addEnd</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">used</span> <span class="o">==</span> <span class="n">size</span><span class="p">)</span>
-      <span class="n">grow</span><span class="p">();</span>
-    <span class="n">array</span><span class="p">[</span><span class="n">used</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">int</span> <span class="n">getCapacity</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">int</span> <span class="n">getUsed</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">used</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="n">growArray</span> <span class="n">arr</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">arr</span><span class="p">.</span><span class="n">addStart</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">getUsed</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">getCapacity</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-</div>
-
-<p>Contribution</p>
-
-<p><a href="http://jianwang.info/">@jianw851</a></p>
-
-<hr />
-
-      
-    </article>
-    <hr />
-
-    
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/03/31/Doubly-Linked-List.html">Doubly Linked List Practice</a>
-      </h1>
-      <meta itemprop="keywords" content="Doubly Linked List,List" />
-      <p class="post-meta">
-      Posted in
-      
-      <a href="/categories/#algorithm">algorithm</a>
-      
-      
-      and tagged
-      
-      <a href="/tags/#Doubly Linked List" title="Doubly Linked List">Doubly Linked List</a>, 
-      
-      <a href="/tags/#List" title="List">List</a>
-      
-      
-      <time itemprop="datePublished" datetime="2016-03-31">
-        on Mar 31, 2016
-      </time>
-      </p>
-    </header>
-
-    <article class="post-content" itemprop="articleBody">
-      
-      <p>This is a naive implementation of Doubly Linked List which mainly used to add or remove element from front or end side.</p>
-
-<p>This implementation only shows the general idea of how Doubly Linked List data structure works inside the computer. This is not used for any real world problems.</p>
-
-<!--more-->
-
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
-</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Node</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">next</span><span class="p">;</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
-  <span class="n">Node</span><span class="p">()</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">next</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">prev</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">v</span><span class="p">),</span> <span class="n">next</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">prev</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">};</span>
-<span class="k">class</span> <span class="nc">DoublyLinkedList</span> <span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">head</span><span class="p">;</span>
-  <span class="n">Node</span> <span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">DoublyLinkedList</span><span class="p">()</span> <span class="o">:</span> <span class="n">head</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">tail</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="n">DoublyLinkedList</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="o">~</span> <span class="n">DoublyLinkedList</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-      <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-      <span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="n">temp</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="k">delete</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">firstAdd</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addStart</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">firstAdd</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addEnd</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">firstAdd</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-      <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
-      <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">removeStart</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-      <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-      <span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="n">head</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="k">delete</span> <span class="n">temp</span><span class="p">;</span>
-      <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">removeEnd</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">tail</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">Node</span> <span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
-      <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">tail</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
-       <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="n">temp</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-      <span class="k">delete</span> <span class="n">temp</span><span class="p">;</span>
-      <span class="n">temp</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">display</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">curr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">Reversedisplay</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
-      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">curr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">DoublyLinkedList</span> <span class="n">dll</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">dll</span><span class="p">.</span><span class="n">addEnd</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">dll</span><span class="p">.</span><span class="n">addStart</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">dll</span><span class="p">.</span><span class="n">removeStart</span><span class="p">();</span>
-  <span class="n">dll</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
-  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-  <span class="n">dll</span><span class="p">.</span><span class="n">Reversedisplay</span><span class="p">();</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-</div>
-
-<p>Contribution</p>
-
-<p><a href="http://jianwang.info/">@jianw851</a></p>
-
-<hr />
-
-      
-    </article>
-    <hr />
-
-    
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/03/27/Naive-Trie.html">Naive Trie Implementation</a>
-      </h1>
-      <meta itemprop="keywords" content="Trie" />
-      <p class="post-meta">
-      Posted in
-      
-      <a href="/categories/#algorithm">algorithm</a>
-      
-      
-      and tagged
-      
-      <a href="/tags/#Trie" title="Trie">Trie</a>
-      
-      
-      <time itemprop="datePublished" datetime="2016-03-27">
-        on Mar 27, 2016
-      </time>
-      </p>
-    </header>
-
-    <article class="post-content" itemprop="articleBody">
-      
-      <p>This is a naive  trie practise.</p>
-
-<!--more-->
-
-<div class="language-cpp highlighter-rouge"><pre class="highlight"><code>
-<span class="cp">#include&lt;iostream&gt;
-#include&lt;fstream&gt;
-#include&lt;string&gt;
-</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">ifstream</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">TrieNode</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="kt">bool</span> <span class="n">isWord</span><span class="p">;</span>
-  <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">subTrie</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
-  <span class="n">TrieNode</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">isWord</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-      <span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="k">class</span> <span class="nc">Trie</span> <span class="p">{</span>
-
-<span class="k">private</span><span class="o">:</span>
-  <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">root</span><span class="p">;</span>
-
-<span class="k">public</span><span class="o">:</span>
-  <span class="n">Trie</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="o">~</span><span class="n">Trie</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">destruct</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">root</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
-      <span class="k">delete</span> <span class="n">root</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">destruct</span> <span class="p">(</span><span class="n">TrieNode</span> <span class="o">*</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">26</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">destruct</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-        <span class="k">delete</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-  <span class="kt">void</span> <span class="n">addWord</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrieNode</span><span class="p">();</span>
-      <span class="p">}</span>
-      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="n">curr</span><span class="o">-&gt;</span><span class="n">isWord</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="n">buildTrie</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ifstream</span> <span class="n">infile</span><span class="p">;</span>
-    <span class="n">infile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">infile</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"open "</span><span class="o">&lt;&lt;</span> <span class="n">filename</span> <span class="o">&lt;&lt;</span><span class="s">" failed"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">string</span> <span class="n">word</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">infile</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">addWord</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">infile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="kt">bool</span> <span class="n">searchWord</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">isWord</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kt">bool</span> <span class="n">searchPrefix</span><span class="p">(</span><span class="n">string</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">TrieNode</span> <span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">word</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">97</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">idx</span> <span class="o">&gt;</span><span class="mi">25</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">subTrie</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="kt">void</span> <span class="n">find</span><span class="p">(</span><span class="n">string</span> <span class="n">filename</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">ifstream</span> <span class="n">infile</span><span class="p">;</span>
-    <span class="n">infile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">infile</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"open "</span><span class="o">&lt;&lt;</span> <span class="n">filename</span> <span class="o">&lt;&lt;</span><span class="s">" failed"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">string</span> <span class="n">word</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">infile</span> <span class="o">&gt;&gt;</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">searchPrefix</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">" : True"</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-      <span class="k">else</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">word</span> <span class="o">&lt;&lt;</span> <span class="s">" : False"</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">infile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Trie</span> <span class="n">trie</span><span class="p">;</span>
-  <span class="n">trie</span><span class="p">.</span><span class="n">buildTrie</span><span class="p">(</span><span class="s">"dict.txt"</span><span class="p">);</span>
-  <span class="n">trie</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"hw8.dat"</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre>
-</div>
-
-<p>Contribution</p>
-
-<p><a href="http://jianwang.info/">@jianw851</a></p>
-
-<hr />
-
-      
-    </article>
-    <hr />
-
-    
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/03/27/Hash-Dictionary.html">A Hash Function For English Dictionary</a>
-      </h1>
-      <meta itemprop="keywords" content="Hashmap" />
-      <p class="post-meta">
-      Posted in
-      
-      <a href="/categories/#algorithm">algorithm</a>
-      
-      
-      and tagged
-      
-      <a href="/tags/#Hashmap" title="Hashmap">Hashmap</a>
-      
-      
-      <time itemprop="datePublished" datetime="2016-03-27">
-        on Mar 27, 2016
-      </time>
-      </p>
-    </header>
-
-    <article class="post-content" itemprop="articleBody">
-      
-      <p>This is a linear chain hash function for English dictionary (210 thousand words)</p>
+<h2 id="solution">Solution</h2>
 
 <ul>
-  <li>First serialize each word with a hash function</li>
-  <li>Then hash each word to a linear chain table with maxmium prime number of dictionary length</li>
-  <li>Output the histogram  operation steps needed when insert (conflict)</li>
+  <li>C++</li>
 </ul>
+
+<h2 id="analysis">Analysis</h2>
+
+<p>解法1: Brute Force： 此暴力破解还稍微带点动态规划的意味在里面。 思路是利用它的一个规律。 打个比喻：即从最小的丑数开始，“1， 2，3，4，5…”，你会发现如果把前面这串数字当成一个保龄球轨道的话，那么“2，3，5”这个就是一个滚动的保龄球，从头开始滚动，保龄球与轨道接触的那一面的数字相乘的结果（去重复后）往轨道最后放。相切的点就是的结果。但是这样的方法有很多明显的缺陷，为了去重要多花费2n的空间（6<em>3等于9</em>2重复） ，而且实际执行的次数要多于n。</p>
+
+<p>解法2: 三指针： 与以上解法相比，此解法发现了真正的pattern。还拿以上例子来讲，就是把保龄球换成蜗牛，三个蜗牛（数字分别是2，3，5）起初都在起跑线上，谁与轨道的乘积最小谁就往前爬一步，这样当出现重复数字的时候，都会在同一个循环里，（即3<em>6与2</em>9两个最小值在同时出现，那么两者都往前爬一步），这样就省了去重复的多余空间和操作。</p>
+
+<p><strong>复杂度</strong></p>
+
+<p>时间：O(n)</p>
+
+<p>空间：O(n)</p>
+
+<p><strong>实现一(cpp)</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
+long long nthUglyNumber1(int n) {
+ if (n == 0) return 0;
+ unordered_set&lt;long long&gt; set1;
+ vector&lt;int&gt; ugly = {2,3,5};
+ priority_queue&lt;long long&gt; queue1;
+ for (int i = 1; i &lt; 6; i++ ) {
+   queue1.push(-i);
+   set1.emplace(i);
+ }
+ long long result;
+ for (int i = 0; i &lt; k; i++) {
+   result = -queue1.top();
+   queue1.pop();
+   for (int j = 0; j &lt; 3; j++) {
+     if (set1.find(ugly[j]*result) == set1.end()) {
+       queue1.push(-ugly[j]*result);
+       set1.emplace(ugly[j]*result);
+     }
+   }
+ }
+ return result;   }
+};
+</code></pre>
+</div>
+
+<p><strong>复杂度</strong></p>
+
+<p>时间：O(n)</p>
+
+<p>空间：O(n)</p>
+
+<p><strong>实现二(cpp)</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
+int nthUglyNumber(int n) {    
+    vector&lt;int&gt; result(1, 1);
+    int i2 = 0, i3 = 0, i5 = 0;
+    while (result.size() &lt; n) {
+        int m2 = result[i2] * 2, 
+            m3 = result[i3] * 3, 
+            m5 = result[i5] * 5;
+        int mn = min(m2, min(m3, m5));
+        if (mn == m2) ++i2;
+        if (mn == m3) ++i3;
+        if (mn == m5) ++i5;
+        result.push_back(mn);
+    }
+    return result.back();
+}
+};
+</code></pre>
+</div>
+
+<ul>
+  <li>596 / 596 test cases passed.</li>
+  <li>Status: Accepted</li>
+  <li>Runtime: 20 ms</li>
+  <li>Beats: 48.17%</li>
+</ul>
+
+<p><strong>实现三(cpp)</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Solution {
+public int nthUglyNumber(int n) {
+    int[] ugly = new int[n];
+    int v2 = 1, v3 = 1, v5 = 1;
+    int i2 = 0, i3 = 0, i5 = 0;
+    for (int k = 0; k &lt; n; ++k) {
+        int v = Math.min(v2, Math.min(v3, v5));
+        ugly[k] = v;
+        if (v2 == v) v2 = ugly[i2++] * 2;
+        if (v3 == v) v3 = ugly[i3++] * 3;
+        if (v5 == v) v5 = ugly[i5++] * 5;
+    }
+    return ugly[n-1];
+}
+}
+</code></pre>
+</div>
+
+<ul>
+  <li>596 / 596 test cases passed.</li>
+  <li>Status: Accepted</li>
+  <li>Runtime: 8 ms</li>
+  <li>Beats: 90.84%</li>
+</ul>
+
+<p><strong>实现四(Java)</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>public class Solution {
+public int nthUglyNumber(int n) {
+    int[] ugly = new int[n];
+    int v2 = 1, v3 = 1, v5 = 1;
+    int i2 = 0, i3 = 0, i5 = 0;
+    for (int k = 0; k &lt; n; ++k) {
+        int v = Math.min(v2, Math.min(v3, v5));
+        ugly[k] = v;
+        if (v2 == v) v2 = ugly[i2++] * 2;
+        if (v3 == v) v3 = ugly[i3++] * 3;
+        if (v5 == v) v5 = ugly[i5++] * 5;
+    }
+    return ugly[n-1];
+}
+}
+</code></pre>
+</div>
+
+<ul>
+  <li>596 / 596 test cases passed.</li>
+  <li>Status: Accepted</li>
+  <li>Runtime: 8 ms</li>
+  <li>Beats: 85.65%</li>
+</ul>
+
+<p><strong>实现五(Python)</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def nthUglyNumber(self, n):
+ugly = [1] * n
+i2 = i3 = i5 = -1
+x = v2 = v3 = v5 = 1
+for k in xrange(n):
+    x = min(v2, v3, v5)
+    ugly[k] = x
+    if x == v2:
+        i2 += 1
+        v2 = ugly[i2] * 2
+    if x == v3:
+        i3 += 1
+        v3 = ugly[i3] * 3
+    if x == v5:
+        i5 += 1
+        v5 = ugly[i5] * 5
+return x
+</code></pre>
+</div>
+
+<ul>
+  <li>596 / 596 test cases passed.</li>
+  <li>Status: Accepted</li>
+  <li>Runtime: 176 ms</li>
+  <li>94.23%</li>
+</ul>
+
+<p>Contribution</p>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<h2 id="reference">Reference</h2>
+
+<p>[^1] <a href="https://leetcode.com/problems/ugly-number-ii/">264. Ugly Number II </a></p>
+
+<p>[^2] <a href="http://www.cnblogs.com/grandyang/p/4743837.html">博客园Grandyang</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/02/03/Clone-Graph.html">Clone Graph</a>
+      </h1>
+      <meta itemprop="keywords" content="Graph,DFS" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Graph" title="Graph">Graph</a>, 
+      
+      <a href="/tags/#DFS" title="DFS">DFS</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-02-03">
+        on Feb 3, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.</p>
+
+<p>How we serialize an undirected graph:</p>
+
+<p>Nodes are labeled uniquely.</p>
+
+<p>We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
+As an example, consider the serialized graph {0,1,2#1,2#2,2}.</p>
+
+<p>The graph has a total of three nodes, and therefore contains three parts as separated by #.</p>
+
+<p>First node is labeled as 0. Connect node 0 to both nodes 1 and 2.
+Second node is labeled as 1. Connect node 1 to node 2.
+Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.</p>
+
+<p>return a deep copied graph.</p>
 
 <!--more-->
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#include&lt;iostream&gt;
-#include&lt;fstream&gt;
-#include&lt;string&gt;
-#include&lt;vector&gt;
-#include&lt;map&gt;
-
-using namespace std;
-
-class hashNode {
-public:
-  unsigned long val;
-  hashNode *next;
-  hashNode() {
-    val = 0;
-    next = NULL;
-  }
-  hashNode (unsigned long v) {
-    val = v;
-    next = NULL;
-  }
-};
-
-class hashTable {
-public:
-  vector&lt;hashNode&gt; hashtable;
-  int hashLen;
-  hashTable() {
-  }
-  hashTable(int size) {
-    hashLen = size;
-    hashtable.resize(size);
-  }
-  ~hashTable() {
-    hashtable.clear();
-  }
-  unsigned long serilize(string str) {
-    unsigned long hash = 5381;
-    int len =  str.length();
-    for (int i = 0; i &lt; len; i++) {
-        hash = ((hash&lt;&lt;5) + hash) + (str[len - i - 1] - 96);
-    }
-    return hash;
-  }
-  void buildHashTable(string filename, string ofilename) {
-    ifstream infile;
-    infile.open(filename);
-    if (infile.fail()) {
-        cout &lt;&lt; "open "&lt;&lt; filename &lt;&lt;" failed"&lt;&lt;endl;
-        return;
-    }
-    if (ifstream(ofilename)) {
-      cout &lt;&lt; ofilename &lt;&lt; " already exists, delete it" &lt;&lt; endl;
-      remove(ofilename.c_str());
-    }
-    ofstream outfile;
-    outfile.open(ofilename, ios::out | ios::app);
-    if (outfile.fail()) {
-        cout &lt;&lt; ofilename &lt;&lt;" open failed" &lt;&lt;endl;
-        return;
-    }
-    string line = "";
-    while (getline(infile, line)) {
-      unsigned long hash =  serilize(line);
-      int idx = (hash % hashLen);
-      int count = 1;
-      if (hashtable[idx].val == 0) {
-        hashtable[idx].val = hash;
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
+UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
+  if (node == NULL) return NULL;
+  unordered_map&lt;UndirectedGraphNode*, UndirectedGraphNode*&gt; map1;
+  vector&lt;UndirectedGraphNode*&gt; queue;
+  queue.push_back(node);
+  UndirectedGraphNode *head = new UndirectedGraphNode(node-&gt;label);
+  map1[node] = head;
+  int curr = 0;
+  while (curr &lt; queue.size()) {
+    UndirectedGraphNode * curr_node = queue[curr];
+    int size = curr_node-&gt;neighbors.size();
+    for (int i = 0; i &lt; size; i++) {
+      UndirectedGraphNode * curr_neigh = curr_node-&gt;neighbors[i];
+      if (map1.find(curr_neigh) == map1.end()) {
+        UndirectedGraphNode * curr_copy = new UndirectedGraphNode(curr_neigh-&gt;label);
+        map1[curr_node]-&gt;neighbors.push_back(curr_copy);
+        map1[curr_neigh] = curr_copy;
+        queue.push_back(curr_neigh);
       } else {
-        hashNode newNode = hashNode(hash);
-        hashNode * curr = &amp;hashtable[idx];
-        while (curr-&gt;next != NULL) {
-          curr = curr-&gt;next;
-          count++;
-        }
-        curr-&gt;next = &amp;newNode;
+        map1[curr_node]-&gt;neighbors.push_back(map1[curr_neigh]);
       }
-      outfile &lt;&lt; count &lt;&lt; endl;
     }
+    curr++;
   }
-  void findHashTable(string filename) {
-    ifstream infile;
-    infile.open(filename);
-    if (infile.fail()) {
-        cout &lt;&lt; "open "&lt;&lt; filename &lt;&lt;" failed"&lt;&lt;endl;
-        return;
-    }
-    string word = "";
-    while (infile &gt;&gt; word) {
-      bool canfind = false;
-      unsigned long hash =  serilize(word);
-      int idx = (hash % hashLen);
-      if (hashtable[idx].val != 0) {
-        hashNode * curr = &amp;hashtable[idx];
-        while (curr != NULL) {
-          if (curr-&gt;val == hash) {
-            canfind = true;
-          }
-          curr = curr-&gt;next;
-        }
-      }
-      if (canfind)
-       cout &lt;&lt; word &lt;&lt; " : true" &lt;&lt;endl;
-      else
-       cout &lt;&lt; word &lt;&lt; " : false" &lt;&lt;endl;
-      word = "";
-    }
-  }
-  void showHistogram(string filename) {
-    ifstream infile;
-    infile.open(filename);
-    if (infile.fail()) {
-        cout &lt;&lt; "open "&lt;&lt; filename &lt;&lt;" failed"&lt;&lt;endl;
-        return;
-    }
-    map&lt;int, int&gt; map1;
-    string word = "";
-    while (infile &gt;&gt; word) {
-      int val = stoi(word);
-      if (map1.find(val) != map1.end())
-          map1[val]++;
-      else
-          map1[val] = 1;
-    }
-    cout &lt;&lt;endl&lt;&lt;"*******************************"&lt;&lt;endl;
-    cout &lt;&lt;"         Histogram"&lt;&lt;endl;
-    cout &lt;&lt;"*******************************"&lt;&lt;endl;
-    cout &lt;&lt; "insert      count "&lt;&lt;endl;
-    map&lt;int, int&gt;::iterator itr = map1.begin();
-    for (; itr != map1.end(); itr++) {
-      cout &lt;&lt; itr-&gt;first &lt;&lt; "           " &lt;&lt; itr-&gt;second &lt;&lt;endl;
-    }
-  }
-};
-
-int main() {
-  hashTable hashtb(213557);
-  hashtb.buildHashTable("dict.txt", "output3.txt");
-  hashtb.findHashTable("hw8.dat");
-  hashtb.showHistogram("output3.txt");
-  return 0;
+  return head;
 }
-
+};
 </code></pre>
 </div>
 
 <p>Contribution</p>
 
 <p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/02/01/Missing-Number.html">Missing Number</a>
+      </h1>
+      <meta itemprop="keywords" content="Array,Bit Manipulation,Math" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Array" title="Array">Array</a>, 
+      
+      <a href="/tags/#Bit Manipulation" title="Bit Manipulation">Bit Manipulation</a>, 
+      
+      <a href="/tags/#Math" title="Math">Math</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-02-01">
+        on Feb 1, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
+
+<p>Example:</p>
+
+<p>Given nums = [0, 1, 3] return 2</p>
+
+<!--more-->
+
+<p>复杂度</p>
+
+<p>时间：O(n)</p>
+
+<p>空间：O(1)</p>
+
+<p>实现一(cpp)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:    int missingNumber(vector&lt;int&gt;&amp; nums) {
+  if (nums.size() == 0) return 0;
+  int sum = 0;
+  int n = nums.size();
+  for (int i = 0; i &lt; nums.size(); i++) {
+    sum += nums[i];
+  }
+  return (n+1)*n/2 - sum;
+}
+};
+</code></pre>
+</div>
+
+<p>复杂度</p>
+
+<p>时间：O(n)</p>
+
+<p>空间：O(0)</p>
+
+<p>实现二(cpp)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
+int missingNumber(vector&lt;int&gt;&amp; nums) {
+  if (nums.size() == 0) return 0;
+  int result = 0;
+  for (int i = 0; i &lt; nums.size(); i++) {
+     result ^= (i+1) ^ nums[i];
+  }
+  return result;
+}
+};
+</code></pre>
+</div>
+
+<p>复杂度</p>
+
+<p>时间：O(n)</p>
+
+<p>空间：O(n)</p>
+
+<p>实现三(cpp)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:    int missingNumber(vector&lt;int&gt;&amp; nums) {
+  if (nums.size() == 0) return 0;
+  vector&lt;bool&gt; list(nums.size(), true);
+  for (int i = 0; i &lt; nums.size(); i++) {
+    list[nums[i]] = false;
+  }
+  int i = 0;
+  for (; i &lt; list.size(); i++) {
+    if (list[i]) return i;
+  }
+  return i;
+}
+};
+</code></pre>
+</div>
+
+<p>Contribution</p>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<p>Reference</p>
+
+<p><a href="https://leetcode.com/problems/missing-number/">268. Missing Number</a></p>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/01/30/Power-Of-Two.html">Power Of Two</a>
+      </h1>
+      <meta itemprop="keywords" content="bit manipulation" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#bit manipulation" title="bit manipulation">bit manipulation</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-01-30">
+        on Jan 30, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <!--more-->
+
+<p>Problem 231 Power of Two
+ Given an integer, write a function to determine if it is a power of two.</p>
+
+<p>Example 1:</p>
+
+<p>n = 12</p>
+
+<p>return false</p>
+
+<p>Example 2:</p>
+
+<p>n = 64</p>
+
+<p>return true</p>
+
+<p>解法1: 数学法， 2的幂不管怎样二分，都能被2整除，直到变为1.</p>
+
+<p>解法2: 位操作， 2的幂在二进制表示的时候，有一个特性，那就是只有一个1在里面（如：00001000就是2的幂，
+而00001100就不是2的幂），利用这个特性我们就可以衍生出三种解法都可以达到用O(1)的时间复杂度.</p>
+
+<ol>
+  <li>移位法：把后面的0移掉，剩下的部分＝＝1，就对了 (不推荐)</li>
+  <li>－1求与：n &amp; n-1 == 0 就对了 （推荐）</li>
+  <li>补数求与： (n &amp; (~n + 1)) == n 就对了 （尚可）</li>
+</ol>
+
+<p>网上对这道题的分析太透彻，其他的解法我就不再赘述，把链接贴在reference大家自己看。我就把两种解法写出来。</p>
+
+<p>复杂度</p>
+
+<p>时间：O(1)</p>
+
+<p>空间：O(0)</p>
+
+<p>实现一(cpp)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
+bool isPowerOfTwo(int n) {
+  return n &gt; 0 &amp;&amp; ((n &amp; (n - 1)) == 0);
+}
+}; 复杂度
+</code></pre>
+</div>
+
+<p>时间：O(logn)</p>
+
+<p>空间：O(1)
+实现二(cpp)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
+bool isPowerOfTwo(int n) {
+  if (n &lt;= 0) return false;
+  while (n != 1) {
+    if (n % 2 != 0)
+    return false;
+    n /= 2;
+  }
+  return true;
+}
+};
+</code></pre>
+</div>
+
+<p>Contribution</p>
+
+<p><a href="http://jianwang.info/">@jianw851</a></p>
+
+<p>Reference</p>
+
+<p><a href="https://leetcode.com/problems/power-of-two/">231. Power of Two</a></p>
+
+<p><a href="http://www.exploringbinary.com/ten-ways-to-check-if-an-integer-is-a-power-of-two-in-c/">Ten Ways to Check if an Integer Is a Power Of Two in C</a></p>
+
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/01/29/Best-Time-to-Buy-and-Sell-Stock.html">Best Time to Buy and Sell Stock</a>
+      </h1>
+      <meta itemprop="keywords" content="Array,Dynamic Programming" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Array" title="Array">Array</a>, 
+      
+      <a href="/tags/#Dynamic Programming" title="Dynamic Programming">Dynamic Programming</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-01-29">
+        on Jan 29, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Say you have an array for which the ith element is the price of a given stock on day i.If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+
+<p>Example
+  Given an example [3,2,3,1,2], return 1</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code> int maxProfit(vector&lt;int&gt; &amp;prices) {
+  if (prices.size() == 0) {
+    return 0;
+  }
+  int minValue = INT_MAX, profit = INT_MIN;
+  for (int i = 0; i &lt; prices.size(); i++) {
+    minValue = min(minValue, prices[i]);
+    if (prices[i] - minValue &gt; profit) {
+      profit = prices[i] - minValue;
+    }
+  }
+  return profit;
+}
+</code></pre>
+</div>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/01/24/Palindrome-Partitioning.html">Palindrome Partitioning</a>
+      </h1>
+      <meta itemprop="keywords" content="graph,dfs" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#graph" title="graph">graph</a>, 
+      
+      <a href="/tags/#dfs" title="dfs">dfs</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-01-24">
+        on Jan 24, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given a string s, partition s such that every substring of the partition is a palindrome.</p>
+
+<p>Return all possible palindrome partitioning of s.</p>
+
+<p>Example
+  Given s = “aab”, return:</p>
+
+<p>[
+    [“aa”,”b”],
+    [“a”,”a”,”b”]
+  ]</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vector&lt;vector&lt;string&gt;&gt; partition(string s) {
+  vector&lt;vector&lt;string&gt;&gt; result;
+  if (s.length() == 0) return result;
+  vector&lt;string&gt; list;
+  dfs_traverse(result, list, s, 0);
+  return result;
+}
+bool isParlindrome(string s) {
+  int left = 0, right = s.length() - 1;
+  while (left &lt;= right) {
+    if (s[left] != s[right]) {
+      break;
+    } else {
+      left++; right--;
+    }
+  }
+  if (left &lt;= right)
+    return false;
+  return true;
+}
+void dfs_traverse(vector&lt;vector&lt;string&gt;&gt; &amp;result, vector&lt;string&gt; list, string s, int pos) {
+  int len = s.length();
+  if (pos == len) {
+    result.push_back(list);
+  } else {
+   for (int i = 1; i &lt;= len - pos; i++) {
+     string temp = s.substr(pos, i);
+     if (!isParlindrome(temp))
+     continue;
+     list.push_back(temp);
+     dfs_traverse(result, list, s, pos+i);
+     list.pop_back();
+   }
+ }
+}
+</code></pre>
+</div>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2016/01/10/Top-K-Frequent-Words.html">Top K Frequent Words</a>
+      </h1>
+      <meta itemprop="keywords" content="data structure" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#data structure" title="data structure">data structure</a>
+      
+      
+      <time itemprop="datePublished" datetime="2016-01-10">
+        on Jan 10, 2016
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given a list of words and an integer k, return the top k frequent words in the list.
+  You should order the words by the frequency of them in the return list, the most frequent one comes first. If two words has the same frequency, the one with lower alphabetical order come first.
+  Do it in O(nlogk) time and O(n) extra space.
+Extra points if you can do it in O(n) time with O(k) extra space.</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code> class Solution {
+ public:
+ class resultType {
+   public:
+   string word;
+   int count;
+   resultType(string _word, int _count) {
+     word = _word;
+     count = _count;
+  }
+  bool operator&lt;(const resultType &amp;oth) const {
+    return count &gt; oth.count || (count == oth.count &amp;&amp; word &lt; oth.word);
+  }
+ };
+  vector&lt;string&gt; topKFrequentWords(vector&lt;string&gt;&amp; words, int k) {
+  vector&lt;string&gt; result;
+  if (words.size() == 0 || k == 0) {
+    return result;
+  }
+  vector&lt;resultType&gt; resultSet;
+  map&lt;string, int&gt; map1;
+  map&lt;string, int&gt;::iterator iterator1;
+  for (int i = 0; i &lt; words.size(); i++) {
+   if (map1.find(words[i]) == map1.end())
+     map1[words[i]] = 1;
+   else
+     map1[words[i]] += 1;
+  }
+  for (iterator1 = map1.begin(); iterator1 != map1.end(); iterator1++) {
+    resultSet.push_back(resultType(iterator1-&gt;first, iterator1-&gt;second));
+  }
+  //sort(resultSet.begin(), resultSet.end());
+  sort(resultSet.begin(), resultSet.end(),[&amp;](resultType a, resultType b) {
+    return a.count &gt; b.count||(a.count==b.count&amp;&amp;a.word&lt;b.word);});
+  for (int i = 0; i &lt; k ; i++) {
+    result.push_back(resultSet[i].word);
+  }
+  return result;
+}   };
+</code></pre>
+</div>
 
 <hr />
 
@@ -918,7 +1023,9 @@ int main() {
   </div>
 </div>
 
-    <section class="pager">
+    </div>
+  </div>
+  <section class="pager">
   
   
   <li class="previous"><a href="/page2/" title="Newer">&larr; Newer</a></li>
@@ -956,389 +1063,18 @@ $(function(){
 
 
 
-  </div>
-  <div class="col-sm-2">
-<div class="sidebar-module about">
-  <h4>About Me</h4>
-  <img title="Jian Wang" src="https://i.imgur.com/Mdc4szJl.jpg" alt="Jian Wang"/>
-  <span>Hi, this is Jian.</span>
-  <br />
-
-  
-
-  You can contact me via: <br />
-
-  
-  <a href="mailto:jianw851@gmail.com" title="mailto: jianw851@gmail.com"><i class="fa fa-envelope-square fa-3x"></i></a>&nbsp;
-  
-  
-  <a href="https://github.com/jianw851" title="GithubID: jianw851"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;
-  
-  
-  <a href="https://twitter.com/jianw851" title="TwitterID: jianw851"><i class="fa fa-twitter-square fa-3x"></i></a>
-  
-
-  
-
-</div>
-
-<div class="sidebar-module">
-  <h4>Site Search</h4>
-  <form onsubmit="search_google()" >
-    <input type="text" id="google-search" placeholder="Google search" />
-    <input type="submit" name="sa" value="Go" />
-  </form>
-</div>
-
-
-<div class="sidebar-module"> <!-- sidebar-module-inset">-->
-  <h4>Copyright Notice</h4>
-
-  
-
-  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-    <img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png">
-  </a>
-  <br />
-  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>
-
-  
-
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Recent Posts</h4>
-  
-  <li>
-  <a href="/algorithm/2016/05/02/graph-bellman-ford.html" title="Bellman-Ford algorithm" rel="bookmark">Bellman-Ford algorithm</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/05/02/graph-DFS-BFS.html" title="Graph Representation" rel="bookmark">Graph Representation</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/04/05/Red-Black-Tree.html" title="Red Black Tree implementation" rel="bookmark">Red Black Tree implementation</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/04/04/Rehashing-Linear-Probe.html" title="Rehashing Linear Probe Practice" rel="bookmark">Rehashing Linear Probe Practice</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/04/04/Boggle-Game.html" title="Boggle Game" rel="bookmark">Boggle Game</a>
-  </li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Categories</h4>
-  
-  <li><a href="/categories/#trick" title="trick" rel="2">trick (2)</a></li>
-  
-  <li><a href="/categories/#read" title="read" rel="3">read (3)</a></li>
-  
-  <li><a href="/categories/#idea" title="idea" rel="1">idea (1)</a></li>
-  
-  <li><a href="/categories/#daily" title="daily" rel="1">daily (1)</a></li>
-  
-  <li><a href="/categories/#algorithm" title="algorithm" rel="30">algorithm (30)</a></li>
-  
-  <li><a href="/categories/#Technology" title="Technology" rel="1">Technology (1)</a></li>
-  
-  <li><a href="/categories/#learn" title="learn" rel="1">learn (1)</a></li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Tags</h4>
-  
-    <a href="/tags/#jekyll" title="jekyll" rel="2">jekyll</a> &nbsp;
-  
-    <a href="/tags/#recommend books" title="recommend books" rel="1">recommend books</a> &nbsp;
-  
-    <a href="/tags/#git" title="git" rel="1">git</a> &nbsp;
-  
-    <a href="/tags/#ruby" title="ruby" rel="1">ruby</a> &nbsp;
-  
-    <a href="/tags/#rails" title="rails" rel="1">rails</a> &nbsp;
-  
-    <a href="/tags/#maintenance" title="maintenance" rel="1">maintenance</a> &nbsp;
-  
-    <a href="/tags/#mindmap" title="mindmap" rel="1">mindmap</a> &nbsp;
-  
-    <a href="/tags/#cloud" title="cloud" rel="1">cloud</a> &nbsp;
-  
-    <a href="/tags/#virtual world" title="virtual world" rel="1">virtual world</a> &nbsp;
-  
-    <a href="/tags/#visa" title="visa" rel="1">visa</a> &nbsp;
-  
-    <a href="/tags/#software engineer" title="software engineer" rel="1">software engineer</a> &nbsp;
-  
-    <a href="/tags/#code" title="code" rel="1">code</a> &nbsp;
-  
-    <a href="/tags/#computer science" title="computer science" rel="1">computer science</a> &nbsp;
-  
-    <a href="/tags/#string" title="string" rel="1">string</a> &nbsp;
-  
-    <a href="/tags/#for loop" title="for loop" rel="1">for loop</a> &nbsp;
-  
-    <a href="/tags/#data structure" title="data structure" rel="2">data structure</a> &nbsp;
-  
-    <a href="/tags/#two stacks" title="two stacks" rel="1">two stacks</a> &nbsp;
-  
-    <a href="/tags/#DFS" title="DFS" rel="8">DFS</a> &nbsp;
-  
-    <a href="/tags/#backtracking" title="backtracking" rel="4">backtracking</a> &nbsp;
-  
-    <a href="/tags/#Binary Search" title="Binary Search" rel="2">Binary Search</a> &nbsp;
-  
-    <a href="/tags/#graph" title="graph" rel="1">graph</a> &nbsp;
-  
-    <a href="/tags/#dfs" title="dfs" rel="1">dfs</a> &nbsp;
-  
-    <a href="/tags/#Array" title="Array" rel="4">Array</a> &nbsp;
-  
-    <a href="/tags/#Dynamic Programming" title="Dynamic Programming" rel="2">Dynamic Programming</a> &nbsp;
-  
-    <a href="/tags/#bit manipulation" title="bit manipulation" rel="1">bit manipulation</a> &nbsp;
-  
-    <a href="/tags/#Bit Manipulation" title="Bit Manipulation" rel="1">Bit Manipulation</a> &nbsp;
-  
-    <a href="/tags/#Math" title="Math" rel="2">Math</a> &nbsp;
-  
-    <a href="/tags/#Graph" title="Graph" rel="3">Graph</a> &nbsp;
-  
-    <a href="/tags/#Heap" title="Heap" rel="1">Heap</a> &nbsp;
-  
-    <a href="/tags/#Three Pointer" title="Three Pointer" rel="1">Three Pointer</a> &nbsp;
-  
-    <a href="/tags/#Facebook" title="Facebook" rel="1">Facebook</a> &nbsp;
-  
-    <a href="/tags/#Architecture" title="Architecture" rel="1">Architecture</a> &nbsp;
-  
-    <a href="/tags/#Technology" title="Technology" rel="1">Technology</a> &nbsp;
-  
-    <a href="/tags/#Assembly" title="Assembly" rel="1">Assembly</a> &nbsp;
-  
-    <a href="/tags/#Hashmap" title="Hashmap" rel="1">Hashmap</a> &nbsp;
-  
-    <a href="/tags/#Trie" title="Trie" rel="1">Trie</a> &nbsp;
-  
-    <a href="/tags/#Doubly Linked List" title="Doubly Linked List" rel="1">Doubly Linked List</a> &nbsp;
-  
-    <a href="/tags/#List" title="List" rel="2">List</a> &nbsp;
-  
-    <a href="/tags/#Grow Array" title="Grow Array" rel="3">Grow Array</a> &nbsp;
-  
-    <a href="/tags/#Singly Linked List" title="Singly Linked List" rel="1">Singly Linked List</a> &nbsp;
-  
-    <a href="/tags/#Queue" title="Queue" rel="2">Queue</a> &nbsp;
-  
-    <a href="/tags/#Linked List" title="Linked List" rel="2">Linked List</a> &nbsp;
-  
-    <a href="/tags/#Stack" title="Stack" rel="1">Stack</a> &nbsp;
-  
-    <a href="/tags/#Two Pointers" title="Two Pointers" rel="1">Two Pointers</a> &nbsp;
-  
-    <a href="/tags/#Tree" title="Tree" rel="1">Tree</a> &nbsp;
-  
-    <a href="/tags/#Divide and Conquer" title="Divide and Conquer" rel="1">Divide and Conquer</a> &nbsp;
-  
-    <a href="/tags/#Traverse" title="Traverse" rel="1">Traverse</a> &nbsp;
-  
-    <a href="/tags/#Pre-order" title="Pre-order" rel="1">Pre-order</a> &nbsp;
-  
-    <a href="/tags/#Post-order" title="Post-order" rel="1">Post-order</a> &nbsp;
-  
-    <a href="/tags/#In-order" title="In-order" rel="1">In-order</a> &nbsp;
-  
-    <a href="/tags/#Back Tracking" title="Back Tracking" rel="1">Back Tracking</a> &nbsp;
-  
-    <a href="/tags/#Boggle" title="Boggle" rel="1">Boggle</a> &nbsp;
-  
-    <a href="/tags/#Hashing" title="Hashing" rel="1">Hashing</a> &nbsp;
-  
-    <a href="/tags/#Linear Probe" title="Linear Probe" rel="1">Linear Probe</a> &nbsp;
-  
-    <a href="/tags/#Rehashing" title="Rehashing" rel="1">Rehashing</a> &nbsp;
-  
-    <a href="/tags/#RBTree" title="RBTree" rel="1">RBTree</a> &nbsp;
-  
-    <a href="/tags/#Red Black Tree" title="Red Black Tree" rel="1">Red Black Tree</a> &nbsp;
-  
-    <a href="/tags/#BFS" title="BFS" rel="1">BFS</a> &nbsp;
-  
-    <a href="/tags/#Bellman-Ford" title="Bellman-Ford" rel="1">Bellman-Ford</a> &nbsp;
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Blogroll</h4>
-  
-  <li><a href="http://jianwang.info/" title="Yet another blog">Jian</a></li>
-  
-  <li><a href="http://jianwang.info/" title="Jian's website">Jian's website</a></li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Archives</h4>
-
-  
-  
-  
-  
-  
-  <li id="2016" > <a href="/archives/#2016">2016</a></li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li id="2015" > <a href="/archives/#2015">2015</a></li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li id="2014" > <a href="/archives/#2014">2014</a></li>
-  
-  
-
-</div>
-
-
-</div>
-
-
 
   
 
   <footer class="site-footer">
 
-  <p>Copyright &copy; <a href="/">Jian's Blog</a></p>
-  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
-  on 
+  <p>Copyright &copy; <a href="/">Welcome</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+  on
   
   <a href="https://github.com/">Github</a>
   
-  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="http://yulijia.net">Lijia Yu</a>  
+  | Theme <a href="https://github.com/jianw851/jianw851.github.io">Jian's Github</a> Design by <a href="http://jianwang.info">Jian Wang</a>  
 
 
   <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
@@ -1346,7 +1082,7 @@ $(function(){
   </div>
 
   <script src="/js/jquery-1.9.1.min.js"></script>
-  <script src="/js/totop.js"></script>  
+  <script src="/js/totop.js"></script>
 
 
 

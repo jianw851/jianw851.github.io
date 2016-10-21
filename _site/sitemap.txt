@@ -13,9 +13,6 @@
 /page3/
 /page4/
 /page5/
-/page6/
-/page7/
-/page8/
 
 /algorithm/2016/05/02/graph-bellman-ford.html
 /algorithm/2016/05/02/graph-DFS-BFS.html
@@ -51,7 +48,6 @@
 /algorithm/2015/12/11/strStr.html
 /read/2015/07/07/code.html
 /read/2015/06/23/dreaming-in-code.html
-/daily/2015/06/01/visa-got-approved.html
 /idea/2015/05/13/universal-structure-cloud-construction.html
 /trick/2015/05/09/maintenance-of-github-pages.html
 /read/2015/04/10/about-reading.html

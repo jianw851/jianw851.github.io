@@ -1,6 +1,6 @@
 ### Site info:
-title: Jian's Blog
-tagline: Welcome to My Blog
+title: Welcome
+tagline: to Jian's Blog
 author: Jian Wang
 email: jianw851@gmail.com
 description: "This is a Jian's Blog."
@@ -12,16 +12,18 @@ locale: en_US
 ### Personal info and site tools info:
 twitter_username: jianw851
 github_username:  jianw851
+linkedin_username:  jianwang85
+google_plus_username: 106933367719218883211
 disqus_shortname: jianw851
 favicon:     "/images/favicon.ico"
-aboutme: Hi, this is Jian. # these are shown on aboutme-sidebar.
-aboutme_photo: "/images/J.png" #your photo.
+aboutme:  # these are shown on aboutme-sidebar.
+aboutme_photo: "/images/J_coffee.png" #your photo.
 google_analytics_key: UA-61717136-1 # put YOUR key here to enable tracking! (blank to disable)
 
 
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
-default_column: "two" # blog style: two columns, if default_column != "two", you will see a one column blog.
+default_column: "one" # blog style: two columns, if default_column != "two", you will see a one column blog.
 default_locale: "en" # blog sidebar language set, only include: English (en), Chinese (cn), Japanese (jp), Polish (pl), Korean (kr) and Russian (ru)
 
 locales:
@@ -140,9 +142,6 @@ Blogroll:
       - name: Jian
         href: http://jianwang.info/
         title: Yet another blog
-      - name: Jian's website
-        href: http://jianwang.info/
-        title: Jian's website
 
 
 ### Build settings
@@ -152,5 +151,5 @@ kramdown:
         input: GFM
         syntax_highlighter: rouge
 gems: [jekyll-paginate]
-paginate: 5
+paginate: 8
 excerpt_separator: <!-- more -->

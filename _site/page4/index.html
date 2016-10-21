@@ -7,16 +7,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width initial-scale=1">
 
-<meta property="og:title" content="Jian's Blog">
-<title>Jian's Blog</title>
+<meta property="og:title" content="Welcome">
+<title>Welcome</title>
 <meta property="og:description" content="This is a Jian's Blog.">
 <meta property="og:url" content="http://localhost:4000/page4/">
-<meta property="og:site_name" content="Jian's Blog">
+<meta property="og:site_name" content="Welcome">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@jianw851">
 <meta name="twitter:creator" content="@jianw851">
-<meta name="twitter:title" content="Jian's Blog">
+<meta name="twitter:title" content="Welcome">
 <meta name="twitter:description" content="This is a Jian's Blog.">
 <meta name="twitter:url" content="http://localhost:4000/page4/">
 
@@ -25,7 +25,7 @@
 <link rel="icon" href="/images/favicon.ico">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="canonical" href="http://localhost:4000/page4/">
-<link rel="alternate" type="application/atom+xml" title="Jian's Blog" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="Welcome" href="http://localhost:4000/feed.xml" />
 
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -72,8 +72,8 @@ for (var b = blocklink.length; b--;) {
 
   <div class="wrapper">
 
-    <h1 class="site-title"><a href="/">Jian's Blog</a></h1>
-    <h3 class="site-meta">Welcome to My Blog</h3>
+    <h1 class="site-title"><a href="/">Welcome</a></h1>
+    <h3 class="site-meta">to Jian's Blog</h3>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -129,12 +129,12 @@ for (var b = blocklink.length; b--;) {
         
         
         
-        
-        
-        
-        
-        
-        
+        <div class="google-search">
+          <form onsubmit="search_google()" >
+            <input  type="text" id="google-search" placeholder="Google search" />
+            <input  type="submit" name="sa" value="Go" />
+          </form>
+        </div>
       </div>
     </nav>
 
@@ -143,203 +143,20 @@ for (var b = blocklink.length; b--;) {
 </header>
 
 
-    
+  
 
-  <div class="page-content col-sm-8">
-    <div class="home">
+  <div class="page-content">
+    <div class="wrapper">
+      <div class="home">
   <div class="post" itemscope itemtype="http://schema.org/BlogPosting" >
 
     
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/learn/2016/03/17/Assembly-Study.html">Assembly on Mac</a>
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/14/Closest-Number-in-Sorted-Array.html">Closest Number in Sorted Array</a>
       </h1>
-      <meta itemprop="keywords" content="Assembly" />
-      <p class="post-meta">
-      Posted in
-      
-      <a href="/categories/#learn">learn</a>
-      
-      
-      and tagged
-      
-      <a href="/tags/#Assembly" title="Assembly">Assembly</a>
-      
-      
-      <time itemprop="datePublished" datetime="2016-03-17">
-        on Mar 17, 2016
-      </time>
-      </p>
-    </header>
-
-    <article class="post-content" itemprop="articleBody">
-      
-      <p>Assembly language is the very basic programming language in a Computer. First it is more detailed. Second it is more effcient. Today I am going to try it on my macbook. Although it is not my first time to try assembly, I feel more comfortable and engaged to do so. This airticle will record some of method and tools.</p>
-
-<!--more-->
-
-<h2 id="tool">Tool</h2>
-
-<ul>
-  <li>NASM</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>  brew install nasm
-</code></pre>
-</div>
-
-<ul>
-  <li>Xcode
-which contains gcc</li>
-</ul>
-
-<p>this link is a very good materail to learn 64 bit assembly on mac
-http://www.idryman.org/blog/2014/12/02/writing-64-bit-assembly-on-mac-os-x/</p>
-
-<p>here is a short example</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>_asm.s
-# as hello_asm.s -o hello_asm.o
-# ld hello_asm.o -e _main -o hello_asm
-.section __DATA,__data
-str:
-  .asciz "Hello world!\n"
-
-.section __TEXT,__text
-.globl _main
-_main:
-  movl $0x2000004, %eax           # preparing system call 4
-  movl $1, %edi                    # STDOUT file descriptor is 1
-  movq str@GOTPCREL(%rip), %rsi   # The value to print
-  movq $100, %rdx                 # the size of the value to print
-  syscall
-
-  movl $0, %ebx
-  movl $0x2000001, %eax           # exit 0
-  syscall
-
-</code></pre>
-</div>
-<p>I have already installed gcc on my computer, so I will not install nasm.</p>
-
-<hr />
-
-      
-    </article>
-    <hr />
-
-    
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/technology/2016/02/23/Facebook-Study-I.html">Facebook Technology Study I</a>
-      </h1>
-      <meta itemprop="keywords" content="Facebook,Architecture,Technology" />
-      <p class="post-meta">
-      Posted in
-      
-      <a href="/categories/#Technology">Technology</a>
-      
-      
-      and tagged
-      
-      <a href="/tags/#Facebook" title="Facebook">Facebook</a>, 
-      
-      <a href="/tags/#Architecture" title="Architecture">Architecture</a>, 
-      
-      <a href="/tags/#Technology" title="Technology">Technology</a>
-      
-      
-      <time itemprop="datePublished" datetime="2016-02-23">
-        on Feb 23, 2016
-      </time>
-      </p>
-    </header>
-
-    <article class="post-content" itemprop="articleBody">
-      
-      <p>As is known to us all, Facebook is world class big tech company which is engaging in connecting the world with its various open source software and open source hardware. So far Facebook has had 296 open source projects on GitHub with 10+ Million Lines of code, 265k Followers and 43k Forks. This airticle is going to introduce the general open source software infrastructure of Facebook. 
-<!--more--></p>
-
-<blockquote>
-  <p>Open source is very important for Facebook. Being open is better than being close. Being connection is better than being isolation. Bellow is a short list of facebook’s open source software in the last 6 months.</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>grocery-delivery
-ig-json-parser
-xhp-bootstrap
-parseapplinksanalytics
-fbcuda
-mcrouter
-errgroup
-third-party
-fb-adb
-flow
-css-layout
-httpdown
-riftdk1
-jsx
-vim-flow
-flux
-dfuse
-thpp
-immutable-js
-fblualib
-rpool
-osquery
-fatal
-ds2
-proxygen : layer 7 load balancer
-fbpca
-stats
-rebound-js
-runcmd
-asyncdisplaykit
-neti
-fbcunn
-f8developerconferenceapp
-parse-facebook-user-session
-parseui-ios
-parse-php-sdk
-facebook-python-ads-sdk
-oss-performance
-taste-tester
-presto-odbc
-between-meals
-neti-cookbook
-</code></pre>
-</div>
-
-<p>Facebook mainly focus on 4 main softwares: data infrastructure like “Presto” and “rocksdb”, server runtime like “proxygen” and “HHVM”, web framework like “javascript”, mobile tools and libraries.</p>
-
-<p>RocksDB is an embeddable persistent key-value store for fast storage. RocksDB can also be the foundation for a client-server database but our current focus is on embedded workloads.</p>
-
-<p>Presto is an open source distributed SQL query engine for running interactive analytic queries against data sources of all sizes ranging from gigabytes to petabytes.</p>
-
-<p>Why open source is very important?</p>
-
-<p>In the year 2004, facebook start with LAMP frame (Linux, Apache, Mysql, PHP),  now it’s like a giant LAMP website with third degree scale. Engineers has done a lot to improve the LAMP and memcache.  you had to make it scale. For example, first we use Mysql, then we need to scale it, then need improve it, even replace it. After we release it, we continue using it, it become a loop.</p>
-
-<p>How facebook contribute?</p>
-
-<p>Hardware: Facebook open a hardware project called “open compute project”, you can buy those hardware from OEM, they don’t have secret anymore.</p>
-
-<p>OCP data center design: mechanical design, electronical design.</p>
-
-<hr />
-
-      
-    </article>
-    <hr />
-
-    
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/02/15/Ugly-Number_II.html">Ugly Number II</a>
-      </h1>
-      <meta itemprop="keywords" content="Dynamic Programming,Math,Heap,Three Pointer" />
+      <meta itemprop="keywords" content="Binary Search" />
       <p class="post-meta">
       Posted in
       
@@ -348,212 +165,323 @@ neti-cookbook
       
       and tagged
       
-      <a href="/tags/#Dynamic Programming" title="Dynamic Programming">Dynamic Programming</a>, 
-      
-      <a href="/tags/#Math" title="Math">Math</a>, 
-      
-      <a href="/tags/#Heap" title="Heap">Heap</a>, 
-      
-      <a href="/tags/#Three Pointer" title="Three Pointer">Three Pointer</a>
+      <a href="/tags/#Binary Search" title="Binary Search">Binary Search</a>
       
       
-      <time itemprop="datePublished" datetime="2016-02-15">
-        on Feb 15, 2016
+      <time itemprop="datePublished" datetime="2015-12-14">
+        on Dec 14, 2015
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
       
-      <p>Problem 264 Ugly Number II</p>
+      <p>Given a target number and an integer array A sorted in ascending order, find the index i in A such that A[i] is closest to the given target.
+Return -1 if there is no element in the array.
+Given [1, 2, 3] and target = 2, return 1.
+Given [1, 4, 6] and target = 3, return 1.
+Given [1, 4, 6] and target = 5, return 1 or 2.
+Given [1, 3, 3, 4] and target = 2, return 0 or 1 or 2.
+There can be duplicate elements in the array, and we can return any of the indices with same value.
+O(logn) time complexity.</p>
 
-<p>Write a program to find the n-th ugly number.</p>
+<!--more-->
+<div class="highlighter-rouge"><pre class="highlight"><code>int closestNumber(vector&lt;int&gt;&amp; A, int target) {
+  if (A.size() == 0) {
+    return -1;
+  } else if (A.size() == 1) {
+    return 0;
+  }
+  int begin = 0;
+  int end = A.size() - 1;
+  while (begin != end - 1) {
+    int mid = (begin + end)/2;
+    if (A[mid] == target) {
+      return mid;
+    } else if (A[mid] &gt; target) {
+      end = mid;
+    } else {
+      begin = mid;
+    }
+  }
+  if (A[begin] == target) {
+    return begin;
+  } else if (A[end] == target) {
+    return end;
+  } else if (A[end] - target &gt;= target - A[begin]) {
+    return begin;
+  } else if (A[end] - target &lt; target - A[begin]) {
+    return end;
+  }
+}
+</code></pre>
+</div>
 
-<p>Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.</p>
+<hr />
 
-<p>Note that 1 is typically treated as an ugly number.</p>
+      
+    </article>
+    <hr />
 
-<p>Hint: The naive approach is to call isUgly for every number until you reach the nth one. Most numbers are not ugly. Try to focus your effort on generating only the ugly ones. An ugly number must be multiplied by either 2, 3, or 5 from a smaller ugly number.</p>
+    
 
-<p>Example 1:</p>
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/13/Total-Occurrence-of-Target.html">Total Occurrence of Target</a>
+      </h1>
+      <meta itemprop="keywords" content="Binary Search" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#Binary Search" title="Binary Search">Binary Search</a>
+      
+      
+      <time itemprop="datePublished" datetime="2015-12-13">
+        on Dec 13, 2015
+      </time>
+      </p>
+    </header>
 
-<p>n = 10 return 12</p>
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given a target number and an integer array sorted in ascending order. Find the total number of occurrences of target in the array.
+Given [1, 3, 3, 4, 5] and target = 3, return 2.
+Given [2, 2, 3, 4, 6] and target = 4, return 1.
+Given [1, 2, 3, 4, 5] and target = 6, return 0.
+Challenge
+Time complexity in O(logn)</p>
 
 <!--more-->
 
-<h2 id="solution">Solution</h2>
-
-<ul>
-  <li>C++</li>
-</ul>
-
-<h2 id="analysis">Analysis</h2>
-
-<p>解法1: Brute Force： 此暴力破解还稍微带点动态规划的意味在里面。 思路是利用它的一个规律。 打个比喻：即从最小的丑数开始，“1， 2，3，4，5…”，你会发现如果把前面这串数字当成一个保龄球轨道的话，那么“2，3，5”这个就是一个滚动的保龄球，从头开始滚动，保龄球与轨道接触的那一面的数字相乘的结果（去重复后）往轨道最后放。相切的点就是的结果。但是这样的方法有很多明显的缺陷，为了去重要多花费2n的空间（6<em>3等于9</em>2重复） ，而且实际执行的次数要多于n。</p>
-
-<p>解法2: 三指针： 与以上解法相比，此解法发现了真正的pattern。还拿以上例子来讲，就是把保龄球换成蜗牛，三个蜗牛（数字分别是2，3，5）起初都在起跑线上，谁与轨道的乘积最小谁就往前爬一步，这样当出现重复数字的时候，都会在同一个循环里，（即3<em>6与2</em>9两个最小值在同时出现，那么两者都往前爬一步），这样就省了去重复的多余空间和操作。</p>
-
-<p><strong>复杂度</strong></p>
-
-<p>时间：O(n)</p>
-
-<p>空间：O(n)</p>
-
-<p><strong>实现一(cpp)</strong></p>
-
 <div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
-long long nthUglyNumber1(int n) {
- if (n == 0) return 0;
- unordered_set&lt;long long&gt; set1;
- vector&lt;int&gt; ugly = {2,3,5};
- priority_queue&lt;long long&gt; queue1;
- for (int i = 1; i &lt; 6; i++ ) {
-   queue1.push(-i);
-   set1.emplace(i);
- }
- long long result;
- for (int i = 0; i &lt; k; i++) {
-   result = -queue1.top();
-   queue1.pop();
-   for (int j = 0; j &lt; 3; j++) {
-     if (set1.find(ugly[j]*result) == set1.end()) {
-       queue1.push(-ugly[j]*result);
-       set1.emplace(ugly[j]*result);
-     }
+/**
+ * @param A an integer array sorted in ascending order
+ * @param target an integer
+ * @return an integer
+ */
+int totalOccurrence(vector&lt;int&gt;&amp; A, int target) {
+  if (A.size() == 0) {
+    return 0;
+  } else if (target &lt; A[0]||target &gt; A[A.size()-1]) {
+    return 0;
+  }
+  if (A.size() == 1&amp;&amp;A[0] == target) {
+    return 1;
+  }
+  int begin = 0;
+  int end = A.size() - 1;
+  while (begin != end -1) {
+    int mid = (begin + end)/2;
+    if (A[mid] == target) {
+      int leftIdx = leftSearch(A, target, begin, mid);
+      int rightIdx = rightSearch(A, target, mid, end);
+      return rightIdx - leftIdx + 1;
+    } else if (A[mid] &gt; target) {
+      end = mid;
+    } else {
+      begin = mid;
+    }
+  }
+  if (A[begin] == target) {
+    return 1;
+  } else if (A[end] == target) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+int leftSearch(vector&lt;int&gt;&amp; A, int target, int begin, int end) {
+  if (begin == end - 1) {
+    if (A[begin] == target) {
+      return begin;
+    } else {
+      return end;
+    }
+  }
+  int mid = (begin + end)/2;
+  if (A[mid] ==  target) {
+    leftSearch(A, target, begin, mid);
+  } else {
+    leftSearch(A, target, mid, end);
+  }
+}
+ int rightSearch(vector&lt;int&gt;&amp; A, int target, int begin, int end) {
+  if (begin == end - 1) {
+    if (A[end] == target) {
+      return end;
+    } else {
+      return begin;
+    }
+  }
+  int mid = (begin + end)/2;
+  if (A[mid] ==  target) {
+    rightSearch(A, target, mid, end);
+  } else {
+    rightSearch(A, target, begin, mid);
+  }
+} };
+</code></pre>
+</div>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/13/Subsets.html">Subsets</a>
+      </h1>
+      <meta itemprop="keywords" content="DFS,backtracking" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#DFS" title="DFS">DFS</a>, 
+      
+      <a href="/tags/#backtracking" title="backtracking">backtracking</a>
+      
+      
+      <time itemprop="datePublished" datetime="2015-12-13">
+        on Dec 13, 2015
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given a set of distinct integers, return all possible subsets.
+Example
+If S = [1,2,3], a solution is:
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+Note
+Elements in a subset must be in non-descending order.
+The solution set must not contain duplicate subsets.
+Challenge
+Can you do it in both recursively and iteratively?</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vector&lt;vector&lt;int&gt; &gt; subsets(vector&lt;int&gt; &amp;nums) {
+  vector&lt;vector&lt;int&gt; &gt; resultSets;
+  if (nums.size() == 0) {
+   resultSets.push_back(nums);
+   return resultSets;
+  }
+  sort(nums.begin(), nums.end());
+  vector&lt;int&gt; list;
+  subSetsHelper(resultSets, list, nums, 0);
+  return resultSets;
+}
+void subSetsHelper(vector&lt;vector&lt;int&gt; &gt; &amp;result, vector&lt;int&gt; &amp;list, vector&lt;int&gt; &amp;nums, int pos) {
+  result.push_back(list);
+  for (int i = pos; i &lt; nums.size(); i++) {
+    list.push_back(nums[i]);
+    subSetsHelper(result, list, nums, i+1);
+    list.pop_back();
+  }
+}
+</code></pre>
+</div>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/13/Subsets-II.html">Subsets II</a>
+      </h1>
+      <meta itemprop="keywords" content="DFS,backtracking" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#DFS" title="DFS">DFS</a>, 
+      
+      <a href="/tags/#backtracking" title="backtracking">backtracking</a>
+      
+      
+      <time itemprop="datePublished" datetime="2015-12-13">
+        on Dec 13, 2015
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given a list of numbers that may has duplicate numbers, return all possible subsets
+Example
+If S = [1,2,2], a solution is:
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+Note
+Each element in a subset must be in non-descending order.
+The ordering between two subsets is free.
+The solution set must not contain duplicate subsets.
+Challenge
+Can you do it in both recursively and iteratively?</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vector&lt;vector&lt;int&gt; &gt; subsetsWithDup(vector&lt;int&gt; &amp;S) {
+   vector&lt;vector&lt;int&gt; &gt; resultSets;
+   vector&lt;int&gt; list;
+   if (S.size() == 0) {
+    resultSets.push_back(S);
+    return resultSets;
    }
+    sort(S.begin(), S.end());
+    subDivide(resultSets, list, S, 0);
+  return resultSets;
+}
+void subDivide(vector&lt;vector &lt;int&gt;&gt; &amp;result, vector&lt;int&gt; &amp;list, const vector&lt;int&gt; &amp;S, int pos) {
+     result.push_back(list);
+     for (int i = pos; i &lt; S.size(); i++) {
+        if ((i != pos)&amp;&amp;S[i] == S[i-1])
+        continue;
+        list.push_back(S[i]);
+        subDivide(result, list, S, i+1);
+        list.pop_back();
+    }
  }
- return result;   }
-};
 </code></pre>
 </div>
-
-<p><strong>复杂度</strong></p>
-
-<p>时间：O(n)</p>
-
-<p>空间：O(n)</p>
-
-<p><strong>实现二(cpp)</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
-int nthUglyNumber(int n) {    
-    vector&lt;int&gt; result(1, 1);
-    int i2 = 0, i3 = 0, i5 = 0;
-    while (result.size() &lt; n) {
-        int m2 = result[i2] * 2, 
-            m3 = result[i3] * 3, 
-            m5 = result[i5] * 5;
-        int mn = min(m2, min(m3, m5));
-        if (mn == m2) ++i2;
-        if (mn == m3) ++i3;
-        if (mn == m5) ++i5;
-        result.push_back(mn);
-    }
-    return result.back();
-}
-};
-</code></pre>
-</div>
-
-<ul>
-  <li>596 / 596 test cases passed.</li>
-  <li>Status: Accepted</li>
-  <li>Runtime: 20 ms</li>
-  <li>Beats: 48.17%</li>
-</ul>
-
-<p><strong>实现三(cpp)</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public class Solution {
-public int nthUglyNumber(int n) {
-    int[] ugly = new int[n];
-    int v2 = 1, v3 = 1, v5 = 1;
-    int i2 = 0, i3 = 0, i5 = 0;
-    for (int k = 0; k &lt; n; ++k) {
-        int v = Math.min(v2, Math.min(v3, v5));
-        ugly[k] = v;
-        if (v2 == v) v2 = ugly[i2++] * 2;
-        if (v3 == v) v3 = ugly[i3++] * 3;
-        if (v5 == v) v5 = ugly[i5++] * 5;
-    }
-    return ugly[n-1];
-}
-}
-</code></pre>
-</div>
-
-<ul>
-  <li>596 / 596 test cases passed.</li>
-  <li>Status: Accepted</li>
-  <li>Runtime: 8 ms</li>
-  <li>Beats: 90.84%</li>
-</ul>
-
-<p><strong>实现四(Java)</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public class Solution {
-public int nthUglyNumber(int n) {
-    int[] ugly = new int[n];
-    int v2 = 1, v3 = 1, v5 = 1;
-    int i2 = 0, i3 = 0, i5 = 0;
-    for (int k = 0; k &lt; n; ++k) {
-        int v = Math.min(v2, Math.min(v3, v5));
-        ugly[k] = v;
-        if (v2 == v) v2 = ugly[i2++] * 2;
-        if (v3 == v) v3 = ugly[i3++] * 3;
-        if (v5 == v) v5 = ugly[i5++] * 5;
-    }
-    return ugly[n-1];
-}
-}
-</code></pre>
-</div>
-
-<ul>
-  <li>596 / 596 test cases passed.</li>
-  <li>Status: Accepted</li>
-  <li>Runtime: 8 ms</li>
-  <li>Beats: 85.65%</li>
-</ul>
-
-<p><strong>实现五(Python)</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>def nthUglyNumber(self, n):
-ugly = [1] * n
-i2 = i3 = i5 = -1
-x = v2 = v3 = v5 = 1
-for k in xrange(n):
-    x = min(v2, v3, v5)
-    ugly[k] = x
-    if x == v2:
-        i2 += 1
-        v2 = ugly[i2] * 2
-    if x == v3:
-        i3 += 1
-        v3 = ugly[i3] * 3
-    if x == v5:
-        i5 += 1
-        v5 = ugly[i5] * 5
-return x
-</code></pre>
-</div>
-
-<ul>
-  <li>596 / 596 test cases passed.</li>
-  <li>Status: Accepted</li>
-  <li>Runtime: 176 ms</li>
-  <li>94.23%</li>
-</ul>
-
-<p>Contribution</p>
-
-<p><a href="http://jianwang.info/">@jianw851</a></p>
-
-<h2 id="reference">Reference</h2>
-
-<p>[^1] <a href="https://leetcode.com/problems/ugly-number-ii/">264. Ugly Number II </a></p>
-
-<p>[^2] <a href="http://www.cnblogs.com/grandyang/p/4743837.html">博客园Grandyang</a></p>
 
 <hr />
 
@@ -565,9 +493,9 @@ return x
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/02/03/Clone-Graph.html">Clone Graph</a>
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/12/Permutations.html">Permutations</a>
       </h1>
-      <meta itemprop="keywords" content="Graph,DFS" />
+      <meta itemprop="keywords" content="DFS,backtracking" />
       <p class="post-meta">
       Posted in
       
@@ -576,72 +504,140 @@ return x
       
       and tagged
       
-      <a href="/tags/#Graph" title="Graph">Graph</a>, 
+      <a href="/tags/#DFS" title="DFS">DFS</a>, 
       
-      <a href="/tags/#DFS" title="DFS">DFS</a>
+      <a href="/tags/#backtracking" title="backtracking">backtracking</a>
       
       
-      <time itemprop="datePublished" datetime="2016-02-03">
-        on Feb 3, 2016
+      <time itemprop="datePublished" datetime="2015-12-12">
+        on Dec 12, 2015
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
       
-      <p>Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.</p>
-
-<p>How we serialize an undirected graph:</p>
-
-<p>Nodes are labeled uniquely.</p>
-
-<p>We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
-As an example, consider the serialized graph {0,1,2#1,2#2,2}.</p>
-
-<p>The graph has a total of three nodes, and therefore contains three parts as separated by #.</p>
-
-<p>First node is labeled as 0. Connect node 0 to both nodes 1 and 2.
-Second node is labeled as 1. Connect node 1 to node 2.
-Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.</p>
-
-<p>return a deep copied graph.</p>
+      <p>Given a list of numbers, return all possible permutations.
+Example
+For nums = [1,2,3], the permutations are:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+Challenge
+Do it without recursion.</p>
 
 <!--more-->
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
-UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
-  if (node == NULL) return NULL;
-  unordered_map&lt;UndirectedGraphNode*, UndirectedGraphNode*&gt; map1;
-  vector&lt;UndirectedGraphNode*&gt; queue;
-  queue.push_back(node);
-  UndirectedGraphNode *head = new UndirectedGraphNode(node-&gt;label);
-  map1[node] = head;
-  int curr = 0;
-  while (curr &lt; queue.size()) {
-    UndirectedGraphNode * curr_node = queue[curr];
-    int size = curr_node-&gt;neighbors.size();
-    for (int i = 0; i &lt; size; i++) {
-      UndirectedGraphNode * curr_neigh = curr_node-&gt;neighbors[i];
-      if (map1.find(curr_neigh) == map1.end()) {
-        UndirectedGraphNode * curr_copy = new UndirectedGraphNode(curr_neigh-&gt;label);
-        map1[curr_node]-&gt;neighbors.push_back(curr_copy);
-        map1[curr_neigh] = curr_copy;
-        queue.push_back(curr_neigh);
-      } else {
-        map1[curr_node]-&gt;neighbors.push_back(map1[curr_neigh]);
+<div class="highlighter-rouge"><pre class="highlight"><code> vector&lt;vector&lt;int&gt; &gt; permute(vector&lt;int&gt; nums) {
+ vector&lt;vector&lt;int&gt; &gt; resultSets;
+ vector&lt;int&gt; list;
+ if (nums.size() == 0) {
+    return resultSets;
+ }
+ permutation(resultSets, list, nums);
+return resultSets;
+}
+void permutation(vector&lt;vector&lt;int&gt; &gt; &amp;result, vector&lt;int&gt; &amp;list, vector&lt;int&gt; &amp;nums) {
+    if (list.size() == nums.size()) {
+      result.push_back(list);
+    } else {
+        for (int i = 0; i &lt; nums.size(); i++) {
+        if (count(list.begin(), list.end(), nums[i]) &gt; 0) {
+         continue;
+        }
+         list.push_back(nums[i]);
+         permutation(result, list, nums);
+         list.pop_back();
+        }
+    }
+}
+</code></pre>
+</div>
+
+<hr />
+
+      
+    </article>
+    <hr />
+
+    
+
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/12/Permutation-II.html">Permutations II</a>
+      </h1>
+      <meta itemprop="keywords" content="DFS,backtracking" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#DFS" title="DFS">DFS</a>, 
+      
+      <a href="/tags/#backtracking" title="backtracking">backtracking</a>
+      
+      
+      <time itemprop="datePublished" datetime="2015-12-12">
+        on Dec 12, 2015
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>Given a list of numbers with duplicate number in it. Find all unique permutations.
+Example
+For numbers [1,2,2] the unique permutations are:
+[
+  [1,2,2],
+  [2,1,2],
+  [2,2,1]
+]
+Challenge
+Using recursion to do it is acceptable. If you can do it without recursion, that would be great!</p>
+
+<!--more-->
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vector&lt;vector&lt;int&gt; &gt; permuteUnique(vector&lt;int&gt; &amp;nums) {
+  vector&lt;vector&lt;int&gt; &gt; resultSets;
+  vector&lt;int&gt; list;
+  if (nums.size() == 0) {
+    resultSets.push_back(list);
+    return resultSets;
+  }
+  vector&lt;bool&gt; visited(nums.size());
+  for_each(visited.begin(), visited.end(), [&amp;](bool x) { x = false;});
+  sort(nums.begin(), nums.end());
+  permutation(resultSets, list, nums, visited);
+  return resultSets;
+}
+void permutation(vector&lt;vector&lt;int&gt; &gt; &amp;result, vector&lt;int&gt; &amp;list,
+                 vector&lt;int&gt; &amp;nums, vector&lt;bool&gt; &amp;visited) {
+    if (list.size() == nums.size()) {
+      result.push_back(list);
+    } else {
+      for (int i = 0; i &lt; nums.size(); i++) {
+        if (visited[i] == true||(i != 0&amp;&amp;nums[i] == nums[i-1]&amp;&amp;visited[i-1] == false)) {
+          continue;
+        }
+        visited[i] = true;
+        list.push_back(nums[i]);
+        permutation(result, list, nums, visited);
+        list.pop_back();
+        visited[i] = false;
       }
     }
-    curr++;
-  }
-  return head;
 }
-};
 </code></pre>
 </div>
-
-<p>Contribution</p>
-
-<p><a href="http://jianwang.info/">@jianw851</a></p>
 
 <hr />
 
@@ -653,9 +649,9 @@ UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
 
     <header class="post-header">
       <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="/algorithm/2016/02/01/Missing-Number.html">Missing Number</a>
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/12/Min-Stack.html">Min Stack</a>
       </h1>
-      <meta itemprop="keywords" content="Array,Bit Manipulation,Math" />
+      <meta itemprop="keywords" content="data structure,two stacks" />
       <p class="post-meta">
       Posted in
       
@@ -664,102 +660,120 @@ UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
       
       and tagged
       
-      <a href="/tags/#Array" title="Array">Array</a>, 
+      <a href="/tags/#data structure" title="data structure">data structure</a>, 
       
-      <a href="/tags/#Bit Manipulation" title="Bit Manipulation">Bit Manipulation</a>, 
-      
-      <a href="/tags/#Math" title="Math">Math</a>
+      <a href="/tags/#two stacks" title="two stacks">two stacks</a>
       
       
-      <time itemprop="datePublished" datetime="2016-02-01">
-        on Feb 1, 2016
+      <time itemprop="datePublished" datetime="2015-12-12">
+        on Dec 12, 2015
       </time>
       </p>
     </header>
 
     <article class="post-content" itemprop="articleBody">
       
-      <p>Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.</p>
-
-<p>Example:</p>
-
-<p>Given nums = [0, 1, 3] return 2</p>
+      <p>Implement a stack with min() function, which will return the smallest number in the stack.
+It should support push, pop and min operation all in O(1) cost.
+push(1)
+pop()   // return 1
+push(2)
+push(3)
+min()   // return 2
+push(1)
+min()   // return 1</p>
 
 <!--more-->
 
-<p>复杂度</p>
-
-<p>时间：O(n)</p>
-
-<p>空间：O(1)</p>
-
-<p>实现一(cpp)</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:    int missingNumber(vector&lt;int&gt;&amp; nums) {
-  if (nums.size() == 0) return 0;
-  int sum = 0;
-  int n = nums.size();
-  for (int i = 0; i &lt; nums.size(); i++) {
-    sum += nums[i];
-  }
-  return (n+1)*n/2 - sum;
+<div class="highlighter-rouge"><pre class="highlight"><code>class MinStack { public:   stack&lt;int&gt; mainStack, minStack;
+MinStack() {
 }
-};
+void push(int number) {
+  mainStack.push(number);
+  if (minStack.empty() || minStack.top() &gt;= number) {
+    minStack.push(number);
+  }
+}
+int pop() {
+  int top = mainStack.top();
+  if (top == minStack.top()) minStack.pop();
+  mainStack.pop();
+  return top;
+}
+int min() {
+  return minStack.top();
+} };
 </code></pre>
 </div>
 
-<p>复杂度</p>
+<hr />
 
-<p>时间：O(n)</p>
+      
+    </article>
+    <hr />
 
-<p>空间：O(0)</p>
+    
 
-<p>实现二(cpp)</p>
+    <header class="post-header">
+      <h1 itemprop="name" class="post-title">
+        <a itemprop="url" class="post-link" href="/algorithm/2015/12/11/strStr.html">strStr</a>
+      </h1>
+      <meta itemprop="keywords" content="string,for loop" />
+      <p class="post-meta">
+      Posted in
+      
+      <a href="/categories/#algorithm">algorithm</a>
+      
+      
+      and tagged
+      
+      <a href="/tags/#string" title="string">string</a>, 
+      
+      <a href="/tags/#for loop" title="for loop">for loop</a>
+      
+      
+      <time itemprop="datePublished" datetime="2015-12-11">
+        on Dec 11, 2015
+      </time>
+      </p>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+      
+      <p>For a given source string and a target string, you should output the first index(from 0) of target string in source string.</p>
+
+<p>If target does not exist in source, just return -1.
+  O(n2) is acceptable. Can you implement an O(n) algorithm?
+when you meet this problem in a real interview, the interviewer may just want to test your basic implementation ability. But make sure your confirm with the interviewer first.</p>
+
+<!--more-->
 
 <div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:
-int missingNumber(vector&lt;int&gt;&amp; nums) {
-  if (nums.size() == 0) return 0;
-  int result = 0;
-  for (int i = 0; i &lt; nums.size(); i++) {
-     result ^= (i+1) ^ nums[i];
-  }
-  return result;
-}
-};
+/**
+ * Returns a index to the first occurrence of target in source,
+ * or -1  if target is not part of source.
+ * @param source string to be scanned.
+ * @param target string containing the sequence of characters to match.
+ */
+int strStr(const char *source, const char *target) {
+    if (source == NULL||target == NULL) {
+    return -1;
+    }
+    int len_source = strlen(source);
+    int len_target = strlen(target);
+    for (int i = 0; i &lt; len_source-len_target+1; i++) {
+      int j = 0;
+      for (j = 0; j &lt; len_target; j++) {
+        if (target[j] != source[i+j])
+        break;
+      }
+      if (j == len_target)
+      return i;
+    }
+    return -1;
+} };
 </code></pre>
 </div>
-
-<p>复杂度</p>
-
-<p>时间：O(n)</p>
-
-<p>空间：O(n)</p>
-
-<p>实现三(cpp)</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>class Solution { public:    int missingNumber(vector&lt;int&gt;&amp; nums) {
-  if (nums.size() == 0) return 0;
-  vector&lt;bool&gt; list(nums.size(), true);
-  for (int i = 0; i &lt; nums.size(); i++) {
-    list[nums[i]] = false;
-  }
-  int i = 0;
-  for (; i &lt; list.size(); i++) {
-    if (list[i]) return i;
-  }
-  return i;
-}
-};
-</code></pre>
-</div>
-
-<p>Contribution</p>
-
-<p><a href="http://jianwang.info/">@jianw851</a></p>
-
-<p>Reference</p>
-
-<p><a href="https://leetcode.com/problems/missing-number/">268. Missing Number</a></p>
 
 <hr />
 
@@ -772,7 +786,9 @@ int missingNumber(vector&lt;int&gt;&amp; nums) {
   </div>
 </div>
 
-    <section class="pager">
+    </div>
+  </div>
+  <section class="pager">
   
   
   <li class="previous"><a href="/page3/" title="Newer">&larr; Newer</a></li>
@@ -810,389 +826,18 @@ $(function(){
 
 
 
-  </div>
-  <div class="col-sm-2">
-<div class="sidebar-module about">
-  <h4>About Me</h4>
-  <img title="Jian Wang" src="https://i.imgur.com/Mdc4szJl.jpg" alt="Jian Wang"/>
-  <span>Hi, this is Jian.</span>
-  <br />
-
-  
-
-  You can contact me via: <br />
-
-  
-  <a href="mailto:jianw851@gmail.com" title="mailto: jianw851@gmail.com"><i class="fa fa-envelope-square fa-3x"></i></a>&nbsp;
-  
-  
-  <a href="https://github.com/jianw851" title="GithubID: jianw851"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;
-  
-  
-  <a href="https://twitter.com/jianw851" title="TwitterID: jianw851"><i class="fa fa-twitter-square fa-3x"></i></a>
-  
-
-  
-
-</div>
-
-<div class="sidebar-module">
-  <h4>Site Search</h4>
-  <form onsubmit="search_google()" >
-    <input type="text" id="google-search" placeholder="Google search" />
-    <input type="submit" name="sa" value="Go" />
-  </form>
-</div>
-
-
-<div class="sidebar-module"> <!-- sidebar-module-inset">-->
-  <h4>Copyright Notice</h4>
-
-  
-
-  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
-    <img src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png">
-  </a>
-  <br />
-  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike</a>
-
-  
-
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Recent Posts</h4>
-  
-  <li>
-  <a href="/algorithm/2016/05/02/graph-bellman-ford.html" title="Bellman-Ford algorithm" rel="bookmark">Bellman-Ford algorithm</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/05/02/graph-DFS-BFS.html" title="Graph Representation" rel="bookmark">Graph Representation</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/04/05/Red-Black-Tree.html" title="Red Black Tree implementation" rel="bookmark">Red Black Tree implementation</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/04/04/Rehashing-Linear-Probe.html" title="Rehashing Linear Probe Practice" rel="bookmark">Rehashing Linear Probe Practice</a>
-  </li>
-  
-  <li>
-  <a href="/algorithm/2016/04/04/Boggle-Game.html" title="Boggle Game" rel="bookmark">Boggle Game</a>
-  </li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Categories</h4>
-  
-  <li><a href="/categories/#trick" title="trick" rel="2">trick (2)</a></li>
-  
-  <li><a href="/categories/#read" title="read" rel="3">read (3)</a></li>
-  
-  <li><a href="/categories/#idea" title="idea" rel="1">idea (1)</a></li>
-  
-  <li><a href="/categories/#daily" title="daily" rel="1">daily (1)</a></li>
-  
-  <li><a href="/categories/#algorithm" title="algorithm" rel="30">algorithm (30)</a></li>
-  
-  <li><a href="/categories/#Technology" title="Technology" rel="1">Technology (1)</a></li>
-  
-  <li><a href="/categories/#learn" title="learn" rel="1">learn (1)</a></li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Tags</h4>
-  
-    <a href="/tags/#jekyll" title="jekyll" rel="2">jekyll</a> &nbsp;
-  
-    <a href="/tags/#recommend books" title="recommend books" rel="1">recommend books</a> &nbsp;
-  
-    <a href="/tags/#git" title="git" rel="1">git</a> &nbsp;
-  
-    <a href="/tags/#ruby" title="ruby" rel="1">ruby</a> &nbsp;
-  
-    <a href="/tags/#rails" title="rails" rel="1">rails</a> &nbsp;
-  
-    <a href="/tags/#maintenance" title="maintenance" rel="1">maintenance</a> &nbsp;
-  
-    <a href="/tags/#mindmap" title="mindmap" rel="1">mindmap</a> &nbsp;
-  
-    <a href="/tags/#cloud" title="cloud" rel="1">cloud</a> &nbsp;
-  
-    <a href="/tags/#virtual world" title="virtual world" rel="1">virtual world</a> &nbsp;
-  
-    <a href="/tags/#visa" title="visa" rel="1">visa</a> &nbsp;
-  
-    <a href="/tags/#software engineer" title="software engineer" rel="1">software engineer</a> &nbsp;
-  
-    <a href="/tags/#code" title="code" rel="1">code</a> &nbsp;
-  
-    <a href="/tags/#computer science" title="computer science" rel="1">computer science</a> &nbsp;
-  
-    <a href="/tags/#string" title="string" rel="1">string</a> &nbsp;
-  
-    <a href="/tags/#for loop" title="for loop" rel="1">for loop</a> &nbsp;
-  
-    <a href="/tags/#data structure" title="data structure" rel="2">data structure</a> &nbsp;
-  
-    <a href="/tags/#two stacks" title="two stacks" rel="1">two stacks</a> &nbsp;
-  
-    <a href="/tags/#DFS" title="DFS" rel="8">DFS</a> &nbsp;
-  
-    <a href="/tags/#backtracking" title="backtracking" rel="4">backtracking</a> &nbsp;
-  
-    <a href="/tags/#Binary Search" title="Binary Search" rel="2">Binary Search</a> &nbsp;
-  
-    <a href="/tags/#graph" title="graph" rel="1">graph</a> &nbsp;
-  
-    <a href="/tags/#dfs" title="dfs" rel="1">dfs</a> &nbsp;
-  
-    <a href="/tags/#Array" title="Array" rel="4">Array</a> &nbsp;
-  
-    <a href="/tags/#Dynamic Programming" title="Dynamic Programming" rel="2">Dynamic Programming</a> &nbsp;
-  
-    <a href="/tags/#bit manipulation" title="bit manipulation" rel="1">bit manipulation</a> &nbsp;
-  
-    <a href="/tags/#Bit Manipulation" title="Bit Manipulation" rel="1">Bit Manipulation</a> &nbsp;
-  
-    <a href="/tags/#Math" title="Math" rel="2">Math</a> &nbsp;
-  
-    <a href="/tags/#Graph" title="Graph" rel="3">Graph</a> &nbsp;
-  
-    <a href="/tags/#Heap" title="Heap" rel="1">Heap</a> &nbsp;
-  
-    <a href="/tags/#Three Pointer" title="Three Pointer" rel="1">Three Pointer</a> &nbsp;
-  
-    <a href="/tags/#Facebook" title="Facebook" rel="1">Facebook</a> &nbsp;
-  
-    <a href="/tags/#Architecture" title="Architecture" rel="1">Architecture</a> &nbsp;
-  
-    <a href="/tags/#Technology" title="Technology" rel="1">Technology</a> &nbsp;
-  
-    <a href="/tags/#Assembly" title="Assembly" rel="1">Assembly</a> &nbsp;
-  
-    <a href="/tags/#Hashmap" title="Hashmap" rel="1">Hashmap</a> &nbsp;
-  
-    <a href="/tags/#Trie" title="Trie" rel="1">Trie</a> &nbsp;
-  
-    <a href="/tags/#Doubly Linked List" title="Doubly Linked List" rel="1">Doubly Linked List</a> &nbsp;
-  
-    <a href="/tags/#List" title="List" rel="2">List</a> &nbsp;
-  
-    <a href="/tags/#Grow Array" title="Grow Array" rel="3">Grow Array</a> &nbsp;
-  
-    <a href="/tags/#Singly Linked List" title="Singly Linked List" rel="1">Singly Linked List</a> &nbsp;
-  
-    <a href="/tags/#Queue" title="Queue" rel="2">Queue</a> &nbsp;
-  
-    <a href="/tags/#Linked List" title="Linked List" rel="2">Linked List</a> &nbsp;
-  
-    <a href="/tags/#Stack" title="Stack" rel="1">Stack</a> &nbsp;
-  
-    <a href="/tags/#Two Pointers" title="Two Pointers" rel="1">Two Pointers</a> &nbsp;
-  
-    <a href="/tags/#Tree" title="Tree" rel="1">Tree</a> &nbsp;
-  
-    <a href="/tags/#Divide and Conquer" title="Divide and Conquer" rel="1">Divide and Conquer</a> &nbsp;
-  
-    <a href="/tags/#Traverse" title="Traverse" rel="1">Traverse</a> &nbsp;
-  
-    <a href="/tags/#Pre-order" title="Pre-order" rel="1">Pre-order</a> &nbsp;
-  
-    <a href="/tags/#Post-order" title="Post-order" rel="1">Post-order</a> &nbsp;
-  
-    <a href="/tags/#In-order" title="In-order" rel="1">In-order</a> &nbsp;
-  
-    <a href="/tags/#Back Tracking" title="Back Tracking" rel="1">Back Tracking</a> &nbsp;
-  
-    <a href="/tags/#Boggle" title="Boggle" rel="1">Boggle</a> &nbsp;
-  
-    <a href="/tags/#Hashing" title="Hashing" rel="1">Hashing</a> &nbsp;
-  
-    <a href="/tags/#Linear Probe" title="Linear Probe" rel="1">Linear Probe</a> &nbsp;
-  
-    <a href="/tags/#Rehashing" title="Rehashing" rel="1">Rehashing</a> &nbsp;
-  
-    <a href="/tags/#RBTree" title="RBTree" rel="1">RBTree</a> &nbsp;
-  
-    <a href="/tags/#Red Black Tree" title="Red Black Tree" rel="1">Red Black Tree</a> &nbsp;
-  
-    <a href="/tags/#BFS" title="BFS" rel="1">BFS</a> &nbsp;
-  
-    <a href="/tags/#Bellman-Ford" title="Bellman-Ford" rel="1">Bellman-Ford</a> &nbsp;
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Blogroll</h4>
-  
-  <li><a href="http://jianwang.info/" title="Yet another blog">Jian</a></li>
-  
-  <li><a href="http://jianwang.info/" title="Jian's website">Jian's website</a></li>
-  
-</div>
-
-
-<div class="sidebar-module">
-  <h4>Archives</h4>
-
-  
-  
-  
-  
-  
-  <li id="2016" > <a href="/archives/#2016">2016</a></li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li id="2015" > <a href="/archives/#2015">2015</a></li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li id="2014" > <a href="/archives/#2014">2014</a></li>
-  
-  
-
-</div>
-
-
-</div>
-
-
 
   
 
   <footer class="site-footer">
 
-  <p>Copyright &copy; <a href="/">Jian's Blog</a></p>
-  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> 
-  on 
+  <p>Copyright &copy; <a href="/">Welcome</a></p>
+  <p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a>
+  on
   
   <a href="https://github.com/">Github</a>
   
-  | Theme <a href="https://github.com/yulijia/freshman21/">Freshman21</a> Design by <a href="http://yulijia.net">Lijia Yu</a>  
+  | Theme <a href="https://github.com/jianw851/jianw851.github.io">Jian's Github</a> Design by <a href="http://jianwang.info">Jian Wang</a>  
 
 
   <div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
@@ -1200,7 +845,7 @@ $(function(){
   </div>
 
   <script src="/js/jquery-1.9.1.min.js"></script>
-  <script src="/js/totop.js"></script>  
+  <script src="/js/totop.js"></script>
 
 
 
