@@ -166,41 +166,45 @@
 
 <p>#编译OpenWrt SDK#</p>
 
-<p>编译OpenWrt的过程，可参考<a href="/openwrt/2014/08/10/compile_openwrt">OpenWrt的编译</a>。编译配置我勾选了<code>Advanced configuration option</code>、<code>Build the OpenWrt SDK</code>和<code>Build the OpenWrt based Toolchain</code>。</p>
+<p>编译OpenWrt的过程，可参考<a href="/openwrt/2014/08/10/compile_openwrt">OpenWrt的编译</a>。编译配置我勾选了<code class="highlighter-rouge">Advanced configuration option</code>、<code class="highlighter-rouge">Build the OpenWrt SDK</code>和<code class="highlighter-rouge">Build the OpenWrt based Toolchain</code>。</p>
 
-<p>编译完成之后，交叉编译工具链在类似<code>staging_dir/toolchain-architecture_gcc-compilerver_uClibc-libcver/bin/</code>目录。</p>
+<p>编译完成之后，交叉编译工具链在类似<code class="highlighter-rouge">staging_dir/toolchain-architecture_gcc-compilerver_uClibc-libcver/bin/</code>目录。</p>
 
 <p>#配置环境变量#</p>
 
 <p>主要配置以下环境变量：</p>
 
-<pre><code>PATH=$PATH:(toolchain/bin目录)
+<div class="highlighter-rouge"><pre class="highlight"><code>PATH=$PATH:(toolchain/bin目录)
 export PATH
 
 STAGING_DIR=(toolchain目录)
 export STAGING_DIR
 </code></pre>
+</div>
 
 <p>#交叉编译Helloopenwrt#</p>
 
-<p><code>helloopenwrt.c</code>的源码如下：</p>
+<p><code class="highlighter-rouge">helloopenwrt.c</code>的源码如下：</p>
 
-<pre><code>#include &lt;stdlib.h&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>#include &lt;stdlib.h&gt;
 
 int main() {
     printf("Hello OpenWrt\n");
 }
 </code></pre>
+</div>
 
 <p>然后进行交叉编译：</p>
 
-<pre><code>architecture-openwrt-linux-uclibc-gcc helloopenwrt.c -o helloopenwrt.o
+<div class="highlighter-rouge"><pre class="highlight"><code>architecture-openwrt-linux-uclibc-gcc helloopenwrt.c -o helloopenwrt.o
 </code></pre>
+</div>
 
-<p>然后将生成的<code>hellowopenwrt.o</code>文件用scp上传到Easy-Link上，并用ssh登录到Easy-Link上，并运行，便可以看到终端输出：</p>
+<p>然后将生成的<code class="highlighter-rouge">hellowopenwrt.o</code>文件用scp上传到Easy-Link上，并用ssh登录到Easy-Link上，并运行，便可以看到终端输出：</p>
 
-<pre><code>Hello OpenWrt
+<div class="highlighter-rouge"><pre class="highlight"><code>Hello OpenWrt
 </code></pre>
+</div>
 
 				</span>
 				<div class="journal-date">Published 11 August 2014</div>

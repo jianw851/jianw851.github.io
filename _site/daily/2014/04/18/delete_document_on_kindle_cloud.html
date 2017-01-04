@@ -166,8 +166,9 @@
 
 <p>首先，登录<em>amazon</em>，并点击个人文档，将以下代码复制进地址栏中：</p>
 
-<pre><code>javascript:(function(){ var v = new RegExp("PersonalDocuments"); if (!v.test(document.URL)) { return false; } {a=document.getElementsByClassName('rowBodyCollapsed');for(var i = 0; i&lt;a.length; i++){Fion.deleteItem('deleteItem_'+a[i].getAttribute('asin'));};return; }})();
+<div class="highlighter-rouge"><pre class="highlight"><code>javascript:(function(){ var v = new RegExp("PersonalDocuments"); if (!v.test(document.URL)) { return false; } {a=document.getElementsByClassName('rowBodyCollapsed');for(var i = 0; i&lt;a.length; i++){Fion.deleteItem('deleteItem_'+a[i].getAttribute('asin'));};return; }})();
 </code></pre>
+</div>
 
 <p>按回车后，便会删除当前页面的电子书。当然，你也可以在搜索框搜索电子书，再输入以上代码删除搜索结果页面的电子书。</p>
 

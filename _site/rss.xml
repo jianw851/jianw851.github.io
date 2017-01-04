@@ -5,8 +5,8 @@
         <description>Simpleyyt - Yitao Yao</description>
         <link></link>
         <link></link>
-        <lastBuildDate>2017-01-03T21:10:22-05:00</lastBuildDate>
-        <pubDate>2017-01-03T21:10:22-05:00</pubDate>
+        <lastBuildDate>2017-01-03T21:13:16-05:00</lastBuildDate>
+        <pubDate>2017-01-03T21:13:16-05:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -18,7 +18,7 @@
 
 &lt;h1 id=&quot;section&quot;&gt;慢启动&lt;/h1&gt;
 
-&lt;p&gt;慢启动为发送方的 TCP 增加了一个窗口：&lt;strong&gt;拥塞窗口&lt;/strong&gt;，记为&lt;code&gt;cwnd&lt;/code&gt;，慢启动算法如下：&lt;/p&gt;
+&lt;p&gt;慢启动为发送方的 TCP 增加了一个窗口：&lt;strong&gt;拥塞窗口&lt;/strong&gt;，记为&lt;code class=&quot;highlighter-rouge&quot;&gt;cwnd&lt;/code&gt;，慢启动算法如下：&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;连接建好的开始先初始化 cwnd = 1，表明可以传一个 MSS 大小的数据。&lt;/li&gt;
@@ -109,7 +109,7 @@
 
 &lt;p&gt;# Syntax highlight&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;python
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
  # Test
  import text
 &lt;/code&gt;&lt;/p&gt;
@@ -129,60 +129,69 @@
 
 &lt;p&gt;#交叉编译内核#&lt;/p&gt;
 
-&lt;p&gt;由于主线内核只包含了&lt;code&gt;ieee802154&lt;/code&gt;、&lt;code&gt;fakehard&lt;/code&gt;和&lt;code&gt;6lowpan&lt;/code&gt;，所以没办法使用ZigBee串口设备。所以要下载linux-zigbee内核：&lt;/p&gt;
+&lt;p&gt;由于主线内核只包含了&lt;code class=&quot;highlighter-rouge&quot;&gt;ieee802154&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;fakehard&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;6lowpan&lt;/code&gt;，所以没办法使用ZigBee串口设备。所以要下载linux-zigbee内核：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git clone git://git.code.sf.net/p/linux-zigbee/kernel -b 6lowpan linux-zigbee-kernel
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git://git.code.sf.net/p/linux-zigbee/kernel -b 6lowpan linux-zigbee-kernel
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;当然也可以去项目主页下载。下载完成之后，进行源码目录，然后：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make menuconfig
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make menuconfig
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;选择&lt;code&gt;mac802154&lt;/code&gt;、&lt;code&gt;ieee802154&lt;/code&gt;和&lt;code&gt;serial&lt;/code&gt;等模块。然后保存退出，进行编译：&lt;/p&gt;
+&lt;p&gt;选择&lt;code class=&quot;highlighter-rouge&quot;&gt;mac802154&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;ieee802154&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;serial&lt;/code&gt;等模块。然后保存退出，进行编译：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make -j 2
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make -j 2
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;如果出现错误可以网上搜解决方法，编译完成之后，编译模块：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make modules
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make modules
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;接着安装模块：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make modules_install
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make modules_install
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;安装内核：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make install
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make install
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;至此，内核已经编译并且安装成功了。重启PC之后，加载相关模块：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo modprobe ieee802154
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo modprobe ieee802154
 sudo modprobe mac802154
 sudo modprobe af_802154
 sudo modprobe serial
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;每当需使用时，都必须加载上述模块。&lt;/p&gt;
 
 &lt;p&gt;#安装lowpan-tools#&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;lowpan-tools&lt;/code&gt;是管理Linux LowPAN协议栈的工具，由于Ubuntu的lowpan-tools版本太老了，所以需要从项目主页下载安装：&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lowpan-tools&lt;/code&gt;是管理Linux LowPAN协议栈的工具，由于Ubuntu的lowpan-tools版本太老了，所以需要从项目主页下载安装：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git clone git://git.code.sf.net/p/linux-zigbee/linux-zigbee linux-zigbee-linux-zigbee
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone git://git.code.sf.net/p/linux-zigbee/linux-zigbee linux-zigbee-linux-zigbee
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;下载完成之后，进入源码目录安装：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./autogen.sh
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./autogen.sh
 sudo make install
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;安装完成之后，便可以使用&lt;code&gt;izattach&lt;/code&gt;工具添加ZigBee串口设备。&lt;/p&gt;
+&lt;p&gt;安装完成之后，便可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;izattach&lt;/code&gt;工具添加ZigBee串口设备。&lt;/p&gt;
 </description>
                 <link>/linux/2014/10/30/6lowpan_on_linux</link>
                 <guid>/linux/2014/10/30/6lowpan_on_linux</guid>
@@ -197,41 +206,45 @@ sudo make install
 
 &lt;p&gt;#编译OpenWrt SDK#&lt;/p&gt;
 
-&lt;p&gt;编译OpenWrt的过程，可参考&lt;a href=&quot;/openwrt/2014/08/10/compile_openwrt&quot;&gt;OpenWrt的编译&lt;/a&gt;。编译配置我勾选了&lt;code&gt;Advanced configuration option&lt;/code&gt;、&lt;code&gt;Build the OpenWrt SDK&lt;/code&gt;和&lt;code&gt;Build the OpenWrt based Toolchain&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;编译OpenWrt的过程，可参考&lt;a href=&quot;/openwrt/2014/08/10/compile_openwrt&quot;&gt;OpenWrt的编译&lt;/a&gt;。编译配置我勾选了&lt;code class=&quot;highlighter-rouge&quot;&gt;Advanced configuration option&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;Build the OpenWrt SDK&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Build the OpenWrt based Toolchain&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;编译完成之后，交叉编译工具链在类似&lt;code&gt;staging_dir/toolchain-architecture_gcc-compilerver_uClibc-libcver/bin/&lt;/code&gt;目录。&lt;/p&gt;
+&lt;p&gt;编译完成之后，交叉编译工具链在类似&lt;code class=&quot;highlighter-rouge&quot;&gt;staging_dir/toolchain-architecture_gcc-compilerver_uClibc-libcver/bin/&lt;/code&gt;目录。&lt;/p&gt;
 
 &lt;p&gt;#配置环境变量#&lt;/p&gt;
 
 &lt;p&gt;主要配置以下环境变量：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;PATH=$PATH:(toolchain/bin目录)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PATH=$PATH:(toolchain/bin目录)
 export PATH
 
 STAGING_DIR=(toolchain目录)
 export STAGING_DIR
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#交叉编译Helloopenwrt#&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;helloopenwrt.c&lt;/code&gt;的源码如下：&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;helloopenwrt.c&lt;/code&gt;的源码如下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdlib.h&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;stdlib.h&amp;gt;
 
 int main() {
     printf(&quot;Hello OpenWrt\n&quot;);
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;然后进行交叉编译：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;architecture-openwrt-linux-uclibc-gcc helloopenwrt.c -o helloopenwrt.o
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;architecture-openwrt-linux-uclibc-gcc helloopenwrt.c -o helloopenwrt.o
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;然后将生成的&lt;code&gt;hellowopenwrt.o&lt;/code&gt;文件用scp上传到Easy-Link上，并用ssh登录到Easy-Link上，并运行，便可以看到终端输出：&lt;/p&gt;
+&lt;p&gt;然后将生成的&lt;code class=&quot;highlighter-rouge&quot;&gt;hellowopenwrt.o&lt;/code&gt;文件用scp上传到Easy-Link上，并用ssh登录到Easy-Link上，并运行，便可以看到终端输出：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Hello OpenWrt
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello OpenWrt
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
                 <link>/openwrt/2014/08/11/helloworld_on_openwrt</link>
                 <guid>/openwrt/2014/08/11/helloworld_on_openwrt</guid>
@@ -246,8 +259,9 @@ int main() {
 
 &lt;p&gt;错误的捕获可以通过以下命令：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make V=99
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make V=99
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#下载错误#&lt;/p&gt;
 
@@ -257,8 +271,9 @@ int main() {
 
 &lt;p&gt;在编译过程中，可能会出现以下的错误：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;malformed patch at line xxx
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;malformed patch at line xxx
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;这是由于应用patch 时都会检查受影响的行数是否与记录在两个 @@ 之间的数值一致，如果不一致的话，就要打开patch文件手动修改那个数值以符合受影响的行数。具体可以参考&lt;a href=&quot;http://blog.chinaunix.net/uid-11134731-id-33192.html&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
 
@@ -266,9 +281,10 @@ int main() {
 
 &lt;p&gt;在编译时，可能某个Konfig文件出现以下的错误：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;'endif' in different file than 'if'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;'endif' in different file than 'if'
 location of the 'if'
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;这是Kconfig文件出现问题（&lt;a href=&quot;https://lkml.org/lkml/2010/9/27/533&quot;&gt;参考&lt;/a&gt;），只要打开相应的Kconfig文件，在他的最后一行加个加车就行了，我也不知道为什么。&lt;/p&gt;
 </description>
@@ -287,68 +303,79 @@ location of the 'if'
 
 &lt;p&gt;打开终端，安装编译所需的组件：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get install gcc g++ binutils patch bzip2 flex bison make autoconf gettext texinfo unzip sharutils subversion libncurses5-dev ncurses-term zlib1g-dev git-core gawk asciidoc libz-dev
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install gcc g++ binutils patch bzip2 flex bison make autoconf gettext texinfo unzip sharutils subversion libncurses5-dev ncurses-term zlib1g-dev git-core gawk asciidoc libz-dev
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#下载及更新Openwrt源码#&lt;/p&gt;
 
 &lt;p&gt;打开终端，输入下以命令下载源码,当然还可以下载其它的版本，注意不要包含中文路径。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;进入源码目录，更新源码：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;svn update
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;svn update
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;更新源：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./scripts/feeds update -a
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./scripts/feeds update -a
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;安装下载好的包：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./scripts/feeds install -a
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./scripts/feeds install -a
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#编译配置#&lt;/p&gt;
 
 &lt;p&gt;打开终端，输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make menuconfig
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make menuconfig
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;打开OpenWrt配置界面进行配置。当然，Easy-Link有自己的补丁包。&lt;/p&gt;
 
 &lt;p&gt;如果你想配置内核，可以在终端中输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make kernel_menuconfig
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make kernel_menuconfig
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#编译#&lt;/p&gt;
 
 &lt;p&gt;在终端中输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make -j 2
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make -j 2
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;其中的2表示用2个线程进行编译，适用于多核CPU。在编译过程中会下载相应的文件，编译完成后，会在bin目录生成固件文件。&lt;/p&gt;
 
 &lt;p&gt;如果想清除生成的文件，可在终端中输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make clean
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make clean
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;如果想初始化编译环境，可在终端中输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make dirclean
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make dirclean
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;如果想查看编译详细内容，或者捕获错误，可在终端中输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;make V=99
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;make V=99
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
                 <link>/openwrt/2014/08/10/compile_openwrt</link>
                 <guid>/openwrt/2014/08/10/compile_openwrt</guid>
@@ -369,8 +396,9 @@ location of the 'if'
 
 &lt;p&gt;用户名为root，密码为vocore，登录进去之后，系统会提示修改密码并开启ssh，按照提示操作之后，打开终端，输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ssh root@192.168.1.1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh root@192.168.1.1
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;输入密码之后，便可以登录进去了。&lt;/p&gt;
 
@@ -378,13 +406,14 @@ location of the 'if'
 
 &lt;p&gt;根据作者博客介绍，VoCore的STA和AP能够同时工作。首先，开启STA模式，添加下面内容到｀/etc/config/network`。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;config interface wwan
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;config interface wwan
     option proto 'dhcp'
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;然后，修改&lt;code&gt;/etc/config/wireless&lt;/code&gt;文件：&lt;/p&gt;
+&lt;p&gt;然后，修改&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/config/wireless&lt;/code&gt;文件：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;config wifi-device  radio0
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;config wifi-device  radio0
 	option type     mac80211
 	option channel  11
 	option hwmode	11ng
@@ -410,12 +439,13 @@ config wifi-iface
 	option encryption psk2
 	option key      PasswordForWifi
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;修改相应ssid与密码即可。&lt;/p&gt;
 
 &lt;p&gt;如果，你家的路由是用192.168.1.1作它的IP地址，那么为避免冲突，你必须修改VoCore的IP，修改文件里相应的IP，如192.168.61.1。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;config interface 'lan'
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;config interface 'lan'
 	option ifname 'eth0.1'
 	option type 'bridge'
 	option proto 'static'
@@ -423,6 +453,7 @@ config wifi-iface
 	option netmask '255.255.255.0'
 	option ip6assign '60'
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;重启连接成功之后，VoCore便可以访问外网了。&lt;/p&gt;
 </description>
@@ -441,9 +472,10 @@ config wifi-iface
 
 &lt;p&gt;修改_config.yml文件，增加&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;# 每一页显示的文章数
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 每一页显示的文章数
 paginate: 5
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;添加了上面后，你就可以在index.html页面中，引用paginator这个对象了，记住，只有index.html页面可以用。&lt;/p&gt;
 
@@ -471,8 +503,9 @@ paginate: 5
   &lt;li&gt;
     &lt;p&gt;装truncatehtml插件。这个插件首先需要nokogiri，所以你需要在本地安装，安装命令如下：&lt;/p&gt;
 
-    &lt;pre&gt;&lt;code&gt;gem install nokogiri
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install nokogiri
 &lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
     &lt;p&gt;然后再安装上述的插件，这个插件的好处就是对解析后的html代码进行控制，但坏处就是，你如果是托管在Github上，那就悲剧了，不能用。&lt;/p&gt;
   &lt;/li&gt;
@@ -481,7 +514,7 @@ paginate: 5
 &lt;p&gt;上面两种方法，都有一个问题，就是对所有文章的摘要提取都是一样的，但是有时候，对于不同的问题，我想显示不同长度的摘要，所以下面隆重祭出第三种方法（其实，也是我在网上找的，版权不归我哈）： 
 首先，在你文章里，想要输出摘要的截至地方，打上标签，比如：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; ---
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ---
  title: some post
  layout: post
  ---
@@ -492,11 +525,13 @@ paginate: 5
 
  有一天我心血来潮骑它取赶集。  
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;然后用下面的方式截取：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;  \{\{ post.content  | | split:'&amp;lt;!--break--&amp;gt;' | first \}\}
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  \{\{ post.content  | | split:'&amp;lt;!--break--&amp;gt;' | first \}\}
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;这样的方式，就是，你需要在写文章的时候，打一个注释，但是，这个成本，我想，还好吧。&lt;/p&gt;
 
@@ -593,9 +628,10 @@ paginate: 5
 
 &lt;p&gt;首先我们需要在jekyll中开启分页功能，在jekyll的_config.yml中加入分页配置：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;paginate: 5
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;paginate: 5
 paginate_path: &quot;page:num&quot;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;第一行定义了每页的文章数量，而第二行则定义了在分页的结果，比如在/index.html中使用分页，定义为page:num，则第二页的路径将是/page2/index.html，第三页的路径将是/page3/index.html，以此类推。&lt;/p&gt;
 
@@ -618,37 +654,41 @@ paginate_path: &quot;page:num&quot;
 
 &lt;p&gt;首先检测总的页数，如果只有一页，自然就不需要分页了。通过paginator的total_pages属性能判断总页数：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{% if paginator.total_pages &amp;gt; 1 %}
-&amp;lt;!-- 分页代码 --&amp;gt;
-{% endif %}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;paginator.total_pages&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;!--&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;分页代码&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;我们需要一个跳转到上一页的按钮，这个按钮在第一页不需要显示，通过paginator的previous_page属性来判断是否是第一个页面，使用paginator的previous_page_path来输出上一页的路径，注意在前面添加baseurl，并进行一些必要的字符替换：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{% if paginator.previous_page %}
-    &amp;lt;a href=&quot;{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}&quot;上一页&amp;lt;/a&amp;gt;
-{% endif %}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;paginator.previous_page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;上一页&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;接着是生成所有页面的按钮，并使当前页按钮无效化，遍历所有页面，使用paginator的page属性来确定当前页，如果是当前页，则按钮无效，否则使用&lt;code&gt;{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}&lt;/code&gt;来将&lt;code&gt;:num&lt;/code&gt;替换成当前页面的数字生成页面路径：&lt;/p&gt;
+&lt;p&gt;接着是生成所有页面的按钮，并使当前页按钮无效化，遍历所有页面，使用paginator的page属性来确定当前页，如果是当前页，则按钮无效，否则使用&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;site.paginate_path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;prepend:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;site.baseurl&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;replace:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'//',&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;replace:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;':num',&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;来将&lt;code class=&quot;highlighter-rouge&quot;&gt;:num&lt;/code&gt;替换成当前页面的数字生成页面路径：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      &amp;lt;span class=&quot;active&quot;&amp;gt;{{ page }}&amp;lt;/span&amp;gt;
-    {% elsif page == 1 %}
-      &amp;lt;a href=&quot;{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}&quot;&amp;gt;{{ page }}&amp;lt;/a&amp;gt;
-    {% else %}
-      &amp;lt;a href=&quot;{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}&quot;&amp;gt;{{ page }}&amp;lt;/a&amp;gt;
-    {% endif %}
-{% endfor %}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;(1..paginator.total_pages)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;paginator.page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;span&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;active&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&amp;lt;/span&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;elsif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;最后生成一个下一页的按钮，在最后一页不显示，和上一页按钮类似，通过paginator的next_page_path来确定是否还有下一页：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{% if paginator.next_page %}
-    &amp;lt;a href=&quot;{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}&quot;&amp;gt;下一页&amp;lt;/a&amp;gt;
-{% endif %}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;paginator.next_page&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;a&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;下一页&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;这样一个完整的分页导航功能就做好了，效果就和博客主页上的分页效果是一样的。&lt;/p&gt;
 
@@ -815,14 +855,14 @@ paginate_path: &quot;page:num&quot;
 
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20130609184755281&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;由上图可知&lt;em&gt;Delay Method&lt;/em&gt;的值由&lt;em&gt;SPU Bus Mode寄存器&lt;/em&gt;(&lt;code&gt;offset 0x70[2]=1&lt;/code&gt;)的&lt;em&gt;Delay_Method&lt;/em&gt;位的值来决定，下面来看此寄存器的定义：&lt;/p&gt;
+&lt;p&gt;由上图可知&lt;em&gt;Delay Method&lt;/em&gt;的值由&lt;em&gt;SPU Bus Mode寄存器&lt;/em&gt;(&lt;code class=&quot;highlighter-rouge&quot;&gt;offset 0x70[2]=1&lt;/code&gt;)的&lt;em&gt;Delay_Method&lt;/em&gt;位的值来决定，下面来看此寄存器的定义：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20130609184803765&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;SPU(SPI host interface unit)表示SPI主机接口单元。&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;第二种：通过主机在地址段和数据段之间保持(holding)低时钟信号至少一段时间来创建读操作时延(the delay is created bythe host holding the clock signal low for a minimum period of time between the addressand data phases)，此模式通过设置&lt;code&gt;0x70[2]=0&lt;/code&gt;来选择。&lt;/li&gt;
+  &lt;li&gt;第二种：通过主机在地址段和数据段之间保持(holding)低时钟信号至少一段时间来创建读操作时延(the delay is created bythe host holding the clock signal low for a minimum period of time between the addressand data phases)，此模式通过设置&lt;code class=&quot;highlighter-rouge&quot;&gt;0x70[2]=0&lt;/code&gt;来选择。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;在读操作的数据段区间，主机继续提供时钟脉冲和同时驱动数据到SDI输入引脚或从SDO输出引脚读取数据。&lt;/p&gt;
@@ -882,7 +922,7 @@ paginate_path: &quot;page:num&quot;
 
 &lt;p&gt;###可编程的时钟周期延迟###&lt;/p&gt;
 
-&lt;p&gt;下面是&lt;code&gt;Delay_Method=0&lt;/code&gt;的读数据格式，在这种模式下，&lt;code&gt;tdr(r/p)&lt;/code&gt;的值代表最后一个地址位和第一个数据位之间的延时时间，这段时间内时钟信号SCLK保持为低电平。有两个不同的延时值，包括从G-SPI配置寄存器读取的值和从G-SPI端口寄存器读取的值。一旦读写操作指定的时延期满，有效的数据就从设备中发出。&lt;/p&gt;
+&lt;p&gt;下面是&lt;code class=&quot;highlighter-rouge&quot;&gt;Delay_Method=0&lt;/code&gt;的读数据格式，在这种模式下，&lt;code class=&quot;highlighter-rouge&quot;&gt;tdr(r/p)&lt;/code&gt;的值代表最后一个地址位和第一个数据位之间的延时时间，这段时间内时钟信号SCLK保持为低电平。有两个不同的延时值，包括从G-SPI配置寄存器读取的值和从G-SPI端口寄存器读取的值。一旦读写操作指定的时延期满，有效的数据就从设备中发出。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -926,8 +966,9 @@ paginate_path: &quot;page:num&quot;
 
 &lt;p&gt;首先，登录&lt;em&gt;amazon&lt;/em&gt;，并点击个人文档，将以下代码复制进地址栏中：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;javascript:(function(){ var v = new RegExp(&quot;PersonalDocuments&quot;); if (!v.test(document.URL)) { return false; } {a=document.getElementsByClassName('rowBodyCollapsed');for(var i = 0; i&amp;lt;a.length; i++){Fion.deleteItem('deleteItem_'+a[i].getAttribute('asin'));};return; }})();
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;javascript:(function(){ var v = new RegExp(&quot;PersonalDocuments&quot;); if (!v.test(document.URL)) { return false; } {a=document.getElementsByClassName('rowBodyCollapsed');for(var i = 0; i&amp;lt;a.length; i++){Fion.deleteItem('deleteItem_'+a[i].getAttribute('asin'));};return; }})();
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;按回车后，便会删除当前页面的电子书。当然，你也可以在搜索框搜索电子书，再输入以上代码删除搜索结果页面的电子书。&lt;/p&gt;
 
@@ -940,13 +981,13 @@ paginate_path: &quot;page:num&quot;
 
         <item>
                 <title>sk_buff结构分析</title>
-                <description>&lt;p&gt;在wlan驱动中，数据读取写入是通过&lt;code&gt;sk_buff&lt;/code&gt;这个结构体，而&lt;code&gt;sk_buff&lt;/code&gt;结构主要作用是包含接收的缓冲数据，和它的包头信息。&lt;/p&gt;
+                <description>&lt;p&gt;在wlan驱动中，数据读取写入是通过&lt;code class=&quot;highlighter-rouge&quot;&gt;sk_buff&lt;/code&gt;这个结构体，而&lt;code class=&quot;highlighter-rouge&quot;&gt;sk_buff&lt;/code&gt;结构主要作用是包含接收的缓冲数据，和它的包头信息。&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;如下是&lt;code&gt;sk_buff&lt;/code&gt;的主要结构成员：&lt;/p&gt;
+&lt;p&gt;如下是&lt;code class=&quot;highlighter-rouge&quot;&gt;sk_buff&lt;/code&gt;的主要结构成员：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;struct sk_buff {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct sk_buff {
 ...
 	unsigned char *head;
 	unsigned char *data;
@@ -955,37 +996,38 @@ paginate_path: &quot;page:num&quot;
 ...
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;当然，&lt;code&gt;sk_buff&lt;/code&gt;还包含一些链表的东西，在此处并不做解析。在以上结构体中：&lt;/p&gt;
+&lt;p&gt;当然，&lt;code class=&quot;highlighter-rouge&quot;&gt;sk_buff&lt;/code&gt;还包含一些链表的东西，在此处并不做解析。在以上结构体中：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;head&lt;/code&gt;：报文缓冲区的头；&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;data&lt;/code&gt;：数据的头指针；&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;tail&lt;/code&gt;：数据的尾指针；&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;end&lt;/code&gt; ：报文缓冲区的尾部。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt;：报文缓冲区的头；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;：数据的头指针；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tail&lt;/code&gt;：数据的尾指针；&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;end&lt;/code&gt; ：报文缓冲区的尾部。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;如图所示，&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pic.yupoo.com/simpleyyt/DGDM9tAj/medish.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;分别有三个空间：&lt;em&gt;head room&lt;/em&gt;、&lt;em&gt;packet data&lt;/em&gt;、&lt;em&gt;tail room&lt;/em&gt;。其中&lt;em&gt;packet data&lt;/em&gt;是数据所在区包括数据的包头，&lt;em&gt;head room&lt;/em&gt;是数据头部增长的预留空间、&lt;em&gt;tail room&lt;/em&gt;是尾部增加的空间。预留头部使用&lt;code&gt;skb_reserve(skb, header_len);&lt;/code&gt;函数，尾部增加使用&lt;code&gt;skb_put()&lt;/code&gt;，头部增长使用&lt;code&gt;skb_push()&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;分别有三个空间：&lt;em&gt;head room&lt;/em&gt;、&lt;em&gt;packet data&lt;/em&gt;、&lt;em&gt;tail room&lt;/em&gt;。其中&lt;em&gt;packet data&lt;/em&gt;是数据所在区包括数据的包头，&lt;em&gt;head room&lt;/em&gt;是数据头部增长的预留空间、&lt;em&gt;tail room&lt;/em&gt;是尾部增加的空间。预留头部使用&lt;code class=&quot;highlighter-rouge&quot;&gt;skb_reserve(skb, header_len);&lt;/code&gt;函数，尾部增加使用&lt;code class=&quot;highlighter-rouge&quot;&gt;skb_put()&lt;/code&gt;，头部增长使用&lt;code class=&quot;highlighter-rouge&quot;&gt;skb_push()&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;以下图是调用分配空间函数，即初始化函数&lt;code&gt;alloc_skb(len, GFP_KERNEL)&lt;/code&gt;的样子：&lt;/p&gt;
+&lt;p&gt;以下图是调用分配空间函数，即初始化函数&lt;code class=&quot;highlighter-rouge&quot;&gt;alloc_skb(len, GFP_KERNEL)&lt;/code&gt;的样子：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pic.yupoo.com/simpleyyt/DGDLzyp1/medish.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;可以看到，&lt;code&gt;head&lt;/code&gt;、&lt;code&gt;data&lt;/code&gt;和&lt;code&gt;tail&lt;/code&gt;都指向了缓冲区的起始，而end指向结束。这个SKB的数据长度为0，不包含任何数据。&lt;/p&gt;
+&lt;p&gt;可以看到，&lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;tail&lt;/code&gt;都指向了缓冲区的起始，而end指向结束。这个SKB的数据长度为0，不包含任何数据。&lt;/p&gt;
 
-&lt;p&gt;接着调用了&lt;code&gt;skb_reserve(skb, header_len)&lt;/code&gt;预留了头部数据，如图所示：&lt;/p&gt;
+&lt;p&gt;接着调用了&lt;code class=&quot;highlighter-rouge&quot;&gt;skb_reserve(skb, header_len)&lt;/code&gt;预留了头部数据，如图所示：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pic.yupoo.com/simpleyyt/DGDM9eQx/medish.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;通过调用&lt;code&gt;skb_put()&lt;/code&gt;向尾部增长数据，如图所示：&lt;/p&gt;
+&lt;p&gt;通过调用&lt;code class=&quot;highlighter-rouge&quot;&gt;skb_put()&lt;/code&gt;向尾部增长数据，如图所示：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pic.yupoo.com/simpleyyt/DGDM9fX0/medish.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;通过调用&lt;code&gt;skb_push()&lt;/code&gt;向头部增长数据，如图所示，增加了一个UDP头：&lt;/p&gt;
+&lt;p&gt;通过调用&lt;code class=&quot;highlighter-rouge&quot;&gt;skb_push()&lt;/code&gt;向头部增长数据，如图所示，增加了一个UDP头：&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://pic.yupoo.com/simpleyyt/DGDM8T7V/medium.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -1004,7 +1046,7 @@ paginate_path: &quot;page:num&quot;
 
 &lt;!--more--&gt;
 
-&lt;pre&gt;&lt;code&gt;Building QF9700 USB2NET chip driver...
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Building QF9700 USB2NET chip driver...
 make[1]: 正在进入目录 `/home/snail/文档/Project/FriendlyArm/linux-3.0.8'
   CC [M]  /home/snail/文档/Project/FriendlyArm/qf9700-2.6.32/qf9700/qf9700.o
 /home/snail/文档/Project/FriendlyArm/qf9700-2.6.32/qf9700/qf9700.c: In function 'qf9700_set_multicast':
@@ -1019,52 +1061,53 @@ make[1]: *** [_module_/home/snail/文档/Project/FriendlyArm/qf9700-2.6.32/qf970
 make[1]:正在离开目录 `/home/snail/文档/Project/FriendlyArm/linux-3.0.8'
 make: *** [all] 错误 2
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;为此，写了一个补丁。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;diff -ur b/qf9700.c a/qf9700.c
---- b/qf9700.c	2011-01-21 17:59:58.000000000 +0800
-+++ a/qf9700.c	2014-04-15 18:37:50.000000000 +0800
-@@ -353,14 +353,13 @@
- 
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;diff -ur b/qf9700.c a/qf9700.c
+&lt;/span&gt;&lt;span class=&quot;gd&quot;&gt;--- b/qf9700.c	2011-01-21 17:59:58.000000000 +0800
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+++ a/qf9700.c	2014-04-15 18:37:50.000000000 +0800
+&lt;/span&gt;&lt;span class=&quot;gu&quot;&gt;@@ -353,14 +353,13 @@
+&lt;/span&gt; 
  	if (net-&amp;gt;flags &amp;amp; IFF_PROMISC) {
  		rx_ctl |= 0x02;
--	} else if (net-&amp;gt;flags &amp;amp; IFF_ALLMULTI || net-&amp;gt;mc_count &amp;gt; QF_MCAST_MAX) {
-+	} else if (net-&amp;gt;flags &amp;amp; IFF_ALLMULTI || netdev_mc_count(net) &amp;gt; QF_MCAST_MAX) {
- 		rx_ctl |= 0x04;
--	} else if (net-&amp;gt;mc_count) {
+&lt;span class=&quot;gd&quot;&gt;-	} else if (net-&amp;gt;flags &amp;amp; IFF_ALLMULTI || net-&amp;gt;mc_count &amp;gt; QF_MCAST_MAX) {
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+	} else if (net-&amp;gt;flags &amp;amp; IFF_ALLMULTI || netdev_mc_count(net) &amp;gt; QF_MCAST_MAX) {
+&lt;/span&gt; 		rx_ctl |= 0x04;
+&lt;span class=&quot;gd&quot;&gt;-	} else if (net-&amp;gt;mc_count) {
 -		struct dev_mc_list *mc_list = net-&amp;gt;mc_list;
 -		int i;
-+	} else if (netdev_mc_count(net)) {
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+	} else if (netdev_mc_count(net)) {
 +		struct netdev_hw_addr *hw_addr;
- 
--		for (i = 0; i &amp;lt; net-&amp;gt;mc_count; i++, mc_list = mc_list-&amp;gt;next) {
+&lt;/span&gt; 
+&lt;span class=&quot;gd&quot;&gt;-		for (i = 0; i &amp;lt; net-&amp;gt;mc_count; i++, mc_list = mc_list-&amp;gt;next) {
 -			u32 crc = ether_crc(ETH_ALEN, mc_list-&amp;gt;dmi_addr) &amp;gt;&amp;gt; 26;
-+		netdev_for_each_mc_addr(hw_addr, net) {
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+		netdev_for_each_mc_addr(hw_addr, net) {
 +			u32 crc = ether_crc(ETH_ALEN, hw_addr-&amp;gt;addr) &amp;gt;&amp;gt; 26;
- 			hashes[crc &amp;gt;&amp;gt; 3] |= 1 &amp;lt;&amp;lt; (crc &amp;amp; 0x7);
+&lt;/span&gt; 			hashes[crc &amp;gt;&amp;gt; 3] |= 1 &amp;lt;&amp;lt; (crc &amp;amp; 0x7);
  		}
  	}
-@@ -413,9 +412,9 @@
- 
+&lt;span class=&quot;gu&quot;&gt;@@ -413,9 +412,9 @@
+&lt;/span&gt; 
  	/* power up and reset phy */
  	qf_write_reg(dev, PRR, 1);
--	udelay(20 * 1000);	// at least 10ms, here 20ms for safe
-+	mdelay(20);	// at least 10ms, here 20ms for safe
- 	qf_write_reg(dev, PRR, 0);
--	udelay(2 * 1000);	// at least 1ms, here 2ms for reading right register
-+	mdelay(2);	// at least 1ms, here 2ms for reading right register
- 
+&lt;span class=&quot;gd&quot;&gt;-	udelay(20 * 1000);	// at least 10ms, here 20ms for safe
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+	mdelay(20);	// at least 10ms, here 20ms for safe
+&lt;/span&gt; 	qf_write_reg(dev, PRR, 0);
+&lt;span class=&quot;gd&quot;&gt;-	udelay(2 * 1000);	// at least 1ms, here 2ms for reading right register
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+	mdelay(2);	// at least 1ms, here 2ms for reading right register
+&lt;/span&gt; 
  	/* receive broadcast packets */
  	qf9700_set_multicast(dev-&amp;gt;net);
-diff -ur b/qf9700.h a/qf9700.h
---- b/qf9700.h	2010-10-09 16:51:00.000000000 +0800
-+++ a/qf9700.h	2014-04-15 17:20:23.000000000 +0800
-@@ -150,4 +150,21 @@
- #define	QF_TX_OVERHEAD		2	// 2bytes header
+&lt;span class=&quot;gh&quot;&gt;diff -ur b/qf9700.h a/qf9700.h
+&lt;/span&gt;&lt;span class=&quot;gd&quot;&gt;--- b/qf9700.h	2010-10-09 16:51:00.000000000 +0800
+&lt;/span&gt;&lt;span class=&quot;gi&quot;&gt;+++ a/qf9700.h	2014-04-15 17:20:23.000000000 +0800
+&lt;/span&gt;&lt;span class=&quot;gu&quot;&gt;@@ -150,4 +150,21 @@
+&lt;/span&gt; #define	QF_TX_OVERHEAD		2	// 2bytes header
  #define	QF_RX_OVERHEAD		7	// 3bytes header + 4crc tail
  
-+#ifdef DEBUG
+&lt;span class=&quot;gi&quot;&gt;+#ifdef DEBUG
 +#define devdbg(usbnet, fmt, arg...) \
 +        printk(KERN_DEBUG &quot;%s: &quot; fmt &quot;\n&quot; , (usbnet)-&amp;gt;net-&amp;gt;name , ## arg)
 +#else
@@ -1081,8 +1124,9 @@ diff -ur b/qf9700.h a/qf9700.h
 +#define devinfo(usbnet, fmt, arg...) \
 +        printk(KERN_INFO &quot;%s: &quot; fmt &quot;\n&quot; , (usbnet)-&amp;gt;net-&amp;gt;name , ## arg); \
 +
- /*----------------------------------------------------------------------------------------------*/
+&lt;/span&gt; /*----------------------------------------------------------------------------------------------*/
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1sjKysEx&quot;&gt;点此&lt;/a&gt;下载源文件及补丁文件。&lt;/p&gt;
 </description>
@@ -1099,11 +1143,12 @@ diff -ur b/qf9700.h a/qf9700.h
 
 &lt;p&gt;#Marvel驱动的使用#&lt;/p&gt;
 
-&lt;p&gt;88w8686的Linux驱动是通过模块方式载入内核的，在使用时加载进去就行了，88w8686的Linux驱动还包含了sdio的驱动，加载时，还必须加载sdio驱动。在运行&lt;code&gt;make&lt;/code&gt;命令进行编译后，会生成&lt;code&gt;sdio.o&lt;/code&gt;和&lt;code&gt;sd8386.o&lt;/code&gt;文件，在终端下输入下列命令进行加载：&lt;/p&gt;
+&lt;p&gt;88w8686的Linux驱动是通过模块方式载入内核的，在使用时加载进去就行了，88w8686的Linux驱动还包含了sdio的驱动，加载时，还必须加载sdio驱动。在运行&lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;命令进行编译后，会生成&lt;code class=&quot;highlighter-rouge&quot;&gt;sdio.o&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;sd8386.o&lt;/code&gt;文件，在终端下输入下列命令进行加载：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;insmod sdio.o
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;insmod sdio.o
 insmod sd8385.o
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#Marvel驱动源码分析#&lt;/p&gt;
 
@@ -1113,7 +1158,7 @@ insmod sd8385.o
 
 &lt;p&gt;源码的目录结构如下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
 ├─app
 │  └─wlanconfig
 ├─config
@@ -1126,57 +1171,63 @@ insmod sd8385.o
 │  └─linux
 └─wlan
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;其中&lt;em&gt;app文件夹&lt;/em&gt;是驱动自带的wlanconfig工具，用于配置wifi的参数，本文不进行分析。&lt;em&gt;config文件夹&lt;/em&gt;包含的是一些配置文件，不进行分析。if文件夹包含的是关于GSPI操作的接口，包括固件。&lt;em&gt;io文件夹&lt;/em&gt;包含的是GSPI驱动。&lt;em&gt;os文件夹&lt;/em&gt;包含的是与系统相关的操作与头文件。&lt;em&gt;wlan文件夹&lt;/em&gt;是wifi驱动的主要目录，在本文进行重点分析。&lt;/p&gt;
 
 &lt;p&gt;##驱动的启动流程##&lt;/p&gt;
 
-&lt;p&gt;由上文可知，wlan驱动是通过&lt;code&gt;insmod&lt;/code&gt;进加载的。在文件&lt;code&gt;wlan/wlan_main.c&lt;/code&gt;末尾处可以看到：&lt;/p&gt;
+&lt;p&gt;由上文可知，wlan驱动是通过&lt;code class=&quot;highlighter-rouge&quot;&gt;insmod&lt;/code&gt;进加载的。在文件&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan/wlan_main.c&lt;/code&gt;末尾处可以看到：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;module_init(wlan_init_module);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;module_init(wlan_init_module);
 module_exit(wlan_cleanup_module);
 
 MODULE_DESCRIPTION(&quot;M-WLAN Driver&quot;);
 MODULE_AUTHOR(&quot;Marvell International Ltd.&quot;);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;这几个宏说明了wlan驱动模块的入口，知道其初始化函数是&lt;code&gt;wlan_init_module&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;这几个宏说明了wlan驱动模块的入口，知道其初始化函数是&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_init_module&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;再来看看&lt;code&gt;wlan_init_module&lt;/code&gt;函数，在其函数中，调用了以下函数对网卡插入和移除时调用的函数进行了注册，即当电脑检测到网卡时有调用&lt;code&gt;wlan_add_card&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;再来看看&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_init_module&lt;/code&gt;函数，在其函数中，调用了以下函数对网卡插入和移除时调用的函数进行了注册，即当电脑检测到网卡时有调用&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_add_card&lt;/code&gt;。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sbi_register(wlan_add_card, wlan_remove_card, NULL)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sbi_register(wlan_add_card, wlan_remove_card, NULL)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;在&lt;code&gt;wlan_add_card&lt;/code&gt;中，进行初始化后，以下函数启动了内核主线程&lt;code&gt;wlan_service_main_thread&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_add_card&lt;/code&gt;中，进行初始化后，以下函数启动了内核主线程&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_service_main_thread&lt;/code&gt;。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;wlan_create_thread(wlan_service_main_thread, &amp;amp;priv-&amp;gt;MainThread, &quot;wlan_main_service&quot;)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wlan_create_thread(wlan_service_main_thread, &amp;amp;priv-&amp;gt;MainThread, &quot;wlan_main_service&quot;)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;###内核主线程###&lt;/p&gt;
 
-&lt;p&gt;内核主线程&lt;code&gt;wlan_service_main_thread&lt;/code&gt;承担了wlan驱动的主要工作，它主要是处理wlan固件的事件，wlan固件接受到的数据和内核传来的数据。&lt;/p&gt;
+&lt;p&gt;内核主线程&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_service_main_thread&lt;/code&gt;承担了wlan驱动的主要工作，它主要是处理wlan固件的事件，wlan固件接受到的数据和内核传来的数据。&lt;/p&gt;
 
-&lt;p&gt;在&lt;code&gt;wlan_service_main_thread&lt;/code&gt;函数中有一个&lt;code&gt;for&lt;/code&gt;死循环，所有数据处理都在循环里面。&lt;/p&gt;
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_service_main_thread&lt;/code&gt;函数中有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt;死循环，所有数据处理都在循环里面。&lt;/p&gt;
 
 &lt;p&gt;在主循环里面，首先调用：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;OS_SET_THREAD_STATE(TASK_INTERRUPTIBLE);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;OS_SET_THREAD_STATE(TASK_INTERRUPTIBLE);
 ...
 schedule();
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;让主线程进入可中断的等待模式，等到事件到来。当主线程被唤醒时，即有数据要处理，便调用：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sbi_get_int_status(priv, &amp;amp;ireg)；
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sbi_get_int_status(priv, &amp;amp;ireg)；
 ...
 Adapter-&amp;gt;HisRegCpy |= ireg;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;先读取网卡固件发来的数据及标志位，将标志位存入&lt;code&gt;Adapter-&amp;gt;HisRegCpy&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;先读取网卡固件发来的数据及标志位，将标志位存入&lt;code class=&quot;highlighter-rouge&quot;&gt;Adapter-&amp;gt;HisRegCpy&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;紧接着便对标志位进行判断：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;/* Command response? */
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* Command response? */
 if (Adapter-&amp;gt;HisRegCpy &amp;amp; HIS_CmdUpLdRdy) {
 	PRINTM(INFO, &quot;main-thread: Cmd response ready.\n&quot;);
 
@@ -1213,6 +1264,7 @@ if (Adapter-&amp;gt;HisRegCpy &amp;amp; HIS_CardEvent) {
 	wlan_process_event(priv);
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;并且调用相应的处理函数，对数据进行处理。&lt;/p&gt;
 
@@ -1220,57 +1272,63 @@ if (Adapter-&amp;gt;HisRegCpy &amp;amp; HIS_CardEvent) {
 
 &lt;p&gt;接着，便对内核发来的命令进行处理（比如说连接命令，扫描命令）：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;/* Execute the next command */
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/* Execute the next command */
 if (!priv-&amp;gt;wlan_dev.dnld_sent &amp;amp;&amp;amp; !Adapter-&amp;gt;CurCmd) {
 	ExecuteNextCommand(priv);
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;当然，之后便进入等待事件状态，重复以上过程。&lt;/p&gt;
 
 &lt;p&gt;###wlan固件数据/事件###&lt;/p&gt;
 
-&lt;p&gt;当wlan固件有数据/事件时，GSPI驱动会产生中断，它的中断处理函数为&lt;code&gt;sbi_interrupt&lt;/code&gt;，在&lt;code&gt;sbi_interrupt&lt;/code&gt;中调用了&lt;code&gt;wlan_interrupt&lt;/code&gt;,在&lt;code&gt;wlan_interrupt&lt;/code&gt;中，调用&lt;/p&gt;
+&lt;p&gt;当wlan固件有数据/事件时，GSPI驱动会产生中断，它的中断处理函数为&lt;code class=&quot;highlighter-rouge&quot;&gt;sbi_interrupt&lt;/code&gt;，在&lt;code class=&quot;highlighter-rouge&quot;&gt;sbi_interrupt&lt;/code&gt;中调用了&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_interrupt&lt;/code&gt;,在&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_interrupt&lt;/code&gt;中，调用&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;wake_up_interruptible(&amp;amp;priv-&amp;gt;MainThread.waitQ);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wake_up_interruptible(&amp;amp;priv-&amp;gt;MainThread.waitQ);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;唤醒了主线程，对数据进行处理。上面介绍过，主线程调用&lt;code&gt;sbi_get_int_status(priv, &amp;amp;ireg)&lt;/code&gt;读取数据和标志位。&lt;/p&gt;
+&lt;p&gt;唤醒了主线程，对数据进行处理。上面介绍过，主线程调用&lt;code class=&quot;highlighter-rouge&quot;&gt;sbi_get_int_status(priv, &amp;amp;ireg)&lt;/code&gt;读取数据和标志位。&lt;/p&gt;
 
 &lt;p&gt;###应用层调用驱动接口###&lt;/p&gt;
 
-&lt;p&gt;该wlan驱动接口是wext（Wireless Extensions无线扩展接口）。wext的接口实现上，应用层采用ioctl方式访问驱动，设置无线参数或者获取无线参数，配置无线驱动进行联网操作。无线驱动事件到应用层的传递采用的netlink socket技术，一种netlink route消息技术。这也是很多其他类型的驱动标准的实现方法。具体调用方法可以参考&lt;code&gt;wlanconfig&lt;/code&gt;，比如说&lt;/p&gt;
+&lt;p&gt;该wlan驱动接口是wext（Wireless Extensions无线扩展接口）。wext的接口实现上，应用层采用ioctl方式访问驱动，设置无线参数或者获取无线参数，配置无线驱动进行联网操作。无线驱动事件到应用层的传递采用的netlink socket技术，一种netlink route消息技术。这也是很多其他类型的驱动标准的实现方法。具体调用方法可以参考&lt;code class=&quot;highlighter-rouge&quot;&gt;wlanconfig&lt;/code&gt;，比如说&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ioctl(sockfd, SIOCGIWSCAN, &amp;amp;iwr));
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ioctl(sockfd, SIOCGIWSCAN, &amp;amp;iwr));
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;调用wlan驱动扫描命令。如下函数&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;s = socket(PF_INET, SOCK_DGRAM, 0);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;s = socket(PF_INET, SOCK_DGRAM, 0);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;新建了一个netlink连接。&lt;/p&gt;
 
-&lt;p&gt;所有的ioctl的回调函数在，wlan_wext.c的&lt;code&gt;wlan_handler&lt;/code&gt;数组中，这里对&lt;code&gt;SIOCGIWSCAN&lt;/code&gt;即wlan扫描进行分析。可以看到wlan扫描的回调函数是&lt;code&gt;wlan_get_scan&lt;/code&gt;和&lt;code&gt;wlan_set_scan&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;所有的ioctl的回调函数在，wlan_wext.c的&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_handler&lt;/code&gt;数组中，这里对&lt;code class=&quot;highlighter-rouge&quot;&gt;SIOCGIWSCAN&lt;/code&gt;即wlan扫描进行分析。可以看到wlan扫描的回调函数是&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_get_scan&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_set_scan&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;先来看看&lt;code&gt;wlan_set_scan&lt;/code&gt;，在&lt;code&gt;wlan_set_scan&lt;/code&gt;函数中又调用了&lt;code&gt;wlan_scan_networks&lt;/code&gt;,在&lt;code&gt;wlan_scan_networks&lt;/code&gt;中调用了&lt;code&gt;wlan_scan_channel_list&lt;/code&gt;将命令添加到命令队列中，并等待命令执行响应，然后调用&lt;code&gt;wlan_scan_process_results&lt;/code&gt;更新&lt;code&gt;priv&lt;/code&gt;中的扫描表。&lt;/p&gt;
+&lt;p&gt;先来看看&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_set_scan&lt;/code&gt;，在&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_set_scan&lt;/code&gt;函数中又调用了&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_scan_networks&lt;/code&gt;,在&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_scan_networks&lt;/code&gt;中调用了&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_scan_channel_list&lt;/code&gt;将命令添加到命令队列中，并等待命令执行响应，然后调用&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_scan_process_results&lt;/code&gt;更新&lt;code class=&quot;highlighter-rouge&quot;&gt;priv&lt;/code&gt;中的扫描表。&lt;/p&gt;
 
-&lt;p&gt;在函数&lt;code&gt;wlan_scan_channel_list&lt;/code&gt;中调用&lt;code&gt;PrepareAndSendCommand&lt;/code&gt;将命令添加到命令列表。等发送到固件的数据和固件发送过来的数据都存在&lt;code&gt;CmdNode-&amp;gt;BufVirtualAddr&lt;/code&gt;指针指向的数据中，接着调用&lt;/p&gt;
+&lt;p&gt;在函数&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_scan_channel_list&lt;/code&gt;中调用&lt;code class=&quot;highlighter-rouge&quot;&gt;PrepareAndSendCommand&lt;/code&gt;将命令添加到命令列表。等发送到固件的数据和固件发送过来的数据都存在&lt;code class=&quot;highlighter-rouge&quot;&gt;CmdNode-&amp;gt;BufVirtualAddr&lt;/code&gt;指针指向的数据中，接着调用&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;QueueCmd(Adapter, CmdNode, TRUE);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;QueueCmd(Adapter, CmdNode, TRUE);
 wake_up_interruptible(&amp;amp;priv-&amp;gt;MainThread.waitQ);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;将命令加入命令队列，接着唤醒主线程处理命令，然后执行如下函数&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;wait_event_interruptible(CmdNode-&amp;gt;cmdwait_q, CmdNode-&amp;gt;CmdWaitQWoken);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wait_event_interruptible(CmdNode-&amp;gt;cmdwait_q, CmdNode-&amp;gt;CmdWaitQWoken);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;等待结果，当&lt;code&gt;CmdNode-&amp;gt;CmdWaitQWoken&lt;/code&gt;为&lt;code&gt;TRUE&lt;/code&gt;时唤醒。&lt;/p&gt;
+&lt;p&gt;等待结果，当&lt;code class=&quot;highlighter-rouge&quot;&gt;CmdNode-&amp;gt;CmdWaitQWoken&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;TRUE&lt;/code&gt;时唤醒。&lt;/p&gt;
 
-&lt;p&gt;在主线程中，由上面知道，调用&lt;code&gt;ExecuteNextCommand&lt;/code&gt;执行内核发来的命令。在&lt;code&gt;ExecuteNextCommand&lt;/code&gt;函数中调用&lt;code&gt;DownloadCommandToStation&lt;/code&gt;下载命令，&lt;code&gt;DownloadCommandToStation&lt;/code&gt;中，先调用&lt;code&gt;sbi_host_to_card&lt;/code&gt;下载命令，然后调用&lt;code&gt;ModTimer&lt;/code&gt;进行超时时重新发送。&lt;/p&gt;
+&lt;p&gt;在主线程中，由上面知道，调用&lt;code class=&quot;highlighter-rouge&quot;&gt;ExecuteNextCommand&lt;/code&gt;执行内核发来的命令。在&lt;code class=&quot;highlighter-rouge&quot;&gt;ExecuteNextCommand&lt;/code&gt;函数中调用&lt;code class=&quot;highlighter-rouge&quot;&gt;DownloadCommandToStation&lt;/code&gt;下载命令，&lt;code class=&quot;highlighter-rouge&quot;&gt;DownloadCommandToStation&lt;/code&gt;中，先调用&lt;code class=&quot;highlighter-rouge&quot;&gt;sbi_host_to_card&lt;/code&gt;下载命令，然后调用&lt;code class=&quot;highlighter-rouge&quot;&gt;ModTimer&lt;/code&gt;进行超时时重新发送。&lt;/p&gt;
 
-&lt;p&gt;接下来，便是等待响应，当固件对发来的命令响应时，会触发中断，如上文说的调用&lt;code&gt;wlan_process_rx_command&lt;/code&gt;处理固件对命令的响应。在&lt;code&gt;wlan_process_rx_command&lt;/code&gt;中处理完成之后，会调用&lt;code&gt;CleanupAndInsertCmd&lt;/code&gt;回收命令，此时的&lt;code&gt;CmdNode-&amp;gt;CmdWaitQWoken&lt;/code&gt;为&lt;code&gt;TRUE&lt;/code&gt;，下次&lt;code&gt;schedule&lt;/code&gt;时便，唤醒上面等待命令响应的线程，让其继续执行。&lt;/p&gt;
+&lt;p&gt;接下来，便是等待响应，当固件对发来的命令响应时，会触发中断，如上文说的调用&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_process_rx_command&lt;/code&gt;处理固件对命令的响应。在&lt;code class=&quot;highlighter-rouge&quot;&gt;wlan_process_rx_command&lt;/code&gt;中处理完成之后，会调用&lt;code class=&quot;highlighter-rouge&quot;&gt;CleanupAndInsertCmd&lt;/code&gt;回收命令，此时的&lt;code class=&quot;highlighter-rouge&quot;&gt;CmdNode-&amp;gt;CmdWaitQWoken&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;TRUE&lt;/code&gt;，下次&lt;code class=&quot;highlighter-rouge&quot;&gt;schedule&lt;/code&gt;时便，唤醒上面等待命令响应的线程，让其继续执行。&lt;/p&gt;
 
 &lt;p&gt;整个驱动运行的流程便是这样子。&lt;/p&gt;
 </description>
@@ -1287,28 +1345,31 @@ wake_up_interruptible(&amp;amp;priv-&amp;gt;MainThread.waitQ);
 
 &lt;p&gt;虽然Terminal IDE很强大，可以编写Java，android，但它没有gcc/g++。没关系，Terminal IDE强大之处就在于它是可拓展的，具体可以看它的Help。此处，我说明一下，如何把gcc/g++加入Terminal IDE，其实就是将linux-arm-gcc加入Terminal IDE 。&lt;/p&gt;
 
-&lt;p&gt;首先，将&lt;a href=&quot;http://www.kuaipan.cn/file/id_41572487401570322.htm&quot;&gt;linux-arm-gcc&lt;/a&gt;解压到Terminal IDE中的&lt;code&gt;~/system&lt;/code&gt;目录下(不是系统的&lt;code&gt;/system/&lt;/code&gt;，其真正目录为:&lt;code&gt;data/data/com.spartacusrex.spartacuside/files/system&lt;/code&gt;)。&lt;/p&gt;
+&lt;p&gt;首先，将&lt;a href=&quot;http://www.kuaipan.cn/file/id_41572487401570322.htm&quot;&gt;linux-arm-gcc&lt;/a&gt;解压到Terminal IDE中的&lt;code class=&quot;highlighter-rouge&quot;&gt;~/system&lt;/code&gt;目录下(不是系统的&lt;code class=&quot;highlighter-rouge&quot;&gt;/system/&lt;/code&gt;，其真正目录为:&lt;code class=&quot;highlighter-rouge&quot;&gt;data/data/com.spartacusrex.spartacuside/files/system&lt;/code&gt;)。&lt;/p&gt;
 
 &lt;p&gt;修改该’gcc’目录为可读写，在Terminal IDE下执行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;chmod -R 777 ./gcc
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chmod -R 777 ./gcc
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;修改&lt;code&gt;~&lt;/code&gt;(即&lt;code&gt;data/data/com.spartacusrex.spartacuside/files/&lt;/code&gt;)目录下的&lt;code&gt;.bashrc&lt;/code&gt;文件。添加需要的环境变量，在&lt;code&gt;~/.bashrc&lt;/code&gt;文件添加如下环境变量：&lt;/p&gt;
+&lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;~&lt;/code&gt;(即&lt;code class=&quot;highlighter-rouge&quot;&gt;data/data/com.spartacusrex.spartacuside/files/&lt;/code&gt;)目录下的&lt;code class=&quot;highlighter-rouge&quot;&gt;.bashrc&lt;/code&gt;文件。添加需要的环境变量，在&lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bashrc&lt;/code&gt;文件添加如下环境变量：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;export CPLUS_INCLUDE_PATH=$IDESYSTEM/gcc/arm-linux-androideabi/c++/include:$CPLUS_INCLUDE_PATH
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export CPLUS_INCLUDE_PATH=$IDESYSTEM/gcc/arm-linux-androideabi/c++/include:$CPLUS_INCLUDE_PATH
 export C_INCLUDE_PATH=$IDESYSTEM/gcc/arm-linux-androideabi/include:$C_INCLUDE_PATH
 export PATH=$IDESYSTEM/gcc/bin:$PATH
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;将&lt;code&gt;gcc/bin&lt;/code&gt;下的相应文件改一下名，改为&lt;code&gt;gcc&lt;/code&gt;和&lt;code&gt;g++&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;gcc/bin&lt;/code&gt;下的相应文件改一下名，改为&lt;code class=&quot;highlighter-rouge&quot;&gt;gcc&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;g++&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;再重启Terminal IDE后(需按TerminalIDE的Shutdown按钮)，便可以使用gcc和g++进行c++/c的编译，如下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;vim a.cpp   //写入代吗
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim a.cpp   //写入代吗
 g++ a.cpp   //编译
 ./a.out     //运行
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;此时，再用otg接个键盘或者用蓝牙键盘的话，那么整个apad就相当于你的电脑，得心应手。&lt;/p&gt;
 

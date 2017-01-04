@@ -251,14 +251,14 @@
 
 <p><img src="http://img.blog.csdn.net/20130609184755281" alt="" /></p>
 
-<p>由上图可知<em>Delay Method</em>的值由<em>SPU Bus Mode寄存器</em>(<code>offset 0x70[2]=1</code>)的<em>Delay_Method</em>位的值来决定，下面来看此寄存器的定义：</p>
+<p>由上图可知<em>Delay Method</em>的值由<em>SPU Bus Mode寄存器</em>(<code class="highlighter-rouge">offset 0x70[2]=1</code>)的<em>Delay_Method</em>位的值来决定，下面来看此寄存器的定义：</p>
 
 <p><img src="http://img.blog.csdn.net/20130609184803765" alt="" /></p>
 
 <p>SPU(SPI host interface unit)表示SPI主机接口单元。</p>
 
 <ul>
-  <li>第二种：通过主机在地址段和数据段之间保持(holding)低时钟信号至少一段时间来创建读操作时延(the delay is created bythe host holding the clock signal low for a minimum period of time between the addressand data phases)，此模式通过设置<code>0x70[2]=0</code>来选择。</li>
+  <li>第二种：通过主机在地址段和数据段之间保持(holding)低时钟信号至少一段时间来创建读操作时延(the delay is created bythe host holding the clock signal low for a minimum period of time between the addressand data phases)，此模式通过设置<code class="highlighter-rouge">0x70[2]=0</code>来选择。</li>
 </ul>
 
 <p>在读操作的数据段区间，主机继续提供时钟脉冲和同时驱动数据到SDI输入引脚或从SDO输出引脚读取数据。</p>
@@ -318,7 +318,7 @@
 
 <p>###可编程的时钟周期延迟###</p>
 
-<p>下面是<code>Delay_Method=0</code>的读数据格式，在这种模式下，<code>tdr(r/p)</code>的值代表最后一个地址位和第一个数据位之间的延时时间，这段时间内时钟信号SCLK保持为低电平。有两个不同的延时值，包括从G-SPI配置寄存器读取的值和从G-SPI端口寄存器读取的值。一旦读写操作指定的时延期满，有效的数据就从设备中发出。</p>
+<p>下面是<code class="highlighter-rouge">Delay_Method=0</code>的读数据格式，在这种模式下，<code class="highlighter-rouge">tdr(r/p)</code>的值代表最后一个地址位和第一个数据位之间的延时时间，这段时间内时钟信号SCLK保持为低电平。有两个不同的延时值，包括从G-SPI配置寄存器读取的值和从G-SPI端口寄存器读取的值。一旦读写操作指定的时延期满，有效的数据就从设备中发出。</p>
 
 <ul>
   <li>

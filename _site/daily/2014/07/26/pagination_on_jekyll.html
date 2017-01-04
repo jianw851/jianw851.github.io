@@ -168,9 +168,10 @@
 
 <p>首先我们需要在jekyll中开启分页功能，在jekyll的_config.yml中加入分页配置：</p>
 
-<pre><code>paginate: 5
+<div class="highlighter-rouge"><pre class="highlight"><code>paginate: 5
 paginate_path: "page:num"
 </code></pre>
+</div>
 
 <p>第一行定义了每页的文章数量，而第二行则定义了在分页的结果，比如在/index.html中使用分页，定义为page:num，则第二页的路径将是/page2/index.html，第三页的路径将是/page3/index.html，以此类推。</p>
 
@@ -193,37 +194,41 @@ paginate_path: "page:num"
 
 <p>首先检测总的页数，如果只有一页，自然就不需要分页了。通过paginator的total_pages属性能判断总页数：</p>
 
-<pre><code>{% if paginator.total_pages &gt; 1 %}
-&lt;!-- 分页代码 --&gt;
-{% endif %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">paginator.total_pages</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">分页代码</span><span class="w"> </span><span class="err">--&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>我们需要一个跳转到上一页的按钮，这个按钮在第一页不需要显示，通过paginator的previous_page属性来判断是否是第一个页面，使用paginator的previous_page_path来输出上一页的路径，注意在前面添加baseurl，并进行一些必要的字符替换：</p>
 
-<pre><code>{% if paginator.previous_page %}
-    &lt;a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"上一页&lt;/a&gt;
-{% endif %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">paginator.previous_page</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="err">&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"</span><span class="err">上一页&lt;/a&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>接着是生成所有页面的按钮，并使当前页按钮无效化，遍历所有页面，使用paginator的page属性来确定当前页，如果是当前页，则按钮无效，否则使用<code>{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}</code>来将<code>:num</code>替换成当前页面的数字生成页面路径：</p>
+<p>接着是生成所有页面的按钮，并使当前页按钮无效化，遍历所有页面，使用paginator的page属性来确定当前页，如果是当前页，则按钮无效，否则使用<code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">site.paginate_path</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">prepend:</span><span class="w"> </span><span class="err">site.baseurl</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">replace:</span><span class="w"> </span><span class="err">'//',</span><span class="w"> </span><span class="err">'/'</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">replace:</span><span class="w"> </span><span class="err">':num',</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code>来将<code class="highlighter-rouge">:num</code>替换成当前页面的数字生成页面路径：</p>
 
-<pre><code>{% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      &lt;span class="active"&gt;{{ page }}&lt;/span&gt;
-    {% elsif page == 1 %}
-      &lt;a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}"&gt;{{ page }}&lt;/a&gt;
-    {% else %}
-      &lt;a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"&gt;{{ page }}&lt;/a&gt;
-    {% endif %}
-{% endfor %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">(1..paginator.total_pages)</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">paginator.page</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="err">&lt;span</span><span class="w"> </span><span class="err">class=</span><span class="s2">"active"</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/span&gt;</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">elsif</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">1</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="err">&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}"</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+      </span><span class="err">&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">page</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;</span><span class="w">
+    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>最后生成一个下一页的按钮，在最后一页不显示，和上一页按钮类似，通过paginator的next_page_path来确定是否还有下一页：</p>
 
-<pre><code>{% if paginator.next_page %}
-    &lt;a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"&gt;下一页&lt;/a&gt;
-{% endif %}
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">paginator.next_page</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+    </span><span class="err">&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"</span><span class="err">&gt;下一页&lt;/a&gt;</span><span class="w">
+</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
 
 <p>这样一个完整的分页导航功能就做好了，效果就和博客主页上的分页效果是一样的。</p>
 

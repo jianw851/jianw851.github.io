@@ -164,7 +164,7 @@
 
 <!--more-->
 
-<pre><code>Building QF9700 USB2NET chip driver...
+<div class="highlighter-rouge"><pre class="highlight"><code>Building QF9700 USB2NET chip driver...
 make[1]: 正在进入目录 `/home/snail/文档/Project/FriendlyArm/linux-3.0.8'
   CC [M]  /home/snail/文档/Project/FriendlyArm/qf9700-2.6.32/qf9700/qf9700.o
 /home/snail/文档/Project/FriendlyArm/qf9700-2.6.32/qf9700/qf9700.c: In function 'qf9700_set_multicast':
@@ -179,52 +179,53 @@ make[1]: *** [_module_/home/snail/文档/Project/FriendlyArm/qf9700-2.6.32/qf970
 make[1]:正在离开目录 `/home/snail/文档/Project/FriendlyArm/linux-3.0.8'
 make: *** [all] 错误 2
 </code></pre>
+</div>
 
 <p>为此，写了一个补丁。</p>
 
-<pre><code>diff -ur b/qf9700.c a/qf9700.c
---- b/qf9700.c	2011-01-21 17:59:58.000000000 +0800
-+++ a/qf9700.c	2014-04-15 18:37:50.000000000 +0800
-@@ -353,14 +353,13 @@
- 
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="gh">diff -ur b/qf9700.c a/qf9700.c
+</span><span class="gd">--- b/qf9700.c	2011-01-21 17:59:58.000000000 +0800
+</span><span class="gi">+++ a/qf9700.c	2014-04-15 18:37:50.000000000 +0800
+</span><span class="gu">@@ -353,14 +353,13 @@
+</span> 
  	if (net-&gt;flags &amp; IFF_PROMISC) {
  		rx_ctl |= 0x02;
--	} else if (net-&gt;flags &amp; IFF_ALLMULTI || net-&gt;mc_count &gt; QF_MCAST_MAX) {
-+	} else if (net-&gt;flags &amp; IFF_ALLMULTI || netdev_mc_count(net) &gt; QF_MCAST_MAX) {
- 		rx_ctl |= 0x04;
--	} else if (net-&gt;mc_count) {
+<span class="gd">-	} else if (net-&gt;flags &amp; IFF_ALLMULTI || net-&gt;mc_count &gt; QF_MCAST_MAX) {
+</span><span class="gi">+	} else if (net-&gt;flags &amp; IFF_ALLMULTI || netdev_mc_count(net) &gt; QF_MCAST_MAX) {
+</span> 		rx_ctl |= 0x04;
+<span class="gd">-	} else if (net-&gt;mc_count) {
 -		struct dev_mc_list *mc_list = net-&gt;mc_list;
 -		int i;
-+	} else if (netdev_mc_count(net)) {
+</span><span class="gi">+	} else if (netdev_mc_count(net)) {
 +		struct netdev_hw_addr *hw_addr;
- 
--		for (i = 0; i &lt; net-&gt;mc_count; i++, mc_list = mc_list-&gt;next) {
+</span> 
+<span class="gd">-		for (i = 0; i &lt; net-&gt;mc_count; i++, mc_list = mc_list-&gt;next) {
 -			u32 crc = ether_crc(ETH_ALEN, mc_list-&gt;dmi_addr) &gt;&gt; 26;
-+		netdev_for_each_mc_addr(hw_addr, net) {
+</span><span class="gi">+		netdev_for_each_mc_addr(hw_addr, net) {
 +			u32 crc = ether_crc(ETH_ALEN, hw_addr-&gt;addr) &gt;&gt; 26;
- 			hashes[crc &gt;&gt; 3] |= 1 &lt;&lt; (crc &amp; 0x7);
+</span> 			hashes[crc &gt;&gt; 3] |= 1 &lt;&lt; (crc &amp; 0x7);
  		}
  	}
-@@ -413,9 +412,9 @@
- 
+<span class="gu">@@ -413,9 +412,9 @@
+</span> 
  	/* power up and reset phy */
  	qf_write_reg(dev, PRR, 1);
--	udelay(20 * 1000);	// at least 10ms, here 20ms for safe
-+	mdelay(20);	// at least 10ms, here 20ms for safe
- 	qf_write_reg(dev, PRR, 0);
--	udelay(2 * 1000);	// at least 1ms, here 2ms for reading right register
-+	mdelay(2);	// at least 1ms, here 2ms for reading right register
- 
+<span class="gd">-	udelay(20 * 1000);	// at least 10ms, here 20ms for safe
+</span><span class="gi">+	mdelay(20);	// at least 10ms, here 20ms for safe
+</span> 	qf_write_reg(dev, PRR, 0);
+<span class="gd">-	udelay(2 * 1000);	// at least 1ms, here 2ms for reading right register
+</span><span class="gi">+	mdelay(2);	// at least 1ms, here 2ms for reading right register
+</span> 
  	/* receive broadcast packets */
  	qf9700_set_multicast(dev-&gt;net);
-diff -ur b/qf9700.h a/qf9700.h
---- b/qf9700.h	2010-10-09 16:51:00.000000000 +0800
-+++ a/qf9700.h	2014-04-15 17:20:23.000000000 +0800
-@@ -150,4 +150,21 @@
- #define	QF_TX_OVERHEAD		2	// 2bytes header
+<span class="gh">diff -ur b/qf9700.h a/qf9700.h
+</span><span class="gd">--- b/qf9700.h	2010-10-09 16:51:00.000000000 +0800
+</span><span class="gi">+++ a/qf9700.h	2014-04-15 17:20:23.000000000 +0800
+</span><span class="gu">@@ -150,4 +150,21 @@
+</span> #define	QF_TX_OVERHEAD		2	// 2bytes header
  #define	QF_RX_OVERHEAD		7	// 3bytes header + 4crc tail
  
-+#ifdef DEBUG
+<span class="gi">+#ifdef DEBUG
 +#define devdbg(usbnet, fmt, arg...) \
 +        printk(KERN_DEBUG "%s: " fmt "\n" , (usbnet)-&gt;net-&gt;name , ## arg)
 +#else
@@ -241,8 +242,9 @@ diff -ur b/qf9700.h a/qf9700.h
 +#define devinfo(usbnet, fmt, arg...) \
 +        printk(KERN_INFO "%s: " fmt "\n" , (usbnet)-&gt;net-&gt;name , ## arg); \
 +
- /*----------------------------------------------------------------------------------------------*/
+</span> /*----------------------------------------------------------------------------------------------*/
 </code></pre>
+</div>
 
 <p><a href="http://pan.baidu.com/s/1sjKysEx">点此</a>下载源文件及补丁文件。</p>
 

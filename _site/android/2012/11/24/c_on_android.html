@@ -166,28 +166,31 @@
 
 <p>虽然Terminal IDE很强大，可以编写Java，android，但它没有gcc/g++。没关系，Terminal IDE强大之处就在于它是可拓展的，具体可以看它的Help。此处，我说明一下，如何把gcc/g++加入Terminal IDE，其实就是将linux-arm-gcc加入Terminal IDE 。</p>
 
-<p>首先，将<a href="http://www.kuaipan.cn/file/id_41572487401570322.htm">linux-arm-gcc</a>解压到Terminal IDE中的<code>~/system</code>目录下(不是系统的<code>/system/</code>，其真正目录为:<code>data/data/com.spartacusrex.spartacuside/files/system</code>)。</p>
+<p>首先，将<a href="http://www.kuaipan.cn/file/id_41572487401570322.htm">linux-arm-gcc</a>解压到Terminal IDE中的<code class="highlighter-rouge">~/system</code>目录下(不是系统的<code class="highlighter-rouge">/system/</code>，其真正目录为:<code class="highlighter-rouge">data/data/com.spartacusrex.spartacuside/files/system</code>)。</p>
 
 <p>修改该’gcc’目录为可读写，在Terminal IDE下执行</p>
 
-<pre><code>chmod -R 777 ./gcc
+<div class="highlighter-rouge"><pre class="highlight"><code>chmod -R 777 ./gcc
 </code></pre>
+</div>
 
-<p>修改<code>~</code>(即<code>data/data/com.spartacusrex.spartacuside/files/</code>)目录下的<code>.bashrc</code>文件。添加需要的环境变量，在<code>~/.bashrc</code>文件添加如下环境变量：</p>
+<p>修改<code class="highlighter-rouge">~</code>(即<code class="highlighter-rouge">data/data/com.spartacusrex.spartacuside/files/</code>)目录下的<code class="highlighter-rouge">.bashrc</code>文件。添加需要的环境变量，在<code class="highlighter-rouge">~/.bashrc</code>文件添加如下环境变量：</p>
 
-<pre><code>export CPLUS_INCLUDE_PATH=$IDESYSTEM/gcc/arm-linux-androideabi/c++/include:$CPLUS_INCLUDE_PATH
+<div class="highlighter-rouge"><pre class="highlight"><code>export CPLUS_INCLUDE_PATH=$IDESYSTEM/gcc/arm-linux-androideabi/c++/include:$CPLUS_INCLUDE_PATH
 export C_INCLUDE_PATH=$IDESYSTEM/gcc/arm-linux-androideabi/include:$C_INCLUDE_PATH
 export PATH=$IDESYSTEM/gcc/bin:$PATH
 </code></pre>
+</div>
 
-<p>将<code>gcc/bin</code>下的相应文件改一下名，改为<code>gcc</code>和<code>g++</code>。</p>
+<p>将<code class="highlighter-rouge">gcc/bin</code>下的相应文件改一下名，改为<code class="highlighter-rouge">gcc</code>和<code class="highlighter-rouge">g++</code>。</p>
 
 <p>再重启Terminal IDE后(需按TerminalIDE的Shutdown按钮)，便可以使用gcc和g++进行c++/c的编译，如下：</p>
 
-<pre><code>vim a.cpp   //写入代吗
+<div class="highlighter-rouge"><pre class="highlight"><code>vim a.cpp   //写入代吗
 g++ a.cpp   //编译
 ./a.out     //运行
 </code></pre>
+</div>
 
 <p>此时，再用otg接个键盘或者用蓝牙键盘的话，那么整个apad就相当于你的电脑，得心应手。</p>
 

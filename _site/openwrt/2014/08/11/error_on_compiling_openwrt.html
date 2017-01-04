@@ -166,8 +166,9 @@
 
 <p>错误的捕获可以通过以下命令：</p>
 
-<pre><code>make V=99
+<div class="highlighter-rouge"><pre class="highlight"><code>make V=99
 </code></pre>
+</div>
 
 <p>#下载错误#</p>
 
@@ -177,8 +178,9 @@
 
 <p>在编译过程中，可能会出现以下的错误：</p>
 
-<pre><code>malformed patch at line xxx
+<div class="highlighter-rouge"><pre class="highlight"><code>malformed patch at line xxx
 </code></pre>
+</div>
 
 <p>这是由于应用patch 时都会检查受影响的行数是否与记录在两个 @@ 之间的数值一致，如果不一致的话，就要打开patch文件手动修改那个数值以符合受影响的行数。具体可以参考<a href="http://blog.chinaunix.net/uid-11134731-id-33192.html">这里</a>。</p>
 
@@ -186,9 +188,10 @@
 
 <p>在编译时，可能某个Konfig文件出现以下的错误：</p>
 
-<pre><code>'endif' in different file than 'if'
+<div class="highlighter-rouge"><pre class="highlight"><code>'endif' in different file than 'if'
 location of the 'if'
 </code></pre>
+</div>
 
 <p>这是Kconfig文件出现问题（<a href="https://lkml.org/lkml/2010/9/27/533">参考</a>），只要打开相应的Kconfig文件，在他的最后一行加个加车就行了，我也不知道为什么。</p>
 

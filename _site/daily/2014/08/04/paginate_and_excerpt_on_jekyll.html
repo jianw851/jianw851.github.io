@@ -168,9 +168,10 @@
 
 <p>修改_config.yml文件，增加</p>
 
-<pre><code># 每一页显示的文章数
+<div class="highlighter-rouge"><pre class="highlight"><code># 每一页显示的文章数
 paginate: 5
 </code></pre>
+</div>
 
 <p>添加了上面后，你就可以在index.html页面中，引用paginator这个对象了，记住，只有index.html页面可以用。</p>
 
@@ -198,8 +199,9 @@ paginate: 5
   <li>
     <p>装truncatehtml插件。这个插件首先需要nokogiri，所以你需要在本地安装，安装命令如下：</p>
 
-    <pre><code>gem install nokogiri
+    <div class="highlighter-rouge"><pre class="highlight"><code>gem install nokogiri
 </code></pre>
+    </div>
 
     <p>然后再安装上述的插件，这个插件的好处就是对解析后的html代码进行控制，但坏处就是，你如果是托管在Github上，那就悲剧了，不能用。</p>
   </li>
@@ -208,7 +210,7 @@ paginate: 5
 <p>上面两种方法，都有一个问题，就是对所有文章的摘要提取都是一样的，但是有时候，对于不同的问题，我想显示不同长度的摘要，所以下面隆重祭出第三种方法（其实，也是我在网上找的，版权不归我哈）： 
 首先，在你文章里，想要输出摘要的截至地方，打上标签，比如：</p>
 
-<pre><code> ---
+<div class="highlighter-rouge"><pre class="highlight"><code> ---
  title: some post
  layout: post
  ---
@@ -219,11 +221,13 @@ paginate: 5
 
  有一天我心血来潮骑它取赶集。  
 </code></pre>
+</div>
 
 <p>然后用下面的方式截取：</p>
 
-<pre><code>  \{\{ post.content  | | split:'&lt;!--break--&gt;' | first \}\}
+<div class="highlighter-rouge"><pre class="highlight"><code>  \{\{ post.content  | | split:'&lt;!--break--&gt;' | first \}\}
 </code></pre>
+</div>
 
 <p>这样的方式，就是，你需要在写文章的时候，打一个注释，但是，这个成本，我想，还好吧。</p>
 
