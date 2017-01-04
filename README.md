@@ -1,4 +1,4 @@
-# Simpleyyt
+# Jian Wang
 
 My blog based on Jekyll-Bootstrap.
 

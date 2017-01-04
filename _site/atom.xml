@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Welcome to</title>
+ <title>Jian Wang's Blog</title>
  <link href="/" rel="self"/>
  <link href=""/>
- <updated>2017-01-03T21:47:43-05:00</updated>
+ <updated>2017-01-03T22:08:09-05:00</updated>
  <id></id>
  <author>
    <name>Jian Wang</name>
@@ -3733,13 +3733,11 @@ Click &lt;a href=&quot;http://www.google.com/analytics&quot;&gt;Google Analytics
  </entry>
  
  <entry>
-   <title>关于如何设置jekyll的一些格式运用</title>
+   <title>posts and markdown cheat sheet</title>
    <link href="/trick/2014/08/04/paginate_and_excerpt_on_jekyll"/>
    <updated>2014-08-04T00:00:00-04:00</updated>
    <id>/trick/2014/08/04/paginate_and_excerpt_on_jekyll</id>
-   <content type="html">&lt;p&gt;怎么说呢，用Jekyll搭建Blog不管被说的多么好用，但终究应该只属于技术宅+爱折腾的群体吧，经常一个Wordpress上的小功能，却要在Jekyll折腾不少时间，比如之前的站内搜索，以及今天的分页以及文章摘要，足足折腾了我一下午，而且最后的解决方案还是不完美，有点小挫败感。&lt;/p&gt;
-
-&lt;!--more--&gt;
+   <content type="html">&lt;!--more--&gt;
 &lt;p&gt;增加图片的格式如下&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20130609184731593&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
@@ -3794,7 +3792,7 @@ paginate: 5
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;上面两种方法，都有一个问题，就是对所有文章的摘要提取都是一样的，但是有时候，对于不同的问题，我想显示不同长度的摘要，所以下面隆重祭出第三种方法（其实，也是我在网上找的，版权不归我哈）： 
+&lt;p&gt;上面两种方法，都有一个问题，就是对所有文章的摘要提取都是一样的，但是有时候，对于不同的问题，我想显示不同长度的摘要，所以下面隆重祭出第三种方法（其实，也是我在网上找的，版权不归我哈）：
 首先，在你文章里，想要输出摘要的截至地方，打上标签，比如：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ---
@@ -3816,11 +3814,7 @@ paginate: 5
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;这样的方式，就是，你需要在写文章的时候，打一个注释，但是，这个成本，我想，还好吧。&lt;/p&gt;
-
 &lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;本文转自：&lt;a href=&quot;http://kingauthur.info/2013/01/20/the-paginator-and-excerpt-in-jekyll/&quot;&gt;http://kingauthur.info/2013/01/20/the-paginator-and-excerpt-in-jekyll/&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </content>
  </entry>
  
