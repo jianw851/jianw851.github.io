@@ -1,23 +1,13 @@
 ---
 layout: post
-category: [trick]
-title: 关于如何设置jekyll的一些格式运用
+category: daily
+title: 为Jekyll增加不完美的分页和文章摘要
 tagline: by Kingauthur
 tags: [jekyll]
 ---
 怎么说呢，用Jekyll搭建Blog不管被说的多么好用，但终究应该只属于技术宅+爱折腾的群体吧，经常一个Wordpress上的小功能，却要在Jekyll折腾不少时间，比如之前的站内搜索，以及今天的分页以及文章摘要，足足折腾了我一下午，而且最后的解决方案还是不完美，有点小挫败感。
 
 <!--more-->
-增加图片的格式如下
-
-![](http://img.blog.csdn.net/20130609184731593)
-
-增加行前加一个点符号，直接加 * 即可
-
-如果要斜体，用两个* 括起来   *斜体*
-
-站内链接引用的样式 如下
-可参考[关于阅读]({% post_url 2015-4-10-about-reading %})。 
 
 回到主题，下面先说下Jekyll分页，这个功能有内置的，但是非常见鬼的，只支持对index.html的分页，你没看错，文件名必须是这个，如果你是用JB的话，把index.md重命名成index.html，然后再继续往下看：
 

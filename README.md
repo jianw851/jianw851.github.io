@@ -1,69 +1,35 @@
-Freshman21
-==========
+# Simpleyyt
 
-Freshman21 is a Jekyll blog theme, base on theme [Freshman](http://github.com/yulijia/freshman). 
+My blog based on Jekyll-Bootstrap.
 
-A tribute to WordPress Theme Twenty-Twelve and Twenty-eleven.
+## About Jekyll-Bootstrap
 
-Enjoy.
+For all usage and documentation please see: <http://jekyllbootstrap.com>
 
+## About theme
 
-![Screen](http://i.imgur.com/oSp7kacl.png)
+This theme is the copy of [elementaryOS](http://elementaryos.org) portal page. Some features are imperfect, but I will make it more perfect.
 
-### Version 2.1 update 2016.06.06
+## Usage
 
-- master branch: the simplest template, original version with
-	* Open Graph META Tags
-	* Microdata(schema.org)
+You can edit the `_config.yml` file to change the setting of site. If you want to change avatar or favicon, just replace the files in `assets\themes\Snail\img`.
 
-- gh-pages branch: master branch with 
+## About excerpt
 
-	* [google analytics js template](https://github.com/yulijia/freshman21/blob/gh-pages/_includes/google_analytics.js)
-        * [BackToTop js script](https://github.com/yulijia/freshman21/tree/gh-pages/js)
-        * <q>readmore</q> module
-        * [keyboard shortcuts for pagination](http://yulijia.net/freshman21/news/2016/05/24/new-features.html)
-	* font awesome icon
-	* [Google search](https://github.com/yulijia/freshman21/blob/gh-pages/_includes/google_search.js)
+There are 2 ways of excerpt: "teaser" and "truncate_words" (Configurated in _config.yml).
 
-Clone master branch: 
+ * "teaser": look for the More tag (<!--more-->) and create a teaser from the content that precedes the More tag.
+You must place "<!--more-->" at paragraph in post. The whole content will be displayed in homepage if no More tag found in post.
 
-` git clone https://github.com/yulijia/freshman21.git -b master --single-branch`
+ * "truncate_words": generate an excerpt automatically by selecting the first 20 words of the post. It doesn't work well in some of no-English post.
 
-Clone gh-pages branch: 
+## Change Log
 
-`git clone https://github.com/yulijia/freshman21.git -b gh-pages --single-branch`
+ * Add pagination.
+ * Add new way of excerpt.
+ * Download google fonts to the local.
+ * Add google custom search engine.
 
+## License
 
-### A Summary of Features
-
-- Provide single column and two columns layout
-- Powerful configure file
-- Comments by Disqus
-- Support LaTeX (by MathJax)
-- Syntax highlighting
-- Multiple Languages support 
-    * English
-    * Chinese
-    * Japanese (Contributed by [kokeiro](https://github.com/kokeiro001))
-    * Polish (Contributed by [Derson5](https://github.com/Derson5))
-    * Korean (Contributed by [ulgoon](https://github.com/ulgoon))
-    * Russian (Contributed by [alexeyev](https://github.com/alexeyev))
-
-### How to install this theme?
-
-```
-# please make sure you have already installed git tools and ruby tools(gem)
-$ gem install sass
-$ gem install jekyll
-$ git clone https://github.com/yulijia/freshman21.git
-$ mv freshman21/ yourblogname.github.io/
-
-```
-
-### Demo
-
-Single column, please see [my own blog](http://yulijia.net/en/)
-
-Two columns, please see the [theme website](http://yulijia.net/freshman21/)
-
-
+[MIT](http://opensource.org/licenses/MIT)
