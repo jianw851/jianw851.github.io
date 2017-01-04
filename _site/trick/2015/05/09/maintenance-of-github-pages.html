@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Maintenance of github pages</title>
+    
+	
+	<meta name="author" content="Yitao Yao">
+	
+    <link rel="stylesheet" href="/assets/themes/Snail/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/themes/Snail/css/main.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/pages/journal.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/team.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/static.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/css/errors.css">
+	<link rel="stylesheet" href="/assets/themes/Snail/google-code-prettify/prettify.css">
+	
+	<link rel="shortcut icon" href="/assets/themes/Snail/img/favicon.ico">
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/js/auto_loadmore.js"></script>
+	
+	<script type="text/javascript" src="/assets/themes/Snail/google-code-prettify/prettify.js"></script>
+	
+	<script type="text/javascript">
+	  $(function(){
+		$("pre code").addClass("prettyprint linenums");
+		prettyPrint();
+	  });
+	</script>
+	
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+</head>
+<body>
+	<noscript>
+		&amp;lt;div id="no-js"&amp;gt;Please enable JavaScript in your browser to experience / fully&amp;lt;/div&amp;gt;
+	</noscript>
+    <div id="page-container">
+		<div>
+			<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 700px;">
+			<li id="home"><a href="/">Home</a></li>
+			
+			
+			
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "About Me"><a href="/about">About Me</a></li>
+					
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Archive"><a href="/archive">Archive</a></li>
+					
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Categories"><a href="/categories">Categories</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+				
+			 
+				
+				  
+					
+					<li id = "Tags"><a href="/tags">Tags</a></li>
+					
+				  
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+				
+			 
+			
+			
+		</ul>
+		<form id="nav-search" method="GET" action="/search.html">
+			<div id="search-right-pix">
+				<div id="search-left-pix">
+					<div id="search-center-pix">
+						<div id="search-icon-pix"></div>
+						<input name="query" type="text" placeholder="Search">
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
+			<div id="page-content">
+				
+
+<div id="page-content">
+	<div class="cont932">
+	<div id="journal-articles-block">
+		<div class="journal-article">
+			<div class="journal-post-info">
+				<div class="journal-cat-box">
+				
+				
+				<div class="journal-cat-box">
+
+<a href="/categories.html#trick-ref" title="trick">
+	trick
+
+</a>
+</div>
+				
+				</div>
+			</div>
+			<div class="journal-body">
+				<h1 class="journal-title">Maintenance of github pages<span class="author">by Jian</span>
+				</h1>
+				<span class="the-article">
+				<p>I am a new learner, content bellow will show some tricks about github pages’ development and maintenance. How to use  git, jekyll, ruby, rails will also be included.</p>
+
+<!--more-->
+
+<p>###Recovery
+      $ git log –pretty=oneline</p>
+
+<p>this is to look formal commit</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ git reset --hard 1a410efbd2fdkaldafdkajfdklds059dd55cfe9
+</code></pre>
+</div>
+
+<p>this command is to recover the formal commit using SHA</p>
+
+<p>For more info, <a href="http://git-scm.com/book/zh/v1/Git-%E5%86%85%E9%83%A8%E5%8E%9F%E7%90%86-%E7%BB%B4%E6%8A%A4%E5%8F%8A%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D">click this url</a></p>
+
+<p>###Install jekyll
+在中国，jekyll所在的网站是被屏蔽的，所以需要用vpn翻墙才能成功执行install jekyll命令x,否则会报超时。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ sudo gem update --system
+</code></pre>
+</div>
+
+<p>update the gem to latest version</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ sudo gem install jekyll
+</code></pre>
+</div>
+
+<p>install jekyll</p>
+
+<p>if you want to install rails, the command is the same</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ sudo gem install rails
+</code></pre>
+</div>
+
+<p>###jekyll</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  $ jekyll serve --watch --baseurl ""
+</code></pre>
+</div>
+
+<p>this will run the jekyll server, and type the 127.0.0.1:4000 to the url column, you can test or debug the local project</p>
+
+<p>###Google Custom Search Engine(gcse)
+First, you need to submit your website and sitemap to google, otherwise, there would be no result. 
+<a href="https://www.google.com/webmasters/tools/home?hl=en">click here to submit google webmasters</a>
+Second, customize your google custom search engine API at <a href="https://cse.google.com/cse/all">here</a>
+Finally, If you customize your search engine API and use gcse:searchresults-only featrue,pay attention to the “Query Parameter Name” which has to be given your input name. This problem had costed me half a day to settle down. Otherwise, you can not see any response on the result page after submit your search request.</p>
+
+<p>###Google Analytics
+Click <a href="http://www.google.com/analytics">Google Analytics</a> to creat your account.</p>
+
+<p>A good way to test if it was well set, click your website url and see the Reporting–&gt;Real-Time–&gt;Overview menu if there would be new sessions and new active pages.</p>
+
+
+				</span>
+				<div class="journal-date">Published 09 May 2015</div>
+				<div class="journal-tags">
+				
+				
+	 
+		<a class="tag-cont" href="/tags.html#jekyll-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">jekyll</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#git-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">git</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#ruby-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">ruby</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#rails-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">rails</div>
+			<div class="tag-r"></div>
+		</a>
+	 
+		<a class="tag-cont" href="/tags.html#maintenance-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">maintenance</div>
+			<div class="tag-r"></div>
+		</a>
+	
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+	<div class="clearboth"></div>
+	
+
+
+  <!-- 多说评论框 start -->
+<div id="comments">
+    <div class="ds-thread" data-thread-key="/trick/2015/05/09/maintenance-of-github-pages"  data-title="Maintenance of github pages - Simpleyyt"></div>
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"simpleyyt"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+	<div class="clearboth"></div>
+</div>
+
+			</div>
+			<div class="clearboth pagebottom"></div>
+		</div>
+	</div>
+	<footer>
+	<div class="footer-940">
+		<div class="footer-general-info">
+			© 2014 Yitao Yao.<br><br>
+			Content licensed under:<br>
+			<a class="cc" href="http://creativecommons.org/licenses/by-sa/3.0/">c a b</a><br>
+			<a href = "/about.html">About Me</a><br>
+		</div>
+		<div class="footer-col-cont">
+			<div class="footer-nav-col">
+				<h4><a>Categories</a></h4>
+				<ul>
+					
+					
+
+
+  
+     
+    	<li><a href="/categories.html#trick-ref">
+    		trick <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#read-ref">
+    		read <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#idea-ref">
+    		idea <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#algorithm-ref">
+    		algorithm <span>30</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#Technology-ref">
+    		Technology <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#learn-ref">
+    		learn <span>1</span>
+    	</a></li>
+    
+  
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Pages</a></h4>
+				<ul>
+					
+					
+					
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">Tags</a></li>
+      	
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Feed</a></h4>
+				<ul>
+					<li><a href="/atom.xml">Atom Feed</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a>Links</a></h4>
+				<ul>
+				 
+					<li><a href = "http://simpleyyt.github.io/">Yitao's Blog</a></li>
+				
+				</ul>
+			</div>
+			<div class="footer-nav-col">
+				<h4><a href = "/about.html">About Me</a></h4>
+				<ul>
+				 
+					<li><a href = "mailto:simpleyyt@gmail.com">e-mail</a></li>
+				 
+					<li><a href = "https://github.com/Simpleyyt">Github</a></li>
+				 
+					<li><a href = "http://www.weibo.com/u/1836017133">WeiBo</a></li>
+				 
+					<li><a href = "https://plus.google.com/103860633659538888207?rel=author">Google+</a></li>
+				
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		<div class="clearboth"></div>
+	</div>
+	<div class="clearboth"></div>
+</footer>
+	
+</body>
+</html>
+
