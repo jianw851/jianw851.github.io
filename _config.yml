@@ -9,7 +9,7 @@ markdown: kramdown
 
 # The title and tagline is showed on homepage
 #
-title :  Welcome to Jian's Blog
+title : Jian Wang's Blog
 tagline:
 
 gems: [jekyll-paginate]
