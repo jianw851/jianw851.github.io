@@ -1,7 +1,7 @@
 ---
 layout: post
 category: [algorithm]
-title: A practice for a web problem
+title: A Web Problem Practice
 tagline: by Jian
 tags: [Graph, DFS]
 ---
