@@ -14,12 +14,7 @@ I implemented runable c++ code for problem #1 and problem #2. And provide test u
 <!--more-->
 
 ```cpp
-/**********************************
-compile using following command
-$ g++ -std=c++11 hw.cpp -o hw
-run using following command
-$ ./hw < testData.txt
-***********************************/
+
 #include <iostream>
 #include <unordered_map>
 #include <unordered_set>
